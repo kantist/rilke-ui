@@ -7,13 +7,21 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
+	"noImplicitAny": false,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+	"strictPropertyInitialization": false,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "rilke-ui": [
+        "dist/rilke-ui/rilke-ui",
+        "dist/rilke-ui"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [

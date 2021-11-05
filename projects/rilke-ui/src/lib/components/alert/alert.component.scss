@@ -1,0 +1,60 @@
+@import "../../../scss/vars";
+
+:host {
+  .toast {
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 15px 10px 15px;
+    min-height: 48px;
+
+    p {
+      color: $grey-50;
+      font-size: 1rem;
+      line-height: 1.6rem;
+      margin-right: 0.6rem;
+    }
+
+    &.default {
+      background: $grey-900;
+
+      button {
+        background-color: $grey-700;
+      }
+    }
+    &.success {
+      background: $light-green;
+      button {
+        background-color: $light-green-700;
+      }
+    }
+    &.info {
+      background: $light-blue;
+      button {
+        background-color: $light-blue-700;
+      }
+    }
+    &.warning {
+      background: $amber;
+      button {
+        background-color: $amber-700;
+      }
+    }
+    &.error {
+      background: $pink;
+      button {
+        background-color: $pink-700;
+      }
+    }
+  }
+}
+
+::ng-deep {
+  snack-bar-container {
+    background: transparent !important;
+    padding: 0px !important;
+    overflow: hidden !important;
+  }
+}

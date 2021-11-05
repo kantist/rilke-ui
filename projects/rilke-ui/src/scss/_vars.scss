@@ -1,0 +1,23 @@
+// Color Palette
+@import "./colors.scss";
+@import "./mixins";
+
+// Radius
+$r-1: 0.4rem;
+$r-2: 0.8rem;
+$r-3: 1.2rem;
+
+// Padding
+$p-1: 10px;
+$p-2: 1rem;
+
+// Margin
+$m-1: 10px;
+$m-2: 1rem;
+
+// Shadow
+$s-1: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+$s-2: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+
+//  Module Rem
+$module-rem: 1rem;

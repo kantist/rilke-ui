@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "rilke-ui": {
+      "projectType": "library",
+      "root": "projects/rilke-ui",
+      "sourceRoot": "projects/rilke-ui/src",
+      "prefix": "ril",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/rilke-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/rilke-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/rilke-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/rilke-ui/src/test.ts",
+            "tsConfig": "projects/rilke-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/rilke-ui/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "rilke-ui"
 }

@@ -1,0 +1,30 @@
+.ant-input {
+  background: #ebebeb;
+  border-radius: 20px;
+  width: 100%;
+
+  &:not(.ant-input-disabled):hover {
+    box-shadow: $shadow-hover;
+  }
+  &-lg {
+    border-radius: 25px;
+  }
+  &-disabled {
+    background: rgba(#ccc,.1);
+    border-color: rgba(#ccc,.5);
+    color: #bdbdbd;
+  }
+}
+.ant-calendar-picker {
+  width: 100%;
+
+  .ant-calendar-picker-clear {
+    background-color: #ebebeb;
+  }
+  .ant-calendar-range-picker-separator {
+    vertical-align: middle;
+  }
+}
+.ant-calendar-input-wrap {
+  height: 40px;
+}
