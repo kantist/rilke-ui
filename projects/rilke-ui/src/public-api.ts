@@ -8,11 +8,11 @@ export * from './lib/rilke-ui.module';
 export * from './lib/components/alert/alert.component';
 export * from './lib/components/avatar/avatar.component';
 export * from './lib/components/button/button.component';
+export * from './lib/components/card/card.component';
 export * from './lib/components/expansion-panel/expansion-panel.component';
 export * from './lib/components/expansion-panel/expansion-panel-title/expansion-panel-title.component';
 export * from './lib/components/expansion-panel/expansion-panel-description/expansion-panel-description.component';
 export * from './lib/components/expansion-panel/expansion-panel-content/expansion-panel-content.component';
-
 export * from './lib/components/radio/radio.component';
 
 // Pipes

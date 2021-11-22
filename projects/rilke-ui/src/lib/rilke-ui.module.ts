@@ -39,11 +39,11 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { AlertComponent } from './components/alert/alert.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { ButtonComponent } from './components/button/button.component';
+import { CardComponent } from './components/card/card.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { ExpansionPanelTitleComponent } from './components/expansion-panel/expansion-panel-title/expansion-panel-title.component';
 import { ExpansionPanelDescriptionComponent } from './components/expansion-panel/expansion-panel-description/expansion-panel-description.component';
 import { ExpansionPanelContentComponent } from './components/expansion-panel/expansion-panel-content/expansion-panel-content.component';
-
 import { RadioComponent } from './components/radio/radio.component';
 
 //Pipes
@@ -90,6 +90,7 @@ const materialModules = [
     AlertComponent,
     AvatarComponent,
     ButtonComponent,
+    CardComponent,
     ExpansionPanelComponent,
     ExpansionPanelTitleComponent,
     ExpansionPanelDescriptionComponent,
@@ -98,6 +99,7 @@ const materialModules = [
 
     // Pipes
     InitialLetterPipe,
+    CardComponent,
   ],
   imports: [
     CommonModule,
@@ -109,6 +111,7 @@ const materialModules = [
     AlertComponent,
     AvatarComponent,
     ButtonComponent,
+    CardComponent,
     ExpansionPanelComponent,
     ExpansionPanelTitleComponent,
     ExpansionPanelDescriptionComponent,

@@ -18,8 +18,10 @@
     "importHelpers": true,
     "paths": {
       "rilke-ui": [
-        "dist/rilke-ui/rilke-ui",
         "dist/rilke-ui"
+      ],
+	  "rilke-ui/*": [
+        "dist/rilke-ui/*"
       ]
     },
     "target": "es2017",
