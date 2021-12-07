@@ -22,7 +22,7 @@
 
 .notifier__notification--material {
 	border-radius: .2rem;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 20%);
 	cursor: default;
 	padding: .5rem 1.5rem;
 	text-transform: uppercase;
@@ -45,7 +45,7 @@
 .notifier__notification--material .notifier__notification-button {
 	display: inline-block;
 	transition: opacity .2s ease;
-	opacity: .5;
+	opacity: 50%;
 	margin-right: -10px;
 	margin-left: 10px;
 	outline: none;
@@ -58,13 +58,14 @@
 	vertical-align: top;
 }
 
-.notifier__notification--material .notifier__notification-button:hover, .notifier__notification--material .notifier__notification-button:focus {
-	opacity: 1;
+.notifier__notification--material .notifier__notification-button:hover,
+.notifier__notification--material .notifier__notification-button:focus {
+	opacity: 100%;
 }
 
 .notifier__notification--material .notifier__notification-button:active {
 	transform: scale(0.82);
-	opacity: 1;
+	opacity: 100%;
 }
 
 .notifier__notification--default {

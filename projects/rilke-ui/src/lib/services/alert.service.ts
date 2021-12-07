@@ -8,15 +8,15 @@ export class AlertService {
   constructor(private _snackBar: MatSnackBar) {}
 
   show(config: MatSnackBarConfig) {
-    this._snackBar.openFromComponent(AlertComponent, {
-      data: config.data,
-      duration: config.duration || 3000,
-      horizontalPosition: config.horizontalPosition || 'center',
-      verticalPosition: config.verticalPosition || 'top',
-    });
+  	this._snackBar.openFromComponent(AlertComponent, {
+  		data: config.data,
+  		duration: config.duration || 3000,
+  		horizontalPosition: config.horizontalPosition || 'center',
+  		verticalPosition: config.verticalPosition || 'top',
+  	});
   }
 
   close() {
-    this._snackBar.dismiss();
+  	this._snackBar.dismiss();
   }
 }

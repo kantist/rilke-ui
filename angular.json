@@ -31,6 +31,15 @@
 						"tsConfig": "projects/rilke-ui/tsconfig.spec.json",
 						"karmaConfig": "projects/rilke-ui/karma.conf.js"
 					}
+				},
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": {
+						"lintFilePatterns": [
+							"**/*.ts",
+							"**/*.html"
+						]
+					}
 				}
 			}
 		}

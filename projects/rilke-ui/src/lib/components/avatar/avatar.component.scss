@@ -1,81 +1,81 @@
 @import "../../../scss/vars";
 
 :host {
-  align-items: center;
-  background: $grey-400;
-  border-radius: 50%;
-  display: flex;
-  font-weight: 600;
-  justify-content: center;
-  line-height: 1;
-  position: relative;
-  text-transform: uppercase;
-  flex-shrink: 0;
-  cursor: default;
-  user-select: none; /* supported by Chrome and Opera */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+	align-items: center;
+	background: $grey-400;
+	border-radius: 50%;
+	display: flex;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1;
+	position: relative;
+	text-transform: uppercase;
+	flex-shrink: 0;
+	cursor: default;
+	user-select: none; /* supported by Chrome and Opera */
+	user-select: none; /* Safari */
+	user-select: none; /* Konqueror HTML */
+	user-select: none; /* Firefox */
+	user-select: none; /* Internet Explorer/Edge */
 
-  img {
-    max-height: 100%;
-    max-width: 100%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: 0.5s ease;
-    border-radius: inherit;
-  }
+	img {
+		max-height: 100%;
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: 0.5s ease;
+		border-radius: inherit;
+	}
 
-  .initial {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s ease;
-    width: 100%;
-    height: 100%;
-    background: $grey-400;
-    color: $grey-700;
-    border-radius: inherit;
-  }
+	.initial {
+		display: flex;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+		transition: 0.5s ease;
+		width: 100%;
+		height: 100%;
+		background: $grey-400;
+		color: $grey-700;
+		border-radius: inherit;
+	}
 
-  .icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
-    color: $grey-700;
-  }
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		color: $grey-700;
+	}
 
-  &.selectable {
-    cursor: pointer;
+	&.selectable {
+		cursor: pointer;
 
-    .select-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      color: $grey-700;
-      z-index: 3;
-      opacity: 1;
-      transition: 0.5s ease;
-      font-size: 75%;
-    }
+		.select-image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			color: $grey-700;
+			z-index: 3;
+			opacity: 100%;
+			transition: 0.5s ease;
+			font-size: 75%;
+		}
 
-    &:hover {
-      .select-image {
-        opacity: 1;
-      }
+		&:hover {
+			.select-image {
+				opacity: 100%;
+			}
 
-      img,
-      .initial {
-        opacity: 0.3;
-      }
-    }
-  }
+			img,
+			.initial {
+				opacity: 30%;
+			}
+		}
+	}
 }

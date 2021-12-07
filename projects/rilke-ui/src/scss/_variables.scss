@@ -2,87 +2,91 @@
 
 //Main palette
 $palette: (
-	50 : #e4e4e4,
-	100 : #bcbcbd,
-	200 : #8f9091,
+	50 : #E4E4E4,
+	100 : #BCBCBD,
+	200 : #8F9091,
 	300 : #626364,
 	400 : #414143,
 	500 : #353535,
-	550 : #3c3c3c,
+	550 : #3C3C3C,
 	600 : #232323,
 	700 : #171819,
 	800 : #121314,
-	900 : #0a0b0c,
-	A100 : #52ffff,
-	A200 : #1fffff,
-	A400 : #00ebeb,
-	A700 : #00d2d2,
+	900 : #0A0B0C,
+	A100 : #52FFFF,
+	A200 : #1FFFFF,
+	A400 : #00EBEB,
+	A700 : #00D2D2,
 	contrast: (
-		50 : #000000,
-		100 : #000000,
-		200 : #000000,
-		300 : #ffffff,
-		400 : #ffffff,
-		500 : #ffffff,
-		600 : #ffffff,
-		700 : #ffffff,
-		800 : #ffffff,
-		900 : #ffffff,
-		A100 : #000000,
-		A200 : #000000,
-		A400 : #000000,
-		A700 : #000000,
+		50 : #000,
+		100 : #000,
+		200 : #000,
+		300 : #FFF,
+		400 : #FFF,
+		500 : #FFF,
+		600 : #FFF,
+		700 : #FFF,
+		800 : #FFF,
+		900 : #FFF,
+		A100 : #000,
+		A200 : #000,
+		A400 : #000,
+		A700 : #000,
 	)
 );
+
 @function main-palette($key: $palette) {
 	@return map-get($palette, $key);
 }
+
 @function main-contrast($key: $palette) {
 	@return map-get(map-get($palette, contrast), $key);
 }
 
 //Accent palette
 $accent-palette: (
-	50 : #e7edff,
-	100 : #c2d3fe,
-	200 : #99b6fd,
-	300 : #7098fc,
-	400 : #5282fc,
-	500 : #336cfb,
-	600 : #2e64fa,
-	700 : #2759fa,
-	800 : #204ff9,
-	900 : #143df8,
-	A100 : #ffffff,
-	A200 : #f4f6ff,
-	A400 : #c1caff,
-	A700 : #a7b4ff,
+	50 : #E7EDFF,
+	100 : #C2D3FE,
+	200 : #99B6FD,
+	300 : #7098FC,
+	400 : #5282FC,
+	500 : #336CFB,
+	600 : #2E64FA,
+	700 : #2759FA,
+	800 : #204FF9,
+	900 : #143DF8,
+	A100 : #FFF,
+	A200 : #F4F6FF,
+	A400 : #C1CAFF,
+	A700 : #A7B4FF,
 	contrast: (
-		50 : #000000,
-		100 : #000000,
-		200 : #000000,
-		300 : #000000,
-		400 : #000000,
-		500 : #ffffff,
-		600 : #ffffff,
-		700 : #ffffff,
-		800 : #ffffff,
-		900 : #ffffff,
-		A100 : #000000,
-		A200 : #000000,
-		A400 : #000000,
-		A700 : #000000,
+		50 : #000,
+		100 : #000,
+		200 : #000,
+		300 : #000,
+		400 : #000,
+		500 : #FFF,
+		600 : #FFF,
+		700 : #FFF,
+		800 : #FFF,
+		900 : #FFF,
+		A100 : #000,
+		A200 : #000,
+		A400 : #000,
+		A700 : #000,
 	)
 );
+
 @function accent-palette($key: $accent-palette) {
 	@return map-get($accent-palette, $key);
 }
+
 @function accent-contrast($key: $accent-palette) {
 	@return map-get(map-get($accent-palette, contrast), $key);
 }
 
 :root {
-	--main-color: #fbfbfb;
+	--main-color: #FBFBFB;
 	--main-bg: #353535;
 	--boxed-width: 1140px;
 	--safe-area-inset-top: env(safe-area-inset-top);
@@ -92,28 +96,28 @@ $accent-palette: (
 }
 $boxed-width: 1140px;
 
-$accent-color: #7a9bee;
-$accent-contrast: #fff;
+$accent-color: #7A9BEE;
+$accent-contrast: #FFF;
 
 $success-color: #44D286;
 $success-contrast: #44D28647;
 
-$info-color: #04a9f4;
-$info-contrast: #0075aa4f;
+$info-color: #04A9F4;
+$info-contrast: #0075AA4F;
 
-$warning-color: #e9e165;
+$warning-color: #E9E165;
 $warning-contrast: #000;
 
-$error-color: #ed5564;
-$error-contrast: #ed55646b;
+$error-color: #ED5564;
+$error-contrast: #ED55646B;
 
 $neutral-color: #667684;
 $neutral-contrast: #66768466;
 
-$purple-color: #6244d0;
-$purple-contrast: #6244d05c;
+$purple-color: #6244D0;
+$purple-contrast: #6244D05C;
 
-$mint-color: #00ffab;
+$mint-color: #00FFAB;
 
 //Main
 $main-fs: 14px;
@@ -123,25 +127,24 @@ $module: 10px;
 $main-lh: ($module * 2 / $main-fs);
 $module-rem: ($module / $main-fs) * 1rem;
 $shape: 12px;
-$shadow: 0 18px 24px rgba(#000,.12);
-$shadow-hover: 0px 8px 24px rgba(#000,.12);
+$shadow: 0 18px 24px rgba(#000, .12);
+$shadow-hover: 0 8px 24px rgba(#000, .12);
 $animation: ease-in-out;
 
 //Second
 $second-ff: $main-ff;
 
-
 //Media
-$max543 : only screen and (max-width: 543px);
-$min544 : only screen and (min-width: 544px);
-$max767 : only screen and (max-width: 767px);
-$min768 : only screen and (min-width: 768px);
-$max991 : only screen and (max-width: 991px);
-$min992 : only screen and (min-width: 992px);
-$max1199 : only screen and (max-width: 1199px);
-$min1200 : only screen and (min-width: 1200px);
+$max543: only screen and (max-width: 543px);
+$min544: only screen and (min-width: 544px);
+$max767: only screen and (max-width: 767px);
+$min768: only screen and (min-width: 768px);
+$max991: only screen and (max-width: 991px);
+$min992: only screen and (min-width: 992px);
+$max1199: only screen and (max-width: 1199px);
+$min1200: only screen and (min-width: 1200px);
 
-$touchscreen : (hover: none);
+$touchscreen: (hover: none);
 
 //Headers
 $headers-ff: $second-ff;
@@ -154,23 +157,22 @@ $vertical-navbar-width: $module-rem * 24;
 $footer-height: $module-rem * 6;
 
 //Preloader
-$loader-overlay-bg: #fff;
+$loader-overlay-bg: #FFF;
 $loader-color: accent-palette(500);
 
-$main-color: #fbfbfb;
-$main-color-hover: #cacaca;
+$main-color: #FBFBFB;
+$main-color-hover: #CACACA;
 $main-opposite-color: #232323;
 $main-bg: #353535;
 
-$text-color: #fbfbfb;
-$opposite-color: #0a0b0c;
-$semi-muted-color: #9b9b9b;
-$muted-color: #c6c6c6;
+$text-color: #FBFBFB;
+$opposite-color: #0A0B0C;
+$semi-muted-color: #9B9B9B;
+$muted-color: #C6C6C6;
 
 $input-bg: main-palette(500);
-$input-color: #fbfbfb;
+$input-color: #FBFBFB;
 $input-bg-color: main-palette(500);
 $input-bg-hover-color: main-palette(400);
 $input-border-color: main-palette(500);
 $input-border-focus-color: #000;
-

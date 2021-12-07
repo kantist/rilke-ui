@@ -1,7 +1,7 @@
 import {
-  MatSnackBarConfig,
-  MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,
+	MatSnackBarConfig,
+	MatSnackBarHorizontalPosition,
+	MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 
 export type TAlertTypes = 'default' | 'error' | 'warning' | 'success' | 'info';
