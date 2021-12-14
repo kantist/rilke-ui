@@ -1,0 +1,22 @@
+<div class="wrapper">
+	<div class="uploadBtn" (click)="fileInput.click()">
+		<P *ngIf="!file">Dosya Seç</P>
+		<img *ngIf="file" [src]="file.base64" alt="" />
+		<P class="fileName" *ngIf="file">{{ file.name }}</P>
+		<span *ngIf="!file" class="upload-icon sli-cloud-upload"></span>
+		<span
+			stop-propagation
+			*ngIf="file"
+			class="close-icon sli-close"
+			(click)="cancelFile()"
+		></span>
+
+		<input
+			type="file"
+			(change)="onFileChanged($event)"
+			#fileInput
+			multiple
+			hidden
+		/>
+	</div>
+</div>

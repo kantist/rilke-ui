@@ -1,0 +1,48 @@
+@import "~src/assets/sass/variables";
+
+:host {
+	.wrapper {
+		display: flex;
+		align-items: center;
+		.uploadBtn {
+			background-color: #353535;
+			border-radius: $shape;
+			padding: 1rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: max-content;
+			height: min-content;
+			cursor: pointer;
+			position: relative;
+
+			img {
+				width: 3rem;
+				height: 3rem;
+				position: absolute;
+				left: 0.2rem;
+				border-radius: 10px;
+				object-fit: cover;
+			}
+
+			p {
+				margin: 0 !important;
+			}
+			.fileName {
+				margin: 0;
+				margin-left: 3rem !important;
+			}
+
+			.upload-icon {
+				font-size: 1.4rem;
+				margin-left: 0.5rem;
+				color: #fff;
+			}
+			.close-icon {
+				font-size: 1.4rem;
+				margin-left: 0.5rem;
+				color: #ed5564;
+			}
+		}
+	}
+}

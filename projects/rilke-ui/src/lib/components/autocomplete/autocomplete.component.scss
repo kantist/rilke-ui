@@ -1,0 +1,85 @@
+@import '~src/assets/sass/variables';
+
+$_module-rem: $module-rem;
+$_list-bg: main-palette(500);
+$_list-border-color: main-palette(500);
+$_list-color: #777;
+$_shape: .3rem;
+$_shape-lg: 30px;
+$_shape-sm: 15px;
+$_animation: $animation;
+$_list-shadow: $shadow;
+
+:host {
+	border-radius: $_shape;
+	display: block;
+	outline: none;
+	width: 100%;
+	transition: none;
+
+	&:hover,
+	&:focus {
+		transition: none;
+	}
+	.ka-input {
+		border-radius: inherit;
+		transition: none;
+	}
+	.autocomplete-list {
+		display: none;
+		position: relative;
+		z-index: 999;
+
+		&.opened {
+			display: block;
+		}
+		.list-ul {
+			background: $_list-bg;
+			border: 1px solid $_list-border-color;
+			box-shadow: $_list-shadow;
+			border-radius: $_shape;
+			color: $_list-color;
+			list-style-type: none;
+			left: 0;
+			margin: 0;
+			max-height: $_module-rem * 23;
+			overflow: auto;
+			padding: $_module-rem 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+
+			.list-li {
+				box-shadow: 0 1px 0 rgba(#000,.05);
+				cursor: pointer;
+				padding: ($_module-rem / 2) ($_module-rem * 2);
+				transition: background .2s $_animation;
+
+				::ng-deep .val-mark {
+					background: none;
+					color: #000;
+					pointer-events: none;
+				}
+				&.active {
+					background: rgba(main-palette(500),.05);
+				}
+				&:hover {
+					background: rgba(#000,.05);
+				}
+				&:last-child {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+	&.input-sm {
+		border-radius: $_shape-sm;
+	}
+	&.input-lg {
+		border-radius: $_shape-lg;
+	}
+}
+
+
+

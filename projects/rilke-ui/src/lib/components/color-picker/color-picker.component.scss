@@ -1,0 +1,65 @@
+@import "../../../scss/vars";
+
+:host {
+	position: relative;
+	.wrapper {
+		display: flex;
+		align-items: center;
+		z-index: 800;
+		span {
+			width: 1.6rem;
+			height: 1.6rem;
+			border-radius: 4px;
+			background-color: #eaeaea;
+			border: 1px solid $main-contrast-800;
+		}
+
+		p {
+			margin-left: 0.6rem;
+			color: #232323;
+		}
+	}
+}
+
+.picker {
+	color-chrome {
+		::ng-deep {
+			.chrome-picker {
+				border-radius: 0 0 $r-sm $r-sm !important;
+				background-color: $main-900;
+				margin: $m-md 0;
+			}
+
+			.chrome-body {
+				.chrome-toggles {
+					align-self: center;
+
+					.chrome-hue {
+						margin: 0 !important;
+					}
+				}
+
+				.wrap {
+					width: 100%;
+					text-align: center;
+
+					input {
+						width: auto !important;
+						color: $main-contrast-800 !important;
+						background: $main-700 !important;
+						border-radius: $r-sm !important;
+						box-shadow: none !important;
+					}
+
+					span {
+						display: none !important;
+					}
+				}
+			}
+
+			.chrome-toggle {
+				display: none;
+			}
+		}
+	}
+}

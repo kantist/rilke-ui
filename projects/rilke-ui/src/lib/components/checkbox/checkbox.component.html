@@ -1,0 +1,16 @@
+<div class="ka-checkbox-wrap" (click)="switch(value)">
+	<div class="ka-checkbox-handle" [ngStyle]="getStyles()">
+		<input
+			type="checkbox"
+			class="checkbox-input"
+			[value]="value"
+			[attr.checked]="value"
+		/>
+
+		<span class="check-detector icofont-check-alt"></span>
+	</div>
+
+	<div class="ka-checkbox-label" [ngStyle]="getLabelColor()">
+		<ng-content></ng-content>
+	</div>
+</div>

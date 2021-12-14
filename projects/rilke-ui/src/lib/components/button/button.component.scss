@@ -1,88 +1,33 @@
+@use "sass:math";
 @import "../../../scss/vars";
-
-$_fs: 1rem;
-$_fw: 500;
-$_tt: none;
-$_padding: ($module-rem * 0.6) ($module-rem);
-
-$_lg-padding: ($module-rem * 0.9) ($module-rem * 1.5);
-$_lg-fs: ($_fs * 1.2);
-
-$_sm-padding: ($module-rem * 0.3) ($module-rem * 0.5);
-$_sm-fs: ($_fs * 0.8);
-
-//btn colors
-$_types: (
-	accent: (
-		bg: $indigo,
-		color: $grey-50,
-		hover-bg: darken($indigo, 10%),
-	),
-	success: (
-		bg: $light-green,
-		color: $grey-50,
-		hover-bg: darken($light-green, 10%),
-	),
-	info: (
-		bg: $light-blue,
-		color: $grey-50,
-		hover-bg: darken($light-blue, 10%),
-	),
-	warning: (
-		bg: $amber,
-		color: $grey-50,
-		hover-bg: darken($amber, 10%),
-	),
-	error: (
-		bg: $pink,
-		color: $grey-50,
-		hover-bg: darken($pink, 10%),
-	),
-	light: (
-		bg: $grey-100,
-		color: $grey-900,
-		hover-bg: darken($grey-100, 10%),
-	),
-	dark: (
-		bg: $grey-900,
-		color: $grey-50,
-		hover-bg: darken($grey-900, 10%),
-	),
-);
 
 :host {
 	align-items: center;
 	border: transparent 0 solid;
-	border-radius: $r-1;
 	cursor: pointer;
 	display: inline-flex;
 	width: fit-content;
-	font-size: $_fs;
-	font-weight: $_fw;
 	justify-content: center;
-	line-height: $_fs;
 	outline: none;
-	padding: $_padding;
 	position: relative;
 	text-align: center;
-	text-transform: $_tt;
 	touch-action: manipulation;
 	user-select: none;
 	vertical-align: middle;
 	white-space: nowrap;
 	appearance: none;
-	color: $grey-50;
+	color: $text;
 
 	&:hover {
 		border-color: transparent;
-		box-shadow: $s-2;
+		box-shadow: $s-md;
 	}
 
 	.btn-text {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		min-height: $_fs;
+		min-height: $f-size-md;
 
 		&:empty {
 			margin: 0;
@@ -112,7 +57,7 @@ $_types: (
 		border-top: 2px solid rgba(255, 255, 255, 20%);
 		border-right: 2px solid rgba(255, 255, 255, 20%);
 		border-bottom: 2px solid rgba(255, 255, 255, 20%);
-		border-left: 2px solid #FFF;
+		border-left: 2px solid #fff;
 		transform: translateZ(0);
 		transform: translateZ(0);
 		transform: translateZ(0);
@@ -154,45 +99,187 @@ $_types: (
 		text-align: right;
 	}
 
-	&.btn-lg {
-		font-size: $_lg-fs;
-		line-height: $_lg-fs;
-		padding: $_lg-padding;
+	//Sizes - (xs, sm, md, lg, xl)
+	&.btn-xs {
+		font-size: $f-size-xs;
+		line-height: $f-size-xs;
+		padding: math.div($p-xs, 2) $p-xs;
+		border-radius: $r-xs;
 
 		.btn-text {
-			min-height: $_lg-fs;
+			min-height: $f-size-xs;
+		}
+
+		.btn-loader,
+		.btn-loader::after {
+			border-radius: 50%;
+			width: $f-size-xs;
+			height: $f-size-xs;
 		}
 	}
-
 	&.btn-sm {
-		font-size: $_sm-fs;
-		line-height: $_sm-fs;
-		padding: $_sm-padding;
+		font-size: $f-size-sm;
+		line-height: $f-size-sm;
+		padding: math.div($p-sm, 2) $p-sm;
+		border-radius: $r-sm;
 
 		.btn-text {
-			min-height: $_sm-fs;
+			min-height: $f-size-sm;
+		}
+
+		.btn-loader,
+		.btn-loader::after {
+			border-radius: 50%;
+			width: $f-size-sm;
+			height: $f-size-sm;
+		}
+	}
+	&.btn-md {
+		font-size: $f-size-md;
+		line-height: $f-size-md;
+		padding: math.div($p-md, 2) $p-md;
+		border-radius: $r-md;
+
+		.btn-text {
+			min-height: $f-size-md;
+		}
+		.btn-loader,
+		.btn-loader::after {
+			border-radius: 50%;
+			width: $f-size-md;
+			height: $f-size-md;
+		}
+	}
+	&.btn-lg {
+		font-size: $f-size-lg;
+		line-height: $f-size-lg;
+		padding: math.div($p-lg, 2) $p-lg;
+		border-radius: $r-lg;
+
+		.btn-text {
+			min-height: $f-size-lg;
+		}
+		.btn-loader,
+		.btn-loader::after {
+			border-radius: 50%;
+			width: $f-size-lg;
+			height: $f-size-lg;
+		}
+	}
+	&.btn-xl {
+		font-size: $f-size-xl;
+		line-height: $f-size-xl;
+		padding: math.div($p-xl, 2) $p-xl;
+		border-radius: $r-xl;
+
+		.btn-text {
+			min-height: $f-size-xl;
+		}
+
+		.btn-loader,
+		.btn-loader::after {
+			border-radius: 50%;
+			width: $f-size-xl;
+			height: $f-size-xl;
 		}
 	}
 
 	//colors - (default, accent, gray, neutral, success, info, warning, error)
-	@each $_type, $_color in $_types {
-		&.btn-#{$_type} {
-			background: map-get($_color, bg);
-			color: map-get($_color, color);
+	&.btn-accent {
+		background: $accent-color;
+		color: $accent-text;
 
-			&:hover {
-				background: map-get($_color, hover-bg);
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $accent-color;
+			color: $accent-color;
+
+			.btn-loader {
+				border-left: 2px solid $accent-color;
 			}
+		}
+	}
+	&.btn-success {
+		background: $success-color;
+		color: $success-text;
 
-			&.btn-outline {
-				border-color: map-get($_color, bg);
-				color: map-get($_color, bg);
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $success-color;
+			color: $success-color;
 
-				&:hover,
-				&.active {
-					background: map-get($_color, bg);
-					color: map-get($_color, color);
-				}
+			.btn-loader {
+				border-left: 2px solid $success-color;
+			}
+		}
+	}
+	&.btn-info {
+		background: $info-color;
+		color: $info-text;
+
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $info-color;
+			color: $info-color;
+
+			.btn-loader {
+				border-left: 2px solid $info-color;
+			}
+		}
+	}
+	&.btn-warning {
+		background: $warning-color;
+		color: $warning-text;
+
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $warning-color;
+			color: $warning-color;
+
+			.btn-loader {
+				border-left: 2px solid $warning-color;
+			}
+		}
+	}
+	&.btn-error {
+		background: $error-color;
+		color: $error-text;
+
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $error-color;
+			color: $error-color;
+
+			.btn-loader {
+				border-left: 2px solid $error-color;
+			}
+		}
+	}
+	&.btn-light {
+		background: $light-color;
+		color: $light-text;
+
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $light-color;
+			color: $light-color;
+
+			.btn-loader {
+				border-left: 2px solid $light-color;
+			}
+		}
+	}
+	&.btn-dark {
+		background: $dark-color;
+		color: $dark-text;
+
+		&.btn-outline {
+			background: transparent !important;
+			border-color: $dark-color;
+			color: $dark-color;
+
+			.btn-loader {
+				border-left: 2px solid $dark-color;
 			}
 		}
 	}
@@ -203,7 +290,7 @@ $_types: (
 	}
 
 	&.btn-shadow {
-		box-shadow: $s-2;
+		box-shadow: $s-md;
 	}
 
 	&.btn-disabled {

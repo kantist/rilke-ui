@@ -1,0 +1,35 @@
+<ka-input
+	[(ngModel)]="value"
+	(ngModelChange)="modelChanged($event)"
+	[placeholder]="placeholder"
+	[readonly]="readonly"
+	[disabled]="disabled ? true : null"
+	[type]="type"
+	[charLimiting]="charLimiting"
+	[prefixIcon]="prefixIcon"
+	[suffixIcon]="suffixIcon"
+	[autoSize]="autoSize"
+	[size]="size"
+	[prefix]="prefix"
+	[suffix]="suffix"
+	[bgColor]="bgColor"
+	[borderColor]="borderColor"
+	[color]="color"
+	(focus)="autocompleteOnFocus()"
+	(blur)="autocompleteOnBlur()"
+	(keydown)="keyClick($event)"
+></ka-input>
+
+<div class="autocomplete-list" [ngClass]="{ 'opened': openedList }">
+	<ul class="list-ul" [ngStyle]="getListStyles()">
+		<li
+			class="list-li"
+			(click)="selectItem(item, $event)"
+			*ngFor="let item of results; let i = index"
+			[ngClass]="{ 'active': i === arrowKeyLocation }"
+			[innerHtml]="markValue(key ? item[key] : item, value)"
+		>
+			{{ key ? item[key] : item }}
+		</li>
+	</ul>
+</div>

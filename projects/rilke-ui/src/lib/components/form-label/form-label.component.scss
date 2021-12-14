@@ -1,0 +1,12 @@
+@import '~src/assets/sass/variables';
+
+:host {
+	display: block;
+	font-weight: 600;
+
+	&[required] {
+		&::after {
+			content: " *";
+		}
+	}
+}

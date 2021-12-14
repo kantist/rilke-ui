@@ -1,0 +1,211 @@
+@import '~src/assets/sass/variables';
+
+$_bg: (
+	default: $input-bg-color,
+	hover: $input-bg-hover-color,
+	focus: $input-bg-color,
+	disabled: rgba(230, 230, 230, 0.2)
+);
+$_border: (
+	default: $input-bg-color,
+	hover: $input-bg-hover-color,
+	focus: $input-border-focus-color,
+	disabled: rgba(230, 230, 230, 0.2)
+);
+$_color: (
+	default: $input-color,
+	hover: $input-color,
+	focus: $input-color,
+	disabled: #bdbdbd
+);
+
+$_module-rem: $module-rem;
+$_placeholder-color: #a8a8a8;
+$_border-style: solid;
+$_border-width: 1px;
+$_fs: 1rem;
+$_lh: $_module-rem * 2 / $_fs;
+$_padding-h: $_module-rem * 2;
+$_padding-v: $_module-rem;
+$_shape: $shape;
+$_animation: $animation;
+$_shadow-hover: $shadow-hover;
+
+// size sm
+$_fs-sm: ($_fs * .9);
+$_lh-sm: $_module-rem * 2 / $_fs-sm;
+$_shape-sm: ($_shape * .8);
+$_padding-v-sm: ($_module-rem / 2);
+
+// size lg
+$_fs-lg: ($_fs * 1.3);
+$_lh-lg: $_module-rem * 2 / $_fs-lg;
+$_shape-lg: ($_shape * 1.5);
+$_padding-v-lg: $_module-rem * 1.5;
+
+@-webkit-keyframes autofill {
+	to {
+		color: #353535;
+		background: transparent;
+	}
+}
+input:-webkit-autofill {
+	-webkit-animation-name: autofill;
+	-webkit-animation-fill-mode: both;
+}
+@mixin placeholder {
+	::-webkit-input-placeholder {@content}
+	:-moz-placeholder           {@content}
+	::-moz-placeholder          {@content}
+	:-ms-input-placeholder      {@content}
+}
+
+:host {
+	border-radius: $_shape;
+	color: map-get($_color, default);
+	display: block;
+	font-size: $_fs;
+	line-height: $_lh;
+	outline: none;
+	width: 100%;
+
+	.ka-input-wrap {
+		align-items: center;
+		background: map-get($_bg, default);
+		border: $_border-width $_border-style map-get($_border, default);
+		border-radius: inherit;
+		cursor: text;
+		display: flex;
+		outline: none;
+		padding: 0 calc(#{$_fs} - .2em);
+		position: relative;
+		transition:
+			background .2s $_animation,
+			border .2s $_animation,
+			box-shadow .2s $_animation,
+			color .2s $_animation;
+		will-change: background, border, box-shadow, color;
+		width: 100%;
+
+		.input-infix {
+			flex: auto;
+			min-width: 5px;
+		}
+		.input-control {
+			background: none;
+			border: 0;
+			border-radius: inherit;
+			box-shadow: none;
+			color: inherit;
+			cursor: inherit;
+			display: block;
+			font: inherit;
+			margin: -$_border-width 0;
+			outline: none;
+			padding: $_padding-v .2em;
+			width: 100%;
+
+			@include placeholder {
+				color: $_placeholder-color;
+			}
+		}
+		.input-prefix,
+		.input-suffix {
+			color: $_placeholder-color;
+			flex: none;
+			padding: 0 .2em;
+		}
+		.input-icon {
+			font-size: 1.3em;
+		}
+		.char-limiting {
+			align-items: center;
+			color: $_placeholder-color;
+			display: flex;
+			font-size: .9em;
+			justify-content: center;
+			padding: 0 .2em;
+			pointer-events: none;
+		}
+	}
+
+	:host-context(ka-form-group.float) {
+		.ka-input-wrap {
+			border-color: map-get($_border, default);
+		}
+	}
+
+	&:hover {
+		color: map-get($_color, hover);
+
+		.ka-input-wrap {
+			background: map-get($_bg, hover);
+			border-color: map-get($_border, hover);
+		}
+	}
+	&.input-focus {
+		color: map-get($_color, focus);
+
+		.ka-input-wrap {
+			background: map-get($_bg, focus);
+			border-color: map-get($_border, focus);
+		}
+	}
+	&.ng-invalid.ng-touched,
+	.has-error & {
+		.ka-input-wrap {
+			background-color: rgba($error-color, .1);
+			border: 1px solid $error-color;
+		}
+	}
+	&.input-sm {
+		border-radius: $_shape-sm;
+		font-size: $_fs-sm;
+		line-height: $_lh-sm;
+
+		.ka-input-wrap {
+			.input-control {
+				padding-top: $_padding-v-sm;
+				padding-bottom: $_padding-v-sm;
+			}
+			.input-icon {
+				font-size: 1.1em;
+			}
+		}
+	}
+	&.input-lg {
+		border-radius: $_shape-lg;
+		font-size: $_fs-lg;
+		line-height: $_lh-lg;
+
+		.ka-input-wrap {
+			.input-control {
+				padding-top: $_padding-v-lg;
+				padding-bottom: $_padding-v-lg;
+			}
+		}
+	}
+	&.input-disabled,
+	&.input-readonly {
+		color: map-get($_color, disabled);
+
+		.ka-input-wrap {
+			background-color: map-get($_bg, disabled);
+			border-color:  map-get($_border, disabled);
+			box-shadow: none !important;
+			cursor: not-allowed;
+
+			.input-control {
+				pointer-events: none;
+			}
+		}
+	}
+
+	&.input-nostyle {
+		.ka-input-wrap {
+			background: none !important;
+			border: none !important;
+			padding-left: 0;
+		}
+	}
+}

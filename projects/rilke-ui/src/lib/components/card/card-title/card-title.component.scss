@@ -1,0 +1,12 @@
+@import "../../../../scss/vars";
+
+:host {
+	font-size: $f-size-lg;
+	color: $main-contrast-800;
+	margin-bottom: $m-md;
+
+	p {
+		font-size: $f-size-lg;
+		color: $main-contrast-800;
+	}
+}

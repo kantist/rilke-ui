@@ -1,0 +1,20 @@
+@import '~src/assets/sass/variables';
+
+.button-area {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 1rem;
+
+	span {
+		padding: .5rem 1rem;
+		border-radius: $shape;
+		display: flex;
+		align-items: center;
+		cursor: pointer;
+
+		&:last-child {
+			background: $main-opposite-color;
+			color: $mint-color;
+		}
+	}
+}

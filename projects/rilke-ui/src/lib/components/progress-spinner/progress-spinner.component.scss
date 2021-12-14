@@ -1,0 +1,19 @@
+@import '~src/assets/sass/variables';
+
+:host {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+
+	mat-porgress-spinner {
+
+	}
+
+	p {
+		font-weight: 700;
+		margin-top: 1rem;
+	}
+}

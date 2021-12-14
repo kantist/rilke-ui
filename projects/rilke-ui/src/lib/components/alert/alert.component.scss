@@ -11,49 +11,40 @@
 		min-height: 48px;
 
 		p {
-			color: $grey-50;
+			color: $text;
 			font-size: 1rem;
 			line-height: 1.6rem;
 			margin-right: 0.6rem;
 		}
 
 		&.default {
-			background: $grey-900;
-
+			background: $dark-color;
 			button {
-				background-color: $grey-700;
+				background-color: $dark-hover;
 			}
 		}
-
 		&.success {
-			background: $light-green;
-
+			background: $success-color;
 			button {
-				background-color: $light-green-700;
+				background-color: $success-hover;
 			}
 		}
-
 		&.info {
-			background: $light-blue;
-
+			background: $info-color;
 			button {
-				background-color: $light-blue-700;
+				background-color: $info-hover;
 			}
 		}
-
 		&.warning {
-			background: $amber;
-
+			background: $warning-color;
 			button {
-				background-color: $amber-700;
+				background-color: $warning-hover;
 			}
 		}
-
 		&.error {
-			background: $pink;
-
+			background: $error-color;
 			button {
-				background-color: $pink-700;
+				background-color: $error-hover;
 			}
 		}
 	}

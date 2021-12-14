@@ -1,0 +1,169 @@
+@import '~src/assets/sass/variables';
+
+$_bg: (
+	default: $input-bg-color,
+	hover: $input-bg-hover-color,
+	active: $input-bg-color,
+	disabled: rgba(230, 230, 230, 0.2)
+);
+$_bg_checked: (
+	default: $success-color,
+	hover: darken($success-color, 10%),
+	active: $success-color,
+	disabled: rgba(230, 230, 230, 0.2)
+);
+$_border: (
+	default: $input-bg-color,
+	hover: $input-bg-hover-color,
+	active: $input-bg-color,
+	disabled: rgba(230, 230, 230, 0.2)
+);
+$_border_checked: (
+	default: $success-color,
+	hover: darken($success-color, 10%),
+	active: $success-color,
+	disabled: rgba(230, 230, 230, 0.2)
+);
+$_color: (
+	default: $input-color,
+	hover: $input-color,
+	active: $input-color,
+	disabled: #bdbdbd
+);
+$_color_checked: (
+	default: main-palette(500),
+	hover: main-palette(500),
+	active: main-palette(500),
+	disabled: #bdbdbd
+);
+$_label-color: (
+	default: inherit,
+	hover: inherit,
+	active: inherit,
+	disabled: #bdbdbd
+);
+
+$_module-rem: $module-rem;
+$_border-style: solid;
+$_border-width: 1px;
+$_fs: 1rem;
+$_shape: 500px;
+$_animation: $animation;
+$_height: $_module-rem * 2;
+$_width: $_module-rem * 4;
+
+:host {
+	display: inline-flex;
+	line-height: 1;
+	vertical-align: top;
+	transition: color .2s $_animation;
+
+	.ka-switcher-wrap {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+
+		.ka-switcher-handle {
+			align-items: center;
+			background: map-get($_bg, default);
+			border: $_border-width $_border-style map-get($_border, default);
+			border-radius: $_shape;
+			color: map-get($_border, default);
+			cursor: inherit;
+			display: flex;
+			height: $_height;
+			margin: 0;
+			padding: 0 ($_width / 4);
+			position: relative;
+			transition:
+				background .2s $_animation,
+				border .2s $_animation,
+				color .2s $_animation;
+			width: $_width;
+
+			.switcher-input {
+				cursor: inherit;
+				opacity: 0;
+				position: absolute;
+			}
+			.check-detector {
+				background: map-get($_color, default);
+				border-radius: 50%;
+				display: block;
+				height: $_height / 1.6;
+				left: - $_border-width;
+				position: absolute;
+				transform: translateX(($_height - ($_height / 1.6)) / 2);
+				transition:
+					background .2s $_animation,
+					transform .2s $_animation;
+				width: $_height / 1.6;
+			}
+		}
+		.ka-switcher-label {
+			color: map-get($_label-color, default);
+			margin-left: 10px;
+			transition: color .2s $_animation;
+
+			&:empty {
+				display: none;
+			}
+		}
+		&:hover {
+			.ka-switcher-handle {
+				background: map-get($_bg, hover);
+				border-color: map-get($_border, hover);
+				color: map-get($_color, hover);
+
+				.check-detector {
+					background: map-get($_color, hover);
+				}
+			}
+			.ka-switcher-label {
+				color: map-get($_label-color, hover);
+			}
+		}
+	}
+	&.checked {
+		.ka-switcher-wrap {
+			.ka-switcher-handle {
+				background: map-get($_bg_checked, active);
+				border-color: map-get($_border, active);
+
+				.check-detector {
+					background: map-get($_color_checked, active);
+					transform: translateX($_width - ($_height / 1.6) - (($_height - ($_height / 1.6)) / 2));
+				}
+			}
+			.ka-switcher-label {
+				color: map-get($_label-color, active);
+			}
+		}
+	}
+	&.disabled {
+		.ka-switcher-wrap {
+			cursor: not-allowed;
+
+			.ka-switcher-handle {
+				background: map-get($_bg, disabled);
+				border-color: map-get($_border, disabled);
+
+				.check-detector {
+					background: map-get($_color, disabled);
+				}
+			}
+			.ka-switcher-label {
+				color: map-get($_label-color, disabled);
+			}
+		}
+		&.checked {
+			.ka-switcher-wrap {
+				.ka-switcher-handle {
+					.check-detector {
+						background: map-get($_color_checked, disabled);
+					}
+				}
+			}
+		}
+	}
+}

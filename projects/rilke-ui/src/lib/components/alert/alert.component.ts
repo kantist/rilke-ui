@@ -8,21 +8,21 @@ import { AlertService } from '../../services/alert.service';
 	styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent implements OnInit {
-  text: string;
-  type: string;
-  action: string;
-  constructor(
-    @Inject(MAT_SNACK_BAR_DATA) public data: any,
-    private alertService: AlertService
-  ) {
-  	this.type = this.data.type || 'default';
-  	this.action = this.data.action;
-  	this.text = this.data.text;
-  }
+	text: string;
+	type: string;
+	action: string;
+	constructor(
+		@Inject(MAT_SNACK_BAR_DATA) public data: any,
+		private alertService: AlertService
+	) {
+		this.type = this.data.type || 'default';
+		this.action = this.data.action;
+		this.text = this.data.text;
+	}
 
-  ngOnInit() {}
+	ngOnInit() {}
 
-  onClick() {
-  	this.alertService.close();
-  }
+	onClick() {
+		this.alertService.close();
+	}
 }

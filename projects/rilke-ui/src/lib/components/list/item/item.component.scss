@@ -1,0 +1,51 @@
+@import '~src/assets/sass/variables';
+
+:host {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	align-content: center;
+	flex-direction: column !important;
+	//border-radius: .3rem;
+	//margin-bottom: .5rem;
+	max-height: 5rem;
+	::ng-deep {
+		.list-row {
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			align-content: center;
+			justify-content: center;
+			width: 100%;
+			min-height: 5rem;
+			ka-avatar {
+				margin-right: .5rem;
+			}
+			&:hover {
+				div {
+					color: $main-color-hover;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+	&:nth-child(odd) {
+		background: main-palette(400);
+	}
+	&:nth-child(even) {
+		background: main-palette(500);
+	}
+	&:first-child {
+		border-top-left-radius: .8rem;
+		border-top-right-radius: .8rem;
+	}
+	&:last-child {
+		border-bottom-left-radius: .8rem;
+		border-bottom-right-radius: .8rem;
+		margin-bottom: 2rem;
+	}
+	&.opened {
+		max-height: 100%;
+		box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+	}
+}

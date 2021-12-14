@@ -1,0 +1,51 @@
+@import '~src/assets/sass/variables';
+
+$placeholder: 0;
+
+:host {
+	display: block;
+	margin: 0 0 ($module-rem * 3);
+
+	&.float {
+		position: relative;
+		::ng-deep {
+			ka-form-label {
+				position: absolute;
+				cursor: text;
+				font-size: 65%;
+				opacity: 1;
+				-webkit-transition: all .2s;
+				transition: all .2s;
+				top: -.5em;
+				margin-left: 1rem;
+				z-index: 3;
+				line-height: 1;
+				padding: 0 1px;
+				pointer-events: none;
+				text-transform: uppercase;
+				&::before {
+					content: " ";
+					display: block;
+					position: absolute;
+					background: $input-bg-color;
+					height: 1px;
+					top: 50%;
+					left: -.3em;
+					right: -.3em;
+					z-index: -1;
+				}
+			}
+
+			ka-input:not(.input-focus):not(.has-value) + ka-form-label,
+			ka-select:not(.has-value) + ka-form-label {
+				font-size: .8rem;
+				opacity: .5;
+				top: calc(50% - .4rem);
+
+				&::before {
+					background: transparent;
+				}
+			}
+		}
+	}
+}

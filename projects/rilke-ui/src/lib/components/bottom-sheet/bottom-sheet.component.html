@@ -1,0 +1,6 @@
+<div class="data-area" *ngIf="dataSource.items && dataSource.items.length">
+	<a class="item" *ngFor="let item of dataSource.items" (click)="clickItem(item.name)">
+		<p>{{ item.text }}</p>
+		<p>{{ item.subtext }}</p>
+	</a>
+</div>

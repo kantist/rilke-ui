@@ -5,7 +5,8 @@
 		"@angular/cdk": "^13.0.2",
 		"@angular/common": "^13.0.2",
 		"@angular/core": "^13.0.2",
-		"@angular/material": "^13.0.2"
+		"@angular/material": "^13.0.2",
+		"ngx-color": "^7.3.3"
 	},
 	"dependencies": {
 		"tslib": "^2.3.0"

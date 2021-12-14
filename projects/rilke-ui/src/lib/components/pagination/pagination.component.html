@@ -1,0 +1,23 @@
+<nav class="row">
+	<ul class="pagination">
+		<li class="page-item" [ngClass]="{ disabled: pageNum == 1 }">
+			<a class="page-link pr-4 pl-4" (click)="firstPage()">{{
+				"common.first" | translate
+			}}</a>
+		</li>
+		<!-- TODO pagination max page number yapılmadı geçiştirildi -->
+		<li
+			class="page-item"
+			[ngClass]="{ active: pageNum == page }"
+			*ngFor="let page of dynamicPages"
+		>
+			<a class="page-link" (click)="changePage(page)">{{ page }}</a>
+		</li>
+
+		<li class="page-item" [ngClass]="{ disabled: pageNum == getLast() }">
+			<a class="page-link pr-4 pl-4" (click)="lastPage()">{{
+				"common.last" | translate
+			}}</a>
+		</li>
+	</ul>
+</nav>

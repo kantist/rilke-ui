@@ -1,15 +1,28 @@
-html {
-	height: 100%;
-}
+@use "sass:math";
 
-body {
-	height: 100%;
-	overflow: hidden;
-	position: relative;
-	width: 100%;
-}
+$base-size: 1.2rem;
 
-app-root {
-	display: block;
-	height: 100%;
-}
+// Radius
+$r-xs: math.div($base-size, 2);
+$r-sm: math.div($base-size, 1.5);
+$r-md: $base-size;
+$r-lg: $base-size * 1.5;
+$r-xl: $base-size * 2;
+
+// Padding
+$p-xs: math.div($base-size, 2);
+$p-sm: math.div($base-size, 1.5);
+$p-md: $base-size;
+$p-lg: $base-size * 1.5;
+$p-xl: $base-size * 2;
+
+// Margin
+$m-xs: math.div($base-size, 2);
+$m-sm: math.div($base-size, 1.5);
+$m-md: $base-size;
+$m-lg: $base-size * 1.5;
+$m-xl: $base-size * 2;
+
+// Shadow
+$s-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 7.5%) !important;
+$s-md: 0 0.5rem 1rem rgba(0, 0, 0, 15%) !important;

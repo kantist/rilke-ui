@@ -1,0 +1,32 @@
+<mat-select
+	#matSelect
+	(openedChange)="setDefault($event)"
+	class="select-box"
+	[(ngModel)]="value"
+	[multiple]="multiple"
+	[disableOptionCentering]="disableOptionCentering"
+	[disableRipple]="disableRipple"
+	[disabled]="disabled"
+	[id]="id"
+	[panelClass]="panelClass"
+	[placeholder]="placeholder"
+	[required]="required"
+	[value]="value"
+	[typeaheadDebounceInterval]="typeaheadDebounceInterval"
+>
+	<div class="searchBox" *ngIf="search && options?.length > 5">
+		<ka-form-group [formGroup]="searchForm">
+			<ka-input
+				placeholder="Arama yapın"
+				[prefixIcon]="'icofont-search-1'"
+				(keydown)="$event.stopPropagation()"
+				formControlName="search"
+			></ka-input>
+		</ka-form-group>
+	</div>
+	<mat-option
+		*ngFor="let option of filtered_options"
+		[value]="option.value"
+		[innerHTML]="option.content"
+	></mat-option>
+</mat-select>

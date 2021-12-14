@@ -1,0 +1,64 @@
+@import '~src/assets/sass/variables';
+
+:host {
+	padding: 1rem 2rem;
+	width: 100%;
+	opacity: 0;
+	z-index: -1;
+	display: none;
+
+	::ng-deep {
+		div[detail] {
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+		.picture {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			p {
+				font-weight: bold;
+				margin-top: .25rem;
+				margin-bottom: 0;
+			}
+
+			@media #{$max1199} {
+				display: none;
+			}
+		}
+		.columns {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			align-content: center;
+			flex-grow: 2;
+			padding-left: 1rem;
+			.inline-column {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-evenly;
+				padding: 0 1rem;
+				height: 100%;
+				width: 100%;
+				div {
+					p {
+						&:first-child {
+							color: var(--semi-muted-color);
+							font-size: 80%;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	:host-context(ka-list-item.opened) {
+		opacity: 1;
+		z-index: 1;
+		visibility: visible;
+		transition-delay: .2s;
+		display: flex;
+	}
+}

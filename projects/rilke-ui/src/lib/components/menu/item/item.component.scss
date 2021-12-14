@@ -1,0 +1,22 @@
+@import "../../../../scss/vars";
+
+:host {
+	hr {
+		border: none;
+		border-top: 1px solid rgba(31, 32, 34, 0.1);
+	}
+
+	&:first-child {
+		hr {
+			display: none;
+		}
+	}
+
+	button {
+		color: $main-contrast-800;
+
+		&:hover {
+			background: $main-700;
+		}
+	}
+}

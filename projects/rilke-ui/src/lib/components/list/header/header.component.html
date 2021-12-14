@@ -1,0 +1,7 @@
+<div *ngIf="checkbox" class="list-check">
+	<ka-checkbox [formControl]="listCheck" [value]="listCheck.value"></ka-checkbox>
+</div>
+<div [ngClass]="{ 'pl-4': !checkbox }" class="columns">
+	<ng-content></ng-content>
+</div>
+<div *ngIf="itemOption" class="list-option"></div>

@@ -1,4 +1,5 @@
 @import "../../../scss/vars";
+@import "../../../scss/colors";
 
 :host {
 	align-items: center;
@@ -13,10 +14,6 @@
 	flex-shrink: 0;
 	cursor: default;
 	user-select: none; /* supported by Chrome and Opera */
-	user-select: none; /* Safari */
-	user-select: none; /* Konqueror HTML */
-	user-select: none; /* Firefox */
-	user-select: none; /* Internet Explorer/Edge */
 
 	img {
 		max-height: 100%;

@@ -35,15 +35,31 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
+// 3rd Party
+import { ColorChromeModule } from 'ngx-color/chrome';
+
 // Components
 import { AlertComponent } from './components/alert/alert.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+import { BadgeComponent } from './components/badge/badge.component';
 import { ButtonComponent } from './components/button/button.component';
+
 import { CardComponent } from './components/card/card.component';
+import { CardTitleComponent } from './components/card/card-title/card-title.component';
+import { CardContentComponent } from './components/card/card-content/card-content.component';
+import { CardImageComponent } from './components/card/card-image/card-image.component';
+
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { ExpansionPanelTitleComponent } from './components/expansion-panel/expansion-panel-title/expansion-panel-title.component';
 import { ExpansionPanelDescriptionComponent } from './components/expansion-panel/expansion-panel-description/expansion-panel-description.component';
 import { ExpansionPanelContentComponent } from './components/expansion-panel/expansion-panel-content/expansion-panel-content.component';
+
+import { MenuComponent } from './components/menu/menu.component';
+import { MenuItemComponent } from './components/menu/item/item.component';
+import { MenuItemsComponent } from './components/menu/items/items.component';
+
 import { RadioComponent } from './components/radio/radio.component';
 
 //Pipes
@@ -89,33 +105,59 @@ const materialModules = [
 		// Components
 		AlertComponent,
 		AvatarComponent,
+		BadgeComponent,
 		ButtonComponent,
+
 		CardComponent,
+		CardTitleComponent,
+		CardContentComponent,
+		CardImageComponent,
+
+		ColorPickerComponent,
+
 		ExpansionPanelComponent,
 		ExpansionPanelTitleComponent,
 		ExpansionPanelDescriptionComponent,
 		ExpansionPanelContentComponent,
+
+		MenuComponent,
+		MenuItemComponent,
+		MenuItemsComponent,
+
 		RadioComponent,
 
 		// Pipes
 		InitialLetterPipe,
-		CardComponent,
 	],
 	imports: [
 		CommonModule,
 		// Materials
 		materialModules,
+		ColorChromeModule,
 	],
 	exports: [
 		// Components
 		AlertComponent,
 		AvatarComponent,
+		BadgeComponent,
 		ButtonComponent,
+
 		CardComponent,
+		CardTitleComponent,
+		CardContentComponent,
+		CardImageComponent,
+
+		ColorPickerComponent,
+
 		ExpansionPanelComponent,
 		ExpansionPanelTitleComponent,
 		ExpansionPanelDescriptionComponent,
 		ExpansionPanelContentComponent,
+
+		MenuComponent,
+		MenuItemComponent,
+		MenuItemsComponent,
+
 		RadioComponent,
 
 		// Pipes

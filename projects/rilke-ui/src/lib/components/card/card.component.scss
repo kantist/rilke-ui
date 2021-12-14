@@ -1,0 +1,12 @@
+@import "../../../scss/vars";
+
+:host {
+	background-color: $grey-50;
+	padding: $p-md;
+	box-shadow: $s-md;
+	border-radius: $r-md;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: $main-800;
+}
