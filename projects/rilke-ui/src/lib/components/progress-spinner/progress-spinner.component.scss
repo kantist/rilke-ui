@@ -1,4 +1,4 @@
-@import '~src/assets/sass/variables';
+@import "../../../scss/vars";
 
 :host {
 	display: flex;
@@ -8,8 +8,13 @@
 	align-content: center;
 	align-items: center;
 
-	mat-porgress-spinner {
+	.mat-progress-spinner {
+		stroke: $main-800;
+	}
 
+	::ng-deep .mat-progress-spinner circle,
+	.mat-spinner circle {
+		stroke: inherit;
 	}
 
 	p {

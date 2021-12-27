@@ -23,29 +23,22 @@ const PROPERTIES_NAMES: string[] = [
 ];
 
 @Component({
-	selector: 'ka-input',
+	selector: 'ril-input',
 	templateUrl: './input.component.html',
 	styleUrls: ['./input.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => KAInputComponent),
+			useExisting: forwardRef(() => InputComponent),
 			multi: true,
 		},
 	],
 })
-export class KAInputComponent implements ControlValueAccessor, OnInit {
-	@HostBinding('class.ka-input') simpleInput: boolean;
-	@HostBinding('class.input-sm') get smSize() {
-		return this.size === 'sm';
-	}
-	@HostBinding('class.input-lg') get lgSize() {
-		return this.size === 'lg';
-	}
+export class InputComponent implements ControlValueAccessor, OnInit {
+	@HostBinding('class.ril-input') simpleInput: boolean;
 	@HostBinding('class.input-focus') inputFocus: boolean;
 	@HostBinding('class.input-disabled') @Input() disabled: boolean;
 	@HostBinding('class.input-readonly') @Input() readonly: boolean;
-	@HostBinding('class.input-nostyle') @Input() noStyle: boolean;
 	@Input() type: string;
 	@Input() name: string;
 	@Input() min: string;
@@ -103,7 +96,6 @@ export class KAInputComponent implements ControlValueAccessor, OnInit {
 			suffixIconValue: '',
 			suffixIconColor: '',
 		};
-		this.noStyle = false;
 		this.states = state;
 		this.blur = new EventEmitter<void>();
 		this.focus = new EventEmitter<boolean>();

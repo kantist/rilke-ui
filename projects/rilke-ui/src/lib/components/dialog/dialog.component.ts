@@ -6,21 +6,21 @@ import {
 	HostBinding,
 	ViewChild,
 	ElementRef,
-	Output
+	Output,
 } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { KAModalService } from '@ui/services/modal/modal.service';
+import { ModalService } from '../services/modal/modal.service';
 import { Content, IModalOptions } from '@ui/interfaces/modal';
 import { FormGroup } from '@angular/forms';
 
-type dialogType = 'prompt' | 'confirm';
+type dialogType = 'prompt' | 'confirm';
 
 @Component({
 	selector: 'ka-dialog',
 	templateUrl: './dialog.component.html',
-	styleUrls: ['./dialog.component.scss']
+	styleUrls: ['./dialog.component.scss'],
 })
 export class KADialogComponent {
 	@ViewChild('dialogContent') dialogContent: Content<ElementRef>;
@@ -38,9 +38,7 @@ export class KADialogComponent {
 	@Output() close: EventEmitter<boolean>;
 	@Output() formResult: EventEmitter<any>;
 
-	constructor(
-		private modal: KAModalService,
-	) {
+	constructor(private modal: ModalService) {
 		this.close = new EventEmitter();
 		this.formResult = new EventEmitter(null);
 	}
@@ -55,7 +53,7 @@ export class KADialogComponent {
 			width: '35vw',
 			closeButton: true,
 			overlay: true,
-			overlayClose: true
+			overlayClose: true,
 		};
 
 		if (this.type == 'prompt') {
@@ -66,7 +64,7 @@ export class KADialogComponent {
 			body: this.dialogContent,
 			header: null,
 			footer: null,
-			options: modalOptions
+			options: modalOptions,
 		});
 	}
 

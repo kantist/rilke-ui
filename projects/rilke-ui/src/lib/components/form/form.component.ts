@@ -1,14 +1,12 @@
 import { Component, OnInit, Input, HostBinding } from '@angular/core';
 
 @Component({
-	selector: '[ka-form]',
+	selector: '[ril-form]',
 	templateUrl: './form.component.html',
-	styleUrls: ['./form.component.scss']
+	styleUrls: ['./form.component.scss'],
 })
-export class KAFormComponent implements OnInit {
-	constructor() {
-	}
+export class FormComponent implements OnInit {
+	constructor() {}
 
-	ngOnInit() {
-	}
+	ngOnInit() {}
 }

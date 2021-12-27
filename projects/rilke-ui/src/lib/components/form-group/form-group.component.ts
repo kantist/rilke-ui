@@ -1,15 +1,15 @@
 import { Component, HostBinding, OnInit, Input } from '@angular/core';
 
 @Component({
-	selector: 'ka-form-group',
+	selector: 'ril-form-group',
 	templateUrl: './form-group.component.html',
-	styleUrls: ['./form-group.component.scss']
+	styleUrls: ['./form-group.component.scss'],
 })
-export class KAFormGroupComponent implements OnInit {
-	@HostBinding('class.ka-form-group') true;
-	@HostBinding('class.float') @Input() float: boolean;
+export class FormGroupComponent implements OnInit {
+	@HostBinding('class.ril-form-group') true: boolean = true;
+	@HostBinding('class.float') @Input() float: boolean = true;
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 }

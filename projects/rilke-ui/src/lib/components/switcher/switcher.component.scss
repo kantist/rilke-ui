@@ -1,85 +1,29 @@
-@import '~src/assets/sass/variables';
-
-$_bg: (
-	default: $input-bg-color,
-	hover: $input-bg-hover-color,
-	active: $input-bg-color,
-	disabled: rgba(230, 230, 230, 0.2)
-);
-$_bg_checked: (
-	default: $success-color,
-	hover: darken($success-color, 10%),
-	active: $success-color,
-	disabled: rgba(230, 230, 230, 0.2)
-);
-$_border: (
-	default: $input-bg-color,
-	hover: $input-bg-hover-color,
-	active: $input-bg-color,
-	disabled: rgba(230, 230, 230, 0.2)
-);
-$_border_checked: (
-	default: $success-color,
-	hover: darken($success-color, 10%),
-	active: $success-color,
-	disabled: rgba(230, 230, 230, 0.2)
-);
-$_color: (
-	default: $input-color,
-	hover: $input-color,
-	active: $input-color,
-	disabled: #bdbdbd
-);
-$_color_checked: (
-	default: main-palette(500),
-	hover: main-palette(500),
-	active: main-palette(500),
-	disabled: #bdbdbd
-);
-$_label-color: (
-	default: inherit,
-	hover: inherit,
-	active: inherit,
-	disabled: #bdbdbd
-);
-
-$_module-rem: $module-rem;
-$_border-style: solid;
-$_border-width: 1px;
-$_fs: 1rem;
-$_shape: 500px;
-$_animation: $animation;
-$_height: $_module-rem * 2;
-$_width: $_module-rem * 4;
+@import "../../../scss/vars";
 
 :host {
 	display: inline-flex;
 	line-height: 1;
 	vertical-align: top;
-	transition: color .2s $_animation;
+	transition: color 0.2s ease-in-out;
 
-	.ka-switcher-wrap {
+	.ril-switcher-wrap {
 		align-items: center;
 		cursor: pointer;
 		display: flex;
 
-		.ka-switcher-handle {
+		.ril-switcher-handle {
 			align-items: center;
-			background: map-get($_bg, default);
-			border: $_border-width $_border-style map-get($_border, default);
-			border-radius: $_shape;
-			color: map-get($_border, default);
+			background: $main-800;
+			border-radius: $r-md;
 			cursor: inherit;
 			display: flex;
-			height: $_height;
+			height: $base-size * 1.4;
+			width: $base-size * 2.8;
 			margin: 0;
-			padding: 0 ($_width / 4);
+			padding: 0 2px;
 			position: relative;
-			transition:
-				background .2s $_animation,
-				border .2s $_animation,
-				color .2s $_animation;
-			width: $_width;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+				color 0.2s ease-in-out;
 
 			.switcher-input {
 				cursor: inherit;
@@ -87,83 +31,79 @@ $_width: $_module-rem * 4;
 				position: absolute;
 			}
 			.check-detector {
-				background: map-get($_color, default);
+				background: $main-300;
 				border-radius: 50%;
 				display: block;
-				height: $_height / 1.6;
-				left: - $_border-width;
+				height: $base-size * 0.9;
+				width: $base-size * 0.9;
+				left: 0;
 				position: absolute;
-				transform: translateX(($_height - ($_height / 1.6)) / 2);
-				transition:
-					background .2s $_animation,
-					transform .2s $_animation;
-				width: $_height / 1.6;
+				transform: translateX(4px);
+				transition: background 0.2s ease-in-out,
+					transform 0.2s ease-in-out;
 			}
 		}
-		.ka-switcher-label {
-			color: map-get($_label-color, default);
+		.ril-switcher-label {
+			color: $main-800;
 			margin-left: 10px;
-			transition: color .2s $_animation;
+			transition: color 0.2s ease-in-out;
 
 			&:empty {
 				display: none;
 			}
 		}
 		&:hover {
-			.ka-switcher-handle {
-				background: map-get($_bg, hover);
-				border-color: map-get($_border, hover);
-				color: map-get($_color, hover);
+			.ril-switcher-handle {
+				background: $main-600;
 
 				.check-detector {
-					background: map-get($_color, hover);
+					background: $main-50;
 				}
 			}
-			.ka-switcher-label {
-				color: map-get($_label-color, hover);
+			.ril-switcher-label {
+				color: $main-700;
 			}
 		}
 	}
 	&.checked {
-		.ka-switcher-wrap {
-			.ka-switcher-handle {
-				background: map-get($_bg_checked, active);
-				border-color: map-get($_border, active);
+		.ril-switcher-wrap {
+			.ril-switcher-handle {
+				background: $success-color;
 
 				.check-detector {
-					background: map-get($_color_checked, active);
-					transform: translateX($_width - ($_height / 1.6) - (($_height - ($_height / 1.6)) / 2));
+					background: $main-800;
+					transform: translate(calc(($base-size * 2.8) / 2 + 8px));
 				}
 			}
-			.ka-switcher-label {
-				color: map-get($_label-color, active);
+			.ril-switcher-label {
+				color: $main-800;
 			}
 		}
 	}
-	&.disabled {
-		.ka-switcher-wrap {
-			cursor: not-allowed;
+	// &.disabled {
+	// 	.ril-switcher-wrap {
+	// 		cursor: not-allowed;
 
-			.ka-switcher-handle {
-				background: map-get($_bg, disabled);
-				border-color: map-get($_border, disabled);
+	// 		.ril-switcher-handle {
+	// 			background: map-get($_bg, disabled);
+	// 			border-color: map-get($_border, disabled);
 
-				.check-detector {
-					background: map-get($_color, disabled);
-				}
-			}
-			.ka-switcher-label {
-				color: map-get($_label-color, disabled);
-			}
-		}
-		&.checked {
-			.ka-switcher-wrap {
-				.ka-switcher-handle {
-					.check-detector {
-						background: map-get($_color_checked, disabled);
-					}
-				}
-			}
-		}
-	}
+	// 			.check-detector {
+	// 				background: map-get($_color, disabled);
+	// 			}
+	// 		}
+	// 		.ril-switcher-label {
+	// 			color: map-get($_label-color, disabled);
+	// 		}
+	// 	}
+	// &.checked {
+	// 	.ril-switcher-wrap {
+	// 		.ril-switcher-handle {
+	// 			.check-detector {
+	// 				background: orange;
+	// 			}
+	// 		}
+	// 	}
+	// }
+	// }
 }

@@ -1,114 +1,96 @@
 import {
+	AfterViewInit,
+	ChangeDetectorRef,
 	Component,
-	forwardRef,
 	HostBinding,
-	HostListener,
 	Input,
-	OnInit,
+	ViewChild,
+	ElementRef,
+	HostListener,
+	Renderer2,
 	Output,
 	EventEmitter,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
-import { state } from '../../interfaces/general';
+import { state } from '../../../interfaces/general';
 
 @Component({
-	selector: 'ril-switcher',
-	templateUrl: './switcher.component.html',
-	styleUrls: ['./switcher.component.scss'],
-	providers: [
-		{
-			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => SwitcherComponent),
-			multi: true,
-		},
-	],
+	selector: 'ril-radio-option',
+	templateUrl: './radio-option.component.html',
+	styleUrls: ['./radio-option.component.scss'],
 })
-export class SwitcherComponent implements OnInit {
-	@HostBinding('class.ka-switcher') true;
-	@HostBinding('class.checked') get focus() {
-		return this._value;
-	}
+export class RadioOptionComponent implements AfterViewInit {
+	@HostBinding('class.ril-radio-option') true;
 	@HostBinding('class.disabled') @Input() disabled: boolean;
-	@Input() label: string;
+	@HostBinding('class.checked') checked: boolean;
+	@ViewChild('radioLabel', { static: true }) radioLabel;
 	@Input() name: string;
-	@Input('value') _value: boolean;
+	@Input() label: string;
+	@Input('value') _value: string;
 	@Input() bgColor: string | string[];
+	@Input() borderColor: string | string[];
 	@Input() color: string | string[];
 	@Input() labelColor: string | string[];
-	@Output() valueChanged: EventEmitter<boolean>;
+	@Output() changeValue: EventEmitter<string>;
 	currentBgColor: string;
+	currentBorderColor: string;
 	currentColor: string;
 	currentLabelColor: string;
 	states: any;
-	onChange: any = () => {};
-	onTouched: any = () => {};
 
-	constructor() {
-		this.valueChanged = new EventEmitter();
-		this._value = false;
+	constructor(
+		private renderer: Renderer2,
+		private elementRef: ElementRef,
+		private cdRef: ChangeDetectorRef
+	) {
 		this.label = '';
 		this.name = '';
+		this.checked = false;
 		this.disabled = false;
 		this.states = state;
+		this.changeValue = new EventEmitter<string>();
 	}
 
-	ngOnInit() {
+	ngAfterViewInit() {
+		this.cdRef.detectChanges();
 		this.setStyles(
 			this.disabled
 				? this.states.disabled
-				: this._value
+				: this.checked
 				? this.states.focus
 				: this.states.default
 		);
 	}
 
-	get value() {
-		return this._value;
-	}
-
-	set value(val) {
-		this._value = val;
-		this.valueChanged.emit(val);
-		this.onChange(val);
-		this.onTouched();
-	}
-
-	registerOnChange(fn) {
-		this.onChange = fn;
-	}
-
-	registerOnTouched(fn) {
-		this.onTouched = fn;
-	}
-
-	writeValue(value) {
-		if (value) {
-			this.value = value;
+	switch(value: string) {
+		if (!this.disabled && !this.checked) {
+			this.changeValue.emit(value);
 		}
 	}
 
-	switch(bool: boolean) {
-		if (!this.disabled) {
-			this.value = !bool;
-
-			this.setStyles(this.states[!bool ? 'focus' : 'hover']);
-		}
+	changeAttr(checked: boolean) {
+		this.renderer.setProperty(this.elementRef, 'checked', checked);
+		this.setStyles(
+			this.states[
+				this.disabled ? 'disabled' : checked ? 'focus' : 'default'
+			]
+		);
 	}
 
 	@HostListener('mouseenter') onMouseEnter() {
 		if (!this.disabled) {
-			this.setStyles(this.states[this.value ? 'focus' : 'hover']);
+			this.setStyles(this.states[this.checked ? 'focus' : 'hover']);
 		}
 	}
 	@HostListener('mouseleave') onMouseLeave() {
 		if (!this.disabled) {
-			this.setStyles(this.states[this.value ? 'focus' : 'default']);
+			this.setStyles(this.states[this.checked ? 'focus' : 'default']);
 		}
 	}
 
 	setStyles(
 		st: state,
 		bg: string | string[] = this.bgColor,
+		border: string | string[] = this.borderColor,
 		color: string | string[] = this.color,
 		labelColor: string | string[] = this.labelColor
 	) {
@@ -129,6 +111,8 @@ export class SwitcherComponent implements OnInit {
 		}
 
 		this.currentBgColor = bg instanceof Array ? bg[styleIndex] : bg;
+		this.currentBorderColor =
+			border instanceof Array ? border[styleIndex] : border;
 		this.currentColor = color instanceof Array ? color[styleIndex] : color;
 		this.currentLabelColor =
 			labelColor instanceof Array ? labelColor[styleIndex] : labelColor;
@@ -137,11 +121,12 @@ export class SwitcherComponent implements OnInit {
 	getStyles() {
 		return {
 			'background-color': this.currentBgColor,
+			'border-color': this.currentBorderColor,
 		};
 	}
-	getDetectorColor() {
+	getMarkerColor() {
 		return {
-			background: this.currentColor,
+			'background-color': this.currentColor,
 		};
 	}
 	getLabelColor() {

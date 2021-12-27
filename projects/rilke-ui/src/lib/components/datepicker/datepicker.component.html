@@ -1,16 +1,8 @@
-<div class="ka-input-wrap" (click)="autoOpen ? picker.open() : onFocus(disabled || readonly)" [ngStyle]="getStyles()">
-	<div
-		class="input-prefix input-icon"
-		[ngStyle]="{ 'color': properties.prefixIconColor }"
-		*ngIf="properties.prefixIconValue"
-	>
-		<span class="{{ properties.prefixIconValue }}"></span>
-	</div>
-
-	<div class="input-prefix" *ngIf="properties.prefixValue" [ngStyle]="{ 'color': properties.prefixColor }">
-		{{ properties.prefixValue }}
-	</div>
-
+<div
+	class="ril-input-wrap"
+	(click)="autoOpen ? picker.open() : onFocus(disabled || readonly)"
+	[ngStyle]="getStyles()"
+>
 	<div class="input-infix">
 		<input
 			[matDatepicker]="picker"
@@ -19,27 +11,19 @@
 			placeholder="{{ placeholder }}"
 			class="input-control"
 			[(ngModel)]="value"
-			[readonly]="readonly ? true : null"
-			[required]="required ? true : null"
+			readonly="true"
+			[required]="required ? true : false"
 			(focus)="onFocus(disabled || readonly)"
 			(blur)="onBlur(disabled || readonly)"
 			[attr.disabled]="disabled ? '' : null"
-		>
-	</div>
-
-	<div class="input-suffix" *ngIf="properties.suffixValue" [ngStyle]="{ 'color': properties.suffixColor }">
-		{{ properties.suffixValue }}
+		/>
 	</div>
 
 	<div
-		(click)="picker.open()"
 		class="input-suffix input-icon"
-		[ngStyle]="{ 'color': properties.suffixIconColor }"
-		*ngIf="properties.suffixIconValue"
+		[ngStyle]="{ color: properties.suffixIconColor }"
 	>
-		<span class="{{ properties.suffixIconValue }}"></span>
+		<span class="icon material-icons">calendar_today</span>
 	</div>
-
-	<div class="char-limiting" *ngIf="charLimiting > 0">{{ charLength }}</div>
 </div>
 <mat-datepicker [touchUi]="touchUi" #picker></mat-datepicker>

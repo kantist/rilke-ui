@@ -1,40 +1,18 @@
-@import '~src/assets/sass/variables';
+@import "../../../scss/vars";
 
-$_bg: (
-	default: #fff,
-	hover: #ebebeb,
-	focus: #fff,
-	disabled: rgba(230, 230, 230, 0.2)
-);
-$_border: (
-	default: #fff,
-	hover: #ebebeb,
-	focus: #000,
-	disabled: rgba(230, 230, 230, 0.2)
-);
-$_color: (
-	default: main-palette(500),
-	hover: main-palette(500),
-	focus: main-palette(500),
-	disabled: #bdbdbd
-);
-
-$_module-rem: $module-rem;
+$_module-rem: $base-size;
 $_placeholder-color: #a8a8a8;
-$_border-style: solid;
-$_border-width: 1px;
 $_fs: 1rem;
 $_lh: $_module-rem * 2 / $_fs;
 $_padding-h: $_module-rem * 2;
 $_padding-v: $_module-rem;
 $_shape: 6px;
-$_animation: $animation;
-$_shadow-hover: $shadow-hover;
+$_shadow-hover: $s-md;
 
 // size sm
-$_fs-sm: ($_fs * .9);
+$_fs-sm: ($_fs * 0.9);
 $_lh-sm: $_module-rem * 2 / $_fs-sm;
-$_shape-sm: ($_shape * .8);
+$_shape-sm: ($_shape * 0.8);
 $_padding-v-sm: ($_module-rem / 2);
 
 // size lg
@@ -53,37 +31,23 @@ input:-webkit-autofill {
 	-webkit-animation-name: autofill;
 	-webkit-animation-fill-mode: both;
 }
-@mixin placeholder {
-	::-webkit-input-placeholder {@content}
-	:-moz-placeholder           {@content}
-	::-moz-placeholder          {@content}
-	:-ms-input-placeholder      {@content}
-}
 
 :host {
-	border-radius: $_shape;
-	color: map-get($_color, default);
 	display: block;
-	font-size: $_fs;
-	line-height: $_lh;
 	outline: none;
 	width: 100%;
 
-	.ka-input-wrap {
+	.ril-input-wrap {
 		align-items: center;
-		background: map-get($_bg, default);
-		border: $_border-width $_border-style map-get($_border, default);
-		border-radius: inherit;
-		cursor: text;
+		background: $main-800;
+		border-radius: $r-md;
+		cursor: pointer;
 		display: flex;
 		outline: none;
-		padding: 0 calc(#{$_fs} - .2em);
+		padding: 0 calc(#{$_fs} - 0.2em);
 		position: relative;
-		transition:
-			background .2s $_animation,
-			border .2s $_animation,
-			box-shadow .2s $_animation,
-			color .2s $_animation;
+		transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
 
@@ -93,105 +57,77 @@ input:-webkit-autofill {
 		}
 		.input-control {
 			background: none;
-			border: 0;
-			border-radius: inherit;
+			border: none;
 			box-shadow: none;
-			color: inherit;
+			color: $main-contrast-500;
 			cursor: inherit;
 			display: block;
 			font: inherit;
-			margin: -$_border-width 0;
 			outline: none;
-			padding: $_padding-v .2em;
+			padding: $_padding-v 0.2em;
 			width: 100%;
-
-			@include placeholder {
-				color: $_placeholder-color;
-			}
 		}
 		.input-prefix,
 		.input-suffix {
-			color: $_placeholder-color;
+			color: $main-500;
 			flex: none;
-			padding: 0 .2em;
+			padding: 0 0.2em;
 		}
 		.input-icon {
 			font-size: 1.3em;
 		}
-		.char-limiting {
-			align-items: center;
-			color: $_placeholder-color;
-			display: flex;
-			font-size: .9em;
-			justify-content: center;
-			padding: 0 .2em;
-			pointer-events: none;
-		}
-	}
-
-	:host-context(ka-form-group.float) {
-		.ka-input-wrap {
-			border-color: #ddd;
-		}
 	}
 
 	&:hover {
-		color: map-get($_color, hover);
-
-		.ka-input-wrap {
-			background: map-get($_bg, hover);
-			border-color: map-get($_border, hover);
+		.ril-input-wrap {
+			background: $main-700;
+			box-shadow: $s-md;
 		}
 	}
 	&.input-focus {
-		color: map-get($_color, focus);
-
-		.ka-input-wrap {
-			background: map-get($_bg, focus);
-			border-color: map-get($_border, focus);
+		.ril-input-wrap {
+			background: $main-700;
 		}
 	}
 	&.ng-invalid.ng-touched,
 	.has-error & {
-		.ka-input-wrap {
-			background-color: rgba($error-color, .1);
-			border: 1px solid $error-color;
+		.ril-input-wrap {
+			background-color: rgba($error-color, 0.1);
 		}
 	}
-	&.input-sm {
-		border-radius: $_shape-sm;
-		font-size: $_fs-sm;
-		line-height: $_lh-sm;
+	// &.input-sm {
+	// 	border-radius: $_shape-sm;
+	// 	font-size: $_fs-sm;
+	// 	line-height: $_lh-sm;
 
-		.ka-input-wrap {
-			.input-control {
-				padding-top: $_padding-v-sm;
-				padding-bottom: $_padding-v-sm;
-			}
-			.input-icon {
-				font-size: 1.1em;
-			}
-		}
-	}
-	&.input-lg {
-		border-radius: $_shape-lg;
-		font-size: $_fs-lg;
-		line-height: $_lh-lg;
+	// 	.ril-input-wrap {
+	// 		.input-control {
+	// 			padding-top: $_padding-v-sm;
+	// 			padding-bottom: $_padding-v-sm;
+	// 		}
+	// 		.input-icon {
+	// 			font-size: 1.1em;
+	// 		}
+	// 	}
+	// }
+	// &.input-lg {
+	// 	border-radius: $_shape-lg;
+	// 	font-size: $_fs-lg;
+	// 	line-height: $_lh-lg;
 
-		.ka-input-wrap {
-			.input-control {
-				padding-top: $_padding-v-lg;
-				padding-bottom: $_padding-v-lg;
-			}
-		}
-	}
+	// 	.ril-input-wrap {
+	// 		.input-control {
+	// 			padding-top: $_padding-v-lg;
+	// 			padding-bottom: $_padding-v-lg;
+	// 		}
+	// 	}
+	// }
 	&.input-disabled,
 	&.input-readonly {
-		color: map-get($_color, disabled);
+		color: $main-contrast-500;
 
-		.ka-input-wrap {
-			background-color: map-get($_bg, disabled);
-			border-color:  map-get($_border, disabled);
+		.ril-input-wrap {
+			background-color: $main-500;
 			box-shadow: none !important;
 			cursor: not-allowed;
 
@@ -200,4 +136,81 @@ input:-webkit-autofill {
 			}
 		}
 	}
+}
+
+::ng-deep .mat-datepicker-content {
+	margin-top: 1rem;
+	box-shadow: $s-md;
+	background-color: $main-800;
+	border-radius: $r-md !important;
+	color: $main-contrast-800;
+
+	.mat-calendar-arrow {
+		border-top-color: $main-contrast-800;
+		fill: $main-contrast-800;
+	}
+
+	.mat-calendar-next-button,
+	.mat-calendar-previous-button {
+		color: $main-contrast-800;
+	}
+	.mat-calendar-next-button:hover,
+	.mat-calendar-previous-button:hover {
+		background-color: $main-800;
+	}
+
+	.mat-calendar-period-button:hover {
+		background-color: $main-800;
+	}
+
+	.mat-calendar-table-header {
+		color: $main-contrast-800;
+	}
+
+	.mat-calendar-table-header-divider::after {
+		background: #939393;
+	}
+
+	.mat-calendar-body-label {
+		color: $main-contrast-800;
+	}
+
+	.mat-calendar-body-cell-content {
+		color: $main-contrast-800;
+
+		// &:hover {
+		// 	background-color: $main-700 !important;
+		// }
+
+		&.mat-calendar-body-selected {
+			background-color: $success-color;
+		}
+	}
+
+	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-keyboard-focused
+		.mat-calendar-body-active
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-program-focused
+		.mat-calendar-body-active
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+		background-color: $main-700 !important;
+	}
+
+	.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+		border-color: #939393;
+	}
+}
+
+::ng-deep
+	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-keyboard-focused
+	.mat-calendar-body-active
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-program-focused
+	.mat-calendar-body-active
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+	background-color: $main-800;
 }

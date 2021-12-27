@@ -13,7 +13,7 @@ export class ButtonComponent implements OnInit {
 	@Input() beforeIcon: string;
 	@Input() afterIcon: string;
 
-	@HostBinding('class.ril-btn') true;
+	@HostBinding('class.ril-btn') true = true;
 	@HostBinding('class.btn-disabled') @Input() disabled: boolean;
 	@HostBinding('class.btn-load') @Input() load: boolean;
 

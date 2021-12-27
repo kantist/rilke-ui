@@ -1,15 +1,9 @@
-<ul class="tabs-ul nav nav-pills">
-	<div
-		*ngIf="!navigation"
-		class="button-group"
-		(click)="$event.stopPropagation()"
-	>
+<div class="tabs-ul nav nav-pills">
+	<div class="button-group" (click)="$event.stopPropagation()">
 		<div
 			class="plate"
-			[style.width]="'calc(100% / ' + tabs.length + ')'"
-			[style.transform]="
-				'translateX(calc(calc(100% * ' + currentIndex + ') - .3rem))'
-			"
+			[style.width]="'calc(100% / ' + tabs.length + ' - .9rem)'"
+			[style.transform]="'translateX(calc(100% * ' + currentIndex + '))'"
 		>
 			<div class="box"></div>
 		</div>
@@ -23,23 +17,7 @@
 			<span>{{ tab.title }}</span>
 		</div>
 	</div>
-
-	<div
-		*ngIf="navigation"
-		class="button-group"
-		(click)="$event.stopPropagation()"
-	>
-		<div class="navigation">
-			<ka-icon
-				[iconClass]="'icofont-long-arrow-left'"
-				[kaColor]="'#fff'"
-				[kaFontSize]="'2rem'"
-				[padding]="0"
-			></ka-icon>
-			<P>Geri</P>
-		</div>
-	</div>
-</ul>
+</div>
 <div class="tab-content h-100" [class]="scrollable ? 'scrollable' : ''">
 	<ng-content></ng-content>
 </div>

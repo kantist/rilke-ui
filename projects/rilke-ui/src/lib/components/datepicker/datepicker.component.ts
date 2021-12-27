@@ -26,36 +26,38 @@ const PROPERTIES_NAMES: string[] = [
 ];
 
 @Component({
-	selector: 'ka-datepicker',
+	selector: 'ril-date-picker',
 	templateUrl: './datepicker.component.html',
 	styleUrls: ['./datepicker.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => KADatepickerComponent),
+			useExisting: forwardRef(() => DatePickerComponent),
 			multi: true,
 		},
 	],
 })
-export class KADatepickerComponent implements ControlValueAccessor, OnInit {
+export class DatePickerComponent implements ControlValueAccessor, OnInit {
 	@ViewChild('picker') picker;
 
-	@HostBinding('class.ka-input') simpleInput: boolean;
+	@HostBinding('class.ril-date-picker') true = true;
+
 	@HostBinding('class.input-sm') get smSize() {
 		return this.size === 'sm';
 	}
 	@HostBinding('class.input-lg') get lgSize() {
 		return this.size === 'lg';
 	}
+
 	@HostBinding('class.input-focus') get focused() {
 		return this.inputFocus;
 	}
 	@HostBinding('class.input-disabled') @Input() disabled: boolean;
 	@HostBinding('class.input-readonly') @Input() readonly: boolean;
+
 	@Input() type: string;
 	@Input() name: string;
 	@Input() placeholder: string;
-	@Input() charLimiting: number;
 	@Input() prefix: string | string[];
 	@Input() suffix: string | string[];
 	@Input() prefixIcon: string | string[];
@@ -65,7 +67,6 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 	@Input() autoSize: boolean;
 	@HostBinding('class.has-value') @Input('value') innerValue: string;
 	@Input() bgColor: string | string[];
-	@Input() borderColor: string | string[];
 	@Input() color: string | string[];
 	@Input() autoOpen: boolean;
 
@@ -74,11 +75,11 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 	@Output() valueChange: EventEmitter<string>;
 
 	inputFocus: boolean;
-	charLength: number;
 	properties: IInputProperties;
+
 	currentBgColor: string;
-	currentBorderColor: string;
 	currentColor: string;
+
 	states: any;
 	onChange: any = () => {};
 	onTouched: any = () => {};
@@ -91,10 +92,11 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 		public element: ElementRef,
 		private breakpointObserver: BreakpointObserver
 	) {
-		this.simpleInput = true;
-		this.type = 'date';
+		this.placeholder = 'gün/ay/yıl';
+		this.type = 'text';
 		this.name = '';
 		this.size = 'md';
+
 		this.inputFocus = false;
 		this.readonly = false;
 		this.disabled = false;
@@ -116,7 +118,7 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 		this.focus = new EventEmitter<void>();
 		this.valueChange = new EventEmitter<string>();
 		this.suffixIcon = 'icofont-ui-calendar';
-		this.autoOpen = false;
+		this.autoOpen = true;
 	}
 
 	open() {
@@ -124,8 +126,6 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 	}
 
 	ngOnInit() {
-		this.changeCharLength(this.charLimiting, this.innerValue.length);
-
 		if (this.autoSize) {
 			setTimeout(() => {
 				this.resizable(
@@ -158,14 +158,6 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 			this.valueChange.emit(v);
 			this.onChange(v);
 		}
-
-		if (this.charLimiting > 0) {
-			this.changeCharLength(this.charLimiting, this.innerValue.length);
-		}
-	}
-
-	changeCharLength(limit: number, valLength: number) {
-		this.charLength = limit - valLength >= 0 ? limit - valLength : 0;
 	}
 
 	registerOnChange(fn) {
@@ -190,15 +182,14 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 		if (!this.inputFocus && !disabled) {
 			this.element.nativeElement.querySelector('.input-control').focus();
 			this.inputFocus = true;
-
 			this.focus.emit();
 			this.setStyles(this.states.focus);
 		}
 	}
 
 	onBlur(disabled: boolean) {
+		console.log("worked")
 		this.inputFocus = false;
-
 		if (!disabled) {
 			this.blur.emit();
 			this.onTouched();
@@ -219,28 +210,22 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 
 	resizable(el: any, factor?: number) {
 		const INT: number = Number(factor) || 7.7;
-
 		function resize() {
 			el.parentElement.style.maxWidth = el.value.length * INT + 4 + 'px';
 		}
-
 		const e = 'keyup, keypress, focus, blur, change'.split(',');
-
 		for (let i = 0; i < e.length; i++) {
 			el.addEventListener(e[i], resize, false);
 		}
-
 		resize();
 	}
 
 	setStyles(
 		st: state,
 		bg: string | string[] = this.bgColor,
-		border: string | string[] = this.borderColor,
 		color: string | string[] = this.color
 	) {
 		let styleIndex: number = 0;
-
 		switch (st) {
 			case this.states.hover:
 				styleIndex = 1;
@@ -256,15 +241,12 @@ export class KADatepickerComponent implements ControlValueAccessor, OnInit {
 		}
 
 		this.currentBgColor = bg instanceof Array ? bg[styleIndex] : bg;
-		this.currentBorderColor =
-			border instanceof Array ? border[styleIndex] : border;
 		this.currentColor = color instanceof Array ? color[styleIndex] : color;
 	}
 
 	getStyles() {
 		return {
 			'background-color': this.currentBgColor,
-			'border-color': this.currentBorderColor,
 			color: this.currentColor,
 		};
 	}

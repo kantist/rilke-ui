@@ -8,3 +8,10 @@ html,
 body {
 	height: 100%;
 }
+
+.mat-datepicker-toggle .mat-icon-button {
+	background-color: red;
+}
+.mat-calendar {
+	background-color: lightgreen;
+}

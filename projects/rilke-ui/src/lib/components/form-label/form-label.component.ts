@@ -1,14 +1,14 @@
 import { Component, HostBinding, OnInit, Input } from '@angular/core';
 
 @Component({
-	selector: 'ka-form-label',
+	selector: 'ril-form-label',
 	templateUrl: './form-label.component.html',
-	styleUrls: ['./form-label.component.scss']
+	styleUrls: ['./form-label.component.scss'],
 })
-export class KAFormLabelComponent implements OnInit {
-	@HostBinding('class.ka-form-label') true;
+export class FormLabelComponent implements OnInit {
+	@HostBinding('class.ril-form-label') true: boolean = true;
 
-	constructor() { }
+	constructor() {}
 
-	ngOnInit() { }
+	ngOnInit() {}
 }

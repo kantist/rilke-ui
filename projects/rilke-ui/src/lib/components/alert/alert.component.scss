@@ -6,12 +6,13 @@
 		display: flex;
 		flex-wrap: nowrap;
 		justify-content: space-around;
+		border-radius: $r-md;
 		align-items: center;
 		padding: 10px 15px;
 		min-height: 48px;
 
 		p {
-			color: $text;
+			color: $main-contrast-800;
 			font-size: 1rem;
 			line-height: 1.6rem;
 			margin-right: 0.6rem;

@@ -1,30 +1,18 @@
-import { style } from '@angular/animations';
-import {
-	Inject,
-	Component,
-	OnInit,
-	Input,
-	EventEmitter,
-	HostBinding,
-	HostListener,
-	Output,
-} from '@angular/core';
+import { Component, OnInit, Input, HostBinding } from '@angular/core';
 
 @Component({
-	selector: 'ka-progress-spinner',
+	selector: 'ril-progress-spinner',
 	templateUrl: './progress-spinner.component.html',
 	styleUrls: ['./progress-spinner.component.scss'],
 })
-export class KAProgressSpinnerComponent implements OnInit {
+export class ProgressSpinnerComponent implements OnInit {
 	@Input() strokeWidth: number;
 	@Input() diameter: number;
 	@Input() strokeColor: string;
 	@Input() loadingText: string;
-	@Input() mode: string;
+	@Input() mode: any;
 
-	// @HostBinding('style.backgroundColor') get backgroundColor() {
-	// 	return `#${this.strokeColor}`;
-	// }
+	@HostBinding('class.ril-progress-spinner') true = true;
 
 	constructor() {
 		this.strokeWidth = 5;

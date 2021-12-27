@@ -16,29 +16,28 @@ import {
 import {
 	ControlValueAccessor,
 	NG_VALUE_ACCESSOR,
-	FormControl,
 	FormBuilder,
 	FormGroup,
 } from '@angular/forms';
 
-import { KAOptionComponent } from './option/option.component';
+import { SelectOptionComponent } from './select-option/select-option.component';
 
 @Component({
-	selector: 'ka-select',
+	selector: 'ril-select',
 	templateUrl: './select.component.html',
 	styleUrls: ['./select.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
-			useExisting: forwardRef(() => KASelectComponent),
+			useExisting: forwardRef(() => SelectComponent),
 			multi: true,
 		},
 	],
 })
-export class KASelectComponent
+export class SelectComponent
 	implements OnInit, AfterContentInit, ControlValueAccessor
 {
-	@HostBinding('class.ka-select') true;
+	@HostBinding('class.ril-select') true;
 
 	@Output() valueSelected: EventEmitter<any | any[]>;
 	@Input() search: boolean;
@@ -58,8 +57,8 @@ export class KASelectComponent
 	@Output() openedChange: EventEmitter<boolean>;
 	@Output() selectionChange: EventEmitter<any>;
 
-	@ContentChildren(KAOptionComponent)
-	optionQueries: QueryList<KAOptionComponent>;
+	@ContentChildren(SelectOptionComponent)
+	optionQueries: QueryList<SelectOptionComponent>;
 	@ViewChild('matSelect') matSelect;
 
 	@HostBinding('class.has-value') @Input('value') innerValue: any;
@@ -109,7 +108,7 @@ export class KASelectComponent
 			this.filtered_options = this.options;
 		}
 
-		this.searchForm.get('search').valueChanges.subscribe((res) => {
+		this.searchForm.get('search')?.valueChanges.subscribe((res) => {
 			this.filterResults(res);
 		});
 
@@ -128,7 +127,7 @@ export class KASelectComponent
 	}
 
 	setDefault(status) {
-		this.searchForm.get('search').setValue('');
+		this.searchForm.get('search')?.setValue('');
 	}
 
 	// register OnChange event

@@ -14,15 +14,15 @@
 	[value]="value"
 	[typeaheadDebounceInterval]="typeaheadDebounceInterval"
 >
-	<div class="searchBox" *ngIf="search && options?.length > 5">
-		<ka-form-group [formGroup]="searchForm">
-			<ka-input
+	<div class="searchBox" *ngIf="search && options.length > 5">
+		<!-- <ril-form-group [formGroup]="searchForm">
+			<ril-input
 				placeholder="Arama yapın"
 				[prefixIcon]="'icofont-search-1'"
 				(keydown)="$event.stopPropagation()"
 				formControlName="search"
-			></ka-input>
-		</ka-form-group>
+			></ril-input>
+		</ril-form-group> -->
 	</div>
 	<mat-option
 		*ngFor="let option of filtered_options"

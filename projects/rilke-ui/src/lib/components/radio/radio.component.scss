@@ -1,0 +1,14 @@
+@import "../../../scss/vars";
+
+$_module-rem: $base-size;
+
+:host {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	margin: -$_module-rem / 2;
+
+	&.ka-radio-horizontal {
+		flex-direction: row;
+	}
+}

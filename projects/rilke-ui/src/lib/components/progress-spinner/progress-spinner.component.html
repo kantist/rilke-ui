@@ -1,7 +1,7 @@
 <mat-progress-spinner
+	[style.stroke]="strokeColor + ' !important'"
 	[diameter]="diameter"
 	[strokeWidth]="strokeWidth"
-	[color]="strokeColor"
 	[mode]="mode"
 ></mat-progress-spinner>
 <p *ngIf="loadingText">{{ loadingText }}</p>

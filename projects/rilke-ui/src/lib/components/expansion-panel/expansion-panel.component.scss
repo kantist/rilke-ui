@@ -1,4 +1,15 @@
 @import "../../../scss/vars";
 
 :host {
+	.mat-expansion-panel {
+		background: $main-800;
+		box-shadow: $s-md;
+		border-radius: $r-md;
+
+		::ng-deep {
+			.mat-expansion-indicator::after {
+				color: $main-contrast-700 !important;
+			}
+		}
+	}
 }

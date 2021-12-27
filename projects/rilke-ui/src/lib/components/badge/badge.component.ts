@@ -6,7 +6,7 @@ import { Component, OnInit, HostBinding, Input } from '@angular/core';
 	styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent implements OnInit {
-	@HostBinding('class.ril-badge') true;
+	@HostBinding('class.ril-badge') true = true;
 
 	// Sizes
 	@HostBinding('class.badge-xs') get xs() {

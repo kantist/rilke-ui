@@ -8,15 +8,13 @@ import {
 	Injector,
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { catchError, tap } from 'rxjs/operators';
 
-import { KADialogComponent } from '../components/dialog';
 import { FormGroup } from '@angular/forms';
 
 @Injectable({
 	providedIn: 'root',
 })
-export class KADialogService {
+export class DialogService {
 	componentRef: ComponentRef<any>;
 
 	constructor(

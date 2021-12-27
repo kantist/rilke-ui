@@ -1,32 +1,7 @@
-@import '~src/assets/sass/variables';
+@import "../../../scss/vars";
 
 :host {
 	display: flex;
 	flex-direction: column;
 	height: 100%;
-
-	.data-area {
-		.item {
-			display: flex;
-			flex-direction: column;
-			width: 100%;
-			font-size: 1.2rem;
-			padding: .8rem 1rem;
-			cursor: pointer;
-
-			p {
-				margin: 0;
-			}
-
-			p:last-child {
-				color: $semi-muted-color;
-				font-size: .9rem;
-			}
-
-			&:hover {
-				background: #6c757d17;
-			}
-		}
-
-	}
 }

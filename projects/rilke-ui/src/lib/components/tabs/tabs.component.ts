@@ -3,32 +3,28 @@ import {
 	ContentChildren,
 	QueryList,
 	Input,
-	OnInit,
 	AfterContentInit,
-	OnChanges,
 } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
-import { KATabComponent } from './tab/tab.component';
+import { TabComponent } from './tab/tab.component';
 
 @Component({
-	selector: 'ka-tabs',
+	selector: 'ril-tabs',
 	templateUrl: './tabs.component.html',
 	styleUrls: ['./tabs.component.scss'],
 })
-export class KATabsComponent implements AfterContentInit {
-	@ContentChildren(KATabComponent) tabs: QueryList<KATabComponent>;
+export class TabsComponent implements AfterContentInit {
+	@ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
 
 	@Input() scrollable: boolean;
 	@Input() icon: string;
-	@Input() navigation: boolean;
 	currentIndex: number = 0;
 
 	@Input() index: number;
 
 	constructor(private router: Router) {
 		this.scrollable = false;
-		this.navigation = false;
 	}
 
 	ngAfterContentInit() {

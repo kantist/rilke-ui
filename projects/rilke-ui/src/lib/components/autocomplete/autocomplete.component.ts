@@ -31,7 +31,7 @@ export class AutocompleteComponent
 	extends KAInputComponent
 	implements OnInit, ControlValueAccessor
 {
-	@HostBinding('class.ka-autocomplete') true;
+	@HostBinding('class.ka-autocomplete') true = true;
 
 	@HostListener('document:click', ['$event'])
 	@HostListener('document:touchstart', ['$event'])

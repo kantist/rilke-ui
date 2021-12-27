@@ -1,5 +1,5 @@
 <div
-	class="ka-input-wrap"
+	class="ril-input-wrap"
 	(click)="onFocus(disabled || readonly)"
 	[ngStyle]="getStyles()"
 >
@@ -30,8 +30,8 @@
 			placeholder="{{ placeholder }}"
 			class="input-control"
 			[(ngModel)]="value"
-			[readonly]="readonly ? true : null"
-			[required]="required ? true : null"
+			[readonly]="readonly ? true : false"
+			[required]="required ? true : false"
 			(focus)="onFocus(disabled || readonly)"
 			(blur)="onBlur(disabled || readonly)"
 			[attr.disabled]="disabled ? '' : null"

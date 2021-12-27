@@ -1,15 +1,21 @@
 <div class="wrapper">
 	<div class="uploadBtn" (click)="fileInput.click()">
 		<P *ngIf="!file">Dosya Seç</P>
-		<img *ngIf="file" [src]="file.base64" alt="" />
+		<img *ngIf="file && isImage" [src]="file.base64" alt="" />
+		<span *ngIf="file && !isImage" class="file-icon material-icons"
+			>insert_drive_file</span
+		>
 		<P class="fileName" *ngIf="file">{{ file.name }}</P>
-		<span *ngIf="!file" class="upload-icon sli-cloud-upload"></span>
+		<span *ngIf="!file" class="upload-icon material-icons"
+			>file_upload</span
+		>
 		<span
 			stop-propagation
 			*ngIf="file"
-			class="close-icon sli-close"
+			class="close-icon material-icons"
 			(click)="cancelFile()"
-		></span>
+			>cancel</span
+		>
 
 		<input
 			type="file"

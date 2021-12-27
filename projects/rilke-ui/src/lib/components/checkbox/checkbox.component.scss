@@ -1,64 +1,29 @@
-@import "~src/assets/sass/variables";
-
-$_bg: (
-	default: main-palette(550),
-	hover: main-palette(550),
-	active: main-palette(550),
-	disabled: rgba(#ccc, 0.1),
-);
-$_border: (
-	default: main-palette(300),
-	hover: main-palette(550),
-	active: main-palette(550),
-	disabled: rgba(#ccc, 0.5),
-);
-$_color: (
-	default: main-palette(550),
-	hover: $main-color,
-	active: $mint-color,
-	disabled: #bdbdbd,
-);
-$_label-color: (
-	default: inherit,
-	hover: inherit,
-	active: inherit,
-	disabled: #bdbdbd,
-);
-
-$_module-rem: $module-rem;
-$_border-style: solid;
-$_border-width: 1px;
-$_fs: 1rem;
-$_height: $_module-rem * 2;
-$_width: $_module-rem * 2;
-$_shape: 3px;
-$_animation: $animation;
+@use "sass:math";
+@import "../../../scss/vars";
 
 :host {
 	display: inline-flex;
 	line-height: 1;
-	transition: color 0.2s $_animation;
+	transition: color 0.2s ease-in-out;
 
-	.ka-checkbox-wrap {
+	.ril-checkbox-wrap {
 		align-items: center;
 		cursor: pointer;
 		display: flex;
 
-		.ka-checkbox-handle {
+		.ril-checkbox-handle {
 			align-items: center;
-			background: map-get($_bg, default);
-			// border: $_border-width $_border-style map-get($_border, default);
-			border-radius: $_shape;
-			color: map-get($_border, default);
+			background: $main-800;
+			border-radius: math.div($r-xs, 1.5);
 			cursor: inherit;
 			display: flex;
-			height: $_height;
+			height: $base-size * 1.5;
 			justify-content: center;
 			margin: 0;
 			position: relative;
-			transition: background 0.2s $_animation, border 0.2s $_animation,
-				color 0.2s $_animation;
-			width: $_width;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+				color 0.2s ease-in-out;
+			width: $base-size * 1.5;
 
 			.checkbox-input {
 				width: 100%;
@@ -70,69 +35,64 @@ $_animation: $animation;
 				display: block;
 				font-size: 1.6rem;
 				transform: scale(0);
-				transition: transform 0.2s $_animation;
+				transition: transform 0.2s ease-in-out;
 			}
 		}
-		.ka-checkbox-label {
-			color: map-get($_label-color, default);
+		.ril-checkbox-label {
+			color: $main-800;
 			margin-left: 10px;
-			transition: color 0.2s $_animation;
-
+			transition: color 0.2s ease-in-out;
 			&:empty {
 				display: none;
 			}
 		}
 		&:hover {
-			.ka-checkbox-handle {
-				background: map-get($_bg, hover);
-				border-color: map-get($_border, hover);
-				color: map-get($_color, hover);
-
+			.ril-checkbox-handle {
+				background: $main-700;
+				color: $main-contrast-800;
 				.check-detector {
-					transform: scale(1);
+					transform: scale(0.8);
 				}
 			}
-			.ka-checkbox-label {
-				color: map-get($_label-color, hover);
+			.ril-checkbox-label {
+				color: $main-800;
 			}
 		}
 	}
 	&.checked {
-		.ka-checkbox-wrap {
-			.ka-checkbox-handle {
-				background: map-get($_bg, active);
-				border-color: map-get($_border, active);
-				color: map-get($_color, active);
+		.ril-checkbox-wrap {
+			.ril-checkbox-handle {
+				background: $main-800;
+				color: $success-color;
 
 				.check-detector {
-					transform: scale(1);
+					transform: scale(0.8);
 				}
 			}
-			.ka-checkbox-label {
-				color: map-get($_label-color, active);
+			.ril-checkbox-label {
+				color: $main-800;
 			}
 		}
 	}
 	&.disabled {
-		.ka-checkbox-wrap {
+		.ril-checkbox-wrap {
 			cursor: not-allowed;
 
-			.ka-checkbox-handle {
-				background: map-get($_bg, disabled);
-				border-color: map-get($_border, disabled);
-				color: map-get($_color, disabled);
+			.ril-checkbox-handle {
+				background: $main-500;
+				color: $main-contrast-500;
 
 				.check-detector {
 					transform: scale(0);
 				}
 			}
-			.ka-checkbox-label {
-				color: map-get($_label-color, disabled);
+			.ril-checkbox-label {
+				color: $main-500;
 			}
 		}
 		&.checked {
-			.ka-checkbox-wrap {
-				.ka-checkbox-handle {
+			.ril-checkbox-wrap {
+				.ril-checkbox-handle {
 					.check-detector {
 						transform: scale(1);
 					}

@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // Materials
@@ -23,6 +24,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
@@ -33,6 +35,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 // 3rd Party
@@ -43,24 +46,44 @@ import { AlertComponent } from './components/alert/alert.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
 import { BadgeComponent } from './components/badge/badge.component';
 import { ButtonComponent } from './components/button/button.component';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 
 import { CardComponent } from './components/card/card.component';
 import { CardTitleComponent } from './components/card/card-title/card-title.component';
 import { CardContentComponent } from './components/card/card-content/card-content.component';
 import { CardImageComponent } from './components/card/card-image/card-image.component';
 
+import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+
+import { DatePickerComponent } from './components/datepicker/datepicker.component';
 
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { ExpansionPanelTitleComponent } from './components/expansion-panel/expansion-panel-title/expansion-panel-title.component';
 import { ExpansionPanelDescriptionComponent } from './components/expansion-panel/expansion-panel-description/expansion-panel-description.component';
 import { ExpansionPanelContentComponent } from './components/expansion-panel/expansion-panel-content/expansion-panel-content.component';
 
+import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FormGroupComponent } from './components/form-group/form-group.component';
+import { FormLabelComponent } from './components/form-label/form-label.component';
+import { InputComponent } from './components/input/input.component';
+
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu/item/item.component';
 import { MenuItemsComponent } from './components/menu/items/items.component';
 
+import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { RadioComponent } from './components/radio/radio.component';
+import { RadioOptionComponent } from './components/radio/radio-option/radio-option.component';
+
+import { RangeSliderComponent } from './components/range-slider/range-slider.component';
+import { SelectComponent } from './components/select/select.component';
+import { SelectOptionComponent } from './components/select/select-option/select-option.component';
+import { SwitcherComponent } from './components/switcher/switcher.component';
+
+import { TabsComponent } from './components/tabs/tabs.component';
+import { TabComponent } from './components/tabs/tab/tab.component';
+import { TextAreaComponent } from './components/text-area/text-area.component';
 
 //Pipes
 import { InitialLetterPipe } from './pipes/initial-letter.pipe';
@@ -83,6 +106,7 @@ const materialModules = [
 	MatRippleModule,
 	MatSelectModule,
 	MatSidenavModule,
+	MatSliderModule,
 	MatSnackBarModule,
 	MatSortModule,
 	MatTableModule,
@@ -97,6 +121,7 @@ const materialModules = [
 	MatGridListModule,
 	MatRadioModule,
 	MatDatepickerModule,
+	MatNativeDateModule,
 	MatTooltipModule,
 ];
 
@@ -107,30 +132,51 @@ const materialModules = [
 		AvatarComponent,
 		BadgeComponent,
 		ButtonComponent,
+		BottomSheetComponent,
 
 		CardComponent,
 		CardTitleComponent,
 		CardContentComponent,
 		CardImageComponent,
 
+		CheckboxComponent,
 		ColorPickerComponent,
+
+		DatePickerComponent,
 
 		ExpansionPanelComponent,
 		ExpansionPanelTitleComponent,
 		ExpansionPanelDescriptionComponent,
 		ExpansionPanelContentComponent,
 
+		FileUploadComponent,
+		FormGroupComponent,
+		FormLabelComponent,
+		InputComponent,
+
 		MenuComponent,
 		MenuItemComponent,
 		MenuItemsComponent,
 
+		ProgressSpinnerComponent,
 		RadioComponent,
+		RadioOptionComponent,
+		RangeSliderComponent,
+		SelectComponent,
+		SelectOptionComponent,
+		SwitcherComponent,
+
+		TabsComponent,
+		TabComponent,
+		TextAreaComponent,
 
 		// Pipes
 		InitialLetterPipe,
 	],
 	imports: [
 		CommonModule,
+		FormsModule,
+		ReactiveFormsModule,
 		// Materials
 		materialModules,
 		ColorChromeModule,
@@ -141,24 +187,43 @@ const materialModules = [
 		AvatarComponent,
 		BadgeComponent,
 		ButtonComponent,
+		BottomSheetComponent,
 
 		CardComponent,
 		CardTitleComponent,
 		CardContentComponent,
 		CardImageComponent,
 
+		CheckboxComponent,
 		ColorPickerComponent,
+
+		DatePickerComponent,
 
 		ExpansionPanelComponent,
 		ExpansionPanelTitleComponent,
 		ExpansionPanelDescriptionComponent,
 		ExpansionPanelContentComponent,
 
+		FileUploadComponent,
+		FormGroupComponent,
+		FormLabelComponent,
+		InputComponent,
+
 		MenuComponent,
 		MenuItemComponent,
 		MenuItemsComponent,
 
+		ProgressSpinnerComponent,
 		RadioComponent,
+		RadioOptionComponent,
+		RangeSliderComponent,
+		SelectComponent,
+		SelectOptionComponent,
+		SwitcherComponent,
+
+		TabsComponent,
+		TabComponent,
+		TextAreaComponent,
 
 		// Pipes
 		InitialLetterPipe,
