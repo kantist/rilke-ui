@@ -1,4 +1,4 @@
-@import "~src/assets/sass/variables";
+@import "../../../scss/vars";
 
 :host {
 	display: flex;
@@ -30,7 +30,7 @@
 				opacity: 0;
 				display: none;
 			}
-		
+
 			.skeleton {
 				opacity: 1;
 				display: flex;
@@ -42,7 +42,6 @@
 			}
 		}
 	}
-
 
 	::ng-deep {
 		ka-list-header .columns,
@@ -144,10 +143,10 @@
 			}
 
 			&:nth-child(odd) {
-				background: main-palette(700);
+				background: $main-800;
 			}
 			&:nth-child(even) {
-				background: main-palette(900);
+				background: $main-700;
 			}
 			&:last-child {
 				// margin-bottom: 2rem;

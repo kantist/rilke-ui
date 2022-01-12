@@ -37,16 +37,19 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 
 // 3rd Party
 import { ColorChromeModule } from 'ngx-color/chrome';
 
 // Components
 import { AlertComponent } from './components/alert/alert.component';
+import { AutocompleteComponent } from './components/auto-complete/auto-complete.component';
 import { AvatarComponent } from './components/avatar/avatar.component';
+
 import { BadgeComponent } from './components/badge/badge.component';
 import { ButtonComponent } from './components/button/button.component';
-import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 
 import { CardComponent } from './components/card/card.component';
 import { CardTitleComponent } from './components/card/card-title/card-title.component';
@@ -57,6 +60,7 @@ import { CheckboxComponent } from './components/checkbox/checkbox.component';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 
 import { DatePickerComponent } from './components/datepicker/datepicker.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { ExpansionPanelTitleComponent } from './components/expansion-panel/expansion-panel-title/expansion-panel-title.component';
@@ -67,6 +71,11 @@ import { FileUploadComponent } from './components/file-upload/file-upload.compon
 import { FormGroupComponent } from './components/form-group/form-group.component';
 import { FormLabelComponent } from './components/form-label/form-label.component';
 import { InputComponent } from './components/input/input.component';
+
+import { ListComponent } from './components/list/list.component';
+import { ListHeaderComponent } from './components/list/list-header/list-header.component';
+import { ListItemComponent } from './components/list/list-item/list-item.component';
+import { ListItemDetailComponent } from './components/list/list-item-detail/list-item-detail.component';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu/item/item.component';
@@ -85,8 +94,11 @@ import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tabs/tab/tab.component';
 import { TextAreaComponent } from './components/text-area/text-area.component';
 
-//Pipes
+// Pipes
 import { InitialLetterPipe } from './pipes/initial-letter.pipe';
+
+// Directives
+import { StopPropagation } from './directives/stop-propagation.directive';
 
 const materialModules = [
 	CdkTreeModule,
@@ -123,16 +135,19 @@ const materialModules = [
 	MatDatepickerModule,
 	MatNativeDateModule,
 	MatTooltipModule,
+	MatDialogModule,
+	MatBottomSheetModule,
 ];
 
 @NgModule({
 	declarations: [
 		// Components
 		AlertComponent,
+		AutocompleteComponent,
 		AvatarComponent,
+
 		BadgeComponent,
 		ButtonComponent,
-		BottomSheetComponent,
 
 		CardComponent,
 		CardTitleComponent,
@@ -143,6 +158,7 @@ const materialModules = [
 		ColorPickerComponent,
 
 		DatePickerComponent,
+		DialogComponent,
 
 		ExpansionPanelComponent,
 		ExpansionPanelTitleComponent,
@@ -153,6 +169,11 @@ const materialModules = [
 		FormGroupComponent,
 		FormLabelComponent,
 		InputComponent,
+
+		ListComponent,
+		ListHeaderComponent,
+		ListItemComponent,
+		ListItemDetailComponent,
 
 		MenuComponent,
 		MenuItemComponent,
@@ -172,11 +193,15 @@ const materialModules = [
 
 		// Pipes
 		InitialLetterPipe,
+
+		// Directives
+		StopPropagation,
 	],
 	imports: [
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
+
 		// Materials
 		materialModules,
 		ColorChromeModule,
@@ -184,10 +209,11 @@ const materialModules = [
 	exports: [
 		// Components
 		AlertComponent,
+		AutocompleteComponent,
 		AvatarComponent,
+
 		BadgeComponent,
 		ButtonComponent,
-		BottomSheetComponent,
 
 		CardComponent,
 		CardTitleComponent,
@@ -198,6 +224,7 @@ const materialModules = [
 		ColorPickerComponent,
 
 		DatePickerComponent,
+		DialogComponent,
 
 		ExpansionPanelComponent,
 		ExpansionPanelTitleComponent,
@@ -208,6 +235,11 @@ const materialModules = [
 		FormGroupComponent,
 		FormLabelComponent,
 		InputComponent,
+
+		ListComponent,
+		ListHeaderComponent,
+		ListItemComponent,
+		ListItemDetailComponent,
 
 		MenuComponent,
 		MenuItemComponent,
@@ -227,6 +259,9 @@ const materialModules = [
 
 		// Pipes
 		InitialLetterPipe,
+
+		// Directives
+		StopPropagation,
 	],
 })
 export class RilkeUiModule {}

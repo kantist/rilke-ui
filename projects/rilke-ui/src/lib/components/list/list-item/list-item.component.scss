@@ -1,4 +1,4 @@
-@import '~src/assets/sass/variables';
+@import "../../../../scss/vars";
 
 :host {
 	display: flex;
@@ -19,33 +19,33 @@
 			width: 100%;
 			min-height: 5rem;
 			ka-avatar {
-				margin-right: .5rem;
+				margin-right: 0.5rem;
 			}
 			&:hover {
 				div {
-					color: $main-color-hover;
+					color: blue;
 					font-weight: 600;
 				}
 			}
 		}
 	}
 	&:nth-child(odd) {
-		background: main-palette(400);
+		background: green;
 	}
 	&:nth-child(even) {
-		background: main-palette(500);
+		background: pink;
 	}
 	&:first-child {
-		border-top-left-radius: .8rem;
-		border-top-right-radius: .8rem;
+		border-top-left-radius: 0.8rem;
+		border-top-right-radius: 0.8rem;
 	}
 	&:last-child {
-		border-bottom-left-radius: .8rem;
-		border-bottom-right-radius: .8rem;
+		border-bottom-left-radius: 0.8rem;
+		border-bottom-right-radius: 0.8rem;
 		margin-bottom: 2rem;
 	}
 	&.opened {
 		max-height: 100%;
-		box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 	}
 }

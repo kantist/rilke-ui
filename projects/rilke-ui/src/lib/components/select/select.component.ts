@@ -84,7 +84,7 @@ export class SelectComponent
 		this.id = '';
 		this.multiple = false;
 		this.panelClass = '';
-		this.placeholder = '';
+		this.placeholder = 'Seç';
 		this.required = false;
 		this.search = false;
 		this.searchValue = '';

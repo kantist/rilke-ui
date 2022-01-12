@@ -6,10 +6,12 @@ export * from './lib/rilke-ui.module';
 
 // Components ***
 export * from './lib/components/alert/alert.component';
+export * from './lib/components/auto-complete/auto-complete.component';
 export * from './lib/components/avatar/avatar.component';
+
 export * from './lib/components/badge/badge.component';
 export * from './lib/components/button/button.component';
-export * from './lib/components/bottom-sheet/bottom-sheet.component';
+
 export * from './lib/components/card/card.component';
 export * from './lib/components/card/card-title/card-title.component';
 export * from './lib/components/card/card-content/card-content.component';
@@ -19,6 +21,7 @@ export * from './lib/components/checkbox/checkbox.component';
 export * from './lib/components/color-picker/color-picker.component';
 
 export * from './lib/components/datepicker/datepicker.component';
+export * from './lib/components/dialog/dialog.component';
 
 export * from './lib/components/expansion-panel/expansion-panel.component';
 export * from './lib/components/expansion-panel/expansion-panel-title/expansion-panel-title.component';
@@ -29,6 +32,11 @@ export * from './lib/components/file-upload/file-upload.component';
 export * from './lib/components/form-group/form-group.component';
 export * from './lib/components/form-label/form-label.component';
 export * from './lib/components/input/input.component';
+
+export * from './lib/components/list/list.component';
+export * from './lib/components/list/list-header/list-header.component';
+export * from './lib/components/list/list-item/list-item.component';
+export * from './lib/components/list/list-item-detail/list-item-detail.component';
 
 export * from './lib/components/menu/menu.component';
 export * from './lib/components/menu/item/item.component';
@@ -49,11 +57,15 @@ export * from './lib/components/text-area/text-area.component';
 
 // Pipes ***
 export * from './lib/pipes/initial-letter.pipe';
+export * from './lib/directives/stop-propagation.directive';
 
 // Services ***
 export * from './lib/services/alert.service';
+export * from './lib/services/dialog.service';
 export * from './lib/services/bottom-sheet.service';
 export * from './lib/services/modal.service';
 
 // Interfaces ***
 export * from './lib/interfaces/alert';
+export * from './lib/interfaces/bottom-sheet';
+export * from './lib/interfaces/dialog';

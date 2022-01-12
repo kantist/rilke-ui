@@ -4,7 +4,6 @@ import {
 	Input,
 	ElementRef,
 	forwardRef,
-	ChangeDetectorRef,
 	HostListener,
 	HostBinding,
 	Output,
@@ -13,12 +12,12 @@ import {
 
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { DomSanitizer } from '@angular/platform-browser';
-import { KAInputComponent } from '../input';
+import { InputComponent } from '../input/input.component';
 
 @Component({
-	selector: 'ril-autocomplete',
-	templateUrl: './autocomplete.component.html',
-	styleUrls: ['./autocomplete.component.scss'],
+	selector: 'ril-auto-complete',
+	templateUrl: './auto-complete.component.html',
+	styleUrls: ['./auto-complete.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,
@@ -28,10 +27,10 @@ import { KAInputComponent } from '../input';
 	],
 })
 export class AutocompleteComponent
-	extends KAInputComponent
+	extends InputComponent
 	implements OnInit, ControlValueAccessor
 {
-	@HostBinding('class.ka-autocomplete') true = true;
+	@HostBinding('class.ril-auto-complete') true = true;
 
 	@HostListener('document:click', ['$event'])
 	@HostListener('document:touchstart', ['$event'])
@@ -57,11 +56,7 @@ export class AutocompleteComponent
 	openedList: boolean;
 	attached: boolean;
 
-	constructor(
-		element: ElementRef,
-		private changeDetector: ChangeDetectorRef,
-		private sanitizer: DomSanitizer
-	) {
+	constructor(element: ElementRef, private sanitizer: DomSanitizer) {
 		super(element);
 
 		this.simpleInput = false;
@@ -69,7 +64,6 @@ export class AutocompleteComponent
 		this.results = [];
 		this.arrowKeyLocation = 0;
 		this.data = [];
-
 		this.openedList = false;
 		this.opened = new EventEmitter<void>();
 		this.closed = new EventEmitter<void>();

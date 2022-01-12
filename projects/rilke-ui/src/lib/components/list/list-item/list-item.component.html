@@ -1,7 +1,7 @@
 <div class="list-row" (click)="toggleDetails()">
 	<div (click)="$event.stopPropagation()" *ngIf="checkbox" class="list-check">
-		<ka-checkbox [formControl]="listCheck" [value]="listCheck.value">
-		</ka-checkbox>
+		<ril-checkbox [formControl]="listCheck" [value]="listCheck.value">
+		</ril-checkbox>
 	</div>
 	<div [ngClass]="{ 'pl-4': !checkbox }" class="columns">
 		<ng-content select="[column]"></ng-content>
@@ -10,6 +10,6 @@
 		<ng-content select="[option]"></ng-content>
 	</div>
 </div>
-<ka-list-detail>
+<ril-list-item-detail>
 	<ng-content select="[detail]"></ng-content>
-</ka-list-detail>
+</ril-list-item-detail>

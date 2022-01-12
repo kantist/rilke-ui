@@ -1,17 +1,28 @@
 @import "./vars.scss";
 
 body {
-	margin: 0;
-	padding: 0;
-}
-html,
-body {
-	height: 100%;
-}
+	mat-bottom-sheet-container {
+		padding: 1rem !important;
+		background: $main-800 !important;
+		border-top-right-radius: $r-md !important;
+		border-top-left-radius: $r-md !important;
+	}
 
-.mat-datepicker-toggle .mat-icon-button {
-	background-color: red;
-}
-.mat-calendar {
-	background-color: lightgreen;
+	.modal-overlay-wrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		z-index: 1000;
+
+		.modal-panel {
+			max-width: 100%;
+			position: static;
+			padding: 1rem !important;
+			background: $main-800 !important;
+			border-radius: $r-md;
+		}
+	}
 }

@@ -1,91 +1,42 @@
-import {
-	Component,
-	OnInit,
-	Input,
-	EventEmitter,
-	HostBinding,
-	ViewChild,
-	ElementRef,
-	Output,
-} from '@angular/core';
-
-import { Observable } from 'rxjs';
-
-import { ModalService } from '../services/modal/modal.service';
-import { Content, IModalOptions } from '@ui/interfaces/modal';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-
-type dialogType = 'prompt' | 'confirm';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Observable } from 'rxjs';
+import { IDialogData } from '../../interfaces/dialog';
 
 @Component({
-	selector: 'ka-dialog',
-	templateUrl: './dialog.component.html',
-	styleUrls: ['./dialog.component.scss'],
+	selector: 'ril-dialog',
+	templateUrl: 'dialog.component.html',
+	styleUrls: ['dialog.component.scss'],
 })
-export class KADialogComponent {
-	@ViewChild('dialogContent') dialogContent: Content<ElementRef>;
-
-	@Input() title: string;
-	@Input() message: string;
-	@Input() type: dialogType = 'confirm';
-	@Input() form: FormGroup;
-	@Input() labels: any;
-	@Input() confirmText: string;
-	@Input() cancelText: string;
+export class DialogComponent implements OnInit {
+	onResults: Observable<boolean>;
+	@Output() onResult: EventEmitter<boolean>;
+	form: FormGroup;
 
 	formArray: any[];
 
-	@Output() close: EventEmitter<boolean>;
-	@Output() formResult: EventEmitter<any>;
-
-	constructor(private modal: ModalService) {
-		this.close = new EventEmitter();
-		this.formResult = new EventEmitter(null);
+	constructor(
+		@Inject(MAT_DIALOG_DATA) public data: IDialogData,
+		private dialogRef: MatDialogRef<any>
+	) {
+		this.onResult = new EventEmitter<boolean>(null);
+		this.onResults = this.onResult.asObservable();
 	}
 
-	open() {
-		if (this.form) {
-			this.formArray = Object.keys(this.form.controls);
+	ngOnInit() {
+		if (this.data.form) {
+			this.formArray = Object.keys(this.data.form.controls);
 		}
-
-		let modalOptions: IModalOptions = {
-			height: '100%',
-			width: '35vw',
-			closeButton: true,
-			overlay: true,
-			overlayClose: true,
-		};
-
-		if (this.type == 'prompt') {
-			modalOptions.windowClass = 'dark';
-		}
-
-		this.modal.open({
-			body: this.dialogContent,
-			header: null,
-			footer: null,
-			options: modalOptions,
-		});
 	}
 
-	confirm() {
-		this.close.emit(true);
-		this.modal.close();
+	onCancel() {
+		this.onResult.emit(false);
+		this.dialogRef.close();
 	}
 
-	dismiss() {
-		this.close.emit(false);
-		this.modal.close();
-	}
-
-	hideModal() {
-		this.close.emit(false);
-		this.modal.close();
-	}
-
-	onSubmit() {
-		this.close.emit(true);
-		this.formResult.emit(this.form);
-		this.modal.close();
+	onAction() {
+		this.onResult.emit(true);
+		this.dialogRef.close();
 	}
 }

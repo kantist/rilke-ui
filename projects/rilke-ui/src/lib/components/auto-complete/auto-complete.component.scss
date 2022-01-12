@@ -1,0 +1,66 @@
+@import "../../../scss/vars";
+
+:host {
+	border-radius: $r-md;
+	display: block;
+	outline: none;
+	width: 100%;
+	transition: none;
+
+	&:hover,
+	&:focus {
+		transition: none;
+	}
+	.ka-input {
+		border-radius: inherit;
+		transition: none;
+	}
+	.autocomplete-list {
+		display: none;
+		position: relative;
+		z-index: 999;
+
+		&.opened {
+			display: block;
+		}
+		.list-ul {
+			background: red;
+			border: 1px solid green;
+			box-shadow: $s-md;
+			border-radius: $r-md;
+			color: blue;
+			list-style-type: none;
+			left: 0;
+			margin: 0;
+			max-height: $base-size * 23;
+			overflow: auto;
+			padding: $base-size 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 999;
+
+			.list-li {
+				box-shadow: 0 1px 0 rgba(#000, 0.05);
+				cursor: pointer;
+				padding: ($base-size / 2) ($base-size * 2);
+				transition: background 0.2s ease-in-out;
+
+				::ng-deep .val-mark {
+					background: none;
+					color: #000;
+					pointer-events: none;
+				}
+				&.active {
+					background: rgba(pink, 0.05);
+				}
+				&:hover {
+					background: rgba(#000, 0.05);
+				}
+				&:last-child {
+					box-shadow: none;
+				}
+			}
+		}
+	}
+}

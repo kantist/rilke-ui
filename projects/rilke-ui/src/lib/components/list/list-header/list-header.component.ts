@@ -1,19 +1,17 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { KAListComponent } from './../list.component';
+import { ListComponent } from './../list.component';
 
 @Component({
-	selector: 'ka-list-header',
-	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss'],
+	selector: 'ril-list-header',
+	templateUrl: './list-header.component.html',
+	styleUrls: ['./list-header.component.scss'],
 })
-export class KAListHeaderComponent implements OnInit {
+export class ListHeaderComponent implements OnInit {
 	listCheck = new FormControl(false);
 
-	constructor(
-		@Inject(KAListComponent) public list: KAListComponent
-	) {}
+	constructor(@Inject(ListComponent) public list: ListComponent) {}
 
 	unchecking: boolean;
 

@@ -10,11 +10,11 @@
 			ril-form-label {
 				position: absolute;
 				cursor: text;
-				font-size: 0.8rem;
+				font-size: 65%;
 				opacity: 1;
 				-webkit-transition: all 0.2s;
 				transition: all 0.2s;
-				top: calc(50% - 0.4rem);
+				top: -0.5em;
 				margin-left: 1rem;
 				color: $main-500;
 				z-index: 3;
@@ -22,67 +22,30 @@
 				padding: 0 1px;
 				pointer-events: none;
 				text-transform: uppercase;
+
+				&::before {
+					content: " ";
+					display: block;
+					position: absolute;
+					background: red;
+					height: 1px;
+					top: 50%;
+					left: -0.3em;
+					right: -0.3em;
+					z-index: -1;
+				}
 			}
 
-			ril-input:has(.input-focus) + ril-form-label {
-				background: red !important;
+			ril-input:not(.input-focus):not(.has-value) + ril-form-label,
+			ril-select:not(.has-value) + ril-form-label {
+				font-size: 0.8rem !important;
+				opacity: 0.5;
+				top: calc(50% - 0.4rem) !important;
+
+				&::before {
+					background: transparent;
+				}
 			}
-
-			// ril-input:not(.input-focus):not(.has-value) + ril-form-label,
-			// ril-select:not(.has-value) + ril-form-label {
-			// 	font-size: 0.8rem !important;
-			// 	opacity: 0.5;
-			// 	top: calc(50% - 0.4rem) !important;
-			// 	color: red !important;
-
-			// 	&::before {
-			// 		background: transparent;
-			// 	}
-			// }
 		}
 	}
-
-	// &.float {
-	// 	position: relative;
-	// 	::ng-deep {
-	// 		ril-form-label {
-	// 			position: absolute;
-	// 			cursor: text;
-	// 			font-size: 65%;
-	// 			opacity: 1;
-	// 			-webkit-transition: all 0.2s;
-	// 			transition: all 0.2s;
-	// 			top: -0.5em;
-	// 			margin-left: 1rem;
-	// 			color: $main-500;
-	// 			z-index: 3;
-	// 			line-height: 1;
-	// 			padding: 0 1px;
-	// 			pointer-events: none;
-	// 			text-transform: uppercase;
-	// 			&::before {
-	// 				content: " ";
-	// 				display: block;
-	// 				position: absolute;
-	// 				background: $main-800;
-	// 				top: 50%;
-	// 				left: -0.3em;
-	// 				right: -0.3em;
-	// 				z-index: -1;
-	// 			}
-	// 		}
-
-	// 		ril-input:not(.input-focus):not(.has-value) + ril-form-label,
-	// 		ril-select:not(.has-value) + ril-form-label {
-	// 			font-size: 0.8rem !important;
-	// 			opacity: 0.5;
-	// 			top: calc(50% - 0.4rem) !important;
-	// 			color: red !important;
-
-	// 			&::before {
-	// 				background: transparent;
-	// 			}
-	// 		}
-	// 	}
-	// }
 }

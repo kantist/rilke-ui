@@ -8,14 +8,14 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
-import { KAListComponent } from './../list.component';
+import { ListComponent } from './../list.component';
 
 @Component({
-	selector: 'ka-list-item',
-	templateUrl: './item.component.html',
-	styleUrls: ['./item.component.scss'],
+	selector: 'ril-list-item',
+	templateUrl: './list-item.component.html',
+	styleUrls: ['./list-item.component.scss'],
 })
-export class KAListItemComponent implements OnInit, OnDestroy {
+export class ListItemComponent implements OnInit, OnDestroy {
 	@HostBinding('class.opened') opened: boolean = false;
 
 	@Input() itemIndex: number;
@@ -26,9 +26,7 @@ export class KAListItemComponent implements OnInit, OnDestroy {
 	unchecking: boolean;
 	checkStatus: boolean;
 
-	constructor(
-		@Inject(KAListComponent) public list: KAListComponent
-	) {
+	constructor(@Inject(ListComponent) public list: ListComponent) {
 		this.unchecking = false;
 	}
 

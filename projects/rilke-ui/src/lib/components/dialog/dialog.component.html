@@ -1,38 +1,22 @@
-<ng-template #dialogContent>
-	<h5 class="mt-0" [class.mb-0]="type == 'prompt'">{{ title }}</h5>
-	<span>{{ message }}</span>
+<div class="text">
+	<p>{{ data.text }}</p>
+</div>
 
-	<ng-container *ngIf="type == 'prompt'">
-		<form class="pt-5" [formGroup]="form" (ngSubmit)="onSubmit()">
-			<ng-container *ngFor="let control of formArray; let i = index">
-				<ka-form-group [float]="true">
-					<ka-input
-						class="shadow-sm"
-						[formControlName]="control"
-					></ka-input>
-					<ka-form-label required>{{
-						labels[control]
-					}}</ka-form-label>
-					<ka-form-description
-						[control]="form.get(control)"
-					></ka-form-description>
-				</ka-form-group>
-			</ng-container>
-			<div class="button-area">
-				<span (click)="dismiss()">
-					{{ cancelText }}
-				</span>
-				<button ka-button [view]="'default'">Gönder</button>
-			</div>
-		</form>
-	</ng-container>
+<ng-container *ngIf="data.form">
+	<form class="pt-5" [formGroup]="data.form">
+		<ng-container *ngFor="let control of formArray; let i = index">
+			<ril-form-group [float]="true">
+				<ril-input [formControlName]="control"></ril-input>
+			</ril-form-group>
+		</ng-container>
+	</form>
+</ng-container>
 
-	<div class="button-area" *ngIf="type == 'confirm'">
-		<span (click)="dismiss()">
-			{{ cancelText }}
-		</span>
-		<span (click)="confirm()">
-			{{ confirmText }}
-		</span>
-	</div>
-</ng-template>
+<div class="button-area">
+	<button class="cancel" (click)="onCancel()">
+		{{ data.cancel }}
+	</button>
+	<button class="action" (click)="onAction()">
+		<span class="material-icons">check_circle</span>{{ data.action }}
+	</button>
+</div>

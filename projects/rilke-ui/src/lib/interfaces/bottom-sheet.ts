@@ -1,10 +1,6 @@
-export interface IBottomSheetItems {
-	name: string;
-	text: string;
-	subtext?: string,
-	class?: string;
-}
+import { MatBottomSheetConfig } from '@angular/material/bottom-sheet';
 
-export interface IBottomSheetOptions {
-	items: IBottomSheetItems[]
+export interface IBottomSheetOptions extends MatBottomSheetConfig {
+	mobileIndicator?: boolean;
+	component: any;
 }

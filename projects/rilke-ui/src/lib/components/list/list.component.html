@@ -1,11 +1,15 @@
 <div class="content">
-	<div #refHeader><ng-content select="ka-list-header"></ng-content></div>
+	<div #refHeader>
+		<ng-content select="ril-list-header"></ng-content>
+	</div>
 	<div #refItem class="scrollable h-100">
-		<ng-content select="ka-list-item"></ng-content>
+		<ng-content select="ril-list-item"></ng-content>
 	</div>
 </div>
 
-<div class="skeleton header" *ngIf="listHeader" ka-skeleton>
+<h1>test</h1>
+
+<!-- <div class="skeleton header" *ngIf="listHeader" ka-skeleton>
 	<div *ngIf="checkbox" class="list-check">
 		<ka-checkbox skeleton></ka-checkbox>
 	</div>
@@ -50,4 +54,4 @@
 	[pagesNumber]="pagesCount"
 	[pageNum]="page"
 	(pageChange)="pageListener($event)"
-></ka-pagination>
+></ka-pagination> -->

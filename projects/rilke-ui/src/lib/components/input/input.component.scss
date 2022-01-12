@@ -20,7 +20,8 @@
 		padding: 0 calc(#{$f-size-md} - 0.2em);
 		position: relative;
 		transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+			border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
 
@@ -30,7 +31,7 @@
 		}
 		.input-control {
 			background: none;
-			border: none;
+			border: 0;
 			border-radius: inherit;
 			box-shadow: none;
 			color: inherit;
@@ -40,6 +41,10 @@
 			outline: none;
 			padding: $p-sm 0.2em;
 			width: 100%;
+
+			// @include placeholder {
+			// 	color: $main-contrast-700;
+			// }
 		}
 		.input-prefix,
 		.input-suffix {
@@ -58,6 +63,12 @@
 			justify-content: center;
 			padding: 0 0.2em;
 			pointer-events: none;
+		}
+	}
+
+	:host-context(ril-form-group.float) {
+		.ka-input-wrap {
+			border-color: $main-contrast-700;
 		}
 	}
 
@@ -91,6 +102,7 @@
 
 		.ril-input-wrap {
 			background-color: $main-500;
+			border-color: $main-500;
 			box-shadow: none !important;
 			cursor: not-allowed;
 

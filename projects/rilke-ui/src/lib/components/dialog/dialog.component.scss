@@ -1,20 +1,45 @@
-@import '~src/assets/sass/variables';
+@import "../../../scss/vars";
 
-.button-area {
+:host {
+	width: 100%;
 	display: flex;
-	justify-content: flex-end;
-	padding-top: 1rem;
+	flex-direction: column;
 
-	span {
-		padding: .5rem 1rem;
-		border-radius: $shape;
-		display: flex;
-		align-items: center;
-		cursor: pointer;
-
-		&:last-child {
-			background: $main-opposite-color;
-			color: $mint-color;
+	.text {
+		margin-bottom: 2rem;
+		p {
+			color: $main-contrast-800;
 		}
 	}
+	.button-area {
+		display: flex;
+		justify-content: flex-end;
+
+		button {
+			border: none;
+			cursor: pointer;
+			padding: $p-sm / 2 $p-sm;
+			border-radius: $r-sm;
+			color: $main-900;
+			display: flex;
+			align-items: center;
+
+			&.cancel {
+				background-color: $error-color;
+			}
+			&.action {
+				background-color: $success-color;
+				margin-left: 1rem;
+
+				span {
+					margin-right: 0.5rem;
+				}
+			}
+		}
+	}
+}
+
+::ng-deep .mat-dialog-container {
+	background: $main-800 !important;
+	border-radius: $r-md !important;
 }

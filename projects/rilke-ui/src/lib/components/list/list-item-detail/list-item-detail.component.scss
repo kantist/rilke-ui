@@ -1,4 +1,4 @@
-@import '~src/assets/sass/variables';
+@import "../../../../scss/vars";
 
 :host {
 	padding: 1rem 2rem;
@@ -20,11 +20,11 @@
 			align-items: center;
 			p {
 				font-weight: bold;
-				margin-top: .25rem;
+				margin-top: 0.25rem;
 				margin-bottom: 0;
 			}
 
-			@media #{$max1199} {
+			@media screen and (max-width: 1199px) {
 				display: none;
 			}
 		}
@@ -45,7 +45,7 @@
 				div {
 					p {
 						&:first-child {
-							color: var(--semi-muted-color);
+							color: red;
 							font-size: 80%;
 						}
 					}
@@ -58,7 +58,7 @@
 		opacity: 1;
 		z-index: 1;
 		visibility: visible;
-		transition-delay: .2s;
+		transition-delay: 0.2s;
 		display: flex;
 	}
 }

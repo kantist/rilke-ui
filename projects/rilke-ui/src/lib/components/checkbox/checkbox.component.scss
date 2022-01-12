@@ -39,7 +39,7 @@
 			}
 		}
 		.ril-checkbox-label {
-			color: $main-800;
+			color: $main-contrast-800;
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 			&:empty {
@@ -49,13 +49,13 @@
 		&:hover {
 			.ril-checkbox-handle {
 				background: $main-700;
-				color: $main-contrast-800;
+				color: $main-contrast-700;
 				.check-detector {
 					transform: scale(0.8);
 				}
 			}
 			.ril-checkbox-label {
-				color: $main-800;
+				color: $main-contrast-700;
 			}
 		}
 	}
@@ -70,7 +70,7 @@
 				}
 			}
 			.ril-checkbox-label {
-				color: $main-800;
+				color: $main-contrast-800;
 			}
 		}
 	}

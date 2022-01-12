@@ -9,21 +9,19 @@ import {
 	ElementRef,
 	ChangeDetectorRef,
 	ViewChild,
-	HostBinding,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { KASelectToolbarService } from '@ui/services/select-toolbar/select-toolbar.service';
+// import { KASelectToolbarService } from '@ui/services/select-toolbar/select-toolbar.service';
 
-import { ISelectToolbarOptions } from '@ui/interfaces/selectToolbar';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+// import { ISelectToolbarOptions } from '@ui/interfaces/selectToolbar';
 
 @Component({
-	selector: 'ka-list',
+	selector: 'ril-list',
 	templateUrl: './list.component.html',
 	styleUrls: ['./list.component.scss'],
-	providers:  [ KASelectToolbarService ]
+	// providers: [KASelectToolbarService],
 })
-export class KAListComponent implements OnInit, OnChanges, AfterViewInit {
+export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	@ViewChild('refHeader') refHeader: ElementRef<any>;
 	@ViewChild('refItem') refItem: ElementRef<any>;
 
@@ -37,7 +35,7 @@ export class KAListComponent implements OnInit, OnChanges, AfterViewInit {
 	@Output() pageChange: EventEmitter<number>;
 
 	// Select toolbar
-	@Input() selectToolbarOptions: ISelectToolbarOptions;
+	// @Input() selectToolbarOptions: ISelectToolbarOptions;
 	@Output() checkedItems: EventEmitter<any[]>;
 	@Output() clearForm: EventEmitter<boolean>;
 	@Output() setAll: EventEmitter<boolean>;
@@ -57,7 +55,7 @@ export class KAListComponent implements OnInit, OnChanges, AfterViewInit {
 
 	constructor(
 		private el: ElementRef,
-		private selectToolbar: KASelectToolbarService,
+		// private selectToolbar: KASelectToolbarService,
 		private route: ActivatedRoute,
 		private cdr: ChangeDetectorRef
 	) {
@@ -87,31 +85,30 @@ export class KAListComponent implements OnInit, OnChanges, AfterViewInit {
 	ngOnInit() {
 		// Pagination
 		this.route.queryParams.subscribe((x) => {
-			this.selectToolbar.close();
+			// this.selectToolbar.close();
 			this.page = x.page || 1;
 		});
 		this.calcPagesCount(this.dataLength, this.itemsPerPage);
 
 		// Select toolbar close event
-		this.selectToolbar.toolbarClosed.subscribe((closed) => {
-			if (closed) {
-				this.checkedItems.emit([]);
-				this.clearForm.emit(true);
-				this.itemPool = [];
-			}
-		});
+		// this.selectToolbar.toolbarClosed.subscribe((closed) => {
+		// 	if (closed) {
+		// 		this.checkedItems.emit([]);
+		// 		this.clearForm.emit(true);
+		// 		this.itemPool = [];
+		// 	}
+		// });
 
 		// Select toolbar button events
-		this.selectToolbar.buttonClick.subscribe((name) => {
-			this.buttonEvents.emit(name);
-		});
+		// this.selectToolbar.buttonClick.subscribe((name) => {
+		// 	this.buttonEvents.emit(name);
+		// });
 	}
 
 	emitSetAll(val) {
 		this.setAll.emit(val);
 
-		if (!val)
-			this.setUncheckAll();
+		if (!val) this.setUncheckAll();
 	}
 
 	ngAfterViewInit() {
@@ -148,31 +145,30 @@ export class KAListComponent implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	/* SELECT TOOLBAR FUNCTIONS */
-	openSelectToolbar(
-		selected: any = null,
-		text_selected: any = null,
-		printButton: boolean = false,
-		copyButton: boolean = false,
-		deleteButton: boolean = false
-	) {
-		this.selectToolbar.open(this.selectToolbarOptions);
-	}
+	// openSelectToolbar(
+	// 	selected: any = null,
+	// 	text_selected: any = null,
+	// 	printButton: boolean = false,
+	// 	copyButton: boolean = false,
+	// 	deleteButton: boolean = false
+	// ) {
+	// 	this.selectToolbar.open(this.selectToolbarOptions);
+	// }
 
-	setSelectToolbar() {
-		this.selectedTotal = this.itemPool.length;
+	// setSelectToolbar() {
+	// 	this.selectedTotal = this.itemPool.length;
 
-		if (!this.selectToolbar.componentRef) {
-			this.selectToolbarOptions.selected = this.selectedTotal;
-			this.selectToolbar.open(this.selectToolbarOptions);
-		}
+	// 	if (!this.selectToolbar.componentRef) {
+	// 		this.selectToolbarOptions.selected = this.selectedTotal;
+	// 		this.selectToolbar.open(this.selectToolbarOptions);
+	// 	}
 
-		this.selectToolbar.setSelected(this.selectedTotal);
-	}
+	// 	this.selectToolbar.setSelected(this.selectedTotal);
+	// }
 
 	setSelectedItems(index: number, value: boolean) {
 		if (value == true) {
-			if (!this.itemPool.includes(index))
-				this.itemPool.push(index);
+			if (!this.itemPool.includes(index)) this.itemPool.push(index);
 		} else {
 			const selected_item_index: number = this.itemPool.indexOf(index);
 
@@ -183,14 +179,14 @@ export class KAListComponent implements OnInit, OnChanges, AfterViewInit {
 
 		this.checkedItems.emit(this.itemPool);
 
-		if (this.selectToolbarOptions) this.setSelectToolbar();
+		// if (this.selectToolbarOptions) this.setSelectToolbar();
 	}
 
 	setUncheckAll() {
 		this.itemPool = [];
 		this.checkedItems.emit(this.itemPool);
 
-		if (this.selectToolbarOptions) this.setSelectToolbar();
+		// if (this.selectToolbarOptions) this.setSelectToolbar();
 	}
 
 	public get skeletonRows() {
