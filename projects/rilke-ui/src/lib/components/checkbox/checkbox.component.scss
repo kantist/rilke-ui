@@ -18,12 +18,12 @@
 			cursor: inherit;
 			display: flex;
 			height: $base-size * 1.5;
+			width: $base-size * 1.5;
 			justify-content: center;
 			margin: 0;
 			position: relative;
 			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
-			width: $base-size * 1.5;
 
 			.checkbox-input {
 				width: 100%;
@@ -94,7 +94,7 @@
 			.ril-checkbox-wrap {
 				.ril-checkbox-handle {
 					.check-detector {
-						transform: scale(1);
+						transform: scale(0.8);
 					}
 				}
 			}

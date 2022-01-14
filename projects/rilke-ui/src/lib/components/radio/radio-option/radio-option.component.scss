@@ -1,18 +1,14 @@
 @import "../../../../scss/vars";
 
 :host {
-	color: #aaafb4;
-	cursor: pointer;
 	display: inline-flex;
 	line-height: 1;
-	margin: $m-sm;
 	transition: color 0.2s ease-in-out;
 
 	.ril-radio-wrap {
-		display: flex;
 		align-items: center;
 		cursor: pointer;
-		margin: 0;
+		display: flex;
 
 		.radio-input {
 			cursor: pointer;
@@ -22,20 +18,19 @@
 		.ril-radio-handle {
 			align-items: center;
 			background: $main-800;
-			border: 1px solid red;
+			//border: 1px solid red;
 			border-radius: 50%;
-			cursor: pointer;
+			cursor: inherit;
 			display: flex;
-			height: 1rem;
-			width: 1rem;
+			height: $base-size * 1.5;
+			width: $base-size * 1.5;
 			justify-content: center;
 			margin: 0;
-			padding: 3px;
 			position: relative;
 			transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 
 			.check-detector {
-				background: green;
+				background: $success-color;
 				border-radius: 50%;
 				display: block;
 				height: 100%;
@@ -47,6 +42,7 @@
 			}
 		}
 		.ril-radio-label {
+			color: $main-contrast-800;
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -57,60 +53,56 @@
 		&:hover {
 			.ril-radio-handle {
 				background: $main-700;
-				border-color: pink;
-
 				.check-detector {
-					background: blue;
-					transform: scale(1);
+					background: $main-contrast-700;
+
+					transform: scale(0.5);
 				}
+			}
+			.ril-radio-label {
+				color: $main-contrast-700;
 			}
 		}
 	}
 	&.checked {
 		.ril-radio-wrap {
 			.ril-radio-handle {
-				background: teal;
-				border-color: grey;
+				background: $main-800;
+				color: $success-color;
 
 				.check-detector {
-					background: yellow;
-					transform: scale(1);
+					transform: scale(0.5);
 				}
 			}
-			.w-radio-label {
-				color: purple;
+			.ril-radio-label {
+				color: $main-contrast-700;
 			}
 		}
 	}
-	// &.disabled {
-	// 	.ril-radio-wrap {
-	// 		.ril-radio-handle {
-	// 			background: map-get($_bg, disabled);
-	// 			border-color: map-get($_border, disabled);
+	&.disabled {
+		.ril-radio-wrap {
+			cursor: not-allowed;
 
-	// 			.check-detector {
-	// 				background: map-get($_color, disabled);
-	// 				transform: scale(0);
-	// 			}
-	// 		}
-	// 	}
-	// 	&.checked {
-	// 		.ril-radio-wrap {
-	// 			.ril-radio-handle {
-	// 				background: map-get($_bg, disabled);
-	// 				border-color: map-get($_border, disabled);
+			.ril-radio-handle {
+				background: $main-500;
+				color: $main-contrast-500;
 
-	// 				.check-detector {
-	// 					background: map-get($_color, disabled);
-	// 				}
-	// 			}
-	// 			.w-radio-label {
-	// 				color: map-get($_label-color, disabled);
-	// 			}
-	// 		}
-	// 	}
-	// }
-	// .ril-radio-horizontal > & {
-	// 	margin: 0 5px;
-	// }
+				.check-detector {
+					transform: scale(0);
+				}
+			}
+			.ril-radio-label {
+				color: $main-500;
+			}
+		}
+		&.checked {
+			.ril-radio-wrap {
+				.ril-radio-handle {
+					.check-detector {
+						transform: scale(0.5);
+					}
+				}
+			}
+		}
+	}
 }

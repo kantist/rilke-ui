@@ -8,7 +8,15 @@ $_module-rem: $base-size;
 	flex-direction: column;
 	margin: -$_module-rem / 2;
 
-	&.ka-radio-horizontal {
+	&.ril-radio-horizontal {
 		flex-direction: row;
+	}
+
+	::ng-deep ril-radio-option {
+		margin-bottom: 1rem;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }

@@ -10,12 +10,12 @@ import {
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
-	selector: 'ka-pagination',
+	selector: 'ril-pagination',
 	templateUrl: './pagination.component.html',
 	styleUrls: ['./pagination.component.scss'],
 })
-export class KAPaginationComponent implements OnInit, OnChanges {
-	@HostBinding('class.ka-pagination') true;
+export class PaginationComponent implements OnInit, OnChanges {
+	@HostBinding('class.ril-pagination') true: boolean = true;
 
 	@Input() pageRouter: boolean;
 	@Input() pagesNumber: number;

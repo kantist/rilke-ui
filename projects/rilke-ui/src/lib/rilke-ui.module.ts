@@ -81,6 +81,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu/item/item.component';
 import { MenuItemsComponent } from './components/menu/items/items.component';
 
+import { PaginationComponent } from './components/pagination/pagination.component';
+
 import { ProgressSpinnerComponent } from './components/progress-spinner/progress-spinner.component';
 import { RadioComponent } from './components/radio/radio.component';
 import { RadioOptionComponent } from './components/radio/radio-option/radio-option.component';
@@ -179,6 +181,7 @@ const materialModules = [
 		MenuItemComponent,
 		MenuItemsComponent,
 
+		PaginationComponent,
 		ProgressSpinnerComponent,
 		RadioComponent,
 		RadioOptionComponent,
@@ -245,6 +248,7 @@ const materialModules = [
 		MenuItemComponent,
 		MenuItemsComponent,
 
+		PaginationComponent,
 		ProgressSpinnerComponent,
 		RadioComponent,
 		RadioOptionComponent,

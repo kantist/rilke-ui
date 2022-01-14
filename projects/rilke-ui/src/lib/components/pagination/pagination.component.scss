@@ -1,66 +1,59 @@
-@import "~src/assets/sass/variables";
+@import "../../../scss/vars";
 
 :host {
-	list-style-type: none;
-	display: flex;
-	justify-content: center;
-	margin: 1rem 0;
-	padding: 0;
+	.wrapper {
+		list-style-type: none;
+		display: flex;
+		justify-content: center;
+		margin: 1rem 0;
+		padding: 0;
 
-	.page-item {
-		margin: 0;
-		.page-link {
-			background: main-palette(400);
-			border-color: main-palette(400);
-			border-left: 1px solid #353535;
-			color: #fff;
-			padding: 0.8rem 1.6rem;
-			// 		font-size: 1rem;
-			// 		font-weight: 700;
-			cursor: pointer;
-			// 		display: block;
-			// 		text-align: center;
-			// 		text-decoration: none;
-			// 		display: flex;
-			// 		align-content: center;
-			// 		align-items: center;
-			// 		justify-content: center;
-			// 		width: 2.5rem;
-			// 		height: 2.5rem;
-			&:hover {
-				background: main-palette(500);
-				border-color: main-palette(500);
+		.page-item {
+			margin: 0;
+			.page-link {
+				background: $main-700;
+				border-color: $main-700;
+				border-left: 1px solid #353535;
+				color: #fff;
+				padding: 0.8rem 1.6rem;
+
+				cursor: pointer;
+
+				&:hover {
+					background: main-palette(500);
+					border-color: main-palette(500);
+					color: #fff;
+				}
+			}
+
+			&:first-child {
+				.page-link {
+					border-color: transparent;
+					border-top-left-radius: 0.8rem;
+					border-bottom-left-radius: 0.8rem;
+				}
+			}
+			&:last-child {
+				.page-link {
+					border-top-right-radius: 0.8rem;
+					border-bottom-right-radius: 0.8rem;
+				}
+			}
+		}
+		.page-item.active {
+			.page-link {
+				background: $main-500;
+				border-color: transparent;
 				color: #fff;
 			}
 		}
-
-		&:first-child {
+		.page-item.disabled {
 			.page-link {
-				border-color: transparent;
-				border-top-left-radius: 0.8rem;
-				border-bottom-left-radius: 0.8rem;
+				// 		background: rgba(212, 211, 211, 0.6);
+				// 		border-color: rgba(212, 211, 211, 0.6);
+				color: #939393;
+				// 		pointer-events: none;
 			}
-		}
-		&:last-child {
-			.page-link {
-				border-top-right-radius: 0.8rem;
-				border-bottom-right-radius: 0.8rem;
-			}
-		}
-	}
-	.page-item.active {
-		.page-link {
-			background: main-palette(500);
-			border-color: transparent;
-			color: #fff;
-		}
-	}
-	.page-item.disabled {
-		.page-link {
-			// 		background: rgba(212, 211, 211, 0.6);
-			// 		border-color: rgba(212, 211, 211, 0.6);
-			color: #939393;
-			// 		pointer-events: none;
 		}
 	}
 }

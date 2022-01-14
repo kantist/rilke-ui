@@ -42,6 +42,7 @@ export * from './lib/components/menu/menu.component';
 export * from './lib/components/menu/item/item.component';
 export * from './lib/components/menu/items/items.component';
 
+export * from './lib/components/pagination/pagination.component';
 export * from './lib/components/progress-spinner/progress-spinner.component';
 export * from './lib/components/radio/radio.component';
 export * from './lib/components/radio/radio-option/radio-option.component';
