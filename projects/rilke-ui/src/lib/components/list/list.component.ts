@@ -9,6 +9,7 @@ import {
 	ElementRef,
 	ChangeDetectorRef,
 	ViewChild,
+	HostBinding,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 // import { KASelectToolbarService } from '@ui/services/select-toolbar/select-toolbar.service';
@@ -33,6 +34,8 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	@Input() dataLength: number;
 	@Input() itemsPerPage: number;
 	@Output() pageChange: EventEmitter<number>;
+
+	@HostBinding('class.loaded') @Input() loaded: boolean;
 
 	// Select toolbar
 	// @Input() selectToolbarOptions: ISelectToolbarOptions;
@@ -122,7 +125,7 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	}
 
 	closeOpenedList() {
-		const lists = this.el.nativeElement.querySelectorAll('ka-list-item');
+		const lists = this.el.nativeElement.querySelectorAll('ril-list-item');
 
 		lists.forEach((element) => {
 			element.classList.remove('opened');

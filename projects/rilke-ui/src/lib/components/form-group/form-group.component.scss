@@ -15,7 +15,7 @@
 				-webkit-transition: all 0.2s;
 				transition: all 0.2s;
 				top: -0.5em;
-				margin-left: 1rem;
+				margin-left: $base-size * 1.5;
 				color: $main-500;
 				z-index: 3;
 				line-height: 1;
@@ -27,7 +27,7 @@
 					content: " ";
 					display: block;
 					position: absolute;
-					background: red;
+					background: $main-700;
 					height: 1px;
 					top: 50%;
 					left: -0.3em;
@@ -35,15 +35,19 @@
 					z-index: -1;
 				}
 			}
+		}
 
-			ril-input:not(.input-focus):not(.has-value) + ril-form-label,
-			ril-select:not(.has-value) + ril-form-label {
-				font-size: 0.8rem !important;
-				opacity: 0.5;
-				top: calc(50% - 0.4rem) !important;
+		&:not(.has-value):not(.input-focus) {
+			::ng-deep {
+				ril-form-label {
+					font-size: 0.8rem !important;
+					opacity: 0.5;
+					top: calc(50% - 0.4rem) !important;
+					margin-left: $base-size * 1;
 
-				&::before {
-					background: transparent;
+					&::before {
+						background: transparent;
+					}
 				}
 			}
 		}

@@ -19,6 +19,7 @@
 			box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		width: 100%;
 		padding: $p-sm;
+		min-width: 10rem;
 
 		::ng-deep {
 			.mat-select-value {
@@ -38,7 +39,7 @@
 
 	:host-context(ril-form-group.float) {
 		.select-box {
-			border-color: blue;
+			//border-color: blue;
 		}
 	}
 

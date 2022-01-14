@@ -62,9 +62,10 @@ export class SelectComponent
 	@ViewChild('matSelect') matSelect;
 
 	@HostBinding('class.has-value') @Input('value') innerValue: any;
-	@HostBinding('class.input-nostyle') @Input() noStyle: boolean;
 
-	onChange = (value: string | string[]) => {};
+	onChange = (value: string | string[]) => {
+		this.selectionChange.emit(value);
+	};
 	onTouched = () => {};
 
 	@HostListener('click', ['$event'])
@@ -84,7 +85,6 @@ export class SelectComponent
 		this.id = '';
 		this.multiple = false;
 		this.panelClass = '';
-		this.placeholder = 'Seç';
 		this.required = false;
 		this.search = false;
 		this.searchValue = '';

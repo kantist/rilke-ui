@@ -5,9 +5,8 @@
 	flex-flow: row nowrap;
 	align-items: center;
 	align-content: center;
-	flex-direction: column !important;
-	//border-radius: .3rem;
-	//margin-bottom: .5rem;
+	width: 100%;
+
 	max-height: 5rem;
 	::ng-deep {
 		.list-row {
@@ -18,22 +17,27 @@
 			justify-content: center;
 			width: 100%;
 			min-height: 5rem;
+			color: $main-contrast-700;
+
+			.columns {
+				padding: $p-md;
+			}
+
 			ka-avatar {
 				margin-right: 0.5rem;
 			}
 			&:hover {
 				div {
-					color: blue;
-					font-weight: 600;
+					color: $main-contrast-500;
 				}
 			}
 		}
 	}
 	&:nth-child(odd) {
-		background: green;
+		background: $main-700;
 	}
 	&:nth-child(even) {
-		background: pink;
+		background: $main-800;
 	}
 	&:first-child {
 		border-top-left-radius: 0.8rem;

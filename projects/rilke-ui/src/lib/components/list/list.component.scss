@@ -16,7 +16,7 @@
 		display: inherit;
 	}
 
-	:host-context(.main-content.loaded) {
+	&.loaded {
 		.content {
 			opacity: 1;
 			display: flex;
