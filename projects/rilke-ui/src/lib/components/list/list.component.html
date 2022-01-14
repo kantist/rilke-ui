@@ -1,4 +1,6 @@
 <div class="content">
+	<ng-content select="header"></ng-content>
+
 	<div #refHeader>
 		<ng-content select="ril-list-header"></ng-content>
 	</div>
@@ -7,7 +9,7 @@
 	</div>
 </div>
 
-<h1>test</h1>
+<ng-content></ng-content>
 
 <!-- <div class="skeleton header" *ngIf="listHeader" ka-skeleton>
 	<div *ngIf="checkbox" class="list-check">

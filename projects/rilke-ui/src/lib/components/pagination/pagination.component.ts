@@ -21,6 +21,9 @@ export class PaginationComponent implements OnInit, OnChanges {
 	@Input() pagesNumber: number;
 	@Input() pageNum: number;
 
+	@Input() firstText: string;
+	@Input() lastText: string;
+
 	@Output() pageChange: EventEmitter<number>;
 
 	pages: Array<number>;
@@ -33,6 +36,9 @@ export class PaginationComponent implements OnInit, OnChanges {
 		this.pageRouter = true;
 
 		this.pageChange = new EventEmitter<number>();
+
+		this.firstText = 'İlk Sayfa';
+		this.lastText = 'Son Sayfa';
 	}
 
 	public changePage(page: number) {
