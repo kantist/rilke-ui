@@ -1,6 +1,7 @@
 {
-	"name": "rilke-ui",
+	"name": "@kantist/rilke-ui",
 	"version": "0.0.1",
+	"description": "A UI library for Rilke Architecture",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
 		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/rilke-ui/"
