@@ -3,17 +3,14 @@ import {
 	HostBinding,
 	OnInit,
 	Input,
-	ViewChildren,
-	AfterViewInit,
 	ContentChildren,
 	QueryList,
-	ViewContainerRef,
-	ContentChild,
-	ComponentRef,
 	AfterContentInit,
 } from '@angular/core';
+import { DatePickerComponent } from '../datepicker/datepicker.component';
 import { InputComponent } from '../input/input.component';
 import { SelectComponent } from '../select/select.component';
+import { TextAreaComponent } from '../text-area/text-area.component';
 
 @Component({
 	selector: 'ril-form-group',
@@ -31,6 +28,12 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 
 	@ContentChildren(SelectComponent)
 	selectRef: QueryList<SelectComponent>;
+
+	@ContentChildren(TextAreaComponent)
+	textareaRef: QueryList<TextAreaComponent>;
+
+	@ContentChildren(DatePickerComponent)
+	datepickerRef: QueryList<DatePickerComponent>;
 
 	constructor() {}
 
@@ -50,6 +53,20 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 
 		this.selectRef.toArray().forEach((input, index) => {
 			input.selectionChange.subscribe((i) => {
+				this.hasValue = input.innerValue ? true : false;
+			});
+		});
+
+		this.textareaRef.toArray().forEach((input, index) => {
+			input.focus.subscribe((i) => {
+				console.log('change detected', i);
+				this.inputFocus = input.textareaFocus;
+				this.hasValue = input.innerValue ? true : false;
+			});
+		});
+
+		this.datepickerRef.toArray().forEach((input, index) => {
+			input.focus.subscribe((i) => {
 				console.log('change detected', i);
 				this.hasValue = input.innerValue ? true : false;
 			});

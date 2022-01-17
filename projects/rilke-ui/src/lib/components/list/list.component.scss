@@ -44,10 +44,11 @@
 	}
 
 	::ng-deep {
-		ka-list-header .columns,
+		ril-list-header .columns,
 		.list-row .columns {
 			display: flex;
 			width: 100%;
+			padding: 1rem;
 			div {
 				align-items: center;
 				display: flex;

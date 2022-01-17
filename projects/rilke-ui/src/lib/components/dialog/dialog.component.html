@@ -6,7 +6,8 @@
 	<form class="pt-5" [formGroup]="data.form">
 		<ng-container *ngFor="let control of formArray; let i = index">
 			<ril-form-group [float]="true">
-				<ril-input [formControlName]="control"></ril-input>
+				<ril-form-label>{{ control }}</ril-form-label>
+				<ril-input></ril-input>
 			</ril-form-group>
 		</ng-container>
 	</form>

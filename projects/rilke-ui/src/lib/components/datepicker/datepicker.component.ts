@@ -92,7 +92,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 		public element: ElementRef,
 		private breakpointObserver: BreakpointObserver
 	) {
-		this.placeholder = 'gün/ay/yıl';
+		this.placeholder = '';
 		this.type = 'text';
 		this.name = '';
 		this.size = 'md';
@@ -188,7 +188,7 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 	}
 
 	onBlur(disabled: boolean) {
-		console.log("worked")
+		console.log('worked');
 		this.inputFocus = false;
 		if (!disabled) {
 			this.blur.emit();
