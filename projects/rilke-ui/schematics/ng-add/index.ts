@@ -104,7 +104,7 @@ function addToNgModule(sourceDir: string): Rule {
 export default function (): Rule {
 	return async (host: Tree, context: SchematicContext) => {
 		const workspace = await getWorkspace(host);
-		const project = workspace.projects.get(null as string);
+		const project = workspace.projects.get('');
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
