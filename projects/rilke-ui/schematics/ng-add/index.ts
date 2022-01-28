@@ -26,8 +26,7 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 			throw new SchematicsException(`Project does not exist.`);
 		}
 
-		const sourceDir = buildDefaultPath(project); // src/app/
-		let configPath = sourceDir + 'angular.json';
+		let configPath = './angular.json';
 
 		if (host.exists(configPath)) {
 			let currentAngularJson = host.read(configPath)!.toString('utf-8');
@@ -119,7 +118,7 @@ export default function (): Rule {
 			applyTemplates({
 				...strings
 			}),
-			move(sourceDir + 'assets/rilke-ui/'),
+			move(sourceDir + '/assets/rilke-ui/'),
 		]);
 
 		return chain([
