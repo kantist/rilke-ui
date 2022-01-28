@@ -1,4 +1,8 @@
-@import "./vars.scss";
+@use "sass:math";
+
+@import "./colors";
+@import "./structure";
+@import "./typography";
 
 body {
 	mat-bottom-sheet-container {
