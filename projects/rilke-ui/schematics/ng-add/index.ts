@@ -1,6 +1,5 @@
-import { JsonObject, join, normalize, strings, workspaces } from '@angular-devkit/core';
+import { normalize, strings, workspaces } from '@angular-devkit/core';
 import {
-	MergeStrategy,
 	Rule,
 	SchematicContext,
 	SchematicsException,
@@ -10,7 +9,6 @@ import {
 	chain,
 	mergeWith,
 	move,
-	noop,
 	url,
 } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
@@ -18,11 +16,11 @@ import { addExportToModule, addImportToModule } from '../utility/ast-utils';
 import * as ts from '../third_party/github.com/Microsoft/TypeScript/lib/typescript';
 import { InsertChange } from '../utility/change';
 import { findModule, LAYER_EXT } from '../utility/find-module';
-import { buildDefaultPath, getWorkspace, updateWorkspace } from '../utility/workspace';
+import { buildDefaultPath, getWorkspace } from '../utility/workspace';
 
 function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rule {
-	return (host: Tree, context: SchematicContext) => {
-		const project = workspace.projects.get(null as string);
+	return (host: Tree) => {
+		const project = workspace.projects.get('');
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
@@ -106,7 +104,7 @@ function addToNgModule(sourceDir: string): Rule {
 export default function (): Rule {
 	return async (host: Tree, context: SchematicContext) => {
 		const workspace = await getWorkspace(host);
-		const project = workspace.projects.get(null as string);
+		const project = workspace.projects.get('');
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
