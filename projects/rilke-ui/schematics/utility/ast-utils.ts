@@ -7,7 +7,7 @@
  */
 
 import { tags } from '@angular-devkit/core';
-import * as ts from './typescript';
+import * as ts from '../third_party/files/typescript';
 import { Change, InsertChange, NoopChange } from './change';
 import { indentBy } from './helper';
 

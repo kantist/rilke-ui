@@ -13,7 +13,7 @@ import {
 } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 import { addExportToModule, addImportToModule } from '../utility/ast-utils';
-import * as ts from '../utility/typescript';
+import * as ts from '../third_party/files/typescript';
 import { InsertChange } from '../utility/change';
 import { findModule, LAYER_EXT } from '../utility/find-module';
 import { buildDefaultPath, getWorkspace } from '../utility/workspace';
