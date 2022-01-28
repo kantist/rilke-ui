@@ -22,6 +22,8 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 	return (host: Tree) => {
 		const project = workspace.projects.get(workspace.extensions.defaultProject as string);
 
+		const projectName = workspace.extensions.defaultProject as string;
+
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
 		}
@@ -31,13 +33,13 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 		if (host.exists(configPath)) {
 			let currentAngularJson = host.read(configPath)!.toString('utf-8');
 			let json = JSON.parse(currentAngularJson);
-			let optionsJson = json['projects'][project.root]['architect']['build']['options'];
+			let optionsJson = json['projects'][projectName]['architect']['build']['options'];
 			optionsJson['styles'].push("src/assets/rilke-ui/_colors.scss");
 			optionsJson['styles'].push("src/assets/rilke-ui/_structure.scss");
 			optionsJson['styles'].push("src/assets/rilke-ui/_typography.scss");
 			optionsJson['styles'].push("src/assets/rilke-ui/components.scss");
 			optionsJson['styles'].push("src/assets/rilke-ui/styles.scss");
-			json['projects'][project.root]['architect']['build']['options'] = optionsJson;
+			json['projects'][projectName]['architect']['build']['options'] = optionsJson;
 			host.overwrite(configPath, JSON.stringify(json, null, 2));
 		} else {
 			throw new SchematicsException('angular.json not found at ' + configPath);
