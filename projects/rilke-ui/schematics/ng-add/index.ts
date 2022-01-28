@@ -20,7 +20,7 @@ import { buildDefaultPath, getWorkspace } from '../utility/workspace';
 
 function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rule {
 	return (host: Tree) => {
-		const project = workspace.projects.get('');
+		const project = workspace.projects.get(workspace.extensions.defaultProject as string);
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
@@ -104,7 +104,8 @@ function addToNgModule(sourceDir: string): Rule {
 export default function (): Rule {
 	return async (host: Tree, context: SchematicContext) => {
 		const workspace = await getWorkspace(host);
-		const project = workspace.projects.get('');
+
+		const project = workspace.projects.get(workspace.extensions.defaultProject as string);
 
 		if (!project) {
 			throw new SchematicsException(`Project does not exist.`);
