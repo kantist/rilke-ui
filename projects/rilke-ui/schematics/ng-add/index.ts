@@ -1,10 +1,132 @@
-import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
+import { JsonObject, join, normalize, strings, workspaces } from '@angular-devkit/core';
+import {
+	MergeStrategy,
+	Rule,
+	SchematicContext,
+	SchematicsException,
+	Tree,
+	apply,
+	applyTemplates,
+	chain,
+	mergeWith,
+	move,
+	noop,
+	url,
+} from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
+import { addExportToModule, addImportToModule } from '../utility/ast-utils';
+import * as ts from '../third_party/github.com/Microsoft/TypeScript/lib/typescript';
+import { InsertChange } from '../utility/change';
+import { findModule, LAYER_EXT } from '../utility/find-module';
+import { buildDefaultPath, getWorkspace, updateWorkspace } from '../utility/workspace';
 
-// Just return the tree
-export function ngAdd(): Rule {
-	return (tree: Tree, context: SchematicContext) => {
+function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rule {
+	return (host: Tree, context: SchematicContext) => {
+		const project = workspace.projects.get(null as string);
+
+		if (!project) {
+			throw new SchematicsException(`Project does not exist.`);
+		}
+
+		const sourceDir = buildDefaultPath(project); // src/app/
+		var configPath = sourceDir + 'angular.json';
+
+		if (host.exists(configPath)) {
+			var currentAngularJson = host.read(configPath)!.toString('utf-8');
+			var json = JSON.parse(currentAngularJson);
+			var optionsJson = json['projects'][project.root]['architect']['build']['options'];
+			optionsJson['styles'].push("src/assets/rilke-ui/_colors.scss");
+			optionsJson['styles'].push("src/assets/rilke-ui/_structure.scss");
+			optionsJson['styles'].push("src/assets/rilke-ui/_typography.scss");
+			optionsJson['styles'].push("src/assets/rilke-ui/components.scss");
+			optionsJson['styles'].push("src/assets/rilke-ui/styles.scss");
+			json['projects'][project.root]['architect']['build']['options'] = optionsJson;
+			host.overwrite(configPath, JSON.stringify(json, null, 2));
+		} else {
+			throw new SchematicsException('angular.json not found at ' + configPath);
+		}
+		return host;
+	}
+}
+
+function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
+	const text = host.read(modulePath);
+	if (text === null) {
+		throw new SchematicsException(`File ${modulePath} does not exist.`);
+	}
+	const sourceText = text.toString('utf-8');
+
+	return ts.createSourceFile(modulePath, sourceText, ts.ScriptTarget.Latest, true);
+}
+
+function addToNgModule(sourceDir: string): Rule {
+	return (host: Tree) => {
+		const modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT));
+		const source = readIntoSourceFile(host, modulePath);
+
+		const relativePath = '@kantist/rilke-ui';
+		const classifiedName = 'RilkeUiModule';
+		const importChanges = addImportToModule(
+			source,
+			modulePath,
+			classifiedName,
+			relativePath,
+		);
+
+		const importRecorder = host.beginUpdate(modulePath);
+		for (const change of importChanges) {
+			if (change instanceof InsertChange) {
+				importRecorder.insertLeft(change.pos, change.toAdd);
+			}
+		}
+		host.commitUpdate(importRecorder);
+
+		// Need to refresh the AST because we overwrote the file in the host.
+		const exportSource = readIntoSourceFile(host, modulePath);
+
+		const exportRecorder = host.beginUpdate(modulePath);
+		const exportChanges = addExportToModule(
+			exportSource,
+			modulePath,
+			classifiedName,
+			relativePath,
+		);
+
+		for (const change of exportChanges) {
+			if (change instanceof InsertChange) {
+				exportRecorder.insertLeft(change.pos, change.toAdd);
+			}
+		}
+		host.commitUpdate(exportRecorder);
+
+		return host;
+	};
+}
+
+export default function (): Rule {
+	return async (host: Tree, context: SchematicContext) => {
+		const workspace = await getWorkspace(host);
+		const project = workspace.projects.get(null as string);
+
+		if (!project) {
+			throw new SchematicsException(`Project does not exist.`);
+		}
+
+		const sourceDir = buildDefaultPath(project); // src/app/
+
 		context.addTask(new NodePackageInstallTask());
-		return tree;
+
+		const templateSource = apply(url('../../src/scss'), [
+			applyTemplates({
+				...strings
+			}),
+			move(sourceDir + 'assets/rilke-ui/'),
+		]);
+
+		return chain([
+			addStyleToWorkspaceFile(workspace),
+			addToNgModule(sourceDir),
+			mergeWith(templateSource)
+		]);
 	};
 }
