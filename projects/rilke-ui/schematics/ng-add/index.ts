@@ -13,7 +13,7 @@ import {
 } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 import { addExportToModule, addImportToModule } from '../utility/ast-utils';
-import * as ts from '../third_party/typescript';
+import * as ts from '../utility/typescript';
 import { InsertChange } from '../utility/change';
 import { findModule, LAYER_EXT } from '../utility/find-module';
 import { buildDefaultPath, getWorkspace } from '../utility/workspace';
@@ -27,12 +27,12 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 		}
 
 		const sourceDir = buildDefaultPath(project); // src/app/
-		var configPath = sourceDir + 'angular.json';
+		let configPath = sourceDir + 'angular.json';
 
 		if (host.exists(configPath)) {
-			var currentAngularJson = host.read(configPath)!.toString('utf-8');
-			var json = JSON.parse(currentAngularJson);
-			var optionsJson = json['projects'][project.root]['architect']['build']['options'];
+			let currentAngularJson = host.read(configPath)!.toString('utf-8');
+			let json = JSON.parse(currentAngularJson);
+			let optionsJson = json['projects'][project.root]['architect']['build']['options'];
 			optionsJson['styles'].push("src/assets/rilke-ui/_colors.scss");
 			optionsJson['styles'].push("src/assets/rilke-ui/_structure.scss");
 			optionsJson['styles'].push("src/assets/rilke-ui/_typography.scss");

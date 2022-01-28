@@ -8,7 +8,7 @@
 
 import { tags } from '@angular-devkit/core';
 import { HostTree } from '@angular-devkit/schematics';
-import * as ts from '../utility/typescript';
+import * as ts from './typescript';
 import { Change, InsertChange } from '../utility/change';
 import { getFileContent } from '../utility/test';
 import {
