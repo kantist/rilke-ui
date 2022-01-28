@@ -101,7 +101,7 @@ function addToNgModule(sourceDir: string): Rule {
 	};
 }
 
-export default function (): Rule {
+export function ngAdd(): Rule {
 	return async (host: Tree, context: SchematicContext) => {
 		const workspace = await getWorkspace(host);
 		const project = workspace.projects.get('');
