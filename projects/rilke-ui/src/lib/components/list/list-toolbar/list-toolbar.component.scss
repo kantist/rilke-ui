@@ -1,0 +1,55 @@
+@import "../../../../scss/vars";
+
+:host {
+	min-width: 20rem;
+	z-index: 10;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #fff;
+
+	.left {
+		display: flex;
+		align-content: center;
+		align-items: center;
+		font-weight: bold;
+
+		.icon {
+			cursor: pointer;
+		}
+		.quantity {
+			margin-left: 1rem;
+			color: $success-color;
+		}
+		.text {
+			margin-left: 0.5rem;
+		}
+	}
+	.right {
+		::ng-deep {
+			.btn-default,
+			btn-dark {
+				background: $main-800;
+			}
+
+			.badge {
+				font-size: 1.1rem;
+				~ {
+					.badge {
+						margin-left: 1rem;
+					}
+				}
+				.danger {
+					color: #fff;
+					background-color: #d24d62;
+					border-color: #d24d62;
+				}
+			}
+		}
+	}
+	.badge.white {
+		color: #000;
+		background-color: #fff;
+		border-color: #fff;
+	}
+}

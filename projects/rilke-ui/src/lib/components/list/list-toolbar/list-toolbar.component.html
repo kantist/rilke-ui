@@ -1,0 +1,16 @@
+<div class="left">
+	<span class="icon material-icons" (click)="closeWindow(true)">close</span>
+	<span class="quantity">{{ toolbarService.selectedListQuantity }}</span>
+	<span class="text">seçildi</span>
+</div>
+<div class="right">
+	<button
+		(click)="clickButton(true)"
+		[view]="'success'"
+		[size]="'md'"
+		ril-button
+	>
+		<span class="btn-icon"></span>
+		test
+	</button>
+</div>

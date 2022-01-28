@@ -25,4 +25,23 @@ body {
 			border-radius: $r-md;
 		}
 	}
+
+	.list-toolbar-overlay-wrapper {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		position: absolute;
+		z-index: 1000;
+
+		.list-toolbar-panel {
+			max-width: 100%;
+			position: static;
+			padding: 1rem !important;
+			background: $main-800 !important;
+			border-radius: $r-md;
+			margin-bottom: 2rem;
+		}
+	}
 }

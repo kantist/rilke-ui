@@ -45,11 +45,12 @@
 		</div>
 	</div>
 </div>
+-->
 
-<ka-pagination
+<ril-pagination
 	*ngIf="pagesCount > 1"
 	[pageRouter]="pageRouter"
 	[pagesNumber]="pagesCount"
 	[pageNum]="page"
 	(pageChange)="pageListener($event)"
-></ka-pagination> -->
+></ril-pagination>

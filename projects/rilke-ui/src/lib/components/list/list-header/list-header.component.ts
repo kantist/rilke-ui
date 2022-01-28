@@ -1,7 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
-import { ListComponent } from './../list.component';
+import { ListToolbarService } from '../../../services/list-toolbar.service';
 
 @Component({
 	selector: 'ril-list-header',
@@ -9,32 +8,28 @@ import { ListComponent } from './../list.component';
 	styleUrls: ['./list-header.component.scss'],
 })
 export class ListHeaderComponent implements OnInit {
+	@Input() checkbox: boolean;
+	@Input() list: any;
+
 	listCheck = new FormControl(false);
 
-	constructor(@Inject(ListComponent) public list: ListComponent) {}
+	constructor(private listToolbar: ListToolbarService) {
+		this.listToolbar.allSelected.subscribe((res) => {
+			if (!res) {
+				this.listCheck.setValue(false);
+			}
+		});
+	}
 
-	unchecking: boolean;
-
-	checkbox: boolean;
 	itemOption: boolean;
 
 	ngOnInit() {
-		this.checkbox = this.list.checkbox;
-		this.itemOption = this.list.itemOption;
-
-		this.list.clearForm.subscribe((val) => {
-			if (val) {
-				this.onClear();
+		this.listCheck.valueChanges.subscribe((res) => {
+			if (res == true) {
+				this.listToolbar.selectAll(this.list);
+			} else {
+				this.listToolbar.removeAll();
 			}
-		});
-
-		this.onChanges();
-	}
-
-	// Get checkbox changed
-	onChanges(): void {
-		this.listCheck.valueChanges.subscribe((val) => {
-			this.list.emitSetAll(val);
 		});
 	}
 

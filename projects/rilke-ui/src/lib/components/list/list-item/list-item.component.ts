@@ -1,14 +1,6 @@
-import {
-	Component,
-	OnInit,
-	OnDestroy,
-	Inject,
-	Input,
-	HostBinding,
-} from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-
-import { ListComponent } from './../list.component';
+import { ListToolbarService } from '../../../services/list-toolbar.service';
 
 @Component({
 	selector: 'ril-list-item',
@@ -16,68 +8,32 @@ import { ListComponent } from './../list.component';
 	styleUrls: ['./list-item.component.scss'],
 })
 export class ListItemComponent implements OnInit, OnDestroy {
-	@HostBinding('class.opened') opened: boolean = false;
-
+	@Input() checkbox: boolean;
 	@Input() itemIndex: number;
 
 	listCheck = new FormControl(false);
-	checkbox: boolean;
-	itemOption: boolean;
-	unchecking: boolean;
-	checkStatus: boolean;
 
-	constructor(@Inject(ListComponent) public list: ListComponent) {
-		this.unchecking = false;
+	constructor(private listToolbar: ListToolbarService) {
+		this.listToolbar.allSelected.subscribe((res) => {
+			if (res) {
+				this.listCheck.setValue(true);
+			} else {
+				this.listCheck.setValue(false);
+			}
+		});
 	}
 
 	ngOnInit() {
-		this.checkbox = this.list.checkbox;
-		this.itemOption = this.list.itemOption;
-
-		this.list.clearForm.subscribe((val) => {
-			if (val) {
-				this.onClear();
-			}
-		});
-
-		this.list.setAll.subscribe((val) => {
-			if (!val) {
-				this.onClear();
+		this.listCheck.valueChanges.subscribe((res) => {
+			if (res == true) {
+				this.listToolbar.addToSelectedList(this.itemIndex, res);
 			} else {
-				this.onSelect();
-			}
-		});
-
-		this.onChanges();
-	}
-
-	toggleDetails() {
-		// TODO: kararsız çalışıyor
-		if (this.list.closeOpenedList() && this.list.expandedList) {
-			this.opened = !this.opened;
-		}
-	}
-
-	// Get checkbox changed
-	onChanges(): void {
-		this.listCheck.valueChanges.subscribe((val) => {
-			if (!this.unchecking) {
-				this.list.setSelectedItems(this.itemIndex, val);
+				this.listToolbar.removeFromSelectedlist(this.itemIndex);
 			}
 		});
 	}
 
-	onClear(): void {
-		this.unchecking = true;
-		this.listCheck.setValue(false);
-		this.unchecking = false;
-	}
+	onClear(): void {}
 
-	onSelect(): void {
-		this.listCheck.setValue(true);
-	}
-
-	ngOnDestroy() {
-		this.list.setSelectedItems(this.itemIndex, false);
-	}
+	ngOnDestroy() {}
 }

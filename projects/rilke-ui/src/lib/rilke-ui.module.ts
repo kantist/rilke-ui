@@ -75,7 +75,7 @@ import { InputComponent } from './components/input/input.component';
 import { ListComponent } from './components/list/list.component';
 import { ListHeaderComponent } from './components/list/list-header/list-header.component';
 import { ListItemComponent } from './components/list/list-item/list-item.component';
-import { ListItemDetailComponent } from './components/list/list-item-detail/list-item-detail.component';
+import { ListToolbarComponent } from './components/list/list-toolbar/list-toolbar.component';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { MenuItemComponent } from './components/menu/item/item.component';
@@ -175,7 +175,7 @@ const materialModules = [
 		ListComponent,
 		ListHeaderComponent,
 		ListItemComponent,
-		ListItemDetailComponent,
+		ListToolbarComponent,
 
 		MenuComponent,
 		MenuItemComponent,
@@ -242,7 +242,6 @@ const materialModules = [
 		ListComponent,
 		ListHeaderComponent,
 		ListItemComponent,
-		ListItemDetailComponent,
 
 		MenuComponent,
 		MenuItemComponent,

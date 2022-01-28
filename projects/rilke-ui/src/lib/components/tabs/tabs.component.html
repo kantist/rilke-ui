@@ -1,4 +1,4 @@
-<div class="tabs-ul nav nav-pills">
+<ul class="tabs-ul nav nav-pills">
 	<div class="button-group" (click)="$event.stopPropagation()">
 		<div
 			class="plate"
@@ -17,7 +17,7 @@
 			<span>{{ tab.title }}</span>
 		</div>
 	</div>
-</div>
+</ul>
 <div class="tab-content h-100" [class]="scrollable ? 'scrollable' : ''">
 	<ng-content></ng-content>
 </div>

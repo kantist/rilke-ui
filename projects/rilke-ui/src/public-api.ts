@@ -36,7 +36,6 @@ export * from './lib/components/input/input.component';
 export * from './lib/components/list/list.component';
 export * from './lib/components/list/list-header/list-header.component';
 export * from './lib/components/list/list-item/list-item.component';
-export * from './lib/components/list/list-item-detail/list-item-detail.component';
 
 export * from './lib/components/menu/menu.component';
 export * from './lib/components/menu/item/item.component';
@@ -65,6 +64,7 @@ export * from './lib/services/alert.service';
 export * from './lib/services/dialog.service';
 export * from './lib/services/bottom-sheet.service';
 export * from './lib/services/modal.service';
+export * from './lib/services/list-toolbar.service';
 
 // Interfaces ***
 export * from './lib/interfaces/alert';
