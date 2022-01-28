@@ -25,7 +25,6 @@ const PROPERTIES_NAMES: string[] = [
 @Component({
 	selector: 'ril-input',
 	templateUrl: './input.component.html',
-	styleUrls: ['./input.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

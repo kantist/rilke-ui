@@ -28,7 +28,6 @@ const PROPERTIES_NAMES: string[] = [
 @Component({
 	selector: 'ril-date-picker',
 	templateUrl: './datepicker.component.html',
-	styleUrls: ['./datepicker.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

@@ -12,7 +12,6 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
 	selector: 'ril-pagination',
 	templateUrl: './pagination.component.html',
-	styleUrls: ['./pagination.component.scss'],
 })
 export class PaginationComponent implements OnInit, OnChanges {
 	@HostBinding('class.ril-pagination') true: boolean = true;

@@ -12,7 +12,6 @@ import { state } from '../../interfaces/general';
 @Component({
 	selector: 'ril-checkbox',
 	templateUrl: './checkbox.component.html',
-	styleUrls: ['./checkbox.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

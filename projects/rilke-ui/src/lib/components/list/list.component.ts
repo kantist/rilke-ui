@@ -16,7 +16,6 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
 	selector: 'ril-list',
 	templateUrl: './list.component.html',
-	styleUrls: ['./list.component.scss'],
 })
 export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	@ViewChild('refHeader') refHeader: ElementRef<any>;

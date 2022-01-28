@@ -13,7 +13,6 @@ import { state } from '../../interfaces/general';
 @Component({
 	selector: 'ril-range-slider',
 	templateUrl: './range-slider.component.html',
-	styleUrls: ['./range-slider.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

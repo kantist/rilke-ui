@@ -1,7 +1,5 @@
 @use "sass:math";
-@import "../../../scss/vars";
-
-:host {
+ril-badge {
 	align-items: center;
 	justify-content: center;
 	border-radius: $r-md;

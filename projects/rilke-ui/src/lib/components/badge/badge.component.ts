@@ -3,7 +3,6 @@ import { Component, OnInit, HostBinding, Input } from '@angular/core';
 @Component({
 	selector: 'ril-badge',
 	templateUrl: './badge.component.html',
-	styleUrls: ['./badge.component.scss'],
 })
 export class BadgeComponent implements OnInit {
 	@HostBinding('class.ril-badge') true = true;

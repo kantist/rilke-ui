@@ -3,5 +3,6 @@
 	"dest": "../../dist/rilke-ui",
 	"lib": {
 		"entryFile": "src/public-api.ts"
-	}
+	},
+	"assets": ["./src/scss"]
 }

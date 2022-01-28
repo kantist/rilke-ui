@@ -25,7 +25,6 @@ import { SelectOptionComponent } from './select-option/select-option.component';
 @Component({
 	selector: 'ril-select',
 	templateUrl: './select.component.html',
-	styleUrls: ['./select.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

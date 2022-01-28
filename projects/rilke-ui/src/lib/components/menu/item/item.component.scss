@@ -1,6 +1,5 @@
-@import "../../../../scss/vars";
-
-:host {
+[ril-menu-item],
+ril-menu-item {
 	hr {
 		border: none;
 		border-top: 1px solid rgba(31, 32, 34, 0.1);

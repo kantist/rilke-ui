@@ -5,7 +5,6 @@ import { AlertService } from '../../services/alert.service';
 @Component({
 	selector: 'ril-alert',
 	templateUrl: './alert.component.html',
-	styleUrls: ['./alert.component.scss'],
 })
 export class AlertComponent implements OnInit {
 	text: string;

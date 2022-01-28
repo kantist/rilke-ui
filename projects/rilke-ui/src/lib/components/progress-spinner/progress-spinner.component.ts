@@ -3,7 +3,6 @@ import { Component, OnInit, Input, HostBinding } from '@angular/core';
 @Component({
 	selector: 'ril-progress-spinner',
 	templateUrl: './progress-spinner.component.html',
-	styleUrls: ['./progress-spinner.component.scss'],
 })
 export class ProgressSpinnerComponent implements OnInit {
 	@Input() thickness: number;

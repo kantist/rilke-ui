@@ -15,7 +15,6 @@ import { TextAreaComponent } from '../text-area/text-area.component';
 @Component({
 	selector: 'ril-form-group',
 	templateUrl: './form-group.component.html',
-	styleUrls: ['./form-group.component.scss'],
 })
 export class FormGroupComponent implements OnInit, AfterContentInit {
 	@HostBinding('class.ril-form-group') true: boolean = true;

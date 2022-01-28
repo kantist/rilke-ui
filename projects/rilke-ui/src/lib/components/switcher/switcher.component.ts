@@ -14,7 +14,6 @@ import { state } from '../../interfaces/general';
 @Component({
 	selector: 'ril-switcher',
 	templateUrl: './switcher.component.html',
-	styleUrls: ['./switcher.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

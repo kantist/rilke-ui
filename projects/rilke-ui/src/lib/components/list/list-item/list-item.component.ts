@@ -5,7 +5,6 @@ import { ListToolbarService } from '../../../services/list-toolbar.service';
 @Component({
 	selector: 'ril-list-item',
 	templateUrl: './list-item.component.html',
-	styleUrls: ['./list-item.component.scss'],
 })
 export class ListItemComponent implements OnInit, OnDestroy {
 	@Input() checkbox: boolean;

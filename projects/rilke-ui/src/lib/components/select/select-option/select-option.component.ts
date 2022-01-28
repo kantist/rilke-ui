@@ -11,7 +11,6 @@ type MatAccordionTogglePosition = 'before' | 'after';
 @Component({
 	selector: 'ril-select-option',
 	templateUrl: './select-option.component.html',
-	styleUrls: ['./select-option.component.scss'],
 })
 export class SelectOptionComponent implements AfterContentInit {
 	@Input() value: any;

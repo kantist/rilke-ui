@@ -2,7 +2,6 @@ import {
 	Component,
 	ElementRef,
 	EventEmitter,
-	HostListener,
 	Input,
 	OnInit,
 	Output,
@@ -16,7 +15,6 @@ import { ColorEvent } from 'ngx-color';
 @Component({
 	selector: 'ril-color-picker',
 	templateUrl: './color-picker.component.html',
-	styleUrls: ['./color-picker.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

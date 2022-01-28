@@ -16,7 +16,6 @@ import { state } from '../../../interfaces/general';
 @Component({
 	selector: 'ril-radio-option',
 	templateUrl: './radio-option.component.html',
-	styleUrls: ['./radio-option.component.scss'],
 })
 export class RadioOptionComponent implements AfterViewInit {
 	@HostBinding('class.ril-radio-option') true;

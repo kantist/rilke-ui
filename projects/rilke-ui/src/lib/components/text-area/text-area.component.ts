@@ -17,7 +17,6 @@ import { ITextareaLimiter } from '../../interfaces/textarea';
 @Component({
 	selector: 'ril-text-area',
 	templateUrl: './text-area.component.html',
-	styleUrls: ['./text-area.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

@@ -1,7 +1,5 @@
 @use "sass:math";
-@import "../../../scss/vars";
-
-:host {
+[ril-button] {
 	align-items: center;
 	border: transparent 0 solid;
 	cursor: pointer;

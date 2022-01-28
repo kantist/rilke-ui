@@ -13,7 +13,6 @@ type MenuPositionX = 'before' | 'after';
 @Component({
 	selector: 'ril-menu',
 	templateUrl: './menu.component.html',
-	styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
 	@Input() xPosition: MenuPositionX;

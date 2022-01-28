@@ -1,12 +1,8 @@
-@import "../../../scss/vars";
-
-$_module-rem: $base-size;
-
-:host {
+ril-radio {
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	margin: -$_module-rem / 2;
+	margin: -$base-size / 2;
 
 	&.ril-radio-horizontal {
 		flex-direction: row;

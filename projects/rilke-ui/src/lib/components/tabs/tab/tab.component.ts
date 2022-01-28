@@ -3,7 +3,6 @@ import { Component, Input, HostBinding, OnInit } from '@angular/core';
 @Component({
 	selector: 'ril-tab',
 	templateUrl: './tab.component.html',
-	styleUrls: ['./tab.component.scss'],
 })
 export class TabComponent implements OnInit {
 	@HostBinding('class.tab-panel') tab = true;

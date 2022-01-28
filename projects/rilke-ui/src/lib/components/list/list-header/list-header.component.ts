@@ -5,7 +5,6 @@ import { ListToolbarService } from '../../../services/list-toolbar.service';
 @Component({
 	selector: 'ril-list-header',
 	templateUrl: './list-header.component.html',
-	styleUrls: ['./list-header.component.scss'],
 })
 export class ListHeaderComponent implements OnInit {
 	@Input() checkbox: boolean;

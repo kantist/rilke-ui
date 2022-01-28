@@ -3,18 +3,19 @@ name: Rilke UI Publisher
 on: push
 
 jobs:
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - run: npm install
-      - run: npm run build
-      - run: npm run build-schematics
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_TOKEN }}
-          access: public
-          package: ./dist/rilke-ui/package.json
+    publish:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 14
+            - run: npm install
+            - run: npm run build
+            - run: npm run bundle-scss
+            - run: npm run build-schematics
+            - uses: JS-DevTools/npm-publish@v1
+              with:
+                  token: ${{ secrets.NPM_TOKEN }}
+                  access: public
+                  package: ./dist/rilke-ui/package.json

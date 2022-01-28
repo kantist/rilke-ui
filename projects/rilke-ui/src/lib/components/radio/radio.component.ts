@@ -17,7 +17,6 @@ import { RadioOptionComponent } from './radio-option/radio-option.component';
 @Component({
 	selector: 'ril-radio',
 	templateUrl: './radio.component.html',
-	styleUrls: ['./radio.component.scss'],
 	providers: [
 		{
 			provide: NG_VALUE_ACCESSOR,

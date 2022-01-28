@@ -7,7 +7,6 @@ import { IDialogData } from '../../interfaces/dialog';
 @Component({
 	selector: 'ril-dialog',
 	templateUrl: 'dialog.component.html',
-	styleUrls: ['dialog.component.scss'],
 })
 export class DialogComponent implements OnInit {
 	onResults: Observable<boolean>;

@@ -11,15 +11,14 @@
 			"architect": {
 				"build": {
 					"builder": "@angular-devkit/build-angular:ng-packagr",
-					"options": {
-						"project": "projects/rilke-ui/ng-package.json"
-					},
 					"configurations": {
 						"production": {
-							"tsConfig": "projects/rilke-ui/tsconfig.lib.prod.json"
+							"tsConfig": "projects/rilke-ui/tsconfig.lib.prod.json",
+							"project": "projects/rilke-ui/ng-package.json"
 						},
 						"development": {
-							"tsConfig": "projects/rilke-ui/tsconfig.lib.json"
+							"tsConfig": "projects/rilke-ui/tsconfig.lib.json",
+							"project": "projects/rilke-ui/ng-package-dev.json"
 						}
 					},
 					"defaultConfiguration": "production"
