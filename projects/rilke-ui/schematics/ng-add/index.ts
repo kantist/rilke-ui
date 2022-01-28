@@ -7,6 +7,7 @@ import {
 	apply,
 	applyTemplates,
 	chain,
+	noop,
 	mergeWith,
 	move,
 	url,
@@ -116,7 +117,8 @@ export default function (): Rule {
 
 		context.addTask(new NodePackageInstallTask());
 
-		const templateSource = apply(url('../../src/scss'), [
+		const templateSource = apply(url('./files'), [
+			noop(),
 			applyTemplates({
 				...strings
 			}),
