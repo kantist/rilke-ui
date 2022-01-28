@@ -1,6 +1,7 @@
 import { normalize, strings, workspaces } from '@angular-devkit/core';
 import {
 	Rule,
+	MergeStrategy,
 	SchematicContext,
 	SchematicsException,
 	Tree,
@@ -138,7 +139,7 @@ export default function (): Rule {
 		return chain([
 			addStyleToWorkspaceFile(workspace),
 			addToNgModule(sourceDir),
-			mergeWith(templateSource)
+			mergeWith(templateSource, MergeStrategy.Overwrite)
 		]);
 	};
 }
