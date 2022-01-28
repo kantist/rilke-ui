@@ -35,11 +35,21 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 			let currentAngularJson = host.read(configPath)!.toString('utf-8');
 			let json = JSON.parse(currentAngularJson);
 			let optionsJson = json['projects'][projectName]['architect']['build']['options'];
-			optionsJson['styles'].push("src/assets/rilke-ui/_colors.scss");
-			optionsJson['styles'].push("src/assets/rilke-ui/_structure.scss");
-			optionsJson['styles'].push("src/assets/rilke-ui/_typography.scss");
-			optionsJson['styles'].push("src/assets/rilke-ui/components.scss");
-			optionsJson['styles'].push("src/assets/rilke-ui/styles.scss");
+
+			let styles = [
+				"src/assets/rilke-ui/_colors.scss",
+				"src/assets/rilke-ui/_structure.scss",
+				"src/assets/rilke-ui/_typography.scss",
+				"src/assets/rilke-ui/components.scss",
+				"src/assets/rilke-ui/styles.scss"
+			];
+
+			styles.forEach((s) => {
+				if (!optionsJson['styles'][s]) {
+					optionsJson['styles'].push(s);
+				}
+			})
+
 			json['projects'][projectName]['architect']['build']['options'] = optionsJson;
 			host.overwrite(configPath, JSON.stringify(json, null, 2));
 		} else {
