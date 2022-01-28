@@ -122,7 +122,7 @@ export default function (): Rule {
 			applyTemplates({
 				...strings
 			}),
-			move(sourceDir + '/assets/rilke-ui/'),
+			move('/src/assets/rilke-ui/'),
 		]);
 
 		return chain([
