@@ -46,7 +46,7 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 			];
 
 			styles.forEach((s) => {
-				if (!optionsJson['styles'][s]) {
+				if (!optionsJson['styles'].hasOwnProperty(s)) {
 					optionsJson['styles'].push(s);
 				}
 			})
