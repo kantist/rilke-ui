@@ -14,7 +14,7 @@ import {
 	url,
 } from '@angular-devkit/schematics';
 import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
-import { addExportToModule, addImportToModule } from '../utility/ast-utils';
+import { addExportToModule, addImportsForStyle, addImportToModule } from '../utility/ast-utils';
 import * as ts from '../third_party/files/typescript';
 import { InsertChange } from '../utility/change';
 import { findModule, LAYER_EXT } from '../utility/find-module';
@@ -57,6 +57,22 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 			throw new SchematicsException('angular.json not found at ' + configPath);
 		}
 		return host;
+	}
+}
+
+function addImportBundleScss(): Rule {
+	return (host: Tree) => {
+		const fileToAdd = 'src/assets/rilke-ui/components.scss';
+
+		const literal = `
+			@use "sass:math";
+			@import './colors';
+			@import './structure';
+			@import './typography';
+
+		`;
+
+		addImportsForStyle(fileToAdd, '');
 	}
 }
 
@@ -139,7 +155,8 @@ export default function (): Rule {
 		return chain([
 			addStyleToWorkspaceFile(workspace),
 			addToNgModule(sourceDir),
-			mergeWith(templateSource, MergeStrategy.Overwrite)
+			mergeWith(templateSource, MergeStrategy.Overwrite),
+			addImportBundleScss()
 		]);
 	};
 }

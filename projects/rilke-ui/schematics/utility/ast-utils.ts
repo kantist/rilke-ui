@@ -681,6 +681,15 @@ export function addRedirectRouteDeclarationToModule(
 	}
 }
 
+export function addImportsForStyle(
+	fileToAdd: string,
+	literal: string
+): Change | undefined {
+	const insertPos = 0;
+
+	return new InsertChange(fileToAdd, insertPos, literal);
+}
+
 /**
  * Adds a new route declaration to a router module (i.e. has a RouterModule declaration)
  */
