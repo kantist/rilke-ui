@@ -72,7 +72,13 @@ function addImportBundleScss(): Rule {
 
 		`;
 
-		addImportsForStyle(fileToAdd, literal);
+		const addVariables = addImportsForStyle(fileToAdd, literal) as InsertChange;
+
+		if (addVariables) {
+			const recorder = host.beginUpdate(fileToAdd);
+			recorder.insertLeft(addVariables.pos, addVariables.toAdd);
+			host.commitUpdate(recorder);
+		}
 
 		return host;
 	}
