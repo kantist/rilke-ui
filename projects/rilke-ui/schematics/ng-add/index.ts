@@ -33,7 +33,7 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 		let configPath = './angular.json';
 
 		if (host.exists(configPath)) {
-			let currentAngularJson = host.read(configPath).toString('utf-8');
+			let currentAngularJson = host.read(configPath)!.toString('utf-8');
 			let json = JSON.parse(currentAngularJson);
 			let optionsJson = json['projects'][projectName]['architect']['build']['options'];
 
