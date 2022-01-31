@@ -72,7 +72,9 @@ function addImportBundleScss(): Rule {
 
 		`;
 
-		addImportsForStyle(fileToAdd, '');
+		addImportsForStyle(fileToAdd, literal);
+
+		return host;
 	}
 }
 
