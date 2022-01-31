@@ -47,7 +47,7 @@ ril-auto-complete {
 				padding: ($base-size / 2) ($base-size * 2);
 				transition: background 0.2s ease-in-out;
 
-				::ng-deep .val-mark {
+				.val-mark {
 					background: none;
 					color: #000;
 					pointer-events: none;

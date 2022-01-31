@@ -43,61 +43,59 @@ ril-list {
 		}
 	}
 
-	::ng-deep {
-		ril-list-header .columns,
-		.list-row .columns {
-			display: flex;
-			width: 100%;
-			padding: 1rem;
+	ril-list-header .columns,
+	.list-row .columns {
+		display: flex;
+		width: 100%;
+		padding: 1rem;
 
-			div {
-				align-items: center;
-				display: flex;
-				flex-flow: row nowrap;
-				flex-basis: 0;
-				word-break: break-word;
-				padding-left: 15px;
-				flex-grow: 2;
-
-				&:first-child {
-					padding-left: 0;
-					flex-grow: 3;
-				}
-
-				&:nth-last-child(2) {
-					flex-grow: 1;
-				}
-
-				&:nth-last-child(4) {
-					flex-grow: 1;
-				}
-
-				&:last-child {
-					flex-grow: 1;
-				}
-			}
-		}
-
-		.list-check {
-			label {
-				height: 1.42857rem;
-			}
-
-			display: flex;
+		div {
 			align-items: center;
-			margin: 0 1.14286rem;
+			display: flex;
+			flex-flow: row nowrap;
+			flex-basis: 0;
+			word-break: break-word;
+			padding-left: 15px;
+			flex-grow: 2;
 
-			input {
-				display: none;
+			&:first-child {
+				padding-left: 0;
+				flex-grow: 3;
+			}
+
+			&:nth-last-child(2) {
+				flex-grow: 1;
+			}
+
+			&:nth-last-child(4) {
+				flex-grow: 1;
+			}
+
+			&:last-child {
+				flex-grow: 1;
 			}
 		}
+	}
 
-		.list-option {
-			display: flex;
-			width: 0;
-			margin-right: 3rem;
-			padding-left: 1rem;
+	.list-check {
+		label {
+			height: 1.42857rem;
 		}
+
+		display: flex;
+		align-items: center;
+		margin: 0 1.14286rem;
+
+		input {
+			display: none;
+		}
+	}
+
+	.list-option {
+		display: flex;
+		width: 0;
+		margin-right: 3rem;
+		padding-left: 1rem;
 	}
 
 	.skeleton {

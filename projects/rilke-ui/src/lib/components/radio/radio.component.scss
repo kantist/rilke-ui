@@ -8,7 +8,7 @@ ril-radio {
 		flex-direction: row;
 	}
 
-	::ng-deep ril-radio-option {
+	ril-radio-option {
 		margin-bottom: 1rem;
 
 		&:last-child {

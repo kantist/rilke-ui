@@ -27,26 +27,24 @@ ril-list-toolbar {
 	}
 
 	.right {
-		::ng-deep {
-			.btn-default,
-			btn-dark {
-				background: $main-800;
+		.btn-default,
+		btn-dark {
+			background: $main-800;
+		}
+
+		.badge {
+			font-size: 1.1rem;
+
+			~ {
+				.badge {
+					margin-left: 1rem;
+				}
 			}
 
-			.badge {
-				font-size: 1.1rem;
-
-				~ {
-					.badge {
-						margin-left: 1rem;
-					}
-				}
-
-				.danger {
-					color: #FFF;
-					background-color: #D24D62;
-					border-color: #D24D62;
-				}
+			.danger {
+				color: #FFF;
+				background-color: #D24D62;
+				border-color: #D24D62;
 			}
 		}
 	}

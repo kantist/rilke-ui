@@ -1,6 +1,6 @@
 {
 	"name": "@kantist/rilke-ui",
-	"version": "0.0.22",
+	"version": "0.0.23",
 	"description": "Rilke UI Library",
 	"keywords": [
 		"angular",
@@ -15,7 +15,7 @@
 		"build": "tsc -p tsconfig.schematics.json",
 		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/rilke-ui/ && copyfiles -f src/scss/** ../../dist/rilke-ui/schematics/ng-add/files"
 	},
-	"peerDependencies": {
+	"dependencies": {
 		"@angular/cdk": "^13.0.2",
 		"@angular/core": "^13.0.0 || ^14.0.0-0",
 		"@angular/common": "^13.0.0 || ^14.0.0-0",

@@ -58,10 +58,8 @@ ril-alert {
 	}
 }
 
-::ng-deep {
-	snack-bar-container {
-		background: transparent !important;
-		padding: 0 !important;
-		overflow: hidden !important;
-	}
+snack-bar-container {
+	background: transparent !important;
+	padding: 0 !important;
+	overflow: hidden !important;
 }

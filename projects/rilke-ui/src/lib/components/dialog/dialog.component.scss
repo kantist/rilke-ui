@@ -40,7 +40,7 @@ ril-dialog {
 	}
 }
 
-::ng-deep .mat-dialog-container {
+.mat-dialog-container {
 	background: $main-900 !important;
 	border-radius: $r-md !important;
 }

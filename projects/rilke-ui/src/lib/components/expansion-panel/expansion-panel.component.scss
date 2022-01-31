@@ -4,10 +4,8 @@ ril-expansion-panel {
 		box-shadow: $s-md;
 		border-radius: $r-md;
 
-		::ng-deep {
-			.mat-expansion-indicator::after {
-				color: $main-contrast-700 !important;
-			}
+		.mat-expansion-indicator::after {
+			color: $main-contrast-700 !important;
 		}
 	}
 }

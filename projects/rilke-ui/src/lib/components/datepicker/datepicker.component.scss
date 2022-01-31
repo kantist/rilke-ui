@@ -145,7 +145,7 @@ ril-date-picker {
 	}
 }
 
-::ng-deep .mat-datepicker-content {
+.mat-datepicker-content {
 	margin-top: 1rem;
 	box-shadow: $s-md;
 	background-color: $main-800;
@@ -206,7 +206,7 @@ ril-date-picker {
 	}
 }
 
-::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
 .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
 .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
 	background-color: $main-800;

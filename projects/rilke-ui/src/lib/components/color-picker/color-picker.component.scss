@@ -24,43 +24,41 @@ ril-color-picker {
 
 .picker {
 	color-chrome {
-		::ng-deep {
-			.chrome-picker {
-				border-radius: 0 0 $r-sm $r-sm !important;
-				background-color: $main-900;
-				margin: $m-md 0;
-			}
+		.chrome-picker {
+			border-radius: 0 0 $r-sm $r-sm !important;
+			background-color: $main-900;
+			margin: $m-md 0;
+		}
 
-			.chrome-body {
-				.chrome-toggles {
-					align-self: center;
+		.chrome-body {
+			.chrome-toggles {
+				align-self: center;
 
-					.chrome-hue {
-						margin: 0 !important;
-					}
-				}
-
-				.wrap {
-					width: 100%;
-					text-align: center;
-
-					input {
-						width: auto !important;
-						color: $main-contrast-800 !important;
-						background: $main-700 !important;
-						border-radius: $r-sm !important;
-						box-shadow: none !important;
-					}
-
-					span {
-						display: none !important;
-					}
+				.chrome-hue {
+					margin: 0 !important;
 				}
 			}
 
-			.chrome-toggle {
-				display: none;
+			.wrap {
+				width: 100%;
+				text-align: center;
+
+				input {
+					width: auto !important;
+					color: $main-contrast-800 !important;
+					background: $main-700 !important;
+					border-radius: $r-sm !important;
+					box-shadow: none !important;
+				}
+
+				span {
+					display: none !important;
+				}
 			}
+		}
+
+		.chrome-toggle {
+			display: none;
 		}
 	}
 }

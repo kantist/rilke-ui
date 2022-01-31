@@ -22,19 +22,17 @@ ril-select {
 		padding: $p-sm;
 		min-width: 10rem;
 
-		::ng-deep {
-			.mat-select-value {
-				max-width: 100%;
-				color: $main-contrast-800;
+		.mat-select-value {
+			max-width: 100%;
+			color: $main-contrast-800;
 
-				.mat-select-placeholder {
-					color: $main-700;
-				}
+			.mat-select-placeholder {
+				color: $main-700;
 			}
+		}
 
-			.mat-select-arrow {
-				color: $main-contrast-800;
-			}
+		.mat-select-arrow {
+			color: $main-contrast-800;
 		}
 	}
 
@@ -95,7 +93,7 @@ ril-select {
 	}
 }
 
-::ng-deep .mat-select-panel {
+.mat-select-panel {
 	background: $main-800;
 	border-radius: $r-md !important;
 

@@ -10,7 +10,7 @@ ril-progress-spinner {
 		stroke: $main-800;
 	}
 
-	::ng-deep .mat-progress-spinner circle,
+	.mat-progress-spinner circle,
 	.mat-spinner circle {
 		stroke: inherit;
 	}

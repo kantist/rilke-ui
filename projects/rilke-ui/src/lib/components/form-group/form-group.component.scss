@@ -5,47 +5,43 @@ ril-form-group {
 	&.float {
 		position: relative;
 
-		::ng-deep {
-			ril-form-label {
-				position: absolute;
-				cursor: text;
-				font-size: 65%;
-				opacity: 100%;
-				transition: all 0.2s;
-				top: -0.5em;
-				margin-left: $base-size * 1.5;
-				color: $main-500;
-				z-index: 3;
-				line-height: 1;
-				padding: 0 1px;
-				pointer-events: none;
-				text-transform: uppercase;
+		ril-form-label {
+			position: absolute;
+			cursor: text;
+			font-size: 65%;
+			opacity: 100%;
+			transition: all 0.2s;
+			top: -0.5em;
+			margin-left: $base-size * 1.5;
+			color: $main-500;
+			z-index: 3;
+			line-height: 1;
+			padding: 0 1px;
+			pointer-events: none;
+			text-transform: uppercase;
 
-				&::before {
-					content: " ";
-					display: block;
-					position: absolute;
-					background: $main-700;
-					height: 1px;
-					top: 50%;
-					left: -0.3em;
-					right: -0.3em;
-					z-index: -1;
-				}
+			&::before {
+				content: " ";
+				display: block;
+				position: absolute;
+				background: $main-700;
+				height: 1px;
+				top: 50%;
+				left: -0.3em;
+				right: -0.3em;
+				z-index: -1;
 			}
 		}
 
 		&:not(.has-value):not(.input-focus) {
-			::ng-deep {
-				ril-form-label {
-					font-size: 0.8rem !important;
-					opacity: 50%;
-					top: calc(50% - 0.4rem) !important;
-					margin-left: $base-size * 1;
+			ril-form-label {
+				font-size: 0.8rem !important;
+				opacity: 50%;
+				top: calc(50% - 0.4rem) !important;
+				margin-left: $base-size * 1;
 
-					&::before {
-						background: transparent;
-					}
+				&::before {
+					background: transparent;
 				}
 			}
 		}
