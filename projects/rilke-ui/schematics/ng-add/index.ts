@@ -64,13 +64,11 @@ function addImportBundleScss(): Rule {
 	return (host: Tree) => {
 		const fileToAdd = 'src/assets/rilke-ui/components.scss';
 
-		const literal = `
-			@use "sass:math";
-			@import './colors';
-			@import './structure';
-			@import './typography';
-
-		`;
+		const literal = `@use "sass:math";
+@import './colors';
+@import './structure';
+@import './typography';
+`;
 
 		const addVariables = addImportsForStyle(fileToAdd, literal) as InsertChange;
 
