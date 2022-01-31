@@ -17,8 +17,11 @@ ril-input {
 		outline: none;
 		padding: 0 calc(#{$f-size-md} - 0.2em);
 		position: relative;
-		transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
-			border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+		transition:
+			background 0.2s ease-in-out,
+			border 0.2s ease-in-out,
+			border 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
@@ -27,6 +30,7 @@ ril-input {
 			flex: auto;
 			min-width: 5px;
 		}
+
 		.input-control {
 			background: none;
 			border: 0;
@@ -44,15 +48,18 @@ ril-input {
 			// 	color: $main-contrast-700;
 			// }
 		}
+
 		.input-prefix,
 		.input-suffix {
 			color: $main-contrast-800;
 			flex: none;
 			padding: 0 0.2em;
 		}
+
 		.input-icon {
 			font-size: 1.3em;
 		}
+
 		.char-limiting {
 			align-items: center;
 			color: $main-contrast-800;
@@ -78,6 +85,7 @@ ril-input {
 			border-color: $main-700;
 		}
 	}
+
 	&.input-focus {
 		color: $main-contrast-800;
 
@@ -86,6 +94,7 @@ ril-input {
 			border-color: $main-200;
 		}
 	}
+
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {

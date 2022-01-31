@@ -18,30 +18,39 @@ ril-alert {
 
 		&.default {
 			background: $dark-color;
+
 			button {
 				background-color: $dark-hover;
 			}
 		}
+
 		&.success {
 			background: $success-color;
+
 			button {
 				background-color: $success-hover;
 			}
 		}
+
 		&.info {
 			background: $info-color;
+
 			button {
 				background-color: $info-hover;
 			}
 		}
+
 		&.warning {
 			background: $warning-color;
+
 			button {
 				background-color: $warning-hover;
 			}
 		}
+
 		&.error {
 			background: $error-color;
+
 			button {
 				background-color: $error-hover;
 			}

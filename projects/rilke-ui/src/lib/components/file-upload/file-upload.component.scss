@@ -2,6 +2,7 @@ ril-file-upload {
 	.wrapper {
 		display: flex;
 		align-items: center;
+
 		.uploadBtn {
 			background-color: $main-800;
 			border-radius: $r-md;
@@ -22,6 +23,7 @@ ril-file-upload {
 				border-radius: $r-md;
 				object-fit: cover;
 			}
+
 			.file-icon {
 				width: 3rem;
 				height: 3rem;
@@ -41,6 +43,7 @@ ril-file-upload {
 				margin: 0 !important;
 				color: $main-contrast-800;
 			}
+
 			.fileName {
 				margin: 0;
 				margin-left: 3rem !important;
@@ -51,6 +54,7 @@ ril-file-upload {
 				margin-left: 0.5rem;
 				color: $main-contrast-800;
 			}
+
 			.close-icon {
 				font-size: 1.4rem;
 				margin-left: 0.5rem;

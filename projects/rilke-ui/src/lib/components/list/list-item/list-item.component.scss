@@ -4,8 +4,8 @@ ril-list-item {
 	align-items: center;
 	align-content: center;
 	width: 100%;
-
 	max-height: 5rem;
+
 	::ng-deep {
 		.list-row {
 			display: flex;
@@ -24,6 +24,7 @@ ril-list-item {
 			ka-avatar {
 				margin-right: 0.5rem;
 			}
+
 			&:hover {
 				div {
 					color: $main-contrast-500;
@@ -31,23 +32,28 @@ ril-list-item {
 			}
 		}
 	}
+
 	&:nth-child(odd) {
 		background: $main-700;
 	}
+
 	&:nth-child(even) {
 		background: $main-600;
 	}
+
 	&:first-child {
 		border-top-left-radius: 0.8rem;
 		border-top-right-radius: 0.8rem;
 	}
+
 	&:last-child {
 		border-bottom-left-radius: 0.8rem;
 		border-bottom-right-radius: 0.8rem;
 		margin-bottom: 2rem;
 	}
+
 	&.opened {
 		max-height: 100%;
-		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+		box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 7.5%);
 	}
 }

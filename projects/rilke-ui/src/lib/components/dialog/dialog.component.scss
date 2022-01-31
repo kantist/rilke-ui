@@ -5,10 +5,12 @@ ril-dialog {
 
 	.text {
 		margin-bottom: 2rem;
+
 		p {
 			color: $main-contrast-800;
 		}
 	}
+
 	.button-area {
 		display: flex;
 		justify-content: flex-end;
@@ -25,6 +27,7 @@ ril-dialog {
 			&.cancel {
 				background-color: $error-color;
 			}
+
 			&.action {
 				background-color: $success-color;
 				margin-left: 1rem;

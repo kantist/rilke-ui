@@ -4,7 +4,7 @@ ril-list-toolbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: #fff;
+	color: #FFF;
 
 	.left {
 		display: flex;
@@ -15,14 +15,17 @@ ril-list-toolbar {
 		.icon {
 			cursor: pointer;
 		}
+
 		.quantity {
 			margin-left: 1rem;
 			color: $success-color;
 		}
+
 		.text {
 			margin-left: 0.5rem;
 		}
 	}
+
 	.right {
 		::ng-deep {
 			.btn-default,
@@ -32,22 +35,25 @@ ril-list-toolbar {
 
 			.badge {
 				font-size: 1.1rem;
+
 				~ {
 					.badge {
 						margin-left: 1rem;
 					}
 				}
+
 				.danger {
-					color: #fff;
-					background-color: #d24d62;
-					border-color: #d24d62;
+					color: #FFF;
+					background-color: #D24D62;
+					border-color: #D24D62;
 				}
 			}
 		}
 	}
+
 	.badge.white {
 		color: #000;
-		background-color: #fff;
-		border-color: #fff;
+		background-color: #FFF;
+		border-color: #FFF;
 	}
 }

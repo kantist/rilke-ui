@@ -13,8 +13,11 @@ ril-select {
 		color: $main-contrast-800;
 		cursor: pointer;
 		overflow: hidden;
-		transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		transition:
+			background 0.2s ease-in-out,
+			border-color 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out,
+			color 0.2s ease-in-out;
 		width: 100%;
 		padding: $p-sm;
 		min-width: 10rem;
@@ -48,6 +51,7 @@ ril-select {
 			color: $main-contrast-700;
 		}
 	}
+
 	&.multiple {
 		.select-box {
 			height: unset;
@@ -59,6 +63,7 @@ ril-select {
 			}
 		}
 	}
+
 	&.opened {
 		.select-box {
 			background: $main-700;
@@ -67,6 +72,7 @@ ril-select {
 			color: $main-contrast-700;
 		}
 	}
+
 	&.disabled {
 		cursor: not-allowed;
 
@@ -79,6 +85,7 @@ ril-select {
 			pointer-events: none;
 		}
 	}
+
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.select-box {

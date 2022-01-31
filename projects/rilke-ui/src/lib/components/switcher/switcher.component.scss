@@ -20,14 +20,17 @@ ril-switcher {
 			margin: 0;
 			padding: 0 2px;
 			position: relative;
-			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+			transition:
+				background 0.2s ease-in-out,
+				border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
 
 			.switcher-input {
 				cursor: inherit;
-				opacity: 0;
+				opacity: 0%;
 				position: absolute;
 			}
+
 			.check-detector {
 				background: $main-300;
 				border-radius: 50%;
@@ -37,10 +40,12 @@ ril-switcher {
 				left: 0;
 				position: absolute;
 				transform: translateX(4px);
-				transition: background 0.2s ease-in-out,
+				transition:
+					background 0.2s ease-in-out,
 					transform 0.2s ease-in-out;
 			}
 		}
+
 		.ril-switcher-label {
 			color: $main-contrast-700;
 			margin-left: 10px;
@@ -50,6 +55,7 @@ ril-switcher {
 				display: none;
 			}
 		}
+
 		&:hover {
 			.ril-switcher-handle {
 				background: $main-600;
@@ -58,11 +64,13 @@ ril-switcher {
 					background: $main-50;
 				}
 			}
+
 			.ril-switcher-label {
 				color: $main-contrast-700;
 			}
 		}
 	}
+
 	&.checked {
 		.ril-switcher-wrap {
 			.ril-switcher-handle {
@@ -73,11 +81,13 @@ ril-switcher {
 					transform: translate(calc(($base-size * 2.8) / 2 + 8px));
 				}
 			}
+
 			.ril-switcher-label {
 				color: $main-contrast-700;
 			}
 		}
 	}
+
 	// &.disabled {
 	// 	.ril-switcher-wrap {
 	// 		cursor: not-allowed;

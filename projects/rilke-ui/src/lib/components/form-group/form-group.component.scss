@@ -4,13 +4,13 @@ ril-form-group {
 
 	&.float {
 		position: relative;
+
 		::ng-deep {
 			ril-form-label {
 				position: absolute;
 				cursor: text;
 				font-size: 65%;
-				opacity: 1;
-				-webkit-transition: all 0.2s;
+				opacity: 100%;
 				transition: all 0.2s;
 				top: -0.5em;
 				margin-left: $base-size * 1.5;
@@ -39,7 +39,7 @@ ril-form-group {
 			::ng-deep {
 				ril-form-label {
 					font-size: 0.8rem !important;
-					opacity: 0.5;
+					opacity: 50%;
 					top: calc(50% - 0.4rem) !important;
 					margin-left: $base-size * 1;
 

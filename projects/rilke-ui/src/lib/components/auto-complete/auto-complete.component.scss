@@ -9,10 +9,12 @@ ril-auto-complete {
 	&:focus {
 		transition: none;
 	}
+
 	.ka-input {
 		border-radius: inherit;
 		transition: none;
 	}
+
 	.autocomplete-list {
 		display: none;
 		position: relative;
@@ -21,6 +23,7 @@ ril-auto-complete {
 		&.opened {
 			display: block;
 		}
+
 		.list-ul {
 			background: red;
 			border: 1px solid green;
@@ -49,12 +52,15 @@ ril-auto-complete {
 					color: #000;
 					pointer-events: none;
 				}
+
 				&.active {
 					background: rgba(pink, 0.05);
 				}
+
 				&:hover {
 					background: rgba(#000, 0.05);
 				}
+
 				&:last-child {
 					box-shadow: none;
 				}

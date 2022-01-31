@@ -1,5 +1,5 @@
 $_module-rem: $base-size;
-$_placeholder-color: #a8a8a8;
+$_placeholder-color: #A8A8A8;
 $_fs: 1rem;
 $_lh: $_module-rem * 2 / $_fs;
 $_padding-h: $_module-rem * 2;
@@ -19,15 +19,16 @@ $_lh-lg: $_module-rem * 2 / $_fs-lg;
 $_shape-lg: ($_shape * 1.5);
 $_padding-v-lg: $_module-rem * 1.5;
 
-@-webkit-keyframes autofill {
+@keyframes autofill {
 	to {
 		color: #666;
 		background: transparent;
 	}
 }
+
 input:-webkit-autofill {
-	-webkit-animation-name: autofill;
-	-webkit-animation-fill-mode: both;
+	animation-name: autofill;
+	animation-fill-mode: both;
 }
 
 ril-date-picker {
@@ -44,7 +45,9 @@ ril-date-picker {
 		outline: none;
 		padding: 0 calc(#{$_fs} - 0.2em);
 		position: relative;
-		transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+		transition:
+			background 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
@@ -53,6 +56,7 @@ ril-date-picker {
 			flex: auto;
 			min-width: 5px;
 		}
+
 		.input-control {
 			background: none;
 			border: none;
@@ -65,12 +69,14 @@ ril-date-picker {
 			padding: $_padding-v 0.2em;
 			width: 100%;
 		}
+
 		.input-prefix,
 		.input-suffix {
 			color: $main-500;
 			flex: none;
 			padding: 0 0.2em;
 		}
+
 		.input-icon {
 			font-size: 1.3em;
 		}
@@ -82,17 +88,20 @@ ril-date-picker {
 			box-shadow: $s-md;
 		}
 	}
+
 	&.input-focus {
 		.ril-input-wrap {
 			background: $main-700;
 		}
 	}
+
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {
 			background-color: rgba($error-color, 0.1);
 		}
 	}
+
 	// &.input-sm {
 	// 	border-radius: $_shape-sm;
 	// 	font-size: $_fs-sm;
@@ -152,6 +161,7 @@ ril-date-picker {
 	.mat-calendar-previous-button {
 		color: $main-contrast-800;
 	}
+
 	.mat-calendar-next-button:hover,
 	.mat-calendar-previous-button:hover {
 		background-color: $main-800;
@@ -185,14 +195,9 @@ ril-date-picker {
 		}
 	}
 
-	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
-		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
-	.cdk-keyboard-focused
-		.mat-calendar-body-active
-		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
-	.cdk-program-focused
-		.mat-calendar-body-active
-		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
 		background-color: $main-700 !important;
 	}
 
@@ -201,14 +206,8 @@ ril-date-picker {
 	}
 }
 
-::ng-deep
-	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
-	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
-.cdk-keyboard-focused
-	.mat-calendar-body-active
-	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
-.cdk-program-focused
-	.mat-calendar-body-active
-	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+::ng-deep .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
 	background-color: $main-800;
 }

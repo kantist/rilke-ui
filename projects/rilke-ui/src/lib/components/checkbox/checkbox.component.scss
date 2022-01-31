@@ -19,16 +19,19 @@ ril-checkbox {
 			justify-content: center;
 			margin: 0;
 			position: relative;
-			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+			transition:
+				background 0.2s ease-in-out,
+				border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
 
 			.checkbox-input {
 				width: 100%;
 				cursor: inherit;
-				opacity: 0;
+				opacity: 0%;
 				position: absolute;
 				user-select: none;
 			}
+
 			.check-detector {
 				display: block;
 				font-size: 1.6rem;
@@ -37,27 +40,33 @@ ril-checkbox {
 				user-select: none;
 			}
 		}
+
 		.ril-checkbox-label {
 			color: $main-contrast-800;
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
+
 			&:empty {
 				display: none;
 			}
 		}
+
 		&:hover {
 			.ril-checkbox-handle {
 				background: $main-700;
 				color: $main-contrast-700;
+
 				.check-detector {
 					transform: scale(0.8);
 				}
 			}
+
 			.ril-checkbox-label {
 				color: $main-contrast-700;
 			}
 		}
 	}
+
 	&.checked {
 		.ril-checkbox-wrap {
 			.ril-checkbox-handle {
@@ -68,11 +77,13 @@ ril-checkbox {
 					transform: scale(0.8);
 				}
 			}
+
 			.ril-checkbox-label {
 				color: $main-contrast-800;
 			}
 		}
 	}
+
 	&.disabled {
 		.ril-checkbox-wrap {
 			cursor: not-allowed;
@@ -85,10 +96,12 @@ ril-checkbox {
 					transform: scale(0);
 				}
 			}
+
 			.ril-checkbox-label {
 				color: $main-500;
 			}
 		}
+
 		&.checked {
 			.ril-checkbox-wrap {
 				.ril-checkbox-handle {

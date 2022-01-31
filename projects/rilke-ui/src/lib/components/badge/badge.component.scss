@@ -12,18 +12,21 @@ ril-badge {
 		border-radius: $r-xs;
 		padding: math.div($p-xs, 2) $p-xs;
 	}
+
 	&.badge-sm {
 		font-size: $f-size-sm;
 		line-height: $f-line-sm;
 		border-radius: $r-sm;
 		padding: math.div($p-sm, 2) $p-sm;
 	}
+
 	&.badge-md {
 		font-size: $f-size-md;
 		line-height: $f-line-md;
 		border-radius: $r-md;
 		padding: math.div($p-md, 2) $p-md;
 	}
+
 	&.badge-lg {
 		font-size: $f-size-lg;
 		line-height: $f-line-lg;
@@ -41,12 +44,15 @@ ril-badge {
 	&.extra-thin {
 		font-weight: $f-weight-xs;
 	}
+
 	&.thin {
 		font-weight: $f-weight-sm;
 	}
+
 	&.bold {
 		font-weight: $f-weight-lg;
 	}
+
 	&.heavy-bold {
 		font-weight: $f-weight-xl;
 	}
@@ -56,26 +62,32 @@ ril-badge {
 		background: $accent-color;
 		color: $accent-text;
 	}
+
 	&.badge-success {
 		background: $success-color;
 		color: $success-text;
 	}
+
 	&.badge-warning {
 		background: $warning-color;
 		color: $warning-text;
 	}
+
 	&.badge-error {
 		background: $error-color;
 		color: $error-text;
 	}
+
 	&.badge-info {
 		background: $info-color;
 		color: $info-text;
 	}
+
 	&.badge-light {
 		background: $light-color;
 		color: $light-text;
 	}
+
 	&.badge-dark {
 		background: $dark-color;
 		color: $dark-text;

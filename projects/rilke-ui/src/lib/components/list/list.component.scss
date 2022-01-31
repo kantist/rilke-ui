@@ -4,38 +4,40 @@ ril-list {
 	justify-content: space-between;
 
 	.content {
-		opacity: 0;
+		opacity: 0%;
 		display: none;
 		flex-direction: column;
 	}
 
 	.skeleton {
-		opacity: 1;
+		opacity: 100%;
 		display: inherit;
 	}
 
 	&.loaded {
 		.content {
-			opacity: 1;
+			opacity: 100%;
 			display: flex;
 		}
+
 		.skeleton {
-			opacity: 0;
+			opacity: 0%;
 			display: none;
 		}
+
 		&.loading {
 			.content {
-				opacity: 0;
+				opacity: 0%;
 				display: none;
 			}
 
 			.skeleton {
-				opacity: 1;
+				opacity: 100%;
 				display: flex;
 			}
 
 			*[ka-skeleton] {
-				opacity: 1;
+				opacity: 100%;
 				visibility: visible;
 			}
 		}
@@ -47,6 +49,7 @@ ril-list {
 			display: flex;
 			width: 100%;
 			padding: 1rem;
+
 			div {
 				align-items: center;
 				display: flex;
@@ -55,16 +58,20 @@ ril-list {
 				word-break: break-word;
 				padding-left: 15px;
 				flex-grow: 2;
+
 				&:first-child {
 					padding-left: 0;
 					flex-grow: 3;
 				}
+
 				&:nth-last-child(2) {
 					flex-grow: 1;
 				}
+
 				&:nth-last-child(4) {
 					flex-grow: 1;
 				}
+
 				&:last-child {
 					flex-grow: 1;
 				}
@@ -75,9 +82,11 @@ ril-list {
 			label {
 				height: 1.42857rem;
 			}
+
 			display: flex;
 			align-items: center;
 			margin: 0 1.14286rem;
+
 			input {
 				display: none;
 			}
@@ -111,6 +120,7 @@ ril-list {
 				.columns {
 					display: flex;
 					width: 100%;
+
 					div {
 						align-items: center;
 						display: flex;
@@ -119,10 +129,12 @@ ril-list {
 						word-break: break-word;
 						padding-left: 15px;
 						flex-grow: 2;
+
 						&:first-child {
 							padding-left: 0;
 							flex-grow: 3;
 						}
+
 						&:last-child {
 							flex-grow: 1;
 						}
@@ -136,6 +148,7 @@ ril-list {
 				justify-content: center;
 				width: 100%;
 				min-height: 5rem;
+
 				ka-avatar {
 					margin-right: 0.5rem;
 				}
@@ -144,9 +157,11 @@ ril-list {
 			&:nth-child(odd) {
 				background: $main-800;
 			}
+
 			&:nth-child(even) {
 				background: $main-700;
 			}
+
 			&:last-child {
 				// margin-bottom: 2rem;
 			}
@@ -164,12 +179,13 @@ ril-list {
 
 		.list-check {
 			pointer-events: none;
-			opacity: 0;
+			opacity: 0%;
 		}
 
 		.columns {
 			display: flex;
 			width: 100%;
+
 			div {
 				align-items: center;
 				display: flex;
@@ -178,6 +194,7 @@ ril-list {
 				word-break: break-word;
 				padding-left: 15px;
 				flex-grow: 2;
+
 				&:first-child {
 					padding-left: 0;
 					flex-grow: 3;

@@ -8,19 +8,19 @@ ril-pagination {
 
 		.page-item {
 			margin: 0;
+
 			.page-link {
 				background: $main-700;
 				border-color: $main-700;
 				border-left: 1px solid #353535;
-				color: #fff;
+				color: #FFF;
 				padding: 0.8rem 1.6rem;
-
 				cursor: pointer;
 
 				&:hover {
 					background: main-palette(500);
 					border-color: main-palette(500);
-					color: #fff;
+					color: #FFF;
 				}
 			}
 
@@ -31,6 +31,7 @@ ril-pagination {
 					border-bottom-left-radius: 0.8rem;
 				}
 			}
+
 			&:last-child {
 				.page-link {
 					border-top-right-radius: 0.8rem;
@@ -38,18 +39,21 @@ ril-pagination {
 				}
 			}
 		}
+
 		.page-item.active {
 			.page-link {
 				background: $main-500;
 				border-color: transparent;
-				color: #fff;
+				color: #FFF;
 			}
 		}
+
 		.page-item.disabled {
 			.page-link {
 				// 		background: rgba(212, 211, 211, 0.6);
 				// 		border-color: rgba(212, 211, 211, 0.6);
 				color: #939393;
+
 				// 		pointer-events: none;
 			}
 		}
