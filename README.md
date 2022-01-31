@@ -4,7 +4,7 @@
 	<a href="[rilke-ui-package]"><img src="https://img.shields.io/npm/v/@kantist/rilke-ui.svg?sanitize=true" alt="Version"></a>
 	<a href="[rilke-ui-package]"><img src="https://img.shields.io/npm/l/@kantist/rilke-ui.svg?sanitize=true" alt="License"></a>
 	<br>
-	<img src="https://github.com/kantist/rilke-ui/actions/workflows/npm-publish.yml/badge.svg" alt="status">
+	<img src="https://github.com/kantist/rilke-ui/actions/workflows/publish.yml/badge.svg" alt="status">
 </p>
 <h1 align="center">Rilke UI - Advanced customizable UI components for Rilke Architecture.</h1>
 <p align="center">
