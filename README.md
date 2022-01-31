@@ -49,9 +49,9 @@ rilke add @kantist/rilke-ui
 [rilke-ui]: https://github.com/kantist/rilke-ui
 [rilke-ui-package]: https://npmjs.com/package/@kantist/rilke-ui
 [quickstart]: https://rilke.ist/ui/
-[typography]: https://rilke.ist/architecture/
-[color_palettes]: https://rilke.ist/architecture/
-[theme_generator]: https://rilke.ist/architecture/
+[typography]: https://rilke.ist/ui/typography/
+[color_palettes]: https://rilke.ist/ui/color-palette/
+[theme_generator]: https://rilke.ist/ui/theme-generator/
 [node.js]: https://nodejs.org/
 [npm]: https://www.npmjs.com/get-npm
 [angular]: https://angular.io/cli
