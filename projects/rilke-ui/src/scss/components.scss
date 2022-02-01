@@ -10,17 +10,17 @@ ril-alert {
 		min-height: 48px;
 
 		p {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 			font-size: 1rem;
 			line-height: 1.6rem;
 			margin-right: 0.6rem;
 		}
 
 		&.default {
-			background: $dark-color;
+			background: main-palette(900);
 
 			button {
-				background-color: $dark-hover;
+				background-color: main-palette(700);
 			}
 		}
 
@@ -62,6 +62,101 @@ snack-bar-container {
 	background: transparent !important;
 	padding: 0 !important;
 	overflow: hidden !important;
+}
+ril-badge {
+	align-items: center;
+	justify-content: center;
+	border-radius: $r-md;
+	display: inline-flex;
+	font-weight: $f-weight-md;
+
+	// Sizes
+	&.badge-xs {
+		font-size: $f-size-xs;
+		line-height: $f-line-xs;
+		border-radius: $r-xs;
+		padding: math.div($p-xs, 2) $p-xs;
+	}
+
+	&.badge-sm {
+		font-size: $f-size-sm;
+		line-height: $f-line-sm;
+		border-radius: $r-sm;
+		padding: math.div($p-sm, 2) $p-sm;
+	}
+
+	&.badge-md {
+		font-size: $f-size-md;
+		line-height: $f-line-md;
+		border-radius: $r-md;
+		padding: math.div($p-md, 2) $p-md;
+	}
+
+	&.badge-lg {
+		font-size: $f-size-lg;
+		line-height: $f-line-lg;
+		border-radius: $r-lg;
+		padding: math.div($p-lg, 2) $p-lg;
+	}
+
+	&.badge-xl {
+		font-size: $f-size-xl;
+		line-height: $f-line-xl;
+		border-radius: $r-xl;
+		padding: math.div($p-xl, 2) $p-xl;
+	}
+
+	&.extra-thin {
+		font-weight: $f-weight-xs;
+	}
+
+	&.thin {
+		font-weight: $f-weight-sm;
+	}
+
+	&.bold {
+		font-weight: $f-weight-lg;
+	}
+
+	&.heavy-bold {
+		font-weight: $f-weight-xl;
+	}
+
+	// Colors
+	&.badge-accent {
+		background: $accent-color;
+		color: $accent-text;
+	}
+
+	&.badge-success {
+		background: $success-color;
+		color: $success-text;
+	}
+
+	&.badge-warning {
+		background: $warning-color;
+		color: $warning-text;
+	}
+
+	&.badge-error {
+		background: $error-color;
+		color: $error-text;
+	}
+
+	&.badge-info {
+		background: $info-color;
+		color: $info-text;
+	}
+
+	&.badge-light {
+		background: main-contrast(900);
+		color: main-palette(900);
+	}
+
+	&.badge-dark {
+		background: main-palette(900);
+		color: main-contrast(900);
+	}
 }
 ril-auto-complete {
 	border-radius: $r-md;
@@ -135,7 +230,7 @@ ril-auto-complete {
 }
 ril-avatar {
 	align-items: center;
-	background: $grey-400;
+	background: material-palette(grey, 400);
 	border-radius: 50%;
 	display: flex;
 	font-weight: 600;
@@ -166,8 +261,8 @@ ril-avatar {
 		transition: 0.5s ease;
 		width: 100%;
 		height: 100%;
-		background: $grey-400;
-		color: $grey-700;
+		background: material-palette(grey, 400);
+		color: material-palette(grey, 700);
 		border-radius: inherit;
 	}
 
@@ -176,7 +271,7 @@ ril-avatar {
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		color: $grey-700;
+		color: material-palette(grey, 700);
 	}
 
 	&.selectable {
@@ -189,7 +284,7 @@ ril-avatar {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			color: $grey-700;
+			color: material-palette(grey, 700);
 			z-index: 3;
 			opacity: 100%;
 			transition: 0.5s ease;
@@ -204,6 +299,131 @@ ril-avatar {
 			img,
 			.initial {
 				opacity: 30%;
+			}
+		}
+	}
+}
+ril-card {
+	background-color: material-palette(grey, 50);
+	padding: $p-md;
+	box-shadow: $s-md;
+	border-radius: $r-md;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: main-palette(800);
+}
+ril-checkbox {
+	display: inline-flex;
+	line-height: 1;
+	transition: color 0.2s ease-in-out;
+
+	.ril-checkbox-wrap {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+
+		.ril-checkbox-handle {
+			align-items: center;
+			background: main-palette(800);
+			border-radius: math.div($r-xs, 1.5);
+			cursor: inherit;
+			display: flex;
+			height: $base-size * 1.5;
+			width: $base-size * 1.5;
+			justify-content: center;
+			margin: 0;
+			position: relative;
+			transition:
+				background 0.2s ease-in-out,
+				border 0.2s ease-in-out,
+				color 0.2s ease-in-out;
+
+			.checkbox-input {
+				width: 100%;
+				cursor: inherit;
+				opacity: 0%;
+				position: absolute;
+				user-select: none;
+			}
+
+			.check-detector {
+				display: block;
+				font-size: 1.6rem;
+				transform: scale(0);
+				transition: transform 0.2s ease-in-out;
+				user-select: none;
+			}
+		}
+
+		.ril-checkbox-label {
+			color: main-contrast(800);
+			margin-left: 10px;
+			transition: color 0.2s ease-in-out;
+
+			&:empty {
+				display: none;
+			}
+		}
+
+		&:hover {
+			.ril-checkbox-handle {
+				background: main-palette(700);
+				color: main-contrast(700);
+
+				.check-detector {
+					transform: scale(0.8);
+				}
+			}
+
+			.ril-checkbox-label {
+				color: main-contrast(700);
+			}
+		}
+	}
+
+	&.checked {
+		.ril-checkbox-wrap {
+			.ril-checkbox-handle {
+				background: main-palette(800);
+				color: $success-color;
+
+				.check-detector {
+					transform: scale(0.8);
+				}
+			}
+
+			.ril-checkbox-label {
+				color: main-contrast(800);
+			}
+		}
+	}
+
+	&.disabled {
+		.ril-checkbox-wrap {
+			cursor: not-allowed;
+
+			.ril-checkbox-handle {
+				background: main-palette(500);
+				color: main-contrast(500);
+
+				.check-detector {
+					transform: scale(0);
+				}
+			}
+
+			.ril-checkbox-label {
+				color: main-palette(500);
+			}
+		}
+
+		&.checked {
+			.ril-checkbox-wrap {
+				.ril-checkbox-handle {
+					.check-detector {
+						transform: scale(0.8);
+					}
+				}
 			}
 		}
 	}
@@ -223,7 +443,7 @@ ril-avatar {
 	vertical-align: middle;
 	white-space: nowrap;
 	appearance: none;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 
 	&:hover {
 		border-color: transparent;
@@ -474,31 +694,31 @@ ril-avatar {
 	}
 
 	&.btn-light {
-		background: $light-color;
-		color: $light-text;
+		background: main-contrast(900);
+		color: main-palette(900);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $light-color;
-			color: $light-color;
+			border-color: main-contrast(900);
+			color: main-contrast(900);
 
 			.btn-loader {
-				border-left: 2px solid $light-color;
+				border-left: 2px solid main-contrast(900);
 			}
 		}
 	}
 
 	&.btn-dark {
-		background: $dark-color;
-		color: $dark-text;
+		background: main-palette(900);
+		color: main-contrast(900);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $dark-color;
-			color: $dark-color;
+			border-color: main-palette(900);
+			color: main-palette(900);
 
 			.btn-loader {
-				border-left: 2px solid $dark-color;
+				border-left: 2px solid main-palette(900);
 			}
 		}
 	}
@@ -532,131 +752,6 @@ ril-avatar {
 		}
 	}
 }
-ril-card {
-	background-color: $grey-50;
-	padding: $p-md;
-	box-shadow: $s-md;
-	border-radius: $r-md;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	background: $main-800;
-}
-ril-checkbox {
-	display: inline-flex;
-	line-height: 1;
-	transition: color 0.2s ease-in-out;
-
-	.ril-checkbox-wrap {
-		align-items: center;
-		cursor: pointer;
-		display: flex;
-
-		.ril-checkbox-handle {
-			align-items: center;
-			background: $main-800;
-			border-radius: math.div($r-xs, 1.5);
-			cursor: inherit;
-			display: flex;
-			height: $base-size * 1.5;
-			width: $base-size * 1.5;
-			justify-content: center;
-			margin: 0;
-			position: relative;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
-				color 0.2s ease-in-out;
-
-			.checkbox-input {
-				width: 100%;
-				cursor: inherit;
-				opacity: 0%;
-				position: absolute;
-				user-select: none;
-			}
-
-			.check-detector {
-				display: block;
-				font-size: 1.6rem;
-				transform: scale(0);
-				transition: transform 0.2s ease-in-out;
-				user-select: none;
-			}
-		}
-
-		.ril-checkbox-label {
-			color: $main-contrast-800;
-			margin-left: 10px;
-			transition: color 0.2s ease-in-out;
-
-			&:empty {
-				display: none;
-			}
-		}
-
-		&:hover {
-			.ril-checkbox-handle {
-				background: $main-700;
-				color: $main-contrast-700;
-
-				.check-detector {
-					transform: scale(0.8);
-				}
-			}
-
-			.ril-checkbox-label {
-				color: $main-contrast-700;
-			}
-		}
-	}
-
-	&.checked {
-		.ril-checkbox-wrap {
-			.ril-checkbox-handle {
-				background: $main-800;
-				color: $success-color;
-
-				.check-detector {
-					transform: scale(0.8);
-				}
-			}
-
-			.ril-checkbox-label {
-				color: $main-contrast-800;
-			}
-		}
-	}
-
-	&.disabled {
-		.ril-checkbox-wrap {
-			cursor: not-allowed;
-
-			.ril-checkbox-handle {
-				background: $main-500;
-				color: $main-contrast-500;
-
-				.check-detector {
-					transform: scale(0);
-				}
-			}
-
-			.ril-checkbox-label {
-				color: $main-500;
-			}
-		}
-
-		&.checked {
-			.ril-checkbox-wrap {
-				.ril-checkbox-handle {
-					.check-detector {
-						transform: scale(0.8);
-					}
-				}
-			}
-		}
-	}
-}
 ril-color-picker {
 	position: relative;
 
@@ -671,12 +766,12 @@ ril-color-picker {
 			height: 1.6rem;
 			border-radius: 4px;
 			background-color: #EAEAEA;
-			border: 1px solid $main-contrast-800;
+			border: 1px solid main-contrast(800);
 		}
 
 		p {
 			margin-left: 0.6rem;
-			color: $main-contrast-800;
+			color: main-contrast(800);
 		}
 	}
 }
@@ -685,7 +780,7 @@ ril-color-picker {
 	color-chrome {
 		.chrome-picker {
 			border-radius: 0 0 $r-sm $r-sm !important;
-			background-color: $main-900;
+			background-color: main-palette(900);
 			margin: $m-md 0;
 		}
 
@@ -704,8 +799,8 @@ ril-color-picker {
 
 				input {
 					width: auto !important;
-					color: $main-contrast-800 !important;
-					background: $main-700 !important;
+					color: main-contrast(800) !important;
+					background: main-palette(700) !important;
 					border-radius: $r-sm !important;
 					box-shadow: none !important;
 				}
@@ -721,105 +816,10 @@ ril-color-picker {
 		}
 	}
 }
-ril-badge {
-	align-items: center;
-	justify-content: center;
-	border-radius: $r-md;
-	display: inline-flex;
-	font-weight: $f-weight-md;
-
-	// Sizes
-	&.badge-xs {
-		font-size: $f-size-xs;
-		line-height: $f-line-xs;
-		border-radius: $r-xs;
-		padding: math.div($p-xs, 2) $p-xs;
-	}
-
-	&.badge-sm {
-		font-size: $f-size-sm;
-		line-height: $f-line-sm;
-		border-radius: $r-sm;
-		padding: math.div($p-sm, 2) $p-sm;
-	}
-
-	&.badge-md {
-		font-size: $f-size-md;
-		line-height: $f-line-md;
-		border-radius: $r-md;
-		padding: math.div($p-md, 2) $p-md;
-	}
-
-	&.badge-lg {
-		font-size: $f-size-lg;
-		line-height: $f-line-lg;
-		border-radius: $r-lg;
-		padding: math.div($p-lg, 2) $p-lg;
-	}
-
-	&.badge-xl {
-		font-size: $f-size-xl;
-		line-height: $f-line-xl;
-		border-radius: $r-xl;
-		padding: math.div($p-xl, 2) $p-xl;
-	}
-
-	&.extra-thin {
-		font-weight: $f-weight-xs;
-	}
-
-	&.thin {
-		font-weight: $f-weight-sm;
-	}
-
-	&.bold {
-		font-weight: $f-weight-lg;
-	}
-
-	&.heavy-bold {
-		font-weight: $f-weight-xl;
-	}
-
-	// Colors
-	&.badge-accent {
-		background: $accent-color;
-		color: $accent-text;
-	}
-
-	&.badge-success {
-		background: $success-color;
-		color: $success-text;
-	}
-
-	&.badge-warning {
-		background: $warning-color;
-		color: $warning-text;
-	}
-
-	&.badge-error {
-		background: $error-color;
-		color: $error-text;
-	}
-
-	&.badge-info {
-		background: $info-color;
-		color: $info-text;
-	}
-
-	&.badge-light {
-		background: $light-color;
-		color: $light-text;
-	}
-
-	&.badge-dark {
-		background: $dark-color;
-		color: $dark-text;
-	}
-}
 $_module-rem: $base-size;
 $_placeholder-color: #A8A8A8;
 $_fs: 1rem;
-$_lh: $_module-rem * 2 / $_fs;
+$_lh: math.div($-module-rem * 2, $-fs);
 $_padding-h: $_module-rem * 2;
 $_padding-v: $_module-rem;
 $_shape: 6px;
@@ -827,13 +827,13 @@ $_shadow-hover: $s-md;
 
 // size sm
 $_fs-sm: ($_fs * 0.9);
-$_lh-sm: $_module-rem * 2 / $_fs-sm;
+$_lh-sm: math.div($-module-rem * 2, $-fs)-sm;
 $_shape-sm: ($_shape * 0.8);
-$_padding-v-sm: ($_module-rem / 2);
+$_padding-v-sm: (math.div($-module-rem, 2));
 
 // size lg
 $_fs-lg: ($_fs * 1.3);
-$_lh-lg: $_module-rem * 2 / $_fs-lg;
+$_lh-lg: math.div($-module-rem * 2, $-fs)-lg;
 $_shape-lg: ($_shape * 1.5);
 $_padding-v-lg: $_module-rem * 1.5;
 
@@ -856,7 +856,7 @@ ril-date-picker {
 
 	.ril-input-wrap {
 		align-items: center;
-		background: $main-800;
+		background: main-palette(800);
 		border-radius: $r-md;
 		cursor: pointer;
 		display: flex;
@@ -879,7 +879,7 @@ ril-date-picker {
 			background: none;
 			border: none;
 			box-shadow: none;
-			color: $main-contrast-500;
+			color: main-contrast(500);
 			cursor: inherit;
 			display: block;
 			font: inherit;
@@ -890,7 +890,7 @@ ril-date-picker {
 
 		.input-prefix,
 		.input-suffix {
-			color: $main-500;
+			color: main-palette(500);
 			flex: none;
 			padding: 0 0.2em;
 		}
@@ -902,14 +902,14 @@ ril-date-picker {
 
 	&:hover {
 		.ril-input-wrap {
-			background: $main-700;
+			background: main-palette(700);
 			box-shadow: $s-md;
 		}
 	}
 
 	&.input-focus {
 		.ril-input-wrap {
-			background: $main-700;
+			background: main-palette(700);
 		}
 	}
 
@@ -949,10 +949,10 @@ ril-date-picker {
 	// }
 	&.input-disabled,
 	&.input-readonly {
-		color: $main-contrast-500;
+		color: main-contrast(500);
 
 		.ril-input-wrap {
-			background-color: $main-500;
+			background-color: main-palette(500);
 			box-shadow: none !important;
 			cursor: not-allowed;
 
@@ -966,31 +966,31 @@ ril-date-picker {
 .mat-datepicker-content {
 	margin-top: 1rem;
 	box-shadow: $s-md;
-	background-color: $main-800;
+	background-color: main-palette(800);
 	border-radius: $r-md !important;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 
 	.mat-calendar-arrow {
-		border-top-color: $main-contrast-800;
-		fill: $main-contrast-800;
+		border-top-color: main-contrast(800);
+		fill: main-contrast(800);
 	}
 
 	.mat-calendar-next-button,
 	.mat-calendar-previous-button {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 
 	.mat-calendar-next-button:hover,
 	.mat-calendar-previous-button:hover {
-		background-color: $main-800;
+		background-color: main-palette(800);
 	}
 
 	.mat-calendar-period-button:hover {
-		background-color: $main-800;
+		background-color: main-palette(800);
 	}
 
 	.mat-calendar-table-header {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 
 	.mat-calendar-table-header-divider::after {
@@ -998,14 +998,14 @@ ril-date-picker {
 	}
 
 	.mat-calendar-body-label {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 
 	.mat-calendar-body-cell-content {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 
 		// &:hover {
-		// 	background-color: $main-700 !important;
+		// 	background-color: main-palette(700) !important;
 		// }
 
 		&.mat-calendar-body-selected {
@@ -1016,7 +1016,7 @@ ril-date-picker {
 	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
 	.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
 	.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-		background-color: $main-700 !important;
+		background-color: main-palette(700) !important;
 	}
 
 	.mat-calendar-body-today:not(.mat-calendar-body-selected) {
@@ -1027,7 +1027,7 @@ ril-date-picker {
 .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
 .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
 .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-	background-color: $main-800;
+	background-color: main-palette(800);
 }
 ril-dialog {
 	width: 100%;
@@ -1038,7 +1038,7 @@ ril-dialog {
 		margin-bottom: 2rem;
 
 		p {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 		}
 	}
 
@@ -1049,9 +1049,9 @@ ril-dialog {
 		button {
 			border: none;
 			cursor: pointer;
-			padding: $p-sm / 2 $p-sm;
+			padding: math.div($p-sm, 2) $p-sm;
 			border-radius: $r-sm;
-			color: $main-900;
+			color: main-palette(900);
 			display: flex;
 			align-items: center;
 
@@ -1072,8 +1072,19 @@ ril-dialog {
 }
 
 .mat-dialog-container {
-	background: $main-900 !important;
+	background: main-palette(900) !important;
 	border-radius: $r-md !important;
+}
+ril-expansion-panel {
+	.mat-expansion-panel {
+		background: main-palette(800);
+		box-shadow: $s-md;
+		border-radius: $r-md;
+
+		.mat-expansion-indicator::after {
+			color: main-contrast(700) !important;
+		}
+	}
 }
 ril-file-upload {
 	.wrapper {
@@ -1081,7 +1092,7 @@ ril-file-upload {
 		align-items: center;
 
 		.uploadBtn {
-			background-color: $main-800;
+			background-color: main-palette(800);
 			border-radius: $r-md;
 			padding: 1rem;
 			display: flex;
@@ -1104,13 +1115,13 @@ ril-file-upload {
 			.file-icon {
 				width: 3rem;
 				height: 3rem;
-				background-color: $main-700;
+				background-color: main-palette(700);
 				font-size: 2.4rem;
 				position: absolute;
 				left: 0.2rem;
 				border-radius: $r-md;
 				object-fit: cover;
-				color: $main-contrast-800;
+				color: main-contrast(800);
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -1118,7 +1129,7 @@ ril-file-upload {
 
 			p {
 				margin: 0 !important;
-				color: $main-contrast-800;
+				color: main-contrast(800);
 			}
 
 			.fileName {
@@ -1129,7 +1140,7 @@ ril-file-upload {
 			.upload-icon {
 				font-size: 1.4rem;
 				margin-left: 0.5rem;
-				color: $main-contrast-800;
+				color: main-contrast(800);
 			}
 
 			.close-icon {
@@ -1155,7 +1166,7 @@ ril-form-group {
 			transition: all 0.2s;
 			top: -0.5em;
 			margin-left: $base-size * 1.5;
-			color: $main-500;
+			color: main-palette(500);
 			z-index: 3;
 			line-height: 1;
 			padding: 0 1px;
@@ -1166,7 +1177,7 @@ ril-form-group {
 				content: " ";
 				display: block;
 				position: absolute;
-				background: $main-700;
+				background: main-palette(700);
 				height: 1px;
 				top: 50%;
 				left: -0.3em;
@@ -1189,17 +1200,6 @@ ril-form-group {
 		}
 	}
 }
-ril-expansion-panel {
-	.mat-expansion-panel {
-		background: $main-800;
-		box-shadow: $s-md;
-		border-radius: $r-md;
-
-		.mat-expansion-indicator::after {
-			color: $main-contrast-700 !important;
-		}
-	}
-}
 ril-form-label {
 	display: block;
 	font-weight: 400;
@@ -1207,6 +1207,127 @@ ril-form-label {
 	&[required] {
 		&::after {
 			content: " *";
+		}
+	}
+}
+ril-input {
+	border-radius: $r-md;
+	color: main-contrast(800);
+	display: flex;
+	font-size: $f-size-md;
+	line-height: $f-line-md;
+	outline: none;
+	width: 100%;
+
+	.ril-input-wrap {
+		align-items: center;
+		background: main-palette(800);
+		border: 1px solid main-palette(800);
+		border-radius: inherit;
+		cursor: text;
+		display: flex;
+		outline: none;
+		padding: 0 calc(#{$f-size-md} - 0.2em);
+		position: relative;
+		transition:
+			background 0.2s ease-in-out,
+			border 0.2s ease-in-out,
+			border 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out,
+			color 0.2s ease-in-out;
+		will-change: background, border, box-shadow, color;
+		width: 100%;
+
+		.input-infix {
+			flex: auto;
+			min-width: 5px;
+		}
+
+		.input-control {
+			background: none;
+			border: 0;
+			border-radius: inherit;
+			box-shadow: none;
+			color: inherit;
+			cursor: inherit;
+			display: block;
+			font: inherit;
+			outline: none;
+			padding: $p-sm 0.2em;
+			width: 100%;
+
+			// @include placeholder {
+			// 	color: main-contrast(700);
+			// }
+		}
+
+		.input-prefix,
+		.input-suffix {
+			color: main-contrast(800);
+			flex: none;
+			padding: 0 0.2em;
+		}
+
+		.input-icon {
+			font-size: 1.3em;
+		}
+
+		.char-limiting {
+			align-items: center;
+			color: main-contrast(800);
+			display: flex;
+			font-size: 0.9em;
+			justify-content: center;
+			padding: 0 0.2em;
+			pointer-events: none;
+		}
+	}
+
+	:host-context(ril-form-group.float) {
+		.ka-input-wrap {
+			border-color: main-contrast(700);
+		}
+	}
+
+	&:hover {
+		color: main-contrast(700);
+
+		.ril-input-wrap {
+			background: main-palette(700);
+			border-color: main-palette(700);
+		}
+	}
+
+	&.input-focus {
+		color: main-contrast(800);
+
+		.ril-input-wrap {
+			background: main-palette(700);
+			border-color: main-palette(200);
+		}
+	}
+
+	&.ng-invalid.ng-touched,
+	.has-error & {
+		.ril-input-wrap {
+			background-color: main-palette(700);
+			outline: $error-color solid 1px;
+		}
+	}
+
+	&.input-disabled,
+	&.input-readonly {
+		color: main-contrast(500);
+
+		.ril-input-wrap {
+			background-color: main-palette(500);
+			border-color: main-palette(500);
+			box-shadow: none !important;
+			cursor: not-allowed;
+
+			.input-control {
+				pointer-events: none;
+			}
 		}
 	}
 }
@@ -1365,11 +1486,11 @@ ril-list {
 			}
 
 			&:nth-child(odd) {
-				background: $main-800;
+				background: main-palette(800);
 			}
 
 			&:nth-child(even) {
-				background: $main-700;
+				background: main-palette(700);
 			}
 
 			&:last-child {
@@ -1417,127 +1538,6 @@ ril-list {
 		}
 	}
 }
-ril-input {
-	border-radius: $r-md;
-	color: $main-contrast-800;
-	display: flex;
-	font-size: $f-size-md;
-	line-height: $f-line-md;
-	outline: none;
-	width: 100%;
-
-	.ril-input-wrap {
-		align-items: center;
-		background: $main-800;
-		border: 1px solid $main-800;
-		border-radius: inherit;
-		cursor: text;
-		display: flex;
-		outline: none;
-		padding: 0 calc(#{$f-size-md} - 0.2em);
-		position: relative;
-		transition:
-			background 0.2s ease-in-out,
-			border 0.2s ease-in-out,
-			border 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
-			color 0.2s ease-in-out;
-		will-change: background, border, box-shadow, color;
-		width: 100%;
-
-		.input-infix {
-			flex: auto;
-			min-width: 5px;
-		}
-
-		.input-control {
-			background: none;
-			border: 0;
-			border-radius: inherit;
-			box-shadow: none;
-			color: inherit;
-			cursor: inherit;
-			display: block;
-			font: inherit;
-			outline: none;
-			padding: $p-sm 0.2em;
-			width: 100%;
-
-			// @include placeholder {
-			// 	color: $main-contrast-700;
-			// }
-		}
-
-		.input-prefix,
-		.input-suffix {
-			color: $main-contrast-800;
-			flex: none;
-			padding: 0 0.2em;
-		}
-
-		.input-icon {
-			font-size: 1.3em;
-		}
-
-		.char-limiting {
-			align-items: center;
-			color: $main-contrast-800;
-			display: flex;
-			font-size: 0.9em;
-			justify-content: center;
-			padding: 0 0.2em;
-			pointer-events: none;
-		}
-	}
-
-	:host-context(ril-form-group.float) {
-		.ka-input-wrap {
-			border-color: $main-contrast-700;
-		}
-	}
-
-	&:hover {
-		color: $main-contrast-700;
-
-		.ril-input-wrap {
-			background: $main-700;
-			border-color: $main-700;
-		}
-	}
-
-	&.input-focus {
-		color: $main-contrast-800;
-
-		.ril-input-wrap {
-			background: $main-700;
-			border-color: $main-200;
-		}
-	}
-
-	&.ng-invalid.ng-touched,
-	.has-error & {
-		.ril-input-wrap {
-			background-color: $main-700;
-			outline: $error-color solid 1px;
-		}
-	}
-
-	&.input-disabled,
-	&.input-readonly {
-		color: $main-contrast-500;
-
-		.ril-input-wrap {
-			background-color: $main-500;
-			border-color: $main-500;
-			box-shadow: none !important;
-			cursor: not-allowed;
-
-			.input-control {
-				pointer-events: none;
-			}
-		}
-	}
-}
 ril-menu {
 	position: relative;
 
@@ -1555,7 +1555,7 @@ ril-menu {
 }
 
 .mat-menu-panel {
-	background: $main-800;
+	background: main-palette(800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {
@@ -1575,8 +1575,8 @@ ril-pagination {
 			margin: 0;
 
 			.page-link {
-				background: $main-700;
-				border-color: $main-700;
+				background: main-palette(700);
+				border-color: main-palette(700);
 				border-left: 1px solid #353535;
 				color: #FFF;
 				padding: 0.8rem 1.6rem;
@@ -1607,7 +1607,7 @@ ril-pagination {
 
 		.page-item.active {
 			.page-link {
-				background: $main-500;
+				background: main-palette(500);
 				border-color: transparent;
 				color: #FFF;
 			}
@@ -1622,6 +1622,28 @@ ril-pagination {
 				// 		pointer-events: none;
 			}
 		}
+	}
+}
+ril-progress-spinner {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
+
+	.mat-progress-spinner {
+		stroke: main-palette(800);
+	}
+
+	.mat-progress-spinner circle,
+	.mat-spinner circle {
+		stroke: inherit;
+	}
+
+	p {
+		font-weight: 700;
+		margin-top: 1rem;
 	}
 }
 ril-radio {
@@ -1642,26 +1664,28 @@ ril-radio {
 		}
 	}
 }
-ril-progress-spinner {
+ril-range-slider {
 	display: flex;
-	justify-content: center;
-	padding: 2rem;
-	flex-direction: column;
-	align-content: center;
-	align-items: center;
+	width: 100%;
 
-	.mat-progress-spinner {
-		stroke: $main-800;
+	mat-slider {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
-	.mat-progress-spinner circle,
-	.mat-spinner circle {
-		stroke: inherit;
+	.mat-accent .mat-slider-track-fill,
+	.mat-accent .mat-slider-thumb,
+	.mat-accent .mat-slider-thumb-label {
+		background-color: main-palette(800);
 	}
 
-	p {
-		font-weight: 700;
-		margin-top: 1rem;
+	.mat-accent .mat-slider-thumb-label-text {
+		color: $success-color;
+	}
+
+	.mat-slider-track-background {
+		background-color: main-palette(600);
 	}
 }
 ril-select {
@@ -1673,10 +1697,10 @@ ril-select {
 
 	.select-box {
 		align-items: center;
-		background: $main-800;
-		border: 1px solid $main-800;
+		background: main-palette(800);
+		border: 1px solid main-palette(800);
 		border-radius: inherit;
-		color: $main-contrast-800;
+		color: main-contrast(800);
 		cursor: pointer;
 		overflow: hidden;
 		transition:
@@ -1690,15 +1714,15 @@ ril-select {
 
 		.mat-select-value {
 			max-width: 100%;
-			color: $main-contrast-800;
+			color: main-contrast(800);
 
 			.mat-select-placeholder {
-				color: $main-700;
+				color: main-palette(700);
 			}
 		}
 
 		.mat-select-arrow {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 		}
 	}
 
@@ -1710,9 +1734,9 @@ ril-select {
 
 	&:hover {
 		.select-box {
-			background: $main-700;
-			border-color: $main-700;
-			color: $main-contrast-700;
+			background: main-palette(700);
+			border-color: main-palette(700);
+			color: main-contrast(700);
 		}
 	}
 
@@ -1722,7 +1746,7 @@ ril-select {
 			min-height: $base-size * 3;
 
 			> .value {
-				margin: -($base-size/ 2);
+				margin: -(math.div($base-size, 2));
 				white-space: normal;
 			}
 		}
@@ -1730,10 +1754,10 @@ ril-select {
 
 	&.opened {
 		.select-box {
-			background: $main-700;
-			border-color: $main-200;
+			background: main-palette(700);
+			border-color: main-palette(200);
 			box-shadow: $s-md;
-			color: $main-contrast-700;
+			color: main-contrast(700);
 		}
 	}
 
@@ -1741,10 +1765,10 @@ ril-select {
 		cursor: not-allowed;
 
 		.select-box {
-			background: $main-500;
-			border-color: $main-500;
+			background: main-palette(500);
+			border-color: main-palette(500);
 			box-shadow: none;
-			color: $main-contrast-500;
+			color: main-contrast(500);
 			cursor: not-allowed;
 			pointer-events: none;
 		}
@@ -1760,7 +1784,7 @@ ril-select {
 }
 
 .mat-select-panel {
-	background: $main-800;
+	background: main-palette(800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {
@@ -1769,7 +1793,7 @@ ril-select {
 	}
 
 	.mat-option {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 }
 ril-switcher {
@@ -1785,7 +1809,7 @@ ril-switcher {
 
 		.ril-switcher-handle {
 			align-items: center;
-			background: $main-800;
+			background: main-palette(800);
 			border-radius: $r-md;
 			cursor: inherit;
 			display: flex;
@@ -1806,7 +1830,7 @@ ril-switcher {
 			}
 
 			.check-detector {
-				background: $main-300;
+				background: main-palette(300);
 				border-radius: 50%;
 				display: block;
 				height: $base-size * 0.9;
@@ -1821,7 +1845,7 @@ ril-switcher {
 		}
 
 		.ril-switcher-label {
-			color: $main-contrast-700;
+			color: main-contrast(700);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -1832,15 +1856,15 @@ ril-switcher {
 
 		&:hover {
 			.ril-switcher-handle {
-				background: $main-600;
+				background: main-palette(600);
 
 				.check-detector {
-					background: $main-50;
+					background: main-palette(50);
 				}
 			}
 
 			.ril-switcher-label {
-				color: $main-contrast-700;
+				color: main-contrast(700);
 			}
 		}
 	}
@@ -1851,13 +1875,13 @@ ril-switcher {
 				background: $success-color;
 
 				.check-detector {
-					background: $main-800;
+					background: main-palette(800);
 					transform: translate(calc(($base-size * 2.8) / 2 + 8px));
 				}
 			}
 
 			.ril-switcher-label {
-				color: $main-contrast-700;
+				color: main-contrast(700);
 			}
 		}
 	}
@@ -1904,14 +1928,14 @@ ril-tabs {
 
 	.button-group {
 		position: relative;
-		background: $main-800;
+		background: main-palette(800);
 		border-radius: 0.5rem;
 		text-align: center;
 		cursor: pointer;
 		width: 100%;
 		height: 2.8rem;
 		display: flex;
-		color: $main-contrast-500;
+		color: main-contrast(500);
 
 		.active {
 			color: $success-color;
@@ -1933,7 +1957,7 @@ ril-tabs {
 
 			.box {
 				height: 100%;
-				background-color: $main-900;
+				background-color: main-palette(900);
 				border-radius: $r-sm;
 			}
 		}
@@ -1945,7 +1969,7 @@ ril-tabs {
 }
 ril-text-area {
 	border-radius: $r-md;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 	display: block;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -1961,8 +1985,8 @@ ril-text-area {
 		width: 100%;
 
 		.textarea-control {
-			background: $main-800;
-			border: 1px solid $main-800;
+			background: main-palette(800);
+			border: 1px solid main-palette(800);
 			border-radius: inherit;
 			box-shadow: none;
 			color: inherit;
@@ -1981,12 +2005,12 @@ ril-text-area {
 			width: 100%;
 
 			// @include placeholder {
-			// 	color: $main-500;
+			// 	color: main-palette(500);
 			// }
 		}
 
 		.char-limiter {
-			color: $main-500;
+			color: main-palette(500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: flex-end;
@@ -2001,24 +2025,24 @@ ril-text-area {
 	}
 
 	&:hover {
-		color: $main-contrast-500;
+		color: main-contrast(500);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: $main-700;
-				border-color: $main-700;
+				background: main-palette(700);
+				border-color: main-palette(700);
 				box-shadow: $s-md;
 			}
 		}
 	}
 
 	&.textarea-focus {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: $main-700;
-				border-color: $main-200;
+				background: main-palette(700);
+				border-color: main-palette(200);
 				box-shadow: $s-md;
 			}
 		}
@@ -2036,14 +2060,14 @@ ril-text-area {
 
 	&.textarea-disabled,
 	&.textarea-readonly {
-		color: $main-contrast-700;
+		color: main-contrast(700);
 
 		.ril-textarea-wrap {
 			cursor: not-allowed;
 
 			.textarea-control {
-				background-color: $main-500;
-				border-color: $main-500;
+				background-color: main-palette(500);
+				border-color: main-palette(500);
 				pointer-events: none;
 				box-shadow: none;
 			}
@@ -2078,37 +2102,13 @@ ril-text-area {
 		}
 	}
 }
-ril-range-slider {
-	display: flex;
-	width: 100%;
-
-	mat-slider {
-		width: 100%;
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	.mat-accent .mat-slider-track-fill,
-	.mat-accent .mat-slider-thumb,
-	.mat-accent .mat-slider-thumb-label {
-		background-color: $main-800;
-	}
-
-	.mat-accent .mat-slider-thumb-label-text {
-		color: $success-color;
-	}
-
-	.mat-slider-track-background {
-		background-color: $main-600;
-	}
-}
 ril-card-content {
 	font-size: $f-size-md;
-	color: $main-contrast-500;
+	color: main-contrast(500);
 
 	p {
 		font-size: $f-size-md;
-		color: $main-contrast-500;
+		color: main-contrast(500);
 	}
 }
 ril-card-image {
@@ -2134,25 +2134,25 @@ ril-card-image {
 }
 ril-card-title {
 	font-size: $f-size-lg;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 	margin-bottom: $m-md;
 
 	p {
 		font-size: $f-size-lg;
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 }
 ril-expansion-panel-content {
-	color: $main-contrast-800;
+	color: main-contrast(800);
 }
 ril-expansion-panel-description {
 	p {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 }
 ril-expansion-panel-title {
 	h4 {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 }
 ril-list-header {
@@ -2166,7 +2166,7 @@ ril-list-header {
 		cursor: pointer;
 	}
 
-	color: $main-contrast-800;
+	color: main-contrast(800);
 }
 ril-list-item {
 	display: flex;
@@ -2184,7 +2184,7 @@ ril-list-item {
 		justify-content: center;
 		width: 100%;
 		min-height: 5rem;
-		color: $main-contrast-700;
+		color: main-contrast(700);
 
 		.columns {
 			padding: $p-md;
@@ -2196,17 +2196,17 @@ ril-list-item {
 
 		&:hover {
 			div {
-				color: $main-contrast-500;
+				color: main-contrast(500);
 			}
 		}
 	}
 
 	&:nth-child(odd) {
-		background: $main-700;
+		background: main-palette(700);
 	}
 
 	&:nth-child(even) {
-		background: $main-600;
+		background: main-palette(600);
 	}
 
 	&:first-child {
@@ -2256,7 +2256,7 @@ ril-list-toolbar {
 	.right {
 		.btn-default,
 		btn-dark {
-			background: $main-800;
+			background: main-palette(800);
 		}
 
 		.badge {
@@ -2296,10 +2296,10 @@ ril-menu-item {
 	}
 
 	button {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 
 		&:hover {
-			background: $main-700;
+			background: main-palette(700);
 		}
 	}
 }
@@ -2321,7 +2321,7 @@ ril-radio-option {
 
 		.ril-radio-handle {
 			align-items: center;
-			background: $main-800;
+			background: main-palette(800);
 
 			//border: 1px solid red;
 			border-radius: 50%;
@@ -2349,7 +2349,7 @@ ril-radio-option {
 		}
 
 		.ril-radio-label {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -2360,16 +2360,16 @@ ril-radio-option {
 
 		&:hover {
 			.ril-radio-handle {
-				background: $main-700;
+				background: main-palette(700);
 
 				.check-detector {
-					background: $main-contrast-700;
+					background: main-contrast(700);
 					transform: scale(0.5);
 				}
 			}
 
 			.ril-radio-label {
-				color: $main-contrast-700;
+				color: main-contrast(700);
 			}
 		}
 	}
@@ -2377,7 +2377,7 @@ ril-radio-option {
 	&.checked {
 		.ril-radio-wrap {
 			.ril-radio-handle {
-				background: $main-800;
+				background: main-palette(800);
 				color: $success-color;
 
 				.check-detector {
@@ -2386,7 +2386,7 @@ ril-radio-option {
 			}
 
 			.ril-radio-label {
-				color: $main-contrast-700;
+				color: main-contrast(700);
 			}
 		}
 	}
@@ -2396,8 +2396,8 @@ ril-radio-option {
 			cursor: not-allowed;
 
 			.ril-radio-handle {
-				background: $main-500;
-				color: $main-contrast-500;
+				background: main-palette(500);
+				color: main-contrast(500);
 
 				.check-detector {
 					transform: scale(0);
@@ -2405,7 +2405,7 @@ ril-radio-option {
 			}
 
 			.ril-radio-label {
-				color: $main-500;
+				color: main-palette(500);
 			}
 		}
 

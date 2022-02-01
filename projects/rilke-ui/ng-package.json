@@ -3,5 +3,10 @@
 	"dest": "../../dist/rilke-ui",
 	"lib": {
 		"entryFile": "src/public-api.ts"
-	}
+	},
+	"allowedNonPeerDependencies": [
+		"@angular/material",
+		"@angular/cdk",
+		"ngx-color"
+	]
 }

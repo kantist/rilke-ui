@@ -12,12 +12,12 @@ ril-color-picker {
 			height: 1.6rem;
 			border-radius: 4px;
 			background-color: #EAEAEA;
-			border: 1px solid $main-contrast-800;
+			border: 1px solid main-contrast(800);
 		}
 
 		p {
 			margin-left: 0.6rem;
-			color: $main-contrast-800;
+			color: main-contrast(800);
 		}
 	}
 }
@@ -26,7 +26,7 @@ ril-color-picker {
 	color-chrome {
 		.chrome-picker {
 			border-radius: 0 0 $r-sm $r-sm !important;
-			background-color: $main-900;
+			background-color: main-palette(900);
 			margin: $m-md 0;
 		}
 
@@ -45,8 +45,8 @@ ril-color-picker {
 
 				input {
 					width: auto !important;
-					color: $main-contrast-800 !important;
-					background: $main-700 !important;
+					color: main-contrast(800) !important;
+					background: main-palette(700) !important;
 					border-radius: $r-sm !important;
 					box-shadow: none !important;
 				}

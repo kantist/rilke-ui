@@ -1,0 +1,59 @@
+@use "sass:color";
+@import "./colors";
+
+// Custom Palette
+$main: material-palette(grey, 900);
+$main-contrast: color.adjust($main, $lightness: 100%);
+
+$main-palette: (
+	50: color.adjust($main, $lightness: 50%),
+	100: color.adjust($main, $lightness: 45%),
+	200: color.adjust($main, $lightness: 40%),
+	300: color.adjust($main, $lightness: 35%),
+	400: color.adjust($main, $lightness: 30%),
+	500: color.adjust($main, $lightness: 25%),
+	600: color.adjust($main, $lightness: 20%),
+	700: color.adjust($main, $lightness: 15%),
+	800: color.adjust($main, $lightness: 5%),
+	900: $main,
+	contrast: (
+		50: color.adjust($main-contrast, $lightness: -50%),
+		100: color.adjust($main-contrast, $lightness: -45%),
+		200: color.adjust($main-contrast, $lightness: -40%),
+		300: color.adjust($main-contrast, $lightness: -35%),
+		400: color.adjust($main-contrast, $lightness: -30%),
+		500: color.adjust($main-contrast, $lightness: -25%),
+		600: color.adjust($main-contrast, $lightness: -20%),
+		700: color.adjust($main-contrast, $lightness: -15%),
+		800: color.adjust($main-contrast, $lightness: -5%),
+		900: color.adjust($main, $lightness: 100%),
+	)
+);
+
+@function main-palette($key: $main-palette) {
+	@return map-get($main-palette, $key);
+}
+
+@function main-contrast($key: $main-palette) {
+	@return map-get(map-get($main-palette, contrast), $key);
+}
+
+$accent-color: material-palette(indigo, 500);
+$accent-text: material-palette(grey, 50);
+$accent-hover: color.adjust(material-palette(indigo, 500), $lightness: -10%);
+
+$success-color: material-palette(light-green, 500);
+$success-text: material-palette(grey, 50);
+$success-hover: color.adjust(material-palette(light-green, 500), $lightness: -10%);
+
+$info-color: material-palette(light-blue, 500);
+$info-text: material-palette(grey, 50);
+$info-hover: color.adjust(material-palette(light-blue, 500), $lightness: -10%);
+
+$warning-color: material-palette(amber, 500);
+$warning-text: material-palette(grey, 50);
+$warning-hover: color.adjust(material-palette(amber, 500), $lightness: -10%);
+
+$error-color: material-palette(pink, 500);
+$error-text: material-palette(grey, 50);
+$error-hover: color.adjust(material-palette(pink, 500), $lightness: -10%);

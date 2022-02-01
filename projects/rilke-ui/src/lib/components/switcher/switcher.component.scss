@@ -11,7 +11,7 @@ ril-switcher {
 
 		.ril-switcher-handle {
 			align-items: center;
-			background: $main-800;
+			background: main-palette(800);
 			border-radius: $r-md;
 			cursor: inherit;
 			display: flex;
@@ -32,7 +32,7 @@ ril-switcher {
 			}
 
 			.check-detector {
-				background: $main-300;
+				background: main-palette(300);
 				border-radius: 50%;
 				display: block;
 				height: $base-size * 0.9;
@@ -47,7 +47,7 @@ ril-switcher {
 		}
 
 		.ril-switcher-label {
-			color: $main-contrast-700;
+			color: main-contrast(700);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -58,15 +58,15 @@ ril-switcher {
 
 		&:hover {
 			.ril-switcher-handle {
-				background: $main-600;
+				background: main-palette(600);
 
 				.check-detector {
-					background: $main-50;
+					background: main-palette(50);
 				}
 			}
 
 			.ril-switcher-label {
-				color: $main-contrast-700;
+				color: main-contrast(700);
 			}
 		}
 	}
@@ -77,13 +77,13 @@ ril-switcher {
 				background: $success-color;
 
 				.check-detector {
-					background: $main-800;
+					background: main-palette(800);
 					transform: translate(calc(($base-size * 2.8) / 2 + 8px));
 				}
 			}
 
 			.ril-switcher-label {
-				color: $main-contrast-700;
+				color: main-contrast(700);
 			}
 		}
 	}

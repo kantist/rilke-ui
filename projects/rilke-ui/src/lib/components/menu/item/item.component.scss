@@ -12,10 +12,10 @@ ril-menu-item {
 	}
 
 	button {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 
 		&:hover {
-			background: $main-700;
+			background: main-palette(700);
 		}
 	}
 }

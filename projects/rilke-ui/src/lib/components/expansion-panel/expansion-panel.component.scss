@@ -1,11 +1,11 @@
 ril-expansion-panel {
 	.mat-expansion-panel {
-		background: $main-800;
+		background: main-palette(800);
 		box-shadow: $s-md;
 		border-radius: $r-md;
 
 		.mat-expansion-indicator::after {
-			color: $main-contrast-700 !important;
+			color: main-contrast(700) !important;
 		}
 	}
 }

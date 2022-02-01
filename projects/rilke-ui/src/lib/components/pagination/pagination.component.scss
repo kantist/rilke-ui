@@ -10,8 +10,8 @@ ril-pagination {
 			margin: 0;
 
 			.page-link {
-				background: $main-700;
-				border-color: $main-700;
+				background: main-palette(700);
+				border-color: main-palette(700);
 				border-left: 1px solid #353535;
 				color: #FFF;
 				padding: 0.8rem 1.6rem;
@@ -42,7 +42,7 @@ ril-pagination {
 
 		.page-item.active {
 			.page-link {
-				background: $main-500;
+				background: main-palette(500);
 				border-color: transparent;
 				color: #FFF;
 			}

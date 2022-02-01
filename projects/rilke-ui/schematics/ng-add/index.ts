@@ -38,10 +38,6 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 			let optionsJson = json['projects'][projectName]['architect']['build']['options'];
 
 			let styles = [
-				"src/assets/rilke-ui/_colors.scss",
-				"src/assets/rilke-ui/_structure.scss",
-				"src/assets/rilke-ui/_typography.scss",
-				"src/assets/rilke-ui/components.scss",
 				"src/assets/rilke-ui/styles.scss"
 			];
 
@@ -65,7 +61,7 @@ function addImportBundleScss(): Rule {
 		const fileToAdd = 'src/assets/rilke-ui/components.scss';
 
 		const literal = `@use "sass:math";
-@import './colors';
+@import './palette';
 @import './structure';
 @import './typography';
 

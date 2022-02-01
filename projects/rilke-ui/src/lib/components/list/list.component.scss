@@ -153,11 +153,11 @@ ril-list {
 			}
 
 			&:nth-child(odd) {
-				background: $main-800;
+				background: main-palette(800);
 			}
 
 			&:nth-child(even) {
-				background: $main-700;
+				background: main-palette(700);
 			}
 
 			&:last-child {

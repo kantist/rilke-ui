@@ -1,7 +1,7 @@
 $_module-rem: $base-size;
 $_placeholder-color: #A8A8A8;
 $_fs: 1rem;
-$_lh: $_module-rem * 2 / $_fs;
+$_lh: math.div($-module-rem * 2, $-fs);
 $_padding-h: $_module-rem * 2;
 $_padding-v: $_module-rem;
 $_shape: 6px;
@@ -9,13 +9,13 @@ $_shadow-hover: $s-md;
 
 // size sm
 $_fs-sm: ($_fs * 0.9);
-$_lh-sm: $_module-rem * 2 / $_fs-sm;
+$_lh-sm: math.div($-module-rem * 2, $-fs)-sm;
 $_shape-sm: ($_shape * 0.8);
-$_padding-v-sm: ($_module-rem / 2);
+$_padding-v-sm: (math.div($-module-rem, 2));
 
 // size lg
 $_fs-lg: ($_fs * 1.3);
-$_lh-lg: $_module-rem * 2 / $_fs-lg;
+$_lh-lg: math.div($-module-rem * 2, $-fs)-lg;
 $_shape-lg: ($_shape * 1.5);
 $_padding-v-lg: $_module-rem * 1.5;
 
@@ -38,7 +38,7 @@ ril-date-picker {
 
 	.ril-input-wrap {
 		align-items: center;
-		background: $main-800;
+		background: main-palette(800);
 		border-radius: $r-md;
 		cursor: pointer;
 		display: flex;
@@ -61,7 +61,7 @@ ril-date-picker {
 			background: none;
 			border: none;
 			box-shadow: none;
-			color: $main-contrast-500;
+			color: main-contrast(500);
 			cursor: inherit;
 			display: block;
 			font: inherit;
@@ -72,7 +72,7 @@ ril-date-picker {
 
 		.input-prefix,
 		.input-suffix {
-			color: $main-500;
+			color: main-palette(500);
 			flex: none;
 			padding: 0 0.2em;
 		}
@@ -84,14 +84,14 @@ ril-date-picker {
 
 	&:hover {
 		.ril-input-wrap {
-			background: $main-700;
+			background: main-palette(700);
 			box-shadow: $s-md;
 		}
 	}
 
 	&.input-focus {
 		.ril-input-wrap {
-			background: $main-700;
+			background: main-palette(700);
 		}
 	}
 
@@ -131,10 +131,10 @@ ril-date-picker {
 	// }
 	&.input-disabled,
 	&.input-readonly {
-		color: $main-contrast-500;
+		color: main-contrast(500);
 
 		.ril-input-wrap {
-			background-color: $main-500;
+			background-color: main-palette(500);
 			box-shadow: none !important;
 			cursor: not-allowed;
 
@@ -148,31 +148,31 @@ ril-date-picker {
 .mat-datepicker-content {
 	margin-top: 1rem;
 	box-shadow: $s-md;
-	background-color: $main-800;
+	background-color: main-palette(800);
 	border-radius: $r-md !important;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 
 	.mat-calendar-arrow {
-		border-top-color: $main-contrast-800;
-		fill: $main-contrast-800;
+		border-top-color: main-contrast(800);
+		fill: main-contrast(800);
 	}
 
 	.mat-calendar-next-button,
 	.mat-calendar-previous-button {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 
 	.mat-calendar-next-button:hover,
 	.mat-calendar-previous-button:hover {
-		background-color: $main-800;
+		background-color: main-palette(800);
 	}
 
 	.mat-calendar-period-button:hover {
-		background-color: $main-800;
+		background-color: main-palette(800);
 	}
 
 	.mat-calendar-table-header {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 
 	.mat-calendar-table-header-divider::after {
@@ -180,14 +180,14 @@ ril-date-picker {
 	}
 
 	.mat-calendar-body-label {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 
 	.mat-calendar-body-cell-content {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 
 		// &:hover {
-		// 	background-color: $main-700 !important;
+		// 	background-color: main-palette(700) !important;
 		// }
 
 		&.mat-calendar-body-selected {
@@ -198,7 +198,7 @@ ril-date-picker {
 	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
 	.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
 	.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-		background-color: $main-700 !important;
+		background-color: main-palette(700) !important;
 	}
 
 	.mat-calendar-body-today:not(.mat-calendar-body-selected) {
@@ -209,5 +209,5 @@ ril-date-picker {
 .mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
 .cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
 .cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-	background-color: $main-800;
+	background-color: main-palette(800);
 }

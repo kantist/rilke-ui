@@ -1,6 +1,6 @@
 ril-text-area {
 	border-radius: $r-md;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 	display: block;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -16,8 +16,8 @@ ril-text-area {
 		width: 100%;
 
 		.textarea-control {
-			background: $main-800;
-			border: 1px solid $main-800;
+			background: main-palette(800);
+			border: 1px solid main-palette(800);
 			border-radius: inherit;
 			box-shadow: none;
 			color: inherit;
@@ -36,12 +36,12 @@ ril-text-area {
 			width: 100%;
 
 			// @include placeholder {
-			// 	color: $main-500;
+			// 	color: main-palette(500);
 			// }
 		}
 
 		.char-limiter {
-			color: $main-500;
+			color: main-palette(500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: flex-end;
@@ -50,30 +50,30 @@ ril-text-area {
 
 			span {
 				display: block;
-				margin: ($base-size / 2) 2px 0;
+				margin: math.div($base-size, 2) 2px 0;
 			}
 		}
 	}
 
 	&:hover {
-		color: $main-contrast-500;
+		color: main-contrast(500);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: $main-700;
-				border-color: $main-700;
+				background: main-palette(700);
+				border-color: main-palette(700);
 				box-shadow: $s-md;
 			}
 		}
 	}
 
 	&.textarea-focus {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: $main-700;
-				border-color: $main-200;
+				background: main-palette(700);
+				border-color: main-palette(200);
 				box-shadow: $s-md;
 			}
 		}
@@ -91,14 +91,14 @@ ril-text-area {
 
 	&.textarea-disabled,
 	&.textarea-readonly {
-		color: $main-contrast-700;
+		color: main-contrast(700);
 
 		.ril-textarea-wrap {
 			cursor: not-allowed;
 
 			.textarea-control {
-				background-color: $main-500;
-				border-color: $main-500;
+				background-color: main-palette(500);
+				border-color: main-palette(500);
 				pointer-events: none;
 				box-shadow: none;
 			}

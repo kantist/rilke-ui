@@ -7,10 +7,10 @@ ril-select {
 
 	.select-box {
 		align-items: center;
-		background: $main-800;
-		border: 1px solid $main-800;
+		background: main-palette(800);
+		border: 1px solid main-palette(800);
 		border-radius: inherit;
-		color: $main-contrast-800;
+		color: main-contrast(800);
 		cursor: pointer;
 		overflow: hidden;
 		transition:
@@ -24,15 +24,15 @@ ril-select {
 
 		.mat-select-value {
 			max-width: 100%;
-			color: $main-contrast-800;
+			color: main-contrast(800);
 
 			.mat-select-placeholder {
-				color: $main-700;
+				color: main-palette(700);
 			}
 		}
 
 		.mat-select-arrow {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 		}
 	}
 
@@ -44,9 +44,9 @@ ril-select {
 
 	&:hover {
 		.select-box {
-			background: $main-700;
-			border-color: $main-700;
-			color: $main-contrast-700;
+			background: main-palette(700);
+			border-color: main-palette(700);
+			color: main-contrast(700);
 		}
 	}
 
@@ -56,7 +56,7 @@ ril-select {
 			min-height: $base-size * 3;
 
 			> .value {
-				margin: -($base-size/ 2);
+				margin: -(math.div($base-size, 2));
 				white-space: normal;
 			}
 		}
@@ -64,10 +64,10 @@ ril-select {
 
 	&.opened {
 		.select-box {
-			background: $main-700;
-			border-color: $main-200;
+			background: main-palette(700);
+			border-color: main-palette(200);
 			box-shadow: $s-md;
-			color: $main-contrast-700;
+			color: main-contrast(700);
 		}
 	}
 
@@ -75,10 +75,10 @@ ril-select {
 		cursor: not-allowed;
 
 		.select-box {
-			background: $main-500;
-			border-color: $main-500;
+			background: main-palette(500);
+			border-color: main-palette(500);
 			box-shadow: none;
-			color: $main-contrast-500;
+			color: main-contrast(500);
 			cursor: not-allowed;
 			pointer-events: none;
 		}
@@ -94,7 +94,7 @@ ril-select {
 }
 
 .mat-select-panel {
-	background: $main-800;
+	background: main-palette(800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {
@@ -103,6 +103,6 @@ ril-select {
 	}
 
 	.mat-option {
-		color: $main-contrast-800;
+		color: main-contrast(800);
 	}
 }

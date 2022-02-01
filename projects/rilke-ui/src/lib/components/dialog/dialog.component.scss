@@ -7,7 +7,7 @@ ril-dialog {
 		margin-bottom: 2rem;
 
 		p {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 		}
 	}
 
@@ -18,9 +18,9 @@ ril-dialog {
 		button {
 			border: none;
 			cursor: pointer;
-			padding: $p-sm / 2 $p-sm;
+			padding: math.div($p-sm, 2) $p-sm;
 			border-radius: $r-sm;
-			color: $main-900;
+			color: main-palette(900);
 			display: flex;
 			align-items: center;
 
@@ -41,6 +41,6 @@ ril-dialog {
 }
 
 .mat-dialog-container {
-	background: $main-900 !important;
+	background: main-palette(900) !important;
 	border-radius: $r-md !important;
 }

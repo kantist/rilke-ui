@@ -1,9 +1,9 @@
 ril-card-content {
 	font-size: $f-size-md;
-	color: $main-contrast-500;
+	color: main-contrast(500);
 
 	p {
 		font-size: $f-size-md;
-		color: $main-contrast-500;
+		color: main-contrast(500);
 	}
 }

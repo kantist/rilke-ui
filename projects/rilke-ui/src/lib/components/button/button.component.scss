@@ -13,7 +13,7 @@
 	vertical-align: middle;
 	white-space: nowrap;
 	appearance: none;
-	color: $main-contrast-800;
+	color: main-contrast(800);
 
 	&:hover {
 		border-color: transparent;
@@ -264,31 +264,31 @@
 	}
 
 	&.btn-light {
-		background: $light-color;
-		color: $light-text;
+		background: main-contrast(900);
+		color: main-palette(900);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $light-color;
-			color: $light-color;
+			border-color: main-contrast(900);
+			color: main-contrast(900);
 
 			.btn-loader {
-				border-left: 2px solid $light-color;
+				border-left: 2px solid main-contrast(900);
 			}
 		}
 	}
 
 	&.btn-dark {
-		background: $dark-color;
-		color: $dark-text;
+		background: main-palette(900);
+		color: main-contrast(900);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $dark-color;
-			color: $dark-color;
+			border-color: main-palette(900);
+			color: main-palette(900);
 
 			.btn-loader {
-				border-left: 2px solid $dark-color;
+				border-left: 2px solid main-palette(900);
 			}
 		}
 	}

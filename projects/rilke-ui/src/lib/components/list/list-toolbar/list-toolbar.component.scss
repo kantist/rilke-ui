@@ -29,7 +29,7 @@ ril-list-toolbar {
 	.right {
 		.btn-default,
 		btn-dark {
-			background: $main-800;
+			background: main-palette(800);
 		}
 
 		.badge {

@@ -44,7 +44,7 @@ ril-auto-complete {
 			.list-li {
 				box-shadow: 0 1px 0 rgba(#000, 0.05);
 				cursor: pointer;
-				padding: ($base-size / 2) ($base-size * 2);
+				padding: math.div($base-size, 2) ($base-size * 2);
 				transition: background 0.2s ease-in-out;
 
 				.val-mark {

@@ -1,6 +1,6 @@
 ril-avatar {
 	align-items: center;
-	background: $grey-400;
+	background: material-palette(grey, 400);
 	border-radius: 50%;
 	display: flex;
 	font-weight: 600;
@@ -31,8 +31,8 @@ ril-avatar {
 		transition: 0.5s ease;
 		width: 100%;
 		height: 100%;
-		background: $grey-400;
-		color: $grey-700;
+		background: material-palette(grey, 400);
+		color: material-palette(grey, 700);
 		border-radius: inherit;
 	}
 
@@ -41,7 +41,7 @@ ril-avatar {
 		justify-content: center;
 		align-items: center;
 		padding: 0;
-		color: $grey-700;
+		color: material-palette(grey, 700);
 	}
 
 	&.selectable {
@@ -54,7 +54,7 @@ ril-avatar {
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			color: $grey-700;
+			color: material-palette(grey, 700);
 			z-index: 3;
 			opacity: 100%;
 			transition: 0.5s ease;

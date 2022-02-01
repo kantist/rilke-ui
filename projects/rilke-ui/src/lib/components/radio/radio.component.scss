@@ -2,7 +2,7 @@ ril-radio {
 	align-items: flex-start;
 	display: flex;
 	flex-direction: column;
-	margin: -$base-size / 2;
+	margin: -(math.div($base-size, 2));
 
 	&.ril-radio-horizontal {
 		flex-direction: row;

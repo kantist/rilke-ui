@@ -13,14 +13,14 @@ ril-tabs {
 
 	.button-group {
 		position: relative;
-		background: $main-800;
+		background: main-palette(800);
 		border-radius: 0.5rem;
 		text-align: center;
 		cursor: pointer;
 		width: 100%;
 		height: 2.8rem;
 		display: flex;
-		color: $main-contrast-500;
+		color: main-contrast(500);
 
 		.active {
 			color: $success-color;
@@ -42,7 +42,7 @@ ril-tabs {
 
 			.box {
 				height: 100%;
-				background-color: $main-900;
+				background-color: main-palette(900);
 				border-radius: $r-sm;
 			}
 		}

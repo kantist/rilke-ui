@@ -10,17 +10,17 @@ ril-alert {
 		min-height: 48px;
 
 		p {
-			color: $main-contrast-800;
+			color: main-contrast(800);
 			font-size: 1rem;
 			line-height: 1.6rem;
 			margin-right: 0.6rem;
 		}
 
 		&.default {
-			background: $dark-color;
+			background: main-palette(900);
 
 			button {
-				background-color: $dark-hover;
+				background-color: main-palette(700);
 			}
 		}
 

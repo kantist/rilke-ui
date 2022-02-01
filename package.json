@@ -1,6 +1,6 @@
 {
 	"name": "rilke-ui-workspace",
-	"version": "0.0.23",
+	"version": "0.0.24",
 	"scripts": {
 		"ng": "ng",
 		"start": "ng serve",

@@ -14,7 +14,7 @@ ril-list-item {
 		justify-content: center;
 		width: 100%;
 		min-height: 5rem;
-		color: $main-contrast-700;
+		color: main-contrast(700);
 
 		.columns {
 			padding: $p-md;
@@ -26,17 +26,17 @@ ril-list-item {
 
 		&:hover {
 			div {
-				color: $main-contrast-500;
+				color: main-contrast(500);
 			}
 		}
 	}
 
 	&:nth-child(odd) {
-		background: $main-700;
+		background: main-palette(700);
 	}
 
 	&:nth-child(even) {
-		background: $main-600;
+		background: main-palette(600);
 	}
 
 	&:first-child {

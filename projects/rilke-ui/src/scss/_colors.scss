@@ -1,345 +1,299 @@
-$red: #F44336;
-$red-50: #FFEBEE;
-$red-100: #FFCDD2;
-$red-200: #EF9A9A;
-$red-300: #E57373;
-$red-400: #EF5350;
-$red-500: $red;
-$red-600: #E53935;
-$red-700: #D32F2F;
-$red-800: #C62828;
-$red-900: #B71C1C;
-$red-a100: #FF8A80;
-$red-a200: #FF5252;
-$red-a400: #FF1744;
-$red-a700: #D50000;
+// Material Design Colors
+$material-palette: (
+	red: (
+		50: #FFEBEE,
+		100: #FFCDD2,
+		200: #EF9A9A,
+		300: #E57373,
+		400: #EF5350,
+		500: #F44336,
+		600: #E53935,
+		700: #D32F2F,
+		800: #C62828,
+		900: #B71C1C,
+		a100: #FF8A80,
+		a200: #FF5252,
+		a400: #FF1744,
+		a700: #D50000,
+	),
+	pink: (
+		50: #FCE4EC,
+		100: #F8BBD0,
+		200: #F48FB1,
+		300: #F06292,
+		400: #EC407A,
+		500: #E91E63,
+		600: #D81B60,
+		700: #C2185B,
+		800: #AD1457,
+		900: #880E4F,
+		a100: #FF80AB,
+		a200: #FF4081,
+		a400: #F50057,
+		a700: #C51162,
+	),
+	purple: (
+		50: #F3E5F5,
+		100: #E1BEE7,
+		200: #CE93D8,
+		300: #BA68C8,
+		400: #AB47BC,
+		500: #9C27B0,
+		600: #8E24AA,
+		700: #7B1FA2,
+		800: #6A1B9A,
+		900: #4A148C,
+		a100: #EA80FC,
+		a200: #E040FB,
+		a400: #D500F9,
+		a700: #A0F,
+	),
+	deep-purple: (
+		50: #EDE7F6,
+		100: #D1C4E9,
+		200: #B39DDB,
+		300: #9575CD,
+		400: #7E57C2,
+		500: #673AB7,
+		600: #5E35B1,
+		700: #512DA8,
+		800: #4527A0,
+		900: #311B92,
+		a100: #B388FF,
+		a200: #7C4DFF,
+		a400: #651FFF,
+		a700: #6200EA,
+	),
+	indigo: (
+		50: #E8EAF6,
+		100: #C5CAE9,
+		200: #9FA8DA,
+		300: #7986CB,
+		400: #5C6BC0,
+		500: #3F51B5,
+		600: #3949AB,
+		700: #303F9F,
+		800: #283593,
+		900: #1A237E,
+		a100: #8C9EFF,
+		a200: #536DFE,
+		a400: #3D5AFE,
+		a700: #304FFE,
+	),
+	blue: (
+		50: #E3F2FD,
+		100: #BBDEFB,
+		200: #90CAF9,
+		300: #64B5F6,
+		400: #42A5F5,
+		500: #2196F3,
+		600: #1E88E5,
+		700: #1976D2,
+		800: #1565C0,
+		900: #0D47A1,
+		a100: #82B1FF,
+		a200: #448AFF,
+		a400: #2979FF,
+		a700: #2962FF,
+	),
+	light-blue: (
+		50: #E1F5FE,
+		100: #B3E5FC,
+		200: #81D4FA,
+		300: #4FC3F7,
+		400: #29B6F6,
+		500: #03A9F4,
+		600: #039BE5,
+		700: #0288D1,
+		800: #0277BD,
+		900: #01579B,
+		a100: #80D8FF,
+		a200: #40C4FF,
+		a400: #00B0FF,
+		a700: #0091EA,
+	),
+	cyan: (
+		50: #E0F7FA,
+		100: #B2EBF2,
+		200: #80DEEA,
+		300: #4DD0E1,
+		400: #26C6DA,
+		500: #00BCD4,
+		600: #00ACC1,
+		700: #0097A7,
+		800: #00838F,
+		900: #006064,
+		a100: #84FFFF,
+		a200: #18FFFF,
+		a400: #00E5FF,
+		a700: #00B8D4,
+	),
+	teal: (
+		50: #E0F2F1,
+		100: #B2DFDB,
+		200: #80CBC4,
+		300: #4DB6AC,
+		400: #26A69A,
+		500: #009688,
+		600: #00897B,
+		700: #00796B,
+		800: #00695C,
+		900: #004D40,
+		a100: #A7FFEB,
+		a200: #64FFDA,
+		a400: #1DE9B6,
+		a700: #00BFA5,
+	),
+	green: (
+		50: #E8F5E9,
+		100: #C8E6C9,
+		200: #A5D6A7,
+		300: #81C784,
+		400: #66BB6A,
+		500: #4CAF50,
+		600: #43A047,
+		700: #388E3C,
+		800: #2E7D32,
+		900: #1B5E20,
+		a100: #B9F6CA,
+		a200: #69F0AE,
+		a400: #00E676,
+		a700: #00C853,
+	),
+	light-green: (
+		50: #F1F8E9,
+		100: #DCEDC8,
+		200: #C5E1A5,
+		300: #AED581,
+		400: #9CCC65,
+		500: #8BC34A,
+		600: #7CB342,
+		700: #689F38,
+		800: #558B2F,
+		900: #33691E,
+		a100: #CCFF90,
+		a200: #B2FF59,
+		a400: #76FF03,
+		a700: #64DD17,
+	),
+	lime: (
+		50: #F9FBE7,
+		100: #F0F4C3,
+		200: #E6EE9C,
+		300: #DCE775,
+		400: #D4E157,
+		500: #CDDC39,
+		600: #C0CA33,
+		700: #AFB42B,
+		800: #9E9D24,
+		900: #827717,
+		a100: #F4FF81,
+		a200: #EEFF41,
+		a400: #C6FF00,
+		a700: #AEEA00,
+	),
+	yellow: (
+		50: #FFFDE7,
+		100: #FFF9C4,
+		200: #FFF59D,
+		300: #FFF176,
+		400: #FFEE58,
+		500: #FFEB3B,
+		600: #FDD835,
+		700: #FBC02D,
+		800: #F9A825,
+		900: #F57F17,
+		a100: #FFFF8D,
+		a200: #FF0,
+		a400: #FFEA00,
+		a700: #FFD600,
+	),
+	amber: (
+		50: #FFF8E1,
+		100: #FFECB3,
+		200: #FFE082,
+		300: #FFD54F,
+		400: #FFCA28,
+		500: #FFC107,
+		600: #FFB300,
+		700: #FFA000,
+		800: #FF8F00,
+		900: #FF6F00,
+		a100: #FFE57F,
+		a200: #FFD740,
+		a400: #FFC400,
+		a700: #FFAB00,
+	),
+	orange: (
+		50: #FFF3E0,
+		100: #FFE0B2,
+		200: #FFCC80,
+		300: #FFB74D,
+		400: #FFA726,
+		500: #FF9800,
+		600: #FB8C00,
+		700: #F57C00,
+		800: #EF6C00,
+		900: #E65100,
+		a100: #FFD180,
+		a200: #FFAB40,
+		a400: #FF9100,
+		a700: #FF6D00,
+	),
+	deep-orange: (
+		50: #FBE9E7,
+		100: #FFCCBC,
+		200: #FFAB91,
+		300: #FF8A65,
+		400: #FF7043,
+		500: #FF5722,
+		600: #F4511E,
+		700: #E64A19,
+		800: #D84315,
+		900: #BF360C,
+		a100: #FF9E80,
+		a200: #FF6E40,
+		a400: #FF3D00,
+		a700: #DD2C00,
+	),
+	brown: (
+		50: #EFEBE9,
+		100: #D7CCC8,
+		200: #BCAAA4,
+		300: #A1887F,
+		400: #8D6E63,
+		500: #795548,
+		600: #6D4C41,
+		700: #5D4037,
+		800: #4E342E,
+		900: #3E2723,
+	),
+	grey: (
+		50: #FAFAFA,
+		100: #F5F5F5,
+		200: #EEE,
+		300: #E0E0E0,
+		400: #BDBDBD,
+		500: #9E9E9E,
+		600: #757575,
+		700: #616161,
+		800: #424242,
+		900: #212121,
+	),
+	blue-grey: (
+		50: #ECEFF1,
+		100: #CFD8DC,
+		200: #B0BEC5,
+		300: #90A4AE,
+		400: #78909C,
+		500: #607D8B,
+		600: #546E7A,
+		700: #455A64,
+		800: #37474F,
+		900: #263238,
+	)
+);
 
-$pink: #E91E63;
-$pink-50: #FCE4EC;
-$pink-100: #F8BBD0;
-$pink-200: #F48FB1;
-$pink-300: #F06292;
-$pink-400: #EC407A;
-$pink-500: $pink;
-$pink-600: #D81B60;
-$pink-700: #C2185B;
-$pink-800: #AD1457;
-$pink-900: #880E4F;
-$pink-a100: #FF80AB;
-$pink-a200: #FF4081;
-$pink-a400: #F50057;
-$pink-a700: #C51162;
-
-$purple: #9C27B0;
-$purple-50: #F3E5F5;
-$purple-100: #E1BEE7;
-$purple-200: #CE93D8;
-$purple-300: #BA68C8;
-$purple-400: #AB47BC;
-$purple-500: $purple;
-$purple-600: #8E24AA;
-$purple-700: #7B1FA2;
-$purple-800: #6A1B9A;
-$purple-900: #4A148C;
-$purple-a100: #EA80FC;
-$purple-a200: #E040FB;
-$purple-a400: #D500F9;
-$purple-a700: #A0F;
-
-$deep-purple: #673AB7;
-$deep-purple-50: #EDE7F6;
-$deep-purple-100: #D1C4E9;
-$deep-purple-200: #B39DDB;
-$deep-purple-300: #9575CD;
-$deep-purple-400: #7E57C2;
-$deep-purple-500: $deep-purple;
-$deep-purple-600: #5E35B1;
-$deep-purple-700: #512DA8;
-$deep-purple-800: #4527A0;
-$deep-purple-900: #311B92;
-$deep-purple-a100: #B388FF;
-$deep-purple-a200: #7C4DFF;
-$deep-purple-a400: #651FFF;
-$deep-purple-a700: #6200EA;
-
-$indigo: #3F51B5;
-$indigo-50: #E8EAF6;
-$indigo-100: #C5CAE9;
-$indigo-200: #9FA8DA;
-$indigo-300: #7986CB;
-$indigo-400: #5C6BC0;
-$indigo-500: $indigo;
-$indigo-600: #3949AB;
-$indigo-700: #303F9F;
-$indigo-800: #283593;
-$indigo-900: #1A237E;
-$indigo-a100: #8C9EFF;
-$indigo-a200: #536DFE;
-$indigo-a400: #3D5AFE;
-$indigo-a700: #304FFE;
-
-$blue: #2196F3;
-$blue-50: #E3F2FD;
-$blue-100: #BBDEFB;
-$blue-200: #90CAF9;
-$blue-300: #64B5F6;
-$blue-400: #42A5F5;
-$blue-500: $blue;
-$blue-600: #1E88E5;
-$blue-700: #1976D2;
-$blue-800: #1565C0;
-$blue-900: #0D47A1;
-$blue-a100: #82B1FF;
-$blue-a200: #448AFF;
-$blue-a400: #2979FF;
-$blue-a700: #2962FF;
-
-$light-blue: #03A9F4;
-$light-blue-50: #E1F5FE;
-$light-blue-100: #B3E5FC;
-$light-blue-200: #81D4FA;
-$light-blue-300: #4FC3F7;
-$light-blue-400: #29B6F6;
-$light-blue-500: $light-blue;
-$light-blue-600: #039BE5;
-$light-blue-700: #0288D1;
-$light-blue-800: #0277BD;
-$light-blue-900: #01579B;
-$light-blue-a100: #80D8FF;
-$light-blue-a200: #40C4FF;
-$light-blue-a400: #00B0FF;
-$light-blue-a700: #0091EA;
-
-$cyan: #00BCD4;
-$cyan-50: #E0F7FA;
-$cyan-100: #B2EBF2;
-$cyan-200: #80DEEA;
-$cyan-300: #4DD0E1;
-$cyan-400: #26C6DA;
-$cyan-500: $cyan;
-$cyan-600: #00ACC1;
-$cyan-700: #0097A7;
-$cyan-800: #00838F;
-$cyan-900: #006064;
-$cyan-a100: #84FFFF;
-$cyan-a200: #18FFFF;
-$cyan-a400: #00E5FF;
-$cyan-a700: #00B8D4;
-
-$teal: #009688;
-$teal-50: #E0F2F1;
-$teal-100: #B2DFDB;
-$teal-200: #80CBC4;
-$teal-300: #4DB6AC;
-$teal-400: #26A69A;
-$teal-500: $teal;
-$teal-600: #00897B;
-$teal-700: #00796B;
-$teal-800: #00695C;
-$teal-900: #004D40;
-$teal-a100: #A7FFEB;
-$teal-a200: #64FFDA;
-$teal-a400: #1DE9B6;
-$teal-a700: #00BFA5;
-
-$green: #4CAF50;
-$green-50: #E8F5E9;
-$green-100: #C8E6C9;
-$green-200: #A5D6A7;
-$green-300: #81C784;
-$green-400: #66BB6A;
-$green-500: $green;
-$green-600: #43A047;
-$green-700: #388E3C;
-$green-800: #2E7D32;
-$green-900: #1B5E20;
-$green-a100: #B9F6CA;
-$green-a200: #69F0AE;
-$green-a400: #00E676;
-$green-a700: #00C853;
-
-$light-green: #8BC34A;
-$light-green-50: #F1F8E9;
-$light-green-100: #DCEDC8;
-$light-green-200: #C5E1A5;
-$light-green-300: #AED581;
-$light-green-400: #9CCC65;
-$light-green-500: $light-green;
-$light-green-600: #7CB342;
-$light-green-700: #689F38;
-$light-green-800: #558B2F;
-$light-green-900: #33691E;
-$light-green-a100: #CCFF90;
-$light-green-a200: #B2FF59;
-$light-green-a400: #76FF03;
-$light-green-a700: #64DD17;
-
-$lime: #CDDC39;
-$lime-50: #F9FBE7;
-$lime-100: #F0F4C3;
-$lime-200: #E6EE9C;
-$lime-300: #DCE775;
-$lime-400: #D4E157;
-$lime-500: $lime;
-$lime-600: #C0CA33;
-$lime-700: #AFB42B;
-$lime-800: #9E9D24;
-$lime-900: #827717;
-$lime-a100: #F4FF81;
-$lime-a200: #EEFF41;
-$lime-a400: #C6FF00;
-$lime-a700: #AEEA00;
-
-$yellow: #FFEB3B;
-$yellow-50: #FFFDE7;
-$yellow-100: #FFF9C4;
-$yellow-200: #FFF59D;
-$yellow-300: #FFF176;
-$yellow-400: #FFEE58;
-$yellow-500: $yellow;
-$yellow-600: #FDD835;
-$yellow-700: #FBC02D;
-$yellow-800: #F9A825;
-$yellow-900: #F57F17;
-$yellow-a100: #FFFF8D;
-$yellow-a200: #FF0;
-$yellow-a400: #FFEA00;
-$yellow-a700: #FFD600;
-
-$amber: #FFC107;
-$amber-50: #FFF8E1;
-$amber-100: #FFECB3;
-$amber-200: #FFE082;
-$amber-300: #FFD54F;
-$amber-400: #FFCA28;
-$amber-500: $amber;
-$amber-600: #FFB300;
-$amber-700: #FFA000;
-$amber-800: #FF8F00;
-$amber-900: #FF6F00;
-$amber-a100: #FFE57F;
-$amber-a200: #FFD740;
-$amber-a400: #FFC400;
-$amber-a700: #FFAB00;
-
-$orange: #FF9800;
-$orange-50: #FFF3E0;
-$orange-100: #FFE0B2;
-$orange-200: #FFCC80;
-$orange-300: #FFB74D;
-$orange-400: #FFA726;
-$orange-500: $orange;
-$orange-600: #FB8C00;
-$orange-700: #F57C00;
-$orange-800: #EF6C00;
-$orange-900: #E65100;
-$orange-a100: #FFD180;
-$orange-a200: #FFAB40;
-$orange-a400: #FF9100;
-$orange-a700: #FF6D00;
-
-$deep-orange: #FF5722;
-$deep-orange-50: #FBE9E7;
-$deep-orange-100: #FFCCBC;
-$deep-orange-200: #FFAB91;
-$deep-orange-300: #FF8A65;
-$deep-orange-400: #FF7043;
-$deep-orange-500: $deep-orange;
-$deep-orange-600: #F4511E;
-$deep-orange-700: #E64A19;
-$deep-orange-800: #D84315;
-$deep-orange-900: #BF360C;
-$deep-orange-a100: #FF9E80;
-$deep-orange-a200: #FF6E40;
-$deep-orange-a400: #FF3D00;
-$deep-orange-a700: #DD2C00;
-
-$brown: #795548;
-$brown-50: #EFEBE9;
-$brown-100: #D7CCC8;
-$brown-200: #BCAAA4;
-$brown-300: #A1887F;
-$brown-400: #8D6E63;
-$brown-500: $brown;
-$brown-600: #6D4C41;
-$brown-700: #5D4037;
-$brown-800: #4E342E;
-$brown-900: #3E2723;
-
-$grey: #9E9E9E;
-$grey-50: #FAFAFA;
-$grey-100: #F5F5F5;
-$grey-200: #EEE;
-$grey-300: #E0E0E0;
-$grey-400: #BDBDBD;
-$grey-500: $grey;
-$grey-600: #757575;
-$grey-700: #616161;
-$grey-800: #424242;
-$grey-900: #212121;
-
-$blue-grey: #607D8B;
-$blue-grey-50: #ECEFF1;
-$blue-grey-100: #CFD8DC;
-$blue-grey-200: #B0BEC5;
-$blue-grey-300: #90A4AE;
-$blue-grey-400: #78909C;
-$blue-grey-500: $blue-grey;
-$blue-grey-600: #546E7A;
-$blue-grey-700: #455A64;
-$blue-grey-800: #37474F;
-$blue-grey-900: #263238;
-
-// Custom Palette
-
-$main: #212121;
-$main-50: lighten($main, 50%);
-$main-100: lighten($main, 45%);
-$main-200: lighten($main, 40%);
-$main-300: lighten($main, 35%);
-$main-400: lighten($main, 30%);
-$main-500: lighten($main, 25%);
-$main-600: lighten($main, 20%);
-$main-700: lighten($main, 15%);
-$main-800: lighten($main, 5%);
-$main-900: $main;
-
-$main-contrast: lighten($main, 100%);
-$main-contrast-50: darken($main-contrast, 50%);
-$main-contrast-100: darken($main-contrast, 45%);
-$main-contrast-200: darken($main-contrast, 40%);
-$main-contrast-300: darken($main-contrast, 35%);
-$main-contrast-400: darken($main-contrast, 30%);
-$main-contrast-500: darken($main-contrast, 25%);
-$main-contrast-600: darken($main-contrast, 20%);
-$main-contrast-700: darken($main-contrast, 15%);
-$main-contrast-800: darken($main-contrast, 5%);
-$main-contrast-900: $main-contrast;
-
-$accent-color: $indigo;
-$accent-text: $grey-50;
-$accent-hover: darken($indigo, 10%);
-
-$success-color: $light-green;
-$success-text: $grey-50;
-$success-hover: darken($light-green, 10%);
-
-$info-color: $light-blue;
-$info-text: $grey-50;
-$info-hover: darken($light-blue, 10%);
-
-$warning-color: $amber;
-$warning-text: $grey-50;
-$warning-hover: darken($amber, 10%);
-
-$error-color: $pink;
-$error-text: $grey-50;
-$error-hover: darken($pink, 10%);
-
-$light-color: $grey-100;
-$light-text: $grey-900;
-$light-hover: darken($grey-100, 10%);
-
-$dark-color: $grey-900;
-$dark-text: $grey-50;
-$dark-hover: darken($grey-900, 10%);
+@function material-palette($key: $material-palette, $value: 50) {
+	@return map-get(map-get($material-palette, $key), $value);
+}
