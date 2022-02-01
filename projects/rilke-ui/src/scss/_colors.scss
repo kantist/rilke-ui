@@ -297,3 +297,7 @@ $material-palette: (
 @function material-palette($key: $material-palette, $value: 50) {
 	@return map-get(map-get($material-palette, $key), $value);
 }
+
+@function material-theme($key: $material-palette) {
+	@return map-get($material-palette, $key);
+}

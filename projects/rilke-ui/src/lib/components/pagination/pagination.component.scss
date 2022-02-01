@@ -13,14 +13,14 @@ ril-pagination {
 				background: main-palette(700);
 				border-color: main-palette(700);
 				border-left: 1px solid #353535;
-				color: #FFF;
+				color: main-contrast(500);
 				padding: 0.8rem 1.6rem;
 				cursor: pointer;
 
 				&:hover {
 					background: main-palette(500);
 					border-color: main-palette(500);
-					color: #FFF;
+					color: main-contrast(500);
 				}
 			}
 
@@ -44,7 +44,7 @@ ril-pagination {
 			.page-link {
 				background: main-palette(500);
 				border-color: transparent;
-				color: #FFF;
+				color: main-contrast(500);
 			}
 		}
 

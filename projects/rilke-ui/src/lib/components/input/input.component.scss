@@ -51,7 +51,7 @@ ril-input {
 
 		.input-prefix,
 		.input-suffix {
-			color: main-contrast(800);
+			color: main-contrast(500);
 			flex: none;
 			padding: 0 0.2em;
 		}
@@ -62,7 +62,7 @@ ril-input {
 
 		.char-limiting {
 			align-items: center;
-			color: main-contrast(800);
+			color: main-contrast(500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: center;

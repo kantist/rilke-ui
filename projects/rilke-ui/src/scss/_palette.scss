@@ -2,33 +2,70 @@
 @import "./colors";
 
 // Custom Palette
-$main: material-palette(grey, 900);
-$main-contrast: color.adjust($main, $lightness: 100%);
+$dark: material-palette(grey, 900);
+$dark-contrast: color.adjust($dark, $lightness: 100%);
 
-$main-palette: (
-	50: color.adjust($main, $lightness: 50%),
-	100: color.adjust($main, $lightness: 45%),
-	200: color.adjust($main, $lightness: 40%),
-	300: color.adjust($main, $lightness: 35%),
-	400: color.adjust($main, $lightness: 30%),
-	500: color.adjust($main, $lightness: 25%),
-	600: color.adjust($main, $lightness: 20%),
-	700: color.adjust($main, $lightness: 15%),
-	800: color.adjust($main, $lightness: 5%),
-	900: $main,
-	contrast: (
-		50: color.adjust($main-contrast, $lightness: -50%),
-		100: color.adjust($main-contrast, $lightness: -45%),
-		200: color.adjust($main-contrast, $lightness: -40%),
-		300: color.adjust($main-contrast, $lightness: -35%),
-		400: color.adjust($main-contrast, $lightness: -30%),
-		500: color.adjust($main-contrast, $lightness: -25%),
-		600: color.adjust($main-contrast, $lightness: -20%),
-		700: color.adjust($main-contrast, $lightness: -15%),
-		800: color.adjust($main-contrast, $lightness: -5%),
-		900: color.adjust($main, $lightness: 100%),
+$light: material-palette(grey, 300);
+$light-contrast: color.adjust($light, $lightness: 100%);
+
+$themes: (
+	light: (
+		50: color.adjust($light, $lightness: 50%),
+		100: color.adjust($light, $lightness: 45%),
+		200: color.adjust($light, $lightness: 40%),
+		300: color.adjust($light, $lightness: 35%),
+		400: color.adjust($light, $lightness: 30%),
+		500: color.adjust($light, $lightness: 25%),
+		600: color.adjust($light, $lightness: 20%),
+		700: color.adjust($light, $lightness: 15%),
+		800: color.adjust($light, $lightness: 5%),
+		900: $light,
+		contrast: (
+			50: color.adjust($light-contrast, $lightness: -50%),
+			100: color.adjust($light-contrast, $lightness: -55%),
+			200: color.adjust($light-contrast, $lightness: -60%),
+			300: color.adjust($light-contrast, $lightness: -65%),
+			400: color.adjust($light-contrast, $lightness: -70%),
+			500: color.adjust($light-contrast, $lightness: -75%),
+			600: color.adjust($light-contrast, $lightness: -80%),
+			700: color.adjust($light-contrast, $lightness: -85%),
+			800: color.adjust($light-contrast, $lightness: -90%),
+			900: color.adjust($light, $lightness: 100%),
+		)
+	),
+	dark: (
+		50: color.adjust($dark, $lightness: 50%),
+		100: color.adjust($dark, $lightness: 45%),
+		200: color.adjust($dark, $lightness: 40%),
+		300: color.adjust($dark, $lightness: 35%),
+		400: color.adjust($dark, $lightness: 30%),
+		500: color.adjust($dark, $lightness: 25%),
+		600: color.adjust($dark, $lightness: 20%),
+		700: color.adjust($dark, $lightness: 15%),
+		800: color.adjust($dark, $lightness: 5%),
+		900: $dark,
+		contrast: (
+			50: color.adjust($dark-contrast, $lightness: -50%),
+			100: color.adjust($dark-contrast, $lightness: -45%),
+			200: color.adjust($dark-contrast, $lightness: -40%),
+			300: color.adjust($dark-contrast, $lightness: -35%),
+			400: color.adjust($dark-contrast, $lightness: -30%),
+			500: color.adjust($dark-contrast, $lightness: -25%),
+			600: color.adjust($dark-contrast, $lightness: -20%),
+			700: color.adjust($dark-contrast, $lightness: -15%),
+			800: color.adjust($dark-contrast, $lightness: -5%),
+			900: color.adjust($dark, $lightness: 100%),
+		)
 	)
 );
+
+$main-palette: null;
+
+@mixin set-theme($key: 'light') {
+	$main-palette: map-get($themes, $key) !global;
+}
+
+@include set-theme();
 
 @function main-palette($key: $main-palette) {
 	@return map-get($main-palette, $key);
