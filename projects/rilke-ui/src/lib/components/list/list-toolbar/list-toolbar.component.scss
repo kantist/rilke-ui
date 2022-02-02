@@ -4,7 +4,7 @@ ril-list-toolbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: #FFF;
+	color: main-contrast(800);
 
 	.left {
 		display: flex;
@@ -24,34 +24,5 @@ ril-list-toolbar {
 		.text {
 			margin-left: 0.5rem;
 		}
-	}
-
-	.right {
-		.btn-default,
-		btn-dark {
-			background: main-palette(800);
-		}
-
-		.badge {
-			font-size: 1.1rem;
-
-			~ {
-				.badge {
-					margin-left: 1rem;
-				}
-			}
-
-			.danger {
-				color: #FFF;
-				background-color: #D24D62;
-				border-color: #D24D62;
-			}
-		}
-	}
-
-	.badge.white {
-		color: #000;
-		background-color: #FFF;
-		border-color: #FFF;
 	}
 }

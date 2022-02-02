@@ -26,7 +26,7 @@ export class ListHeaderComponent implements OnInit {
 	ngOnInit() {
 		this.listCheck.valueChanges.subscribe((res) => {
 			if (!this.unchecking) {
-				if (res == true) {
+				if (res) {
 					this.list.listToolbar.selectAll();
 				} else {
 					this.list.listToolbar.removeAll();
