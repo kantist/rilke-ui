@@ -22,13 +22,13 @@ export class ListHeaderComponent implements OnInit {
 	itemOption: boolean;
 
 	ngOnInit() {
-		// this.listCheck.valueChanges.subscribe((res) => {
-		// 	if (res == true) {
-		// 		this.list.listToolbar.selectAll();
-		// 	} else {
-		// 		this.list.listToolbar.removeAll();
-		// 	}
-		// });
+		this.listCheck.valueChanges.subscribe((res) => {
+			if (res == true) {
+				this.list.listToolbar.selectAll();
+			} else {
+				this.list.listToolbar.removeAll();
+			}
+		});
 	}
 
 	onClear(): void {

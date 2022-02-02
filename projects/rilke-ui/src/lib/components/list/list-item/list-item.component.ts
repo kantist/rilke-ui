@@ -10,6 +10,8 @@ export class ListItemComponent implements OnInit, OnDestroy {
 	@Input() checkbox: boolean;
 	@Input() itemIndex: number;
 
+	unchecking: boolean;
+
 	listCheck = new FormControl(false);
 
 	constructor(
@@ -17,24 +19,34 @@ export class ListItemComponent implements OnInit, OnDestroy {
 	) {
 		this.list.listToolbar.allSelected.subscribe((res) => {
 			if (res) {
-				this.listCheck.setValue(true);
+				this.onSelect();
 			} else {
-				this.listCheck.setValue(false);
+				this.onClear();
 			}
 		});
 	}
 
 	ngOnInit() {
 		this.listCheck.valueChanges.subscribe((res) => {
-			if (res == true) {
-				this.list.listToolbar.addToSelectedList(this.itemIndex, res);
-			} else {
-				this.list.listToolbar.removeFromSelectedlist(this.itemIndex);
+			if (!this.unchecking) {
+				if (res == true) {
+					this.list.listToolbar.addToSelectedList(this.itemIndex, res);
+				} else {
+					this.list.listToolbar.removeFromSelectedlist(this.itemIndex);
+				}
 			}
 		});
 	}
 
-	onClear(): void {}
+	onSelect(): void {
+		this.listCheck.setValue(true);
+	}
+
+	onClear(): void {
+		this.unchecking = true;
+		this.listCheck.setValue(false);
+		this.unchecking = false;
+	}
 
 	ngOnDestroy() {}
 }
