@@ -55,7 +55,8 @@ export class ListToolbarService {
 
 		// subscribe @Output close event
 		this.componentRef.instance.close.subscribe(data => {
-			this.close();
+			if (this.overlayRef)
+				this.close();
 		});
 		this.componentRef.instance.onToolbarButtonClick.subscribe(button => {
 			this.toolbarButtonClick(button);
@@ -69,6 +70,7 @@ export class ListToolbarService {
 		this.isOpen = false;
 
 		this.selectedList = {};
+		this.allSelected.emit(false);
 	}
 
 	get selectedListQuantity() {
@@ -102,7 +104,6 @@ export class ListToolbarService {
 	removeAll() {
 		this.selectedList = {};
 		this.allSelected.emit(false);
-		this.close();
 	}
 
 	toolbarButtonClick(button: string) {
