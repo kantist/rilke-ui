@@ -71,6 +71,8 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 		this.calcPagesCount(this.dataLength, this.itemsPerPage);
 
 		this.listToolbar.setOptions(this.listToolbarOptions);
+
+		this.toolbarButtonClickListener();
 	}
 
 	ngAfterViewInit() {
@@ -83,7 +85,7 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 		this.cdr.detectChanges();
 	}
 
-	toolbarButtonClick() {
+	toolbarButtonClickListener() {
 		this.listToolbar.onToolbarButtonClick.subscribe((button) => {
 			this.onToolbarButtonClick.emit(button);
 		})
