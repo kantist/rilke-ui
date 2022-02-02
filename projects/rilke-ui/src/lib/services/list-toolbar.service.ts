@@ -28,9 +28,12 @@ export class ListToolbarService {
 	setOptions(options: IListToolbarOptions) {
 		if (!options) {
 			options = {
+				selected: 0,
 				text_selected: 'selected'
 			}
 		}
+
+		options.selected = 0;
 
 		this.toolbarOptions = options;
 	}
@@ -73,14 +76,22 @@ export class ListToolbarService {
 		return Object.keys(this.selectedList).length;
 	}
 
+	setSelected() {
+		this.toolbarOptions.selected = this.selectedListQuantity;
+	}
+
 	addToSelectedList(index: number, value: boolean) {
 		this.selectedList[index] = value;
+
+		this.setSelected();
 
 		if (!this.isOpen) this.open();
 	}
 
 	removeFromSelectedlist(index: number) {
 		delete this.selectedList[index];
+
+		this.setSelected();
 
 		if (Object.keys(this.selectedList).length == 0) this.close();
 	}

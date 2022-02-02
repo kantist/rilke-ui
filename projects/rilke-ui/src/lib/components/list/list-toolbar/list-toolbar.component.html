@@ -1,6 +1,6 @@
 <div class="left">
 	<span class="icon material-icons" (click)="closeWindow(true)">close</span>
-	<span class="quantity">{{ toolbarService.selectedListQuantity }}</span>
+	<span class="quantity">{{ options.selected }}</span>
 	<span class="text">{{ options.text_selected }}</span>
 </div>
 <div *ngIf="options.buttons && options.buttons.length" class="right">
