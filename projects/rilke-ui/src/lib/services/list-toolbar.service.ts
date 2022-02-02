@@ -69,7 +69,6 @@ export class ListToolbarService {
 		this.isOpen = false;
 
 		this.selectedList = {};
-		this.allSelected.emit(false);
 	}
 
 	get selectedListQuantity() {

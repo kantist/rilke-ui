@@ -65,7 +65,7 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	ngOnInit() {
 		// Pagination
 		this.route.queryParams.subscribe((x) => {
-			// this.selectToolbar.close();
+			this.listToolbar.close();
 			this.page = x.page || 1;
 		});
 		this.calcPagesCount(this.dataLength, this.itemsPerPage);
