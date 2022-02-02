@@ -28,7 +28,7 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 
 	// List Toolbar
 	@Input() listToolbarOptions: IListToolbarOptions;
-	@Output() onToolbarButtonClick: EventEmitter<string>;
+	@Output() onToolbarButtonClick: EventEmitter<any>;
 
 	// Pagination Inputs
 	@Input() pageRouter: boolean;
@@ -52,7 +52,7 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 		this.checkbox = false;
 
 		// List Toolbar
-		this.onToolbarButtonClick = new EventEmitter<string>();
+		this.onToolbarButtonClick = new EventEmitter<any>();
 
 		// Pagination
 		this.pageChange = new EventEmitter<number>();
@@ -87,7 +87,10 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 
 	toolbarButtonClickListener() {
 		this.listToolbar.onToolbarButtonClick.subscribe((button) => {
-			this.onToolbarButtonClick.emit(button);
+			this.onToolbarButtonClick.emit({
+				button: button,
+				list: this.listToolbar.selectedList
+			});
 		})
 	}
 
