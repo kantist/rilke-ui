@@ -1,24 +1,57 @@
-# RilkeUi
+<p align="center"><a href="https://rilke.ist" target="_blank" rel="noopener noreferrer"><img width="320" src="https://rilke.ist/assets/logo/logo-stroked.png" alt="Rilke logo"></a></p>
+<p align="center">
+	<a href="https://npmcharts.com/compare/@kantist/rilke-ui?minimal=true"><img src="https://img.shields.io/npm/dm/@kantist/rilke-ui.svg?sanitize=true" alt="Downloads"></a>
+	<a href="[rilke-ui-package]"><img src="https://img.shields.io/npm/v/@kantist/rilke-ui.svg?sanitize=true" alt="Version"></a>
+	<a href="[rilke-ui-package]"><img src="https://img.shields.io/npm/l/@kantist/rilke-ui.svg?sanitize=true" alt="License"></a>
+	<br>
+	<img src="https://github.com/kantist/rilke-ui/actions/workflows/publish.yml/badge.svg" alt="status">
+</p>
+<h1 align="center">Rilke UI - Advanced customizable UI components for Rilke Architecture.</h1>
+<p align="center">
+	<br>
+	<i>Rilke. An Advanced Architecture. Developed for complex and modular projects.
+	<br> using Angular Framework.</i>
+	<br>
+</p>
+<p align="center">
+	<a href="https://rilke.ist/ui/">Getting Started</a>
+	·
+	<a href="https://github.com/kantist/rilke-ui/issues">Submit an Issue</a>
+	<br>
+	<br>
+</p>
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+<hr>
 
-## Code scaffolding
+## Documentation
 
-Run `ng generate component component-name --project rilke-ui` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project rilke-ui`.
-> Note: Don't forget to add `--project rilke-ui` or else it will be added to the default project in your `angular.json` file. 
+Get started with Rilke, learn the fundamentals and explore advanced topics on our documentation website.
 
-## Build
+-   [Getting Started][quickstart]
+-   [Typography][typography]
+-   [Color Palettes][color_palettes]
+-   [Theme Generator][theme_generator]
 
-Run `ng build rilke-ui` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Development Setup
 
-## Publishing
+### Prerequisites
 
-After building your library with `ng build rilke-ui`, go to the dist folder `cd dist/rilke-ui` and run `npm publish`.
+-   Install [Node.js] which includes [Node Package Manager][npm]
 
-## Running unit tests
+### Setting Up a Project
 
-Run `ng test rilke-ui` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Install the Rilke UI to Rilke or Angular Application:
 
-## Further help
+```
+rilke add @kantist/rilke-ui
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[rilke-ui]: https://github.com/kantist/rilke-ui
+[rilke-ui-package]: https://npmjs.com/package/@kantist/rilke-ui
+[quickstart]: https://rilke.ist/ui/
+[typography]: https://rilke.ist/ui/typography/
+[color_palettes]: https://rilke.ist/ui/color-palette/
+[theme_generator]: https://rilke.ist/ui/theme-generator/
+[node.js]: https://nodejs.org/
+[npm]: https://www.npmjs.com/get-npm
+[angular]: https://angular.io/cli
