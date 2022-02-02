@@ -36,9 +36,8 @@ ril-tabs {
 			height: calc(100% - 0.6rem);
 			top: 0;
 			margin: 0.3rem;
-			max-width: calc(100% - 0.6rem);
+			max-width: calc(100% - 0.3rem);
 			transition: transform 0.3s ease;
-			padding: 0 0.3rem;
 
 			.box {
 				height: 100%;

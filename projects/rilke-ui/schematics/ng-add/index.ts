@@ -38,7 +38,7 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 			let optionsJson = json['projects'][projectName]['architect']['build']['options'];
 
 			let styles = [
-				"src/assets/rilke-ui/styles.scss"
+				"src/assets/rilke-ui/style/styles.scss"
 			];
 
 			styles.forEach((s) => {
@@ -160,18 +160,27 @@ export default function (): Rule {
 
 		context.addTask(new NodePackageInstallTask());
 
-		const templateSource = apply(url('./files'), [
+		const styleSource = apply(url('./files/style'), [
 			noop(),
 			applyTemplates({
 				...strings
 			}),
-			move('/src/assets/rilke-ui/'),
+			move('/src/assets/rilke-ui/style/'),
+		]);
+
+		const fontSource = apply(url('./files/font'), [
+			noop(),
+			applyTemplates({
+				...strings
+			}),
+			move('/src/assets/rilke-ui/font/'),
 		]);
 
 		return chain([
 			addStyleToWorkspaceFile(workspace),
 			addToNgModule(sourceDir),
-			mergeWith(templateSource, MergeStrategy.Overwrite),
+			mergeWith(styleSource, MergeStrategy.Overwrite),
+			mergeWith(fontSource, MergeStrategy.Overwrite),
 			addImportBundleScss()
 		]);
 	};
