@@ -2,7 +2,7 @@ import { TemplateRef, Type } from '@angular/core';
 
 export interface IListToolbarOptions {
 	text_selected?: Tpl;
-	buttons: IListToolbarButtons[];
+	buttons?: IListToolbarButtons[];
 }
 
 export interface IListToolbarButtons {

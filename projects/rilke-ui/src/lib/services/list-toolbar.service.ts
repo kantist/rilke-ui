@@ -26,6 +26,12 @@ export class ListToolbarService {
 	}
 
 	setOptions(options: IListToolbarOptions) {
+		if (!options) {
+			options = {
+				text_selected: 'selected'
+			}
+		}
+
 		this.toolbarOptions = options;
 	}
 
@@ -43,6 +49,14 @@ export class ListToolbarService {
 		this.componentRef = this.overlayRef.attach(modalPortal);
 
 		this.componentRef.instance.options = this.toolbarOptions;
+
+		// subscribe @Output close event
+		this.componentRef.instance.close.subscribe(data => {
+			this.close();
+		});
+		this.componentRef.instance.onToolbarButtonClick.subscribe(button => {
+			this.toolbarButtonClick(button);
+		});
 
 		this.isOpen = true;
 	}

@@ -3,30 +3,32 @@ import {
 	OnInit,
 	Input,
 	EventEmitter,
-	HostBinding,
 	Output,
 } from '@angular/core';
-import { Content, IListToolbarOptions } from '../../../interfaces/list-toolbar';
-import { ListToolbarService } from '../../../services/list-toolbar.service';
+import { IListToolbarOptions } from '../../../interfaces/list-toolbar';
 
 @Component({
 	selector: 'ril-list-toolbar',
 	templateUrl: './list-toolbar.component.html',
 })
 export class ListToolbarComponent implements OnInit {
-	@HostBinding('class.active') opened: boolean = true;
-
 	@Input() options: IListToolbarOptions;
+	@Output() close: EventEmitter<boolean>;
+	@Output() onToolbarButtonClick: EventEmitter<string>;
 
-	constructor(public toolbarService: ListToolbarService) {}
+	constructor() {
+		this.close = new EventEmitter();
+
+		this.onToolbarButtonClick = new EventEmitter<string>();
+	}
 
 	ngOnInit() {}
 
 	closeWindow(val) {
-		this.toolbarService.close();
+		this.close.emit(true);
 	}
 
 	clickButton(button) {
-		this.toolbarService.toolbarButtonClick(button);
+		this.onToolbarButtonClick.emit(button);
 	}
 }

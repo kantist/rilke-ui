@@ -1,6 +1,7 @@
 ril-form-group {
 	display: block;
 	margin: 0 0 ($base-size * 3);
+	height: min-content;
 
 	&.float {
 		position: relative;
