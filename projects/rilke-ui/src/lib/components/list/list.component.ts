@@ -89,7 +89,7 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 		this.listToolbar.onToolbarButtonClick.subscribe((button) => {
 			this.onToolbarButtonClick.emit({
 				button: button,
-				list: this.listToolbar.selectedList
+				items: this.listToolbar.selectedList
 			});
 		})
 	}
