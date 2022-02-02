@@ -92,7 +92,7 @@ function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
 function addToNgModule(sourceDir: string): Rule {
 	return (host: Tree) => {
 		let source;
-		let modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT));
+		let modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT)) as string;
 
 		if (host.read(modulePath)) {
 			source = readIntoSourceFile(host, modulePath);
@@ -103,7 +103,7 @@ function addToNgModule(sourceDir: string): Rule {
 				layer: ''
 			}
 
-			modulePath = normalize(findModuleFromOptions(host, options));
+			modulePath = findModuleFromOptions(host, options) as string;
 			source = readIntoSourceFile(host, modulePath);
 		}
 
