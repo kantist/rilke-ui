@@ -58,7 +58,7 @@ function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rul
 
 function addImportBundleScss(): Rule {
 	return (host: Tree) => {
-		const fileToAdd = 'src/assets/rilke-ui/components.scss';
+		const fileToAdd = 'src/assets/rilke-ui/style/components.scss';
 
 		const literal = `@use "sass:math";
 @import './palette';
