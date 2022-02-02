@@ -9,12 +9,14 @@ import { ListComponent } from '../list.component';
 export class ListHeaderComponent implements OnInit {
 	@Input() checkbox: boolean;
 
+	unchecking: boolean;
+
 	listCheck = new FormControl(false);
 
 	constructor(@Inject(ListComponent) public list: ListComponent) {
 		this.list.listToolbar.allSelected.subscribe((res) => {
 			if (!res) {
-				this.listCheck.setValue(false);
+				this.onClear();
 			}
 		});
 	}
@@ -23,15 +25,19 @@ export class ListHeaderComponent implements OnInit {
 
 	ngOnInit() {
 		this.listCheck.valueChanges.subscribe((res) => {
-			if (res == true) {
-				this.list.listToolbar.selectAll();
-			} else {
-				this.list.listToolbar.removeAll();
+			if (!this.unchecking) {
+				if (res == true) {
+					this.list.listToolbar.selectAll();
+				} else {
+					this.list.listToolbar.removeAll();
+				}
 			}
 		});
 	}
 
 	onClear(): void {
+		this.unchecking = true;
 		this.listCheck.setValue(false);
+		this.unchecking = false;
 	}
 }
