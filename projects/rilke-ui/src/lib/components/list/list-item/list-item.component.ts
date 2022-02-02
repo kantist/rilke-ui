@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ListToolbarService } from '../../../services/list-toolbar.service';
+import { ListComponent } from '../list.component';
 
 @Component({
 	selector: 'ril-list-item',
@@ -12,8 +12,10 @@ export class ListItemComponent implements OnInit, OnDestroy {
 
 	listCheck = new FormControl(false);
 
-	constructor(private listToolbar: ListToolbarService) {
-		this.listToolbar.allSelected.subscribe((res) => {
+	constructor(
+		@Inject(ListComponent) public list: ListComponent
+	) {
+		this.list.listToolbar.allSelected.subscribe((res) => {
 			if (res) {
 				this.listCheck.setValue(true);
 			} else {
@@ -25,9 +27,9 @@ export class ListItemComponent implements OnInit, OnDestroy {
 	ngOnInit() {
 		this.listCheck.valueChanges.subscribe((res) => {
 			if (res == true) {
-				this.listToolbar.addToSelectedList(this.itemIndex, res);
+				this.list.listToolbar.addToSelectedList(this.itemIndex, res);
 			} else {
-				this.listToolbar.removeFromSelectedlist(this.itemIndex);
+				this.list.listToolbar.removeFromSelectedlist(this.itemIndex);
 			}
 		});
 	}

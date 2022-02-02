@@ -1,16 +1,17 @@
 <div class="left">
 	<span class="icon material-icons" (click)="closeWindow(true)">close</span>
 	<span class="quantity">{{ toolbarService.selectedListQuantity }}</span>
-	<span class="text">seçildi</span>
+	<span class="text">{{ options.text_selected }}</span>
 </div>
-<div class="right">
+<div *ngIf="options.buttons && options.buttons.length" class="right">
 	<button
-		(click)="clickButton(true)"
-		[view]="'success'"
+		(click)="clickButton(button.name)"
+		*ngFor="let button of options.buttons"
+		[view]="button.class"
 		[size]="'md'"
 		ril-button
 	>
-		<span class="btn-icon"></span>
-		test
+		<span *ngIf="button.icon" class="btn-icon" [ngClass]="button.icon"></span>
+		{{ button.text }}
 	</button>
 </div>

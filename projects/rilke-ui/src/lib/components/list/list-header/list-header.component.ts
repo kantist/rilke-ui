@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ListToolbarService } from '../../../services/list-toolbar.service';
+import { ListComponent } from '../list.component';
 
 @Component({
 	selector: 'ril-list-header',
@@ -8,12 +8,11 @@ import { ListToolbarService } from '../../../services/list-toolbar.service';
 })
 export class ListHeaderComponent implements OnInit {
 	@Input() checkbox: boolean;
-	@Input() list: any;
 
 	listCheck = new FormControl(false);
 
-	constructor(private listToolbar: ListToolbarService) {
-		this.listToolbar.allSelected.subscribe((res) => {
+	constructor(@Inject(ListComponent) public list: ListComponent) {
+		this.list.listToolbar.allSelected.subscribe((res) => {
 			if (!res) {
 				this.listCheck.setValue(false);
 			}
@@ -25,9 +24,9 @@ export class ListHeaderComponent implements OnInit {
 	ngOnInit() {
 		this.listCheck.valueChanges.subscribe((res) => {
 			if (res == true) {
-				this.listToolbar.selectAll(this.list);
+				this.list.listToolbar.selectAll();
 			} else {
-				this.listToolbar.removeAll();
+				this.list.listToolbar.removeAll();
 			}
 		});
 	}

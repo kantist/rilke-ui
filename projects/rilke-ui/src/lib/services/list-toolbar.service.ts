@@ -4,24 +4,29 @@ import { ComponentRef, EventEmitter, Injectable, Output } from '@angular/core';
 import { ListToolbarComponent } from '../components/list/list-toolbar/list-toolbar.component';
 import { IListToolbarOptions } from '../interfaces/list-toolbar';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class ListToolbarService {
 	componentRef: ComponentRef<any>;
 	overlayRef: OverlayRef;
 
 	selectedList: any;
+	toolbarOptions: IListToolbarOptions;
 
 	isOpen: boolean;
 
 	@Output() allSelected: EventEmitter<boolean>;
-	@Output() onToolbarConfirmed: EventEmitter<any>;
+	@Output() onToolbarButtonClick: EventEmitter<string>;
 
 	constructor(private overlay: Overlay) {
 		this.selectedList = {};
 		this.isOpen = false;
 
 		this.allSelected = new EventEmitter<boolean>();
-		this.onToolbarConfirmed = new EventEmitter<any>();
+		this.onToolbarButtonClick = new EventEmitter<string>();
+	}
+
+	setOptions(options: IListToolbarOptions) {
+		this.toolbarOptions = options;
 	}
 
 	open() {
@@ -35,7 +40,9 @@ export class ListToolbarService {
 			'list-toolbar-overlay-wrapper'
 		);
 		const modalPortal = new ComponentPortal(ListToolbarComponent);
-		this.overlayRef.attach(modalPortal);
+		this.componentRef = this.overlayRef.attach(modalPortal);
+
+		this.componentRef.instance.options = this.toolbarOptions;
 
 		this.isOpen = true;
 	}
@@ -57,25 +64,25 @@ export class ListToolbarService {
 
 		if (!this.isOpen) this.open();
 	}
+
 	removeFromSelectedlist(index: number) {
 		delete this.selectedList[index];
 
 		if (Object.keys(this.selectedList).length == 0) this.close();
 	}
-	selectAll(list: any) {
-		this.selectedList = {};
-		list.forEach((item, index) => {
-			this.addToSelectedList(index, true);
-		});
+
+	selectAll() {
 		this.allSelected.emit(true);
 	}
+
 	removeAll() {
 		this.selectedList = {};
 		this.allSelected.emit(false);
 		this.close();
 	}
-	toolbarConfirmed() {
-		this.onToolbarConfirmed.emit(this.selectedList);
+
+	toolbarButtonClick(button: string) {
+		this.onToolbarButtonClick.emit(button);
 		this.close();
 	}
 }

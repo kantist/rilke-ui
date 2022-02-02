@@ -1,7 +1,6 @@
 import { TemplateRef, Type } from '@angular/core';
 
 export interface IListToolbarOptions {
-	selected?: number;
 	text_selected?: Tpl;
 	buttons: IListToolbarButtons[];
 }

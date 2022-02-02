@@ -26,7 +26,7 @@ export class ListToolbarComponent implements OnInit {
 		this.toolbarService.close();
 	}
 
-	clickButton(val) {
-		this.toolbarService.toolbarConfirmed();
+	clickButton(button) {
+		this.toolbarService.toolbarButtonClick(button);
 	}
 }

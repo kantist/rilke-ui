@@ -12,16 +12,23 @@ import {
 	HostBinding,
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { IListToolbarOptions } from '../../interfaces/list-toolbar';
+import { ListToolbarService } from '../../services/list-toolbar.service';
 
 @Component({
 	selector: 'ril-list',
 	templateUrl: './list.component.html',
+	providers: [ ListToolbarService ]
 })
 export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	@ViewChild('refHeader') refHeader: ElementRef<any>;
 	@ViewChild('refItem') refItem: ElementRef<any>;
 
 	@Input() checkbox: boolean;
+
+	// List Toolbar
+	@Input() listToolbarOptions: IListToolbarOptions;
+	@Output() onToolbarButtonClick: EventEmitter<string>;
 
 	// Pagination Inputs
 	@Input() pageRouter: boolean;
@@ -34,11 +41,18 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	pagesCount: number;
 	page: number;
 
-	listHeader: boolean = false;
-	listItem: boolean = false;
+	listHeader: boolean;
+	listItem: boolean;
 
-	constructor(private route: ActivatedRoute, private cdr: ChangeDetectorRef) {
+	constructor(
+		private route: ActivatedRoute,
+		private cdr: ChangeDetectorRef,
+		public listToolbar: ListToolbarService
+	) {
 		this.checkbox = false;
+
+		// List Toolbar
+		this.onToolbarButtonClick = new EventEmitter<string>();
 
 		// Pagination
 		this.pageChange = new EventEmitter<number>();
@@ -55,6 +69,8 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 			this.page = x.page || 1;
 		});
 		this.calcPagesCount(this.dataLength, this.itemsPerPage);
+
+		this.listToolbar.setOptions(this.listToolbarOptions);
 	}
 
 	ngAfterViewInit() {
@@ -65,6 +81,12 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 			this.listItem = true;
 		}
 		this.cdr.detectChanges();
+	}
+
+	toolbarButtonClick() {
+		this.listToolbar.onToolbarButtonClick.subscribe((button) => {
+			this.onToolbarButtonClick.emit(button);
+		})
 	}
 
 	/* PAGINATION FUNCTIONS */
