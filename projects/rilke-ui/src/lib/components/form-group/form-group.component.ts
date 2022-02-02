@@ -58,7 +58,6 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 
 		this.textareaRef.toArray().forEach((input, index) => {
 			input.focus.subscribe((i) => {
-				console.log('change detected', i);
 				this.inputFocus = input.textareaFocus;
 				this.hasValue = input.innerValue ? true : false;
 			});
@@ -66,7 +65,11 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 
 		this.datepickerRef.toArray().forEach((input, index) => {
 			input.focus.subscribe((i) => {
-				console.log('change detected', i);
+				this.inputFocus = input.inputFocus;
+				this.hasValue = input.innerValue ? true : false;
+			});
+			input.blur.subscribe((i) => {
+				this.inputFocus = input.inputFocus;
 				this.hasValue = input.innerValue ? true : false;
 			});
 		});

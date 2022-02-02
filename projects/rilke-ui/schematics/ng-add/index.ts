@@ -89,7 +89,64 @@ function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
 	return ts.createSourceFile(modulePath, sourceText, ts.ScriptTarget.Latest, true);
 }
 
-function addToNgModule(sourceDir: string): Rule {
+function addAnimationsModuleToNgModule(sourceDir: string): Rule {
+	return (host: Tree) => {
+		let source;
+		let modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT)) as string;
+
+		if (host.read(modulePath)) {
+			source = readIntoSourceFile(host, modulePath);
+		} else {
+			let options: ModuleOptions = {
+				name: 'app',
+				module: 'App',
+				layer: ''
+			}
+
+			modulePath = findModuleFromOptions(host, options) as string;
+			source = readIntoSourceFile(host, modulePath);
+		}
+
+		const relativePath = '@angular/platform-browser/animations';
+		const classifiedName = 'BrowserAnimationsModule';
+		const importChanges = addImportToModule(
+			source,
+			modulePath,
+			classifiedName,
+			relativePath,
+		);
+
+		const importRecorder = host.beginUpdate(modulePath);
+		for (const change of importChanges) {
+			if (change instanceof InsertChange) {
+				importRecorder.insertLeft(change.pos, change.toAdd);
+			}
+		}
+		host.commitUpdate(importRecorder);
+
+		// Need to refresh the AST because we overwrote the file in the host.
+		const exportSource = readIntoSourceFile(host, modulePath);
+
+		const exportRecorder = host.beginUpdate(modulePath);
+		const exportChanges = addExportToModule(
+			exportSource,
+			modulePath,
+			classifiedName,
+			relativePath,
+		);
+
+		for (const change of exportChanges) {
+			if (change instanceof InsertChange) {
+				exportRecorder.insertLeft(change.pos, change.toAdd);
+			}
+		}
+		host.commitUpdate(exportRecorder);
+
+		return host;
+	};
+}
+
+function addUIModuleToNgModule(sourceDir: string): Rule {
 	return (host: Tree) => {
 		let source;
 		let modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT)) as string;
@@ -169,8 +226,9 @@ export default function (): Rule {
 		]);
 
 		return chain([
+			addAnimationsModuleToNgModule(sourceDir),
+			addUIModuleToNgModule(sourceDir),
 			addStyleToWorkspaceFile(workspace),
-			addToNgModule(sourceDir),
 			mergeWith(templateSource, MergeStrategy.Overwrite),
 			addImportBundleScss()
 		]);

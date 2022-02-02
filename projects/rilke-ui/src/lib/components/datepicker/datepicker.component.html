@@ -1,6 +1,6 @@
 <div
 	class="ril-input-wrap"
-	(click)="autoOpen ? picker.open() : onFocus(disabled || readonly)"
+	(click)="autoOpen ? open() : onFocus(disabled || readonly)"
 	[ngStyle]="getStyles()"
 >
 	<div class="input-infix">
@@ -26,4 +26,4 @@
 		<span class="icon material-icons">calendar_today</span>
 	</div>
 </div>
-<mat-datepicker [touchUi]="touchUi" #picker></mat-datepicker>
+<mat-datepicker [touchUi]="touchUi" #picker (closed)="close()"></mat-datepicker>
