@@ -1,6 +1,6 @@
 {
 	"name": "@kantist/rilke-ui",
-	"version": "0.0.27",
+	"version": "0.0.28",
 	"description": "Rilke UI Library",
 	"keywords": [
 		"angular",
@@ -13,7 +13,7 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "tsc -p tsconfig.schematics.json",
-		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/rilke-ui/ && copyfiles -f src/style/** ../../dist/rilke-ui/schematics/ng-add/files/style"
+		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/rilke-ui/ && copyfiles -f src/assets/style/** ../../dist/rilke-ui/schematics/ng-add/files/style && copyfiles -f src/assets/font/*/** ../../dist/rilke-ui/schematics/ng-add/files/font/trenda"
 	},
 	"dependencies": {
 		"@angular/cdk": "^13.0.2",

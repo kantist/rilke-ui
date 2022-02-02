@@ -1,4 +1,4 @@
 {
-	"dest": "./projects/rilke-ui/src/scss/components.scss",
+	"dest": "./projects/rilke-ui/src/assets/style/components.scss",
 	"mask": "./projects/rilke-ui/src/lib/components/**/*.component.scss"
 }

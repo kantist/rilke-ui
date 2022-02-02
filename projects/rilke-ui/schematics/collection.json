@@ -2,7 +2,7 @@
 	"$schema": "../../../node_modules/@angular-devkit/schematics/collection-schema.json",
 	"schematics": {
 		"ng-add": {
-			"description": "Add Rilke-UI to the project.",
+			"description": "Add RilkeUI to the project.",
 			"factory": "./ng-add"
 		}
 	}

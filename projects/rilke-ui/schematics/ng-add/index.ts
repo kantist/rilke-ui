@@ -160,27 +160,18 @@ export default function (): Rule {
 
 		context.addTask(new NodePackageInstallTask());
 
-		const styleSource = apply(url('./files/style'), [
+		const templateSource = apply(url('./files'), [
 			noop(),
 			applyTemplates({
 				...strings
 			}),
-			move('/src/assets/rilke-ui/style/'),
-		]);
-
-		const fontSource = apply(url('./files/font'), [
-			noop(),
-			applyTemplates({
-				...strings
-			}),
-			move('/src/assets/rilke-ui/font/'),
+			move('/src/assets/rilke-ui/'),
 		]);
 
 		return chain([
 			addStyleToWorkspaceFile(workspace),
 			addToNgModule(sourceDir),
-			mergeWith(styleSource, MergeStrategy.Overwrite),
-			mergeWith(fontSource, MergeStrategy.Overwrite),
+			mergeWith(templateSource, MergeStrategy.Overwrite),
 			addImportBundleScss()
 		]);
 	};
