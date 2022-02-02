@@ -18,7 +18,7 @@ export class TabsComponent implements AfterContentInit {
 
 	@Input() scrollable: boolean;
 	@Input() icon: string;
-	currentIndex: number = 0;
+	currentIndex: number;
 
 	@Input() index: number;
 

@@ -19,7 +19,7 @@ ril-select {
 			box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		width: 100%;
-		padding: $p-sm;
+		padding: $p-sm $p-md;
 		min-width: 10rem;
 
 		.mat-select-value {
@@ -33,12 +33,6 @@ ril-select {
 
 		.mat-select-arrow {
 			color: main-contrast(800);
-		}
-	}
-
-	:host-context(ril-form-group.float) {
-		.select-box {
-			//border-color: blue;
 		}
 	}
 

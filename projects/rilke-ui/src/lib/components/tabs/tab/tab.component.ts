@@ -7,17 +7,13 @@ import { Component, Input, HostBinding, OnInit } from '@angular/core';
 export class TabComponent implements OnInit {
 	@HostBinding('class.tab-panel') tab = true;
 	@HostBinding('class.fade') fade = true;
-	@HostBinding('class.active') @Input() active: boolean = false;
-
-	@HostBinding('class.show') get show() {
-		return this.active;
-	}
+	@HostBinding('class.active') @Input() active: boolean;
 
 	@Input('title') title: string;
 	@Input('rounded') rounded: boolean;
 	@Input('icon') icon: string;
 	@Input('link') link: string;
-	@Input('fullMatch') fullMatch: boolean = false;
+	@Input('fullMatch') fullMatch: boolean;
 
 	ngOnInit() {
 		if (this.fullMatch && window.location.pathname == this.link) {

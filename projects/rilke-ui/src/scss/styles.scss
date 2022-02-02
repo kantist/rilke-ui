@@ -34,6 +34,9 @@ $rilke-ui-theme: mat.define-light-theme(
 @import "./components";
 
 body {
+	height: 100%;
+	background-color: main-palette(900);
+
 	mat-bottom-sheet-container {
 		padding: 1rem !important;
 		background: main-palette(800) !important;

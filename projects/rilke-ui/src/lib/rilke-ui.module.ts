@@ -266,4 +266,4 @@ const materialModules = [
 		StopPropagation,
 	],
 })
-export class RilkeUiModule {}
+export class RilkeUIModule {}

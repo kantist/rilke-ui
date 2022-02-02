@@ -1,13 +1,13 @@
 @use "sass:math";
 
-$base-size: 1.2rem;
+$base-size: 1rem;
 
 // Radius
-$r-xs: math.div($base-size, 2);
-$r-sm: math.div($base-size, 1.5);
-$r-md: $base-size;
-$r-lg: $base-size * 1.5;
-$r-xl: $base-size * 2;
+$r-xs: math.div($base-size, 3);
+$r-sm: math.div($base-size, 2);
+$r-md: math.div($base-size, 1.5);
+$r-lg: $base-size;
+$r-xl: $base-size * 1.5;
 
 // Padding
 $p-xs: math.div($base-size, 2);

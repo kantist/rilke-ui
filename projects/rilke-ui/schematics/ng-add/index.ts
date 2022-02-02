@@ -17,7 +17,7 @@ import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
 import { addExportToModule, addImportsForStyle, addImportToModule } from '../utility/ast-utils';
 import * as ts from '../third_party/files/typescript';
 import { InsertChange } from '../utility/change';
-import { findModule, LAYER_EXT } from '../utility/find-module';
+import { findModule, findModuleFromOptions, LAYER_EXT, ModuleOptions } from '../utility/find-module';
 import { buildDefaultPath, getWorkspace } from '../utility/workspace';
 
 function addStyleToWorkspaceFile(workspace: workspaces.WorkspaceDefinition): Rule {
@@ -91,11 +91,24 @@ function readIntoSourceFile(host: Tree, modulePath: string): ts.SourceFile {
 
 function addToNgModule(sourceDir: string): Rule {
 	return (host: Tree) => {
-		const modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT));
-		const source = readIntoSourceFile(host, modulePath);
+		let source;
+		let modulePath = normalize(findModule(host, sourceDir + '/shared', LAYER_EXT));
+
+		if (host.read(modulePath)) {
+			source = readIntoSourceFile(host, modulePath);
+		} else {
+			let options: ModuleOptions = {
+				name: 'app',
+				module: 'App',
+				layer: ''
+			}
+
+			modulePath = normalize(findModuleFromOptions(host, options));
+			source = readIntoSourceFile(host, modulePath);
+		}
 
 		const relativePath = '@kantist/rilke-ui';
-		const classifiedName = 'RilkeUiModule';
+		const classifiedName = 'RilkeUIModule';
 		const importChanges = addImportToModule(
 			source,
 			modulePath,

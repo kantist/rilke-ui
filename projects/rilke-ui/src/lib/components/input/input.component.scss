@@ -15,7 +15,6 @@ ril-input {
 		cursor: text;
 		display: flex;
 		outline: none;
-		padding: 0 calc(#{$f-size-md} - 0.2em);
 		position: relative;
 		transition:
 			background 0.2s ease-in-out,
@@ -27,6 +26,7 @@ ril-input {
 		width: 100%;
 
 		.input-infix {
+			display: flex;
 			flex: auto;
 			min-width: 5px;
 		}
@@ -41,23 +41,25 @@ ril-input {
 			display: block;
 			font: inherit;
 			outline: none;
-			padding: $p-sm 0.2em;
+			padding: $p-sm $p-md;
 			width: 100%;
-
-			// @include placeholder {
-			// 	color: main-contrast(700);
-			// }
 		}
 
 		.input-prefix,
 		.input-suffix {
 			color: main-contrast(500);
 			flex: none;
-			padding: 0 0.2em;
+			padding: 0 $p-md;
 		}
 
 		.input-icon {
+			display: flex;
+			align-items: center;
 			font-size: 1.3em;
+
+			* {
+				font-size: 1em;
+			}
 		}
 
 		.char-limiting {
@@ -66,7 +68,7 @@ ril-input {
 			display: flex;
 			font-size: 0.9em;
 			justify-content: center;
-			padding: 0 0.2em;
+			padding: 0 $p-md;
 			pointer-events: none;
 		}
 	}
@@ -91,7 +93,7 @@ ril-input {
 
 		.ril-input-wrap {
 			background: main-palette(700);
-			border-color: main-palette(200);
+			border-color: main-contrast(200);
 		}
 	}
 

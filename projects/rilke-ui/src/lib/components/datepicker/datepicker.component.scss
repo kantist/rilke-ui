@@ -1,36 +1,3 @@
-$_module-rem: $base-size;
-$_placeholder-color: #A8A8A8;
-$_fs: 1rem;
-$_lh: math.div($-module-rem * 2, $-fs);
-$_padding-h: $_module-rem * 2;
-$_padding-v: $_module-rem;
-$_shape: 6px;
-$_shadow-hover: $s-md;
-
-// size sm
-$_fs-sm: ($_fs * 0.9);
-$_lh-sm: math.div($-module-rem * 2, $-fs)-sm;
-$_shape-sm: ($_shape * 0.8);
-$_padding-v-sm: (math.div($-module-rem, 2));
-
-// size lg
-$_fs-lg: ($_fs * 1.3);
-$_lh-lg: math.div($-module-rem * 2, $-fs)-lg;
-$_shape-lg: ($_shape * 1.5);
-$_padding-v-lg: $_module-rem * 1.5;
-
-@keyframes autofill {
-	to {
-		color: #666;
-		background: transparent;
-	}
-}
-
-input:-webkit-autofill {
-	animation-name: autofill;
-	animation-fill-mode: both;
-}
-
 ril-date-picker {
 	display: block;
 	outline: none;
@@ -43,7 +10,6 @@ ril-date-picker {
 		cursor: pointer;
 		display: flex;
 		outline: none;
-		padding: 0 calc(#{$_fs} - 0.2em);
 		position: relative;
 		transition:
 			background 0.2s ease-in-out,
@@ -53,6 +19,7 @@ ril-date-picker {
 		width: 100%;
 
 		.input-infix {
+			display: flex;
 			flex: auto;
 			min-width: 5px;
 		}
@@ -66,7 +33,7 @@ ril-date-picker {
 			display: block;
 			font: inherit;
 			outline: none;
-			padding: $_padding-v 0.2em;
+			padding: $p-sm $p-md;
 			width: 100%;
 		}
 
@@ -74,11 +41,17 @@ ril-date-picker {
 		.input-suffix {
 			color: main-contrast(500);
 			flex: none;
-			padding: 0 0.2em;
+			padding: 0 $p-md;
 		}
 
 		.input-icon {
+			display: flex;
+			align-items: center;
 			font-size: 1.3em;
+
+			* {
+				font-size: 1em;
+			}
 		}
 	}
 
@@ -92,6 +65,7 @@ ril-date-picker {
 	&.input-focus {
 		.ril-input-wrap {
 			background: main-palette(700);
+			border-color: main-contrast(200);
 		}
 	}
 
@@ -102,33 +76,6 @@ ril-date-picker {
 		}
 	}
 
-	// &.input-sm {
-	// 	border-radius: $_shape-sm;
-	// 	font-size: $_fs-sm;
-	// 	line-height: $_lh-sm;
-
-	// 	.ril-input-wrap {
-	// 		.input-control {
-	// 			padding-top: $_padding-v-sm;
-	// 			padding-bottom: $_padding-v-sm;
-	// 		}
-	// 		.input-icon {
-	// 			font-size: 1.1em;
-	// 		}
-	// 	}
-	// }
-	// &.input-lg {
-	// 	border-radius: $_shape-lg;
-	// 	font-size: $_fs-lg;
-	// 	line-height: $_lh-lg;
-
-	// 	.ril-input-wrap {
-	// 		.input-control {
-	// 			padding-top: $_padding-v-lg;
-	// 			padding-bottom: $_padding-v-lg;
-	// 		}
-	// 	}
-	// }
 	&.input-disabled,
 	&.input-readonly {
 		color: main-contrast(500);
