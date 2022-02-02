@@ -1,3 +1,68 @@
+ril-alert {
+	.toast {
+		position: relative;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-around;
+		border-radius: $r-md;
+		align-items: center;
+		padding: 10px 15px;
+		min-height: 48px;
+
+		p {
+			color: main-contrast(800);
+			font-size: 1rem;
+			line-height: 1.6rem;
+			margin-right: 0.6rem;
+		}
+
+		&.default {
+			background: main-palette(900);
+
+			button {
+				background-color: main-palette(700);
+			}
+		}
+
+		&.success {
+			background: $success-color;
+
+			button {
+				background-color: $success-hover;
+			}
+		}
+
+		&.info {
+			background: $info-color;
+
+			button {
+				background-color: $info-hover;
+			}
+		}
+
+		&.warning {
+			background: $warning-color;
+
+			button {
+				background-color: $warning-hover;
+			}
+		}
+
+		&.error {
+			background: $error-color;
+
+			button {
+				background-color: $error-hover;
+			}
+		}
+	}
+}
+
+snack-bar-container {
+	background: transparent !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+}
 ril-auto-complete {
 	border-radius: $r-md;
 	display: block;
@@ -64,81 +129,6 @@ ril-auto-complete {
 				&:last-child {
 					box-shadow: none;
 				}
-			}
-		}
-	}
-}
-ril-avatar {
-	align-items: center;
-	background: material-palette(grey, 400);
-	border-radius: 50%;
-	display: flex;
-	font-weight: 600;
-	justify-content: center;
-	line-height: 1;
-	position: relative;
-	text-transform: uppercase;
-	flex-shrink: 0;
-	cursor: default;
-	user-select: none; /* supported by Chrome and Opera */
-
-	img {
-		max-height: 100%;
-		max-width: 100%;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center;
-		transition: 0.5s ease;
-		border-radius: inherit;
-	}
-
-	.initial {
-		display: flex;
-		align-content: center;
-		justify-content: center;
-		align-items: center;
-		transition: 0.5s ease;
-		width: 100%;
-		height: 100%;
-		background: material-palette(grey, 400);
-		color: material-palette(grey, 700);
-		border-radius: inherit;
-	}
-
-	.icon {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 0;
-		color: material-palette(grey, 700);
-	}
-
-	&.selectable {
-		cursor: pointer;
-
-		.select-image {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			color: material-palette(grey, 700);
-			z-index: 3;
-			opacity: 100%;
-			transition: 0.5s ease;
-			font-size: 75%;
-		}
-
-		&:hover {
-			.select-image {
-				opacity: 100%;
-			}
-
-			img,
-			.initial {
-				opacity: 30%;
 			}
 		}
 	}
@@ -238,70 +228,90 @@ ril-badge {
 		color: main-contrast(900);
 	}
 }
-ril-alert {
-	.toast {
-		position: relative;
+ril-avatar {
+	align-items: center;
+	background: material-palette(grey, 400);
+	border-radius: 50%;
+	display: flex;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1;
+	position: relative;
+	text-transform: uppercase;
+	flex-shrink: 0;
+	cursor: default;
+	user-select: none; /* supported by Chrome and Opera */
+
+	img {
+		max-height: 100%;
+		max-width: 100%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		transition: 0.5s ease;
+		border-radius: inherit;
+	}
+
+	.initial {
 		display: flex;
-		flex-wrap: nowrap;
-		justify-content: space-around;
-		border-radius: $r-md;
+		align-content: center;
+		justify-content: center;
 		align-items: center;
-		padding: 10px 15px;
-		min-height: 48px;
+		transition: 0.5s ease;
+		width: 100%;
+		height: 100%;
+		background: material-palette(grey, 400);
+		color: material-palette(grey, 700);
+		border-radius: inherit;
+	}
 
-		p {
-			color: main-contrast(800);
-			font-size: 1rem;
-			line-height: 1.6rem;
-			margin-right: 0.6rem;
+	.icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		color: material-palette(grey, 700);
+	}
+
+	&.selectable {
+		cursor: pointer;
+
+		.select-image {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			color: material-palette(grey, 700);
+			z-index: 3;
+			opacity: 100%;
+			transition: 0.5s ease;
+			font-size: 75%;
 		}
 
-		&.default {
-			background: main-palette(900);
-
-			button {
-				background-color: main-palette(700);
+		&:hover {
+			.select-image {
+				opacity: 100%;
 			}
-		}
 
-		&.success {
-			background: $success-color;
-
-			button {
-				background-color: $success-hover;
-			}
-		}
-
-		&.info {
-			background: $info-color;
-
-			button {
-				background-color: $info-hover;
-			}
-		}
-
-		&.warning {
-			background: $warning-color;
-
-			button {
-				background-color: $warning-hover;
-			}
-		}
-
-		&.error {
-			background: $error-color;
-
-			button {
-				background-color: $error-hover;
+			img,
+			.initial {
+				opacity: 30%;
 			}
 		}
 	}
 }
-
-snack-bar-container {
-	background: transparent !important;
-	padding: 0 !important;
-	overflow: hidden !important;
+ril-card {
+	background-color: material-palette(grey, 50);
+	padding: $p-md;
+	box-shadow: $s-md;
+	border-radius: $r-md;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background: main-palette(800);
 }
 [ril-button] {
 	align-items: center;
@@ -626,16 +636,6 @@ snack-bar-container {
 			visibility: visible;
 		}
 	}
-}
-ril-card {
-	background-color: material-palette(grey, 50);
-	padding: $p-md;
-	box-shadow: $s-md;
-	border-radius: $r-md;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	background: main-palette(800);
 }
 ril-checkbox {
 	display: inline-flex;
