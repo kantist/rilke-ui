@@ -36,7 +36,7 @@ ril-list {
 				display: flex;
 			}
 
-			*[ka-skeleton] {
+			*[ril-skeleton] {
 				opacity: 100%;
 				visibility: visible;
 			}
@@ -147,7 +147,7 @@ ril-list {
 				width: 100%;
 				min-height: 5rem;
 
-				ka-avatar {
+				ril-avatar {
 					margin-right: 0.5rem;
 				}
 			}

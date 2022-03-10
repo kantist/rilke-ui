@@ -91,7 +91,7 @@ export class ListToolbarService {
 	}
 
 	removeFromSelectedlist(index: number) {
-		this.selectedList.splice(index, 1);
+		this.selectedList.splice(this.selectedList.indexOf(index), 1);
 
 		this.setSelected();
 

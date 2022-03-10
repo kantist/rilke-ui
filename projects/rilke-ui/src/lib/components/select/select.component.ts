@@ -33,11 +33,7 @@ import { SelectOptionComponent } from './select-option/select-option.component';
 		},
 	],
 })
-export class SelectComponent
-	implements OnInit, AfterContentInit, ControlValueAccessor
-{
-	@HostBinding('class.ril-select') true;
-
+export class SelectComponent implements OnInit, AfterContentInit, ControlValueAccessor {
 	@Output() valueSelected: EventEmitter<any | any[]>;
 	@Input() search: boolean;
 	@Input() disableOptionCentering: boolean;
@@ -61,11 +57,8 @@ export class SelectComponent
 	@ViewChild('matSelect') matSelect;
 
 	@HostBinding('class.has-value') @Input('value') innerValue: any;
-
-	onChange = (value: string | string[]) => {
-		this.selectionChange.emit(value);
-	};
-	onTouched = () => {};
+	onChange: any = () => {};
+	onTouched: any = () => {};
 
 	@HostListener('click', ['$event'])
 	toggleSelect() {
@@ -155,6 +148,7 @@ export class SelectComponent
 	set value(v) {
 		if (v !== this.innerValue) {
 			this.innerValue = v;
+			this.selectionChange.emit(v);
 			this.onChange(v);
 		}
 	}

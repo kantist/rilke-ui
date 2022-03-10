@@ -23,7 +23,7 @@ import { state } from '../../interfaces/general';
 	],
 })
 export class SwitcherComponent implements OnInit {
-	@HostBinding('class.ka-switcher') true;
+	@HostBinding('class.ril-switcher') true;
 	@HostBinding('class.checked') get focus() {
 		return this._value;
 	}
