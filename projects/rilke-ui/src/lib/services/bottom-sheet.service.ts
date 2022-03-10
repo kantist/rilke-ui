@@ -13,6 +13,10 @@ export class BottomSheetService {
 
 	constructor(private _matBottom: MatBottomSheet) {
 		this.statusChange = new EventEmitter<boolean>();
+
+		this._matBottom._openedBottomSheetRef.afterDismissed().subscribe(() => {
+			this.statusChange.emit(false);
+		});
 	}
 
 	open(config: IBottomSheetOptions) {
@@ -22,16 +26,12 @@ export class BottomSheetService {
 	}
 
 	close() {
-		this.statusChange.emit(false);
 		this._matBottom.dismiss();
 	}
 
 	afterClose() {
 		return this._matBottom._openedBottomSheetRef
 			.afterDismissed()
-			.pipe(tap((res: any) => {
-				this.statusChange.emit(false);
-				return res
-			}));
+			.pipe(tap((res: any) => res));
 	}
 }
