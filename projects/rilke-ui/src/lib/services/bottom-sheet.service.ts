@@ -9,18 +9,18 @@ import { IBottomSheetOptions } from '../interfaces/bottom-sheet';
 
 @Injectable({ providedIn: 'root' })
 export class BottomSheetService {
-	status: EventEmitter<boolean>;
+	statusChange: EventEmitter<boolean>;
 
 	constructor(private _matBottom: MatBottomSheet) {}
 
 	open(config: IBottomSheetOptions) {
-		this.status.emit(true);
+		this.statusChange.emit(true);
 
 		this._matBottom.open(config.component, config);
 	}
 
 	close() {
-		this.status.emit(false);
+		this.statusChange.emit(false);
 		this._matBottom.dismiss();
 	}
 
@@ -28,7 +28,7 @@ export class BottomSheetService {
 		return this._matBottom._openedBottomSheetRef
 			.afterDismissed()
 			.pipe(tap((res: any) => {
-				this.status.emit(false);
+				this.statusChange.emit(false);
 				return res
 			}));
 	}
