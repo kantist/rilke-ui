@@ -1,0 +1,10 @@
+:host {
+	display: block;
+	position: absolute;
+	font-size: $f-size-sm;
+	margin-top: 1px;
+
+	.error {
+		color: $error-color;
+	}
+}

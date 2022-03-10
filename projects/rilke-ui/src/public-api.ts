@@ -31,6 +31,7 @@ export * from './lib/components/expansion-panel/expansion-panel-content/expansio
 export * from './lib/components/file-upload/file-upload.component';
 export * from './lib/components/form-group/form-group.component';
 export * from './lib/components/form-label/form-label.component';
+export * from './lib/components/form-description/form-description.component';
 export * from './lib/components/input/input.component';
 
 export * from './lib/components/list/list.component';
@@ -65,6 +66,7 @@ export * from './lib/services/dialog.service';
 export * from './lib/services/bottom-sheet.service';
 export * from './lib/services/modal.service';
 export * from './lib/services/list-toolbar.service';
+export * from './lib/services/validator.service';
 
 // Interfaces ***
 export * from './lib/interfaces/alert';

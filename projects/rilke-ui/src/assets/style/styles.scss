@@ -49,8 +49,10 @@ body {
 	background-color: main-palette(900);
 
 	mat-bottom-sheet-container {
-		padding: 1rem !important;
-		background: main-palette(800) !important;
+		padding: $p-lg * 2 !important;
+		color: inherit !important;
+		font-family: inherit !important;
+		background: main-palette(900) !important;
 		border-top-right-radius: $r-md !important;
 		border-top-left-radius: $r-md !important;
 	}

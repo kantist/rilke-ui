@@ -100,6 +100,7 @@ import { InitialLetterPipe } from './pipes/initial-letter.pipe';
 
 // Directives
 import { StopPropagation } from './directives/stop-propagation.directive';
+import { FormDescriptionComponent } from './components/form-description';
 
 const materialModules = [
 	CdkTreeModule,
@@ -169,6 +170,7 @@ const materialModules = [
 		FileUploadComponent,
 		FormGroupComponent,
 		FormLabelComponent,
+		FormDescriptionComponent,
 		InputComponent,
 
 		ListComponent,
@@ -236,6 +238,7 @@ const materialModules = [
 		FileUploadComponent,
 		FormGroupComponent,
 		FormLabelComponent,
+		FormDescriptionComponent,
 		InputComponent,
 
 		ListComponent,
