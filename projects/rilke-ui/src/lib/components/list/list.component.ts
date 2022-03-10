@@ -64,10 +64,13 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 
 	ngOnInit() {
 		// Pagination
-		this.route.queryParams.subscribe((x) => {
-			this.listToolbar.close();
-			this.page = x.page || 1;
-		});
+		if (this.pageRouter) {
+			this.route.queryParams.subscribe((x) => {
+				this.listToolbar.close();
+				this.page = x.page || 1;
+			});
+		}
+
 		this.calcPagesCount(this.dataLength, this.itemsPerPage);
 
 		this.listToolbar.setOptions(this.listToolbarOptions);
