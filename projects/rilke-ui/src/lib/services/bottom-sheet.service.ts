@@ -1,9 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import {
-	MatBottomSheet,
-	MatBottomSheetConfig,
-	MatBottomSheetRef,
-} from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { tap } from 'rxjs/operators';
 import { IBottomSheetOptions } from '../interfaces/bottom-sheet';
 
@@ -13,16 +9,16 @@ export class BottomSheetService {
 
 	constructor(private _matBottom: MatBottomSheet) {
 		this.statusChange = new EventEmitter<boolean>();
-
-		this._matBottom._openedBottomSheetRef.afterDismissed().subscribe(() => {
-			this.statusChange.emit(false);
-		});
 	}
 
 	open(config: IBottomSheetOptions) {
 		this.statusChange.emit(true);
 
 		this._matBottom.open(config.component, config);
+
+		this._matBottom._openedBottomSheetRef.afterDismissed().subscribe(() => {
+			this.statusChange.emit(false);
+		});
 	}
 
 	close() {
