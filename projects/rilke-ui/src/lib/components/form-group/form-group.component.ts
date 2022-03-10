@@ -40,6 +40,9 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 
 	ngAfterContentInit() {
 		this.inputRef.toArray().forEach((input, index) => {
+			this.inputFocus = input.inputFocus;
+			this.hasValue = input.innerValue ? true : false;
+
 			input.focus.subscribe((i) => {
 				this.inputFocus = input.inputFocus;
 				this.hasValue = input.innerValue ? true : false;
@@ -51,12 +54,17 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 		});
 
 		this.selectRef.toArray().forEach((input, index) => {
+			this.hasValue = input.innerValue ? true : false;
+
 			input.selectionChange.subscribe((i) => {
 				this.hasValue = input.innerValue ? true : false;
 			});
 		});
 
 		this.textareaRef.toArray().forEach((input, index) => {
+			this.inputFocus = input.textareaFocus;
+			this.hasValue = input.innerValue ? true : false;
+
 			input.focus.subscribe((i) => {
 				this.inputFocus = input.textareaFocus;
 				this.hasValue = input.innerValue ? true : false;
@@ -64,6 +72,9 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 		});
 
 		this.datepickerRef.toArray().forEach((input, index) => {
+			this.inputFocus = input.inputFocus;
+			this.hasValue = input.innerValue ? true : false;
+
 			input.focus.subscribe((i) => {
 				this.inputFocus = input.inputFocus;
 				this.hasValue = input.innerValue ? true : false;
