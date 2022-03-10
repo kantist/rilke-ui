@@ -11,7 +11,9 @@ import { IBottomSheetOptions } from '../interfaces/bottom-sheet';
 export class BottomSheetService {
 	statusChange: EventEmitter<boolean>;
 
-	constructor(private _matBottom: MatBottomSheet) {}
+	constructor(private _matBottom: MatBottomSheet) {
+		this.statusChange = new EventEmitter<boolean>();
+	}
 
 	open(config: IBottomSheetOptions) {
 		this.statusChange.emit(true);
