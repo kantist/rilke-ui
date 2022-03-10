@@ -69,6 +69,7 @@ import { ExpansionPanelContentComponent } from './components/expansion-panel/exp
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
 import { FormGroupComponent } from './components/form-group/form-group.component';
 import { FormLabelComponent } from './components/form-label/form-label.component';
+import { FormDescriptionComponent } from './components/form-description/form-description.component';
 import { InputComponent } from './components/input/input.component';
 
 import { ListComponent } from './components/list/list.component';
@@ -100,7 +101,6 @@ import { InitialLetterPipe } from './pipes/initial-letter.pipe';
 
 // Directives
 import { StopPropagation } from './directives/stop-propagation.directive';
-import { FormDescriptionComponent } from './components/form-description';
 
 const materialModules = [
 	CdkTreeModule,

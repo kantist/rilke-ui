@@ -6,8 +6,7 @@ const validator = new ValidationService();
 
 @Component({
 	selector: 'ril-form-description',
-	templateUrl: './form-description.component.html',
-	styleUrls: ['./form-description.component.scss']
+	templateUrl: './form-description.component.html'
 })
 export class FormDescriptionComponent {
 	_errorMessage: string;
