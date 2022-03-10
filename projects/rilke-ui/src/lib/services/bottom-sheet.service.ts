@@ -19,6 +19,10 @@ export class BottomSheetService {
 		this._matBottom._openedBottomSheetRef.afterDismissed().subscribe(() => {
 			this.statusChange.emit(false);
 		});
+
+		this._matBottom._openedBottomSheetRef.backdropClick().subscribe(() => {
+			this.statusChange.emit(false);
+		})
 	}
 
 	close() {
