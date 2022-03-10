@@ -12,8 +12,7 @@ export class BottomSheetService {
 	constructor(private _matBottom: MatBottomSheet) {}
 
 	open(config: IBottomSheetOptions) {
-		console.log('from ui');
-		this._matBottom.open(config.component);
+		this._matBottom.open(config.component, config);
 	}
 
 	close() {
