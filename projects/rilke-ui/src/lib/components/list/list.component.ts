@@ -33,13 +33,13 @@ export class ListComponent implements OnInit, OnChanges, AfterViewInit {
 	// Pagination Inputs
 	@Input() pageRouter: boolean;
 	@Input() dataLength: number;
+	@Input() page: number;
 	@Input() itemsPerPage: number;
 	@Output() pageChange: EventEmitter<number>;
 
 	@HostBinding('class.loaded') @Input() loaded: boolean;
 
 	pagesCount: number;
-	page: number;
 
 	listHeader: boolean;
 	listItem: boolean;

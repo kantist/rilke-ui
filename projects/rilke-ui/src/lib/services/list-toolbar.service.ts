@@ -9,7 +9,7 @@ export class ListToolbarService {
 	componentRef: ComponentRef<any>;
 	overlayRef: OverlayRef;
 
-	selectedList: any;
+	selectedList: any[];
 	toolbarOptions: IListToolbarOptions;
 
 	isOpen: boolean;
@@ -18,7 +18,7 @@ export class ListToolbarService {
 	@Output() onToolbarButtonClick: EventEmitter<string>;
 
 	constructor(private overlay: Overlay) {
-		this.selectedList = {};
+		this.selectedList = [];
 		this.isOpen = false;
 
 		this.allSelected = new EventEmitter<boolean>();
@@ -70,12 +70,12 @@ export class ListToolbarService {
 		}
 		this.isOpen = false;
 
-		this.selectedList = {};
+		this.selectedList = [];
 		this.allSelected.emit(false);
 	}
 
 	get selectedListQuantity() {
-		return Object.keys(this.selectedList).length;
+		return this.selectedList.length;
 	}
 
 	setSelected() {
@@ -83,7 +83,7 @@ export class ListToolbarService {
 	}
 
 	addToSelectedList(index: number, value: boolean) {
-		this.selectedList[index] = value;
+		this.selectedList.push(index);
 
 		this.setSelected();
 
@@ -95,7 +95,7 @@ export class ListToolbarService {
 
 		this.setSelected();
 
-		if (Object.keys(this.selectedList).length == 0) this.close();
+		if (this.selectedList.length == 0) this.close();
 	}
 
 	selectAll() {
@@ -103,7 +103,7 @@ export class ListToolbarService {
 	}
 
 	removeAll() {
-		this.selectedList = {};
+		this.selectedList = [];
 		this.close();
 	}
 
