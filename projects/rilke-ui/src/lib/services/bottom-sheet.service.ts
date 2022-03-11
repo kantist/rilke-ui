@@ -8,7 +8,7 @@ export class BottomSheetService {
 	statusChange: EventEmitter<boolean>;
 
 	constructor(private _matBottom: MatBottomSheet) {
-		this.statusChange = new EventEmitter<boolean>();
+		this.statusChange = new EventEmitter<boolean>(false);
 	}
 
 	open(config: IBottomSheetOptions) {
