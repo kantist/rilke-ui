@@ -4,7 +4,6 @@ ril-input {
 	display: flex;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
-	outline: none;
 	width: 100%;
 
 	.ril-input-wrap {
@@ -14,7 +13,6 @@ ril-input {
 		border-radius: inherit;
 		cursor: text;
 		display: flex;
-		outline: none;
 		position: relative;
 		transition:
 			background 0.2s ease-in-out,
@@ -40,7 +38,6 @@ ril-input {
 			cursor: inherit;
 			display: block;
 			font: inherit;
-			outline: none;
 			padding: $p-sm $p-md;
 			width: 100%;
 		}
@@ -100,8 +97,7 @@ ril-input {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {
-			background-color: main-palette(700);
-			outline: $error-color solid 1px;
+			border: 1px solid $error-color;
 		}
 	}
 

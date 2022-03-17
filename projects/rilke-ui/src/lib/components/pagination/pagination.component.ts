@@ -69,7 +69,6 @@ export class PaginationComponent implements OnInit, OnChanges {
 
 	goPage() {
 		if (this.pageRouter) {
-			console.log('pageRouter');
 			this.router.navigate(['.'], {
 				relativeTo: this.route,
 				queryParamsHandling: 'merge',

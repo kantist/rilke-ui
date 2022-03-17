@@ -3,14 +3,14 @@ ril-file-upload {
 		display: flex;
 		align-items: center;
 
-		.uploadBtn {
+		.upload-btn {
 			background-color: main-palette(800);
 			border-radius: $r-md;
 			padding: 1rem;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: max-content;
+			width: 100%;
 			height: min-content;
 			cursor: pointer;
 			position: relative;
@@ -44,7 +44,7 @@ ril-file-upload {
 				color: main-contrast(800);
 			}
 
-			.fileName {
+			.file-name {
 				margin: 0;
 				margin-left: 3rem !important;
 			}
@@ -56,9 +56,13 @@ ril-file-upload {
 			}
 
 			.close-icon {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
 				font-size: 1.4rem;
 				margin-left: 0.5rem;
 				color: $error-color;
+				flex: 2;
 			}
 		}
 	}

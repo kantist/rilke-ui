@@ -2,8 +2,6 @@ import { Component, HostBinding, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ValidationService } from '../../services/validator.service';
 
-const validator = new ValidationService();
-
 @Component({
 	selector: 'ril-form-description',
 	templateUrl: './form-description.component.html'
@@ -17,7 +15,9 @@ export class FormDescriptionComponent {
 	@Input() example: string;
 	@Input() exception: string;
 
-	constructor() { }
+	constructor(
+		private validator: ValidationService
+	) { }
 
 	get errorMessage(): string {
 		for (let propertyName in this.control.errors) {
@@ -25,7 +25,7 @@ export class FormDescriptionComponent {
 				this.control.errors.hasOwnProperty(propertyName) &&
 				(!this.control.pristine || this.control.touched)
 			) {
-				return validator.getValidatorErrorMessage(
+				return this.validator.getValidatorErrorMessage(
 					propertyName,
 					this.control.errors[propertyName],
 					this.example

@@ -29,6 +29,7 @@ export * from './lib/components/expansion-panel/expansion-panel-description/expa
 export * from './lib/components/expansion-panel/expansion-panel-content/expansion-panel-content.component';
 
 export * from './lib/components/file-upload/file-upload.component';
+export * from './lib/components/file-drop/file-drop.component';
 export * from './lib/components/form-group/form-group.component';
 export * from './lib/components/form-label/form-label.component';
 export * from './lib/components/form-description/form-description.component';
@@ -58,7 +59,10 @@ export * from './lib/components/text-area/text-area.component';
 
 // Pipes ***
 export * from './lib/pipes/initial-letter.pipe';
+
+// Directives ***
 export * from './lib/directives/stop-propagation.directive';
+export * from './lib/directives/truncate.directive';
 
 // Services ***
 export * from './lib/services/alert.service';
@@ -72,3 +76,9 @@ export * from './lib/services/validator.service';
 export * from './lib/interfaces/alert';
 export * from './lib/interfaces/bottom-sheet';
 export * from './lib/interfaces/dialog';
+
+// Other ***
+export * from './lib/common';
+
+// i18n ***
+export * from './i18n/tr';

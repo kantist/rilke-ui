@@ -58,7 +58,7 @@ export class TextAreaComponent implements ControlValueAccessor, OnInit {
 
 	@HostListener('input')
 	onInput(): void {
-		this.autoGrowArea ? this.adjust() : null;
+		return this.autoGrowArea ? this.adjust() : null;
 	}
 
 	@Output() focus: EventEmitter<boolean>;
@@ -95,7 +95,9 @@ export class TextAreaComponent implements ControlValueAccessor, OnInit {
 		this.setStyles(
 			!this.disabled ? this.states.default : this.states.disabled
 		);
-		this.charLimiter ? this.setLimiter(this.charLimiter, this.value) : null;
+		
+		if (this.charLimiter)
+			this.setLimiter(this.charLimiter, this.value);
 	}
 
 	setLimiter(limiter: number | ITextareaLimiter, value: string) {
@@ -135,7 +137,6 @@ export class TextAreaComponent implements ControlValueAccessor, OnInit {
 	}
 
 	set autoGrow(v) {
-		console.log(v);
 		if (v !== this.autoGrowArea) {
 			this.autoGrowArea = v;
 
@@ -158,6 +159,7 @@ export class TextAreaComponent implements ControlValueAccessor, OnInit {
 	writeValue(value: string) {
 		if (value !== this.innerValue) {
 			this.innerValue = value;
+			this.onInput();
 		}
 	}
 

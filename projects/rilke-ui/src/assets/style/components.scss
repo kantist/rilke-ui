@@ -827,7 +827,6 @@ ril-date-picker {
 		border-radius: $r-md;
 		cursor: pointer;
 		display: flex;
-		outline: none;
 		position: relative;
 		transition:
 			background 0.2s ease-in-out,
@@ -1184,7 +1183,6 @@ ril-input {
 		border-radius: inherit;
 		cursor: text;
 		display: flex;
-		outline: none;
 		position: relative;
 		transition:
 			background 0.2s ease-in-out,
@@ -1271,7 +1269,7 @@ ril-input {
 	.has-error & {
 		.ril-input-wrap {
 			background-color: main-palette(700);
-			outline: $error-color solid 1px;
+			outline: $error-color solid 1px !important;
 		}
 	}
 
@@ -1941,7 +1939,6 @@ ril-text-area {
 		border-radius: inherit;
 		cursor: text;
 		height: 100%;
-		outline: none;
 		padding: 0;
 		position: relative;
 		width: 100%;
@@ -1957,7 +1954,6 @@ ril-text-area {
 			font: inherit;
 			height: 100%;
 			margin: 0;
-			outline: none;
 			padding: $p-sm $p-md;
 			transition:
 				background 0.2s ease-in-out,

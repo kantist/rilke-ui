@@ -1,0 +1,53 @@
+ril-file-drop {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+
+	.wrapper {
+		background-color: main-palette(800);
+		border-radius: $r-md;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: min-content;
+		cursor: pointer;
+		position: relative;
+		width: 100%;
+		transition: background-color .2s ease-in;
+
+		.dropzone {
+			border-radius: $r-md;
+			border: 1px dashed main-contrast(800);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: $p-lg;
+			width: 100%;
+
+			.link {
+				margin-right: $m-xs;
+				color: $info-color;
+			}
+		}
+
+		.upload-icon {
+			font-size: 1.4rem;
+			margin-left: 0.5rem;
+			color: main-contrast(800);
+		}
+
+		&.fileover {
+			background-color: main-palette(700);
+		}
+
+		&:hover {
+			background-color: main-palette(700);
+		}
+	}
+
+	.file {
+		width: 100%;
+		margin-top: $m-md;
+	}
+}

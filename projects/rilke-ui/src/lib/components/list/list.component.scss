@@ -63,14 +63,6 @@ ril-list {
 				flex-grow: 3;
 			}
 
-			&:nth-last-child(2) {
-				flex-grow: 1;
-			}
-
-			&:nth-last-child(4) {
-				flex-grow: 1;
-			}
-
 			&:last-child {
 				flex-grow: 1;
 			}
@@ -79,12 +71,12 @@ ril-list {
 
 	.list-check {
 		label {
-			height: 1.42857rem;
+			height: 1.4286rem;
 		}
 
 		display: flex;
 		align-items: center;
-		margin: 0 1.14286rem;
+		margin: 0 1.1429rem;
 
 		input {
 			display: none;

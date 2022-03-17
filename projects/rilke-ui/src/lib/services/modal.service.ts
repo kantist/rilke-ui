@@ -27,7 +27,6 @@ export class ModalService {
 		this.overlayRef.attach(modalPortal);
 
 		this.overlayRef.backdropClick().subscribe((e) => {
-			console.log('backdrop click');
 			this.close();
 		});
 	}

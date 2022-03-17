@@ -67,6 +67,7 @@ import { ExpansionPanelDescriptionComponent } from './components/expansion-panel
 import { ExpansionPanelContentComponent } from './components/expansion-panel/expansion-panel-content/expansion-panel-content.component';
 
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { FileDropComponent } from './components/file-drop/file-drop.component';
 import { FormGroupComponent } from './components/form-group/form-group.component';
 import { FormLabelComponent } from './components/form-label/form-label.component';
 import { FormDescriptionComponent } from './components/form-description/form-description.component';
@@ -100,7 +101,8 @@ import { TextAreaComponent } from './components/text-area/text-area.component';
 import { InitialLetterPipe } from './pipes/initial-letter.pipe';
 
 // Directives
-import { StopPropagation } from './directives/stop-propagation.directive';
+import { StopPropagationDirective } from './directives/stop-propagation.directive';
+import { TruncateDirective } from './directives/truncate.directive';
 
 const materialModules = [
 	CdkTreeModule,
@@ -168,6 +170,7 @@ const materialModules = [
 		ExpansionPanelContentComponent,
 
 		FileUploadComponent,
+		FileDropComponent,
 		FormGroupComponent,
 		FormLabelComponent,
 		FormDescriptionComponent,
@@ -199,7 +202,8 @@ const materialModules = [
 		InitialLetterPipe,
 
 		// Directives
-		StopPropagation,
+		StopPropagationDirective,
+		TruncateDirective
 	],
 	imports: [
 		CommonModule,
@@ -236,6 +240,7 @@ const materialModules = [
 		ExpansionPanelContentComponent,
 
 		FileUploadComponent,
+		FileDropComponent,
 		FormGroupComponent,
 		FormLabelComponent,
 		FormDescriptionComponent,
@@ -266,7 +271,8 @@ const materialModules = [
 		InitialLetterPipe,
 
 		// Directives
-		StopPropagation,
+		StopPropagationDirective,
+		TruncateDirective
 	],
 })
 export class RilkeUIModule {}

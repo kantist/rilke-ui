@@ -10,7 +10,6 @@ ril-text-area {
 		border-radius: inherit;
 		cursor: text;
 		height: 100%;
-		outline: none;
 		padding: 0;
 		position: relative;
 		width: 100%;
@@ -26,7 +25,6 @@ ril-text-area {
 			font: inherit;
 			height: 100%;
 			margin: 0;
-			outline: none;
 			padding: $p-sm $p-md;
 			transition:
 				background 0.2s ease-in-out,
@@ -83,7 +81,6 @@ ril-text-area {
 	.has-error & {
 		.ril-textarea-wrap {
 			.textarea-control {
-				background-color: rgba($error-color, 0.1);
 				border: 1px solid $error-color;
 			}
 		}

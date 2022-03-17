@@ -1,6 +1,5 @@
 ril-date-picker {
 	display: block;
-	outline: none;
 	width: 100%;
 
 	.ril-input-wrap {
@@ -9,7 +8,6 @@ ril-date-picker {
 		border-radius: $r-md;
 		cursor: pointer;
 		display: flex;
-		outline: none;
 		position: relative;
 		transition:
 			background 0.2s ease-in-out,
@@ -32,7 +30,6 @@ ril-date-picker {
 			cursor: inherit;
 			display: block;
 			font: inherit;
-			outline: none;
 			padding: $p-sm $p-md;
 			width: 100%;
 		}
@@ -72,7 +69,7 @@ ril-date-picker {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {
-			background-color: rgba($error-color, 0.1);
+			border: 1px solid $error-color;
 		}
 	}
 

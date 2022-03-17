@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { RIL_LANGUAGE } from '../../public-api';
 
 @Injectable({ providedIn: 'root' })
 export class ValidationService {
-	lang: any;
-
-	constructor() { }
+	constructor(
+		@Inject(RIL_LANGUAGE) private lang
+	) { }
 
 	public getValidatorErrorMessage(validatorName: string, validatorValue?: any, exampleValue?: string) {
 		let config = {
@@ -24,7 +25,7 @@ export class ValidationService {
 	}
 
 	public markFormGroupTouched(formGroup: FormGroup) {
-		(<any>Object).values(formGroup.controls).forEach(control => {
+		(Object as any).values(formGroup.controls).forEach(control => {
 			control.markAsTouched();
 
 			if (control.controls) {

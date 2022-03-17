@@ -193,7 +193,6 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 	}
 
 	onBlur(disabled: boolean) {
-		console.log('worked');
 		this.inputFocus = false;
 		if (!disabled) {
 			this.blur.emit();

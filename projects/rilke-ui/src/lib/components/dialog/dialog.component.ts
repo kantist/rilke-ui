@@ -26,7 +26,6 @@ export class DialogComponent implements OnInit {
 	ngOnInit() {
 		if (this.data.form) {
 			this.formArray = Object.entries(this.data.form.controls);
-			console.log(this.formArray);
 		}
 	}
 

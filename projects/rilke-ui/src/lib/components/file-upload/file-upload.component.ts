@@ -1,36 +1,98 @@
 import {
 	Component,
-	EventEmitter,
+	forwardRef,
 	HostBinding,
+	Inject,
 	Input,
 	OnInit,
-	Output,
 } from '@angular/core';
+import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { RIL_LANGUAGE } from '../../common';
+import { IFile, RilFile } from '../../interfaces/file';
 
 @Component({
 	selector: 'ril-file-upload',
 	templateUrl: 'file-upload.component.html',
+	providers: [
+		{
+			provide: NG_VALUE_ACCESSOR,
+			useExisting: forwardRef(() => FileUploadComponent),
+			multi: true,
+		},
+	],
 })
-export class FileUploadComponent implements OnInit {
-	@HostBinding('class.ril-file-upload') true: boolean = true;
-	@Output() fileResult: EventEmitter<any>;
-	@Input('value')
-	set model(value: string) {
-		this.cancelFile();
-	}
+export class FileUploadComponent implements ControlValueAccessor, OnInit {
+	@HostBinding('class.ril-file-upload') rilFileUpload: boolean;
+	@Input() required: boolean;
+	@HostBinding('class.input-readonly') @Input() readonly: boolean;
+	@HostBinding('class.input-disabled') @Input() disabled: boolean;
 
-	file: any;
+	@HostBinding('class.has-value') @Input('value') innerValue: IFile;
+
 	isImage: boolean;
 
-	constructor() {
-		this.fileResult = new EventEmitter<any>();
+	onChange: any = () => {};
+	onTouched: any = () => {};
+
+	constructor(
+		@Inject(RIL_LANGUAGE) public lang
+	) {
+		this.rilFileUpload = true;
+		this.readonly = false;
+		this.disabled = false;
+		this.required = false;
+		this.innerValue = null;
+
 		this.isImage = false;
 	}
 
-	ngOnInit() {}
+	get value() {
+		return this.innerValue;
+	}
+
+	set value(v) {
+		if (v !== this.innerValue) {
+			this.innerValue = new RilFile(v);
+			this.onChange(v);
+
+			if (this.value?.file) {
+				if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.value.file.type)) {
+					this.isImage = true;
+				}
+			}
+		}
+	}
+
+	ngOnInit() {
+		if (this.value) {
+			if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.value.file.type)) {
+				this.isImage = true;
+			}
+		}
+	}
+
+	registerOnChange(fn) {
+		this.onChange = fn;
+	}
+
+	registerOnTouched(fn) {
+		this.onTouched = fn;
+	}
+
+	writeValue(value: IFile) {
+		if (value !== this.innerValue) {
+			this.innerValue = new RilFile(value);
+
+			if (this.innerValue?.file) {
+				if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.innerValue.file.type)) {
+					this.isImage = true;
+				}
+			}
+		}
+	}
 
 	onFileChanged(inputValue: any) {
-		this.file = null;
+		this.value = null;
 		this.isImage = false;
 
 		let files: File[] = inputValue.target.files;
@@ -38,30 +100,19 @@ export class FileUploadComponent implements OnInit {
 			let reader: FileReader = new FileReader();
 
 			reader.onloadend = () => {
-				let obj = {
+				this.value = new RilFile({
 					name: file.name,
 					base64: reader.result,
 					file: file,
-				};
-				this.file = obj;
-				this.fileResult.emit(obj);
-				console.log(file);
-				if (
-					['image/jpg', 'image/png', 'image/jpeg'].includes(file.type)
-				) {
-					this.isImage = true;
-					console.log('image');
-				} else {
-					console.log('not image');
-				}
+				});
 			};
 
 			reader.readAsDataURL(file);
 		}
 	}
+
 	cancelFile() {
-		this.file = null;
+		this.value = null;
 		this.isImage = false;
-		this.fileResult.emit(this.file);
 	}
 }

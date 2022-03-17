@@ -4,7 +4,9 @@ import {
 	Input,
 	EventEmitter,
 	Output,
+	Inject,
 } from '@angular/core';
+import { RIL_LANGUAGE } from '../../../common';
 import { IListToolbarOptions } from '../../../interfaces/list-toolbar';
 
 @Component({
@@ -16,7 +18,9 @@ export class ListToolbarComponent implements OnInit {
 	@Output() close: EventEmitter<boolean>;
 	@Output() onToolbarButtonClick: EventEmitter<string>;
 
-	constructor() {
+	constructor(
+		@Inject(RIL_LANGUAGE) public lang
+	) {
 		this.close = new EventEmitter();
 
 		this.onToolbarButtonClick = new EventEmitter<string>();
