@@ -12,6 +12,7 @@
 		type="file"
 		(change)="onFileChanged($event)"
 		[required]="required ? true : false"
+		[multiple]="multiple ? true : false"
 		#fileInput
 		hidden
 	/>

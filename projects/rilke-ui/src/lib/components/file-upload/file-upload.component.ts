@@ -52,7 +52,7 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	set value(v) {
 		if (v !== this.innerValue) {
-			this.innerValue = new RilFile(v);
+			this.innerValue = v;
 			this.onChange(v);
 
 			if (this.value?.file) {
@@ -81,7 +81,7 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	writeValue(value: IFile) {
 		if (value !== this.innerValue) {
-			this.innerValue = new RilFile(value);
+			this.innerValue = value;
 
 			if (this.innerValue?.file) {
 				if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.innerValue.file.type)) {
