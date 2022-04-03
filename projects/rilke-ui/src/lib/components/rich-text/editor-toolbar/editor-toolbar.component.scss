@@ -1,0 +1,43 @@
+ril-editor-toolbar {
+	display: flex;
+	width: 100%;
+	background-color: main-palette(700);
+	border-radius: $r-md $r-md 0 0;
+	border: 1px solid main-palette(700);
+	border-bottom: none;
+	transition: border 0.2s ease-in-out;
+	padding: math.div($p-md, 5) $p-xs;
+
+	.toolbar {
+		display: flex;
+		width: 100%;
+
+		.set {
+			display: flex;
+			align-items: center;
+			background-color: main-palette(700);
+
+			button {
+				border: none;
+				user-select: none;
+				width: auto;
+				outline: 0;
+				overflow: visible;
+				background: transparent;
+				cursor: pointer;
+				white-space: normal;
+				padding: math.div($p-md, 5);
+				color: main-contrast(800);
+
+				&.active {
+					color: $accent-text;
+					box-shadow: $s-md;
+				}
+			}
+
+			+ .set {
+				margin-left: $m-md;
+			}
+		}
+	}
+}

@@ -34,6 +34,10 @@ export * from './lib/components/form-group/form-group.component';
 export * from './lib/components/form-label/form-label.component';
 export * from './lib/components/form-description/form-description.component';
 export * from './lib/components/input/input.component';
+export * from './lib/components/select/select.component';
+export * from './lib/components/select/select-option/select-option.component';
+export * from './lib/components/text-area/text-area.component';
+export * from './lib/components/rich-text/rich-text.component';
 
 export * from './lib/components/list/list.component';
 export * from './lib/components/list/list-header/list-header.component';
@@ -49,13 +53,10 @@ export * from './lib/components/radio/radio.component';
 export * from './lib/components/radio/radio-option/radio-option.component';
 
 export * from './lib/components/range-slider/range-slider.component';
-export * from './lib/components/select/select.component';
-export * from './lib/components/select/select-option/select-option.component';
 export * from './lib/components/switcher/switcher.component';
 
 export * from './lib/components/tabs/tabs.component';
 export * from './lib/components/tabs/tab/tab.component';
-export * from './lib/components/text-area/text-area.component';
 
 // Pipes ***
 export * from './lib/pipes/initial-letter.pipe';

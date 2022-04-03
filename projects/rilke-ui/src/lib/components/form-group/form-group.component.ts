@@ -1,5 +1,6 @@
 import {
 	Component,
+	ElementRef,
 	HostBinding,
 	OnInit,
 	Input,
@@ -9,6 +10,7 @@ import {
 } from '@angular/core';
 import { DatePickerComponent } from '../datepicker/datepicker.component';
 import { InputComponent } from '../input/input.component';
+import { RichTextComponent } from '../rich-text/rich-text.component';
 import { SelectComponent } from '../select/select.component';
 import { TextAreaComponent } from '../text-area/text-area.component';
 
@@ -17,10 +19,12 @@ import { TextAreaComponent } from '../text-area/text-area.component';
 	templateUrl: './form-group.component.html',
 })
 export class FormGroupComponent implements OnInit, AfterContentInit {
-	@HostBinding('class.ril-form-group') true: boolean = true;
-	@HostBinding('class.float') @Input() float: boolean = true;
+	@HostBinding('class.ril-form-group') true = true;
+	@HostBinding('class.float') @Input() float = true;
 	@HostBinding('class.has-value') hasValue: boolean;
 	@HostBinding('class.input-focus') inputFocus: boolean;
+	@HostBinding('class.text-area') textarea: boolean;
+	@HostBinding('class.rich-text') richtext: boolean;
 
 	@ContentChildren(InputComponent)
 	inputRef: QueryList<InputComponent>;
@@ -31,10 +35,13 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 	@ContentChildren(TextAreaComponent)
 	textareaRef: QueryList<TextAreaComponent>;
 
+	@ContentChildren(RichTextComponent)
+	richTextRef: QueryList<RichTextComponent>;
+
 	@ContentChildren(DatePickerComponent)
 	datepickerRef: QueryList<DatePickerComponent>;
 
-	constructor() {}
+	constructor(private element: ElementRef) {}
 
 	ngOnInit() {}
 
@@ -62,6 +69,7 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 		});
 
 		this.textareaRef.toArray().forEach((input, index) => {
+			this.textarea = true;
 			this.inputFocus = input.textareaFocus;
 			this.hasValue = input.innerValue ? true : false;
 
@@ -69,6 +77,30 @@ export class FormGroupComponent implements OnInit, AfterContentInit {
 				this.inputFocus = input.textareaFocus;
 				this.hasValue = input.innerValue ? true : false;
 			});
+		});
+
+		this.richTextRef.toArray().forEach((input, index) => {
+			this.richtext = true;
+			this.inputFocus = input.focused;
+			this.hasValue = input.innerValue ? true : false;
+
+			input.focus.subscribe((i) => {
+				this.inputFocus = input.richtextFocus;
+				this.hasValue = input.innerValue ? true : false;
+			});
+			input.blur.subscribe((i) => {
+				this.inputFocus = input.richtextFocus;
+				this.hasValue = input.innerValue ? true : false;
+			});
+			setTimeout(() => {
+				input.editorToolbar.height.subscribe((height) => {
+					if (!this.inputFocus && !this.hasValue) {
+						this.element.nativeElement.getElementsByTagName('ril-form-label')[0].style.setProperty('top', (height + 18)+'px', 'important');
+					} else {
+						this.element.nativeElement.getElementsByTagName('ril-form-label')[0].style.setProperty('top', '-0.5em');
+					}
+				});
+			})
 		});
 
 		this.datepickerRef.toArray().forEach((input, index) => {

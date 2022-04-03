@@ -26,7 +26,7 @@ import { ITextareaLimiter } from '../../interfaces/textarea';
 	],
 })
 export class TextAreaComponent implements ControlValueAccessor, OnInit {
-	@HostBinding('class.ril-textarea') true;
+	@HostBinding('class.ril-textarea') class = true;
 	@HostBinding('class.textarea-focus') get focused() {
 		return this.textareaFocus;
 	}

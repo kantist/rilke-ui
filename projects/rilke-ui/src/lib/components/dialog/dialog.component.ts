@@ -10,7 +10,7 @@ import { IDialogData } from '../../interfaces/dialog';
 })
 export class DialogComponent implements OnInit {
 	onResults: Observable<boolean>;
-	@Output() onResult: EventEmitter<boolean>;
+	@Output() onResult: EventEmitter<any>;
 	form: FormGroup;
 
 	formArray: any[];
@@ -35,7 +35,11 @@ export class DialogComponent implements OnInit {
 	}
 
 	onAction() {
-		this.onResult.emit(true);
+		if (this.data.form) {
+			this.onResult.emit(this.data.form);
+		} else {
+			this.onResult.emit(true);
+		}
 		this.dialogRef.close();
 	}
 }

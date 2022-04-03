@@ -31,7 +31,7 @@ import { SelectOptionComponent } from './select-option/select-option.component';
 			useExisting: forwardRef(() => SelectComponent),
 			multi: true,
 		},
-	],
+	]
 })
 export class SelectComponent implements OnInit, AfterContentInit, ControlValueAccessor {
 	@Output() valueSelected: EventEmitter<any | any[]>;

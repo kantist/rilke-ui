@@ -46,5 +46,21 @@ ril-form-group {
 				}
 			}
 		}
+
+		&.text-area {
+			&:not(.has-value):not(.input-focus) {
+				ril-form-label {
+					top: 1.2rem !important;
+				}
+			}
+		}
+
+		&.rich-text {
+			&:not(.has-value):not(.input-focus) {
+				ril-form-label {
+					top: 4.2rem !important;
+				}
+			}
+		}
 	}
 }

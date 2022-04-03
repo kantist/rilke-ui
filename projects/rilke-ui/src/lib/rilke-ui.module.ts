@@ -72,6 +72,11 @@ import { FormGroupComponent } from './components/form-group/form-group.component
 import { FormLabelComponent } from './components/form-label/form-label.component';
 import { FormDescriptionComponent } from './components/form-description/form-description.component';
 import { InputComponent } from './components/input/input.component';
+import { TextAreaComponent } from './components/text-area/text-area.component';
+import { SelectComponent } from './components/select/select.component';
+import { SelectOptionComponent } from './components/select/select-option/select-option.component';
+import { RichTextComponent } from './components/rich-text/rich-text.component';
+import { EditorToolbarComponent } from './components/rich-text/editor-toolbar/editor-toolbar.component';
 
 import { ListComponent } from './components/list/list.component';
 import { ListHeaderComponent } from './components/list/list-header/list-header.component';
@@ -89,13 +94,10 @@ import { RadioComponent } from './components/radio/radio.component';
 import { RadioOptionComponent } from './components/radio/radio-option/radio-option.component';
 
 import { RangeSliderComponent } from './components/range-slider/range-slider.component';
-import { SelectComponent } from './components/select/select.component';
-import { SelectOptionComponent } from './components/select/select-option/select-option.component';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 
 import { TabsComponent } from './components/tabs/tabs.component';
 import { TabComponent } from './components/tabs/tab/tab.component';
-import { TextAreaComponent } from './components/text-area/text-area.component';
 
 // Pipes
 import { InitialLetterPipe } from './pipes/initial-letter.pipe';
@@ -175,6 +177,11 @@ const materialModules = [
 		FormLabelComponent,
 		FormDescriptionComponent,
 		InputComponent,
+		TextAreaComponent,
+		SelectComponent,
+		SelectOptionComponent,
+		RichTextComponent,
+		EditorToolbarComponent,
 
 		ListComponent,
 		ListHeaderComponent,
@@ -190,13 +197,10 @@ const materialModules = [
 		RadioComponent,
 		RadioOptionComponent,
 		RangeSliderComponent,
-		SelectComponent,
-		SelectOptionComponent,
 		SwitcherComponent,
 
 		TabsComponent,
 		TabComponent,
-		TextAreaComponent,
 
 		// Pipes
 		InitialLetterPipe,
@@ -245,6 +249,10 @@ const materialModules = [
 		FormLabelComponent,
 		FormDescriptionComponent,
 		InputComponent,
+		TextAreaComponent,
+		SelectComponent,
+		SelectOptionComponent,
+		RichTextComponent,
 
 		ListComponent,
 		ListHeaderComponent,
@@ -259,13 +267,10 @@ const materialModules = [
 		RadioComponent,
 		RadioOptionComponent,
 		RangeSliderComponent,
-		SelectComponent,
-		SelectOptionComponent,
 		SwitcherComponent,
 
 		TabsComponent,
 		TabComponent,
-		TextAreaComponent,
 
 		// Pipes
 		InitialLetterPipe,

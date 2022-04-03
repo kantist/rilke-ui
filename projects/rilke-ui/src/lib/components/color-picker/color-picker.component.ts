@@ -36,7 +36,11 @@ export class ColorPickerComponent implements OnInit, ControlValueAccessor {
 	@Input() showHex: boolean;
 
 	get value() {
-		return this.innerValue;
+		if (this.innerValue) {
+			return this.innerValue;
+		} else {
+			return '#000';
+		}
 	}
 
 	set value(v) {
@@ -53,7 +57,6 @@ export class ColorPickerComponent implements OnInit, ControlValueAccessor {
 		this.colorChanged = new EventEmitter<string>();
 		this.showPicker = false;
 		this.backgroundColor = '#353535';
-		this.innerValue = '#000000';
 		this.showHex = false;
 	}
 
