@@ -27,7 +27,7 @@ export class AvatarComponent implements OnInit {
 		this.src = '';
 		this.icon = '';
 		this.selectable = false;
-		this.alt = 'avatar image';
+		this.alt = '';
 	}
 
 	ngOnInit() {}
