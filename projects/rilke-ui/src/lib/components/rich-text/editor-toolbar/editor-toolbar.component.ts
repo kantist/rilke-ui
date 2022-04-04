@@ -6,6 +6,7 @@ import { CustomClass } from '../../../interfaces/rich-text';
 import { Observable  } from 'rxjs';
 import { DialogService } from '../../../services/dialog.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { RIL_LANGUAGE } from '../../../common';
 
 @Component({
 	selector: 'ril-editor-toolbar',
@@ -162,6 +163,7 @@ export class EditorToolbarComponent implements AfterViewChecked {
 		private richTextService: RichTextService,
 		private er: ElementRef,
 		@Inject(DOCUMENT) private doc: any,
+		@Inject(RIL_LANGUAGE) public lang,
 		private dialog: DialogService,
 		private formBuilder: FormBuilder
 	) {
@@ -279,8 +281,8 @@ export class EditorToolbarComponent implements AfterViewChecked {
 		this.dialog.show({
 			data: {
 				text: 'URL',
-				cancel: 'Vazgeç',
-				action: 'Onayla',
+				cancel: this.lang.common.cancel,
+				action: this.lang.common.confirm,
 				form: form
 			}
 		}).subscribe((result) => {
@@ -310,8 +312,8 @@ export class EditorToolbarComponent implements AfterViewChecked {
 		this.dialog.show({
 			data: {
 				text: 'URL',
-				cancel: 'Vazgeç',
-				action: 'Onayla',
+				cancel: this.lang.common.cancel,
+				action: this.lang.common.confirm,
 				form: form
 			}
 		}).subscribe((result) => {

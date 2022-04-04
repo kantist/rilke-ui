@@ -1,6 +1,6 @@
 export const RIL_TURKISH_LANGUAGE = {
 	common: {
-		config: 'Onayla',
+		confirm: 'Onayla',
 		cancel: 'Vazgeç',
 		text_selected: 'seçildi',
 		select_file: 'Dosya Seç',

@@ -77,6 +77,8 @@ export * from './lib/services/validator.service';
 export * from './lib/interfaces/alert';
 export * from './lib/interfaces/bottom-sheet';
 export * from './lib/interfaces/dialog';
+export * from './lib/interfaces/file';
+export * from './lib/interfaces/list-toolbar';
 
 // Other ***
 export * from './lib/common';
