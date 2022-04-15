@@ -206,7 +206,7 @@ export class RichTextComponent implements OnInit, ControlValueAccessor, AfterVie
 			let height = el.scrollHeight * this.rows;
 
 			if (this.autoGrow) {
-				el.style['min-height'] = `${height}px`;
+				// el.style['min-height'] = `${height}px`;
 			} else {
 				el.style.overflow = 'auto';
 				el.style.height = `${height}px`;

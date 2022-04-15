@@ -155,6 +155,8 @@ export class InputComponent implements ControlValueAccessor, OnInit {
 	writeValue(value: string) {
 		if (value !== this.innerValue) {
 			this.innerValue = value;
+			this.focus.emit(true);
+			this.blur.emit();
 		}
 	}
 

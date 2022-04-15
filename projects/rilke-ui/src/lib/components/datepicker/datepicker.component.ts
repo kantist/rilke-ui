@@ -176,6 +176,8 @@ export class DatePickerComponent implements ControlValueAccessor, OnInit {
 	writeValue(value: string) {
 		if (value !== this.innerValue) {
 			this.innerValue = value;
+			this.focus.emit();
+			this.blur.emit();
 		}
 	}
 
