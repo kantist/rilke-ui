@@ -2,6 +2,7 @@
 	<div class="set">
 		<button
 			ril-button
+			type="button"
 			[view]="'none'"
 			(click)="triggerCommand('undo')"
 			[hidden]="isButtonHidden('undo')">
@@ -18,6 +19,7 @@
 	<div class="set">
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'bold-'+id"
 			[disabled]="htmlMode"
@@ -27,6 +29,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'italic-'+id"
 			[disabled]="htmlMode"
@@ -36,6 +39,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'underline-'+id"
 			[disabled]="htmlMode"
@@ -45,6 +49,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'strikeThrough-'+id"
 			[disabled]="htmlMode"
@@ -54,6 +59,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'subscript-'+id"
 			[disabled]="htmlMode"
@@ -63,6 +69,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'superscript-'+id"
 			[disabled]="htmlMode"
@@ -74,6 +81,7 @@
 	<div class="set">
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'justifyLeft-'+id"
 			[disabled]="htmlMode"
@@ -83,6 +91,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'justifyCenter-'+id"
 			[disabled]="htmlMode"
@@ -92,6 +101,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'justifyRight-'+id"
 			[disabled]="htmlMode"
@@ -112,6 +122,7 @@
 	<div class="set">
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'indent-'+id"
 			[disabled]="htmlMode"
@@ -121,6 +132,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'outdent-'+id"
 			[disabled]="htmlMode"
@@ -132,6 +144,7 @@
 	<div class="set">
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'insertUnorderedList-'+id"
 			[disabled]="htmlMode"
@@ -141,6 +154,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'insertOrderedList-'+id"
 			[disabled]="htmlMode"
@@ -152,8 +166,7 @@
 	<div class="set">
 		<ril-select
 			[(ngModel)]="block"
-			(click)="focus()"
-			(selectionChange)="triggerCommand(block);focus()"
+			(ngModelChange)="triggerCommand(block)"
 			[disabled]="htmlMode"
 			[hidden]="isButtonHidden('heading')"
 		>
@@ -193,6 +206,7 @@
 	<div class="set">
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'link-'+id"
 			[disabled]="isLinkButtonDisabled"
@@ -202,6 +216,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'unlink-'+id"
 			[disabled]="htmlMode || !linkSelected"
@@ -213,6 +228,7 @@
 	<div class="set">
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'clearFormatting-'+id"
 			[disabled]="htmlMode"
@@ -222,6 +238,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'insertHorizontalRule-'+id"
 			[disabled]="htmlMode"
@@ -240,16 +257,16 @@
 		</button> -->
 	</div>
 	<div class="set">
-		<div class="color" [hidden]="isButtonHidden('insertImage')">
+		<div class="color" [hidden]="isButtonHidden('textColor')">
 			<ril-color-picker
 				[(ngModel)]="foreColour"
 				(colorChanged)="insertColor(foreColour, 'textColor')"
 				[disabled]="htmlMode"
-				[hidden]="isButtonHidden('textColor')"
 				#foreColourPicker
 			></ril-color-picker>
 			<button 
 				ril-button
+				type="button"
 				[view]="'none'"
 				[disabled]="htmlMode"
 				(click)="foreColourPicker.togglePicker(); focus()">
@@ -266,6 +283,7 @@
 			></ril-color-picker>
 			<button 
 				ril-button
+				type="button"
 				[view]="'none'"
 				[disabled]="htmlMode"
 				[style.background-color]="backColor"
@@ -282,6 +300,7 @@
 			#fileInput>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'insertImage-'+id"
 			[disabled]="htmlMode"
@@ -291,6 +310,7 @@
 		</button>
 		<button 
 			ril-button
+			type="button"
 			[view]="'none'"
 			[id]="'insertVideo-'+id"
 			[disabled]="htmlMode"

@@ -3,7 +3,7 @@ ril-rich-text {
 	color: main-contrast(800);
 	display: block;
 	font-size: $f-size-md;
-	line-height: $f-line-md;
+	line-height: 1.3;
 	width: 100%;
 
 	.ril-richtext-wrap {
@@ -11,7 +11,7 @@ ril-rich-text {
 		color: main-contrast(800);
 		display: block;
 		font-size: $f-size-md;
-		line-height: $f-line-md;
+		line-height: 1.3;
 		width: 100%;
 
 		.richtext-control {
@@ -36,6 +36,11 @@ ril-rich-text {
 			// @include placeholder {
 			// 	color: main-palette(500);
 			// }
+
+			a {
+				color: $accent-text;
+				text-decoration: underline;
+			}
 
 			&:hover {
 				background: main-palette(700);

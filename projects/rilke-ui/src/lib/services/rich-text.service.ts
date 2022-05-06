@@ -60,7 +60,6 @@ export class RichTextService {
 	}
 
 	insertHtml(html: string): void {
-
 		const isHTMLInserted = this.doc.execCommand('insertHTML', false, html);
 
 		if (!isHTMLInserted) {
