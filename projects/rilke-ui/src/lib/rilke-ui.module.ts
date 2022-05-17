@@ -25,9 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatSortModule } from '@angular/material/sort';
-import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule, MatSnackBarRef } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
@@ -126,8 +124,6 @@ const materialModules = [
 	MatSidenavModule,
 	MatSliderModule,
 	MatSnackBarModule,
-	MatSortModule,
-	MatTableModule,
 	MatTabsModule,
 	MatToolbarModule,
 	MatFormFieldModule,
@@ -207,7 +203,7 @@ const materialModules = [
 
 		// Directives
 		StopPropagationDirective,
-		TruncateDirective
+		TruncateDirective,
 	],
 	imports: [
 		CommonModule,
@@ -277,7 +273,13 @@ const materialModules = [
 
 		// Directives
 		StopPropagationDirective,
-		TruncateDirective
+		TruncateDirective,
+	],
+	providers: [
+		{
+			provide: MatSnackBarRef,
+			useValue: {},
+		},
 	],
 })
 export class RilkeUIModule {}

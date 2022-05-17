@@ -3,7 +3,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { tap } from 'rxjs/operators';
 import { IBottomSheetOptions } from '../interfaces/bottom-sheet';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'any' })
 export class BottomSheetService {
 	statusChange: EventEmitter<boolean>;
 
@@ -22,7 +22,7 @@ export class BottomSheetService {
 
 		this._matBottom._openedBottomSheetRef.backdropClick().subscribe(() => {
 			this.statusChange.emit(false);
-		})
+		});
 	}
 
 	close() {

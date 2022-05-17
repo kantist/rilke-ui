@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { AlertComponent } from '../components/alert/alert.component';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'any' })
 export class AlertService {
 	durationInSeconds: number;
 	constructor(private _snackBar: MatSnackBar) {}

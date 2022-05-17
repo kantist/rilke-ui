@@ -1,6 +1,5 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
-import { AlertService } from '../../services/alert.service';
+import { MatSnackBar, MAT_SNACK_BAR_DATA } from '@angular/material/snack-bar';
 
 @Component({
 	selector: 'ril-alert',
@@ -12,7 +11,7 @@ export class AlertComponent implements OnInit {
 	action: string;
 	constructor(
 		@Inject(MAT_SNACK_BAR_DATA) public data: any,
-		private alertService: AlertService
+		private _snackBar: MatSnackBar
 	) {
 		this.type = this.data.type || 'default';
 		this.action = this.data.action;
@@ -22,6 +21,6 @@ export class AlertComponent implements OnInit {
 	ngOnInit() {}
 
 	onClick() {
-		this.alertService.close();
+		this._snackBar.dismiss();
 	}
 }

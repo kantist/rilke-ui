@@ -5,7 +5,7 @@ import { tap } from 'rxjs/operators';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { DialogComponent } from '../components/dialog/dialog.component';
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: 'any' })
 export class DialogService {
 	constructor(private dialog: MatDialog) {}
 

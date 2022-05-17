@@ -16,18 +16,18 @@
 		"postbuild": "copyfiles schematics/*/schema.json schematics/*/files/** schematics/collection.json ../../dist/rilke-ui/ && copyfiles -f src/assets/style/** ../../dist/rilke-ui/schematics/ng-add/files/style && copyfiles -f src/assets/font/*/** ../../dist/rilke-ui/schematics/ng-add/files/font/trenda"
 	},
 	"dependencies": {
-		"@angular/cdk": "^13.0.2",
-		"@angular/material": "^13.0.2",
+		"@angular/cdk": "^13.3.7",
+		"@angular/material": "^13.3.7",
 		"ngx-color": "^7.3.3"
 	},
 	"peerDependencies": {
-		"@angular/core": "^13.0.0 || ^14.0.0-0",
-		"@angular/common": "^13.0.0 || ^14.0.0-0",
+		"@angular/core": "^13.3.8 || ^14.0.0-0",
+		"@angular/common": "^13.3.8 || ^14.0.0-0",
 		"tslib": "^2.3.0"
 	},
 	"devDependencies": {
-		"@angular/core": "^13.0.0 || ^14.0.0-0",
-		"@angular/common": "^13.0.0 || ^14.0.0-0",
+		"@angular/core": "^13.3.8 || ^14.0.0-0",
+		"@angular/common": "^13.3.8 || ^14.0.0-0",
 		"tslib": "^2.3.0",
 		"copyfiles": "file:../../node_modules/copyfiles",
 		"typescript": "file:../../node_modules/typescript"
