@@ -1,5 +1,5 @@
 ril-rich-text {
-	border-radius: $r-md;
+	border-radius: 0 0 $r-md $r-md;
 	color: main-contrast(800);
 	display: block;
 	font-size: $f-size-md;
@@ -7,7 +7,7 @@ ril-rich-text {
 	width: 100%;
 
 	.ril-richtext-wrap {
-		border-radius: $r-md;
+		border-radius: 0 0 $r-md $r-md;
 		color: main-contrast(800);
 		display: block;
 		font-size: $f-size-md;
@@ -17,6 +17,7 @@ ril-rich-text {
 		.richtext-control {
 			background: main-palette(800);
 			border: 1px solid main-palette(800);
+			border-top: none;
 			border-radius: inherit;
 			box-shadow: none;
 			color: inherit;
@@ -26,21 +27,18 @@ ril-rich-text {
 			height: 100%;
 			margin: 0;
 			padding: $p-sm $p-md;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
-				box-shadow 0.2s ease-in-out,
-				color 0.2s ease-in-out;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+				box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 			width: 100%;
-
-			// @include placeholder {
-			// 	color: main-palette(500);
-			// }
 
 			a {
 				color: $accent-text;
 				text-decoration: underline;
 			}
+
+			// @include placeholder {
+			// 	color: main-palette(500);
+			// }
 
 			&:hover {
 				background: main-palette(700);
@@ -72,6 +70,17 @@ ril-rich-text {
 				background: main-palette(700);
 				border-color: main-contrast(200);
 				box-shadow: $s-md;
+			}
+		}
+
+		ril-editor-toolbar {
+			background-color: main-palette(600);
+			border-color: main-contrast(200);
+
+			.toolbar {
+				.set {
+					background-color: main-palette(600);
+				}
 			}
 		}
 	}
