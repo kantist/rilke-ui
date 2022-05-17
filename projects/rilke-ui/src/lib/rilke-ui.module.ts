@@ -25,7 +25,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
-import { MatSnackBarModule, MatSnackBarRef } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
@@ -274,12 +274,6 @@ const materialModules = [
 		// Directives
 		StopPropagationDirective,
 		TruncateDirective,
-	],
-	providers: [
-		{
-			provide: MatSnackBarRef,
-			useValue: {},
-		},
 	],
 })
 export class RilkeUIModule {}
