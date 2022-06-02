@@ -52,7 +52,7 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	set value(v) {
 		if (v !== this.innerValue) {
-			if (this.validURL(this.innerValue)) {
+			if (this.validURL(v)) {
 				this.isUrl = true;
 			}
 
@@ -93,6 +93,10 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	writeValue(value: IFile) {
 		if (value !== this.innerValue) {
+			if (this.validURL(value)) {
+				this.isUrl = true;
+			}
+
 			this.innerValue = value;
 
 			if (this.innerValue?.file) {
