@@ -12,7 +12,7 @@ ril-menu-item {
 	}
 
 	button {
-		color: main-contrast(800);
+		color: main-contrast(800) !important;
 
 		&:hover {
 			background: main-palette(700);

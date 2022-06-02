@@ -29,14 +29,13 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	@HostBinding('class.has-value') @Input('value') innerValue: IFile;
 
-	isImage: boolean;
+	@Input() isImage: boolean;
+	isUrl: boolean;
 
 	onChange: any = () => {};
 	onTouched: any = () => {};
 
-	constructor(
-		@Inject(RIL_LANGUAGE) public lang
-	) {
+	constructor(@Inject(RIL_LANGUAGE) public lang) {
 		this.rilFileUpload = true;
 		this.readonly = false;
 		this.disabled = false;
@@ -44,6 +43,7 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 		this.innerValue = null;
 
 		this.isImage = false;
+		this.isUrl = false;
 	}
 
 	get value() {
@@ -52,11 +52,19 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	set value(v) {
 		if (v !== this.innerValue) {
+			if (this.validURL(this.innerValue)) {
+				this.isUrl = true;
+			}
+
 			this.innerValue = v;
 			this.onChange(v);
 
 			if (this.value?.file) {
-				if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.value.file.type)) {
+				if (
+					['image/jpg', 'image/png', 'image/jpeg'].includes(
+						this.value.file.type
+					)
+				) {
 					this.isImage = true;
 				}
 			}
@@ -65,7 +73,11 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 
 	ngOnInit() {
 		if (this.value) {
-			if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.value.file.type)) {
+			if (
+				['image/jpg', 'image/png', 'image/jpeg'].includes(
+					this.value.file.type
+				)
+			) {
 				this.isImage = true;
 			}
 		}
@@ -84,7 +96,11 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 			this.innerValue = value;
 
 			if (this.innerValue?.file) {
-				if (['image/jpg', 'image/png', 'image/jpeg'].includes(this.innerValue.file.type)) {
+				if (
+					['image/jpg', 'image/png', 'image/jpeg'].includes(
+						this.innerValue.file.type
+					)
+				) {
 					this.isImage = true;
 				}
 			}
@@ -114,5 +130,18 @@ export class FileUploadComponent implements ControlValueAccessor, OnInit {
 	cancelFile() {
 		this.value = null;
 		this.isImage = false;
+	}
+
+	validURL(str) {
+		let pattern = new RegExp(
+			'^(https?:\\/\\/)?' + // protocol
+				'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+				'((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+				'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+				'(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+				'(\\#[-a-z\\d_]*)?$',
+			'i'
+		); // fragment locator
+		return !!pattern.test(str);
 	}
 }
