@@ -7,40 +7,38 @@ ril-select {
 
 	.select-box {
 		align-items: center;
-		background: main-palette(800);
-		border: 1px solid main-palette(800);
+		background: var(--800);
+		border: 1px solid var(--800);
+		box-shadow: $s-sm;
 		border-radius: inherit;
-		color: main-contrast(800);
+		color: var(--c-800);
 		cursor: pointer;
 		overflow: hidden;
-		transition:
-			background 0.2s ease-in-out,
-			border-color 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
-			color 0.2s ease-in-out;
+		transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		width: 100%;
 		padding: $p-sm $p-md;
 		min-width: 10rem;
 
 		.mat-select-value {
 			max-width: 100%;
-			color: main-contrast(800);
+			color: var(--c-800);
 
 			.mat-select-placeholder {
-				color: main-palette(700);
+				color: var(--700);
 			}
 		}
 
 		.mat-select-arrow {
-			color: main-contrast(800);
+			color: var(--c-800);
 		}
 	}
 
 	&:hover {
 		.select-box {
-			background: main-palette(700);
-			border-color: main-palette(700);
-			color: main-contrast(700);
+			background: var(--700);
+			border-color: var(--700);
+			color: var(--c-700);
 		}
 	}
 
@@ -58,10 +56,10 @@ ril-select {
 
 	&.opened {
 		.select-box {
-			background: main-palette(700);
-			border-color: main-palette(200);
+			background: var(--700);
+			border-color: var(--200);
 			box-shadow: $s-md;
-			color: main-contrast(700);
+			color: var(--c-700);
 		}
 	}
 
@@ -69,10 +67,10 @@ ril-select {
 		cursor: not-allowed;
 
 		.select-box {
-			background: main-palette(500);
-			border-color: main-palette(500);
+			background: var(--500);
+			border-color: var(--500);
 			box-shadow: none;
-			color: main-contrast(500);
+			color: var(--c-500);
 			cursor: not-allowed;
 			pointer-events: none;
 		}
@@ -87,7 +85,7 @@ ril-select {
 }
 
 .mat-select-panel {
-	background: main-palette(800);
+	background: var(--800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {
@@ -96,6 +94,6 @@ ril-select {
 	}
 
 	.mat-option {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 }

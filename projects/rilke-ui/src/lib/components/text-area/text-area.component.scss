@@ -1,6 +1,6 @@
 ril-text-area {
 	border-radius: $r-md;
-	color: main-contrast(800);
+	color: var(--c-800);
 	display: block;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -15,10 +15,10 @@ ril-text-area {
 		width: 100%;
 
 		.textarea-control {
-			background: main-palette(800);
-			border: 1px solid main-palette(800);
+			background: var(--800);
+			border: 1px solid var(--800);
+			box-shadow: $s-sm;
 			border-radius: inherit;
-			box-shadow: none;
 			color: inherit;
 			cursor: inherit;
 			display: block;
@@ -26,20 +26,17 @@ ril-text-area {
 			height: 100%;
 			margin: 0;
 			padding: $p-sm $p-md;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
-				box-shadow 0.2s ease-in-out,
-				color 0.2s ease-in-out;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+				box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 			width: 100%;
 
 			// @include placeholder {
-			// 	color: main-palette(500);
+			// 	color: var(--500);
 			// }
 		}
 
 		.char-limiter {
-			color: main-palette(500);
+			color: var(--500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: flex-end;
@@ -54,24 +51,24 @@ ril-text-area {
 	}
 
 	&:hover {
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: main-palette(700);
-				border-color: main-palette(700);
+				background: var(--700);
+				border-color: var(--700);
 				box-shadow: $s-md;
 			}
 		}
 	}
 
 	&.textarea-focus {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: main-palette(700);
-				border-color: main-contrast(200);
+				background: var(--700);
+				border-color: var(--c-200);
 				box-shadow: $s-md;
 			}
 		}
@@ -88,14 +85,14 @@ ril-text-area {
 
 	&.textarea-disabled,
 	&.textarea-readonly {
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.ril-textarea-wrap {
 			cursor: not-allowed;
 
 			.textarea-control {
-				background-color: main-palette(500);
-				border-color: main-palette(500);
+				background-color: var(--500);
+				border-color: var(--500);
 				pointer-events: none;
 				box-shadow: none;
 			}

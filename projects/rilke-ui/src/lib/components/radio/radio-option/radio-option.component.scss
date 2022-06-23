@@ -16,7 +16,7 @@ ril-radio-option {
 
 		.ril-radio-handle {
 			align-items: center;
-			background: main-palette(800);
+			background: var(--800);
 
 			//border: 1px solid red;
 			border-radius: 50%;
@@ -36,15 +36,14 @@ ril-radio-option {
 				height: 100%;
 				padding: 0;
 				transform: scale(0);
-				transition:
-					background 0.2s ease-in-out,
+				transition: background 0.2s ease-in-out,
 					transform 0.2s ease-in-out;
 				width: 100%;
 			}
 		}
 
 		.ril-radio-label {
-			color: main-contrast(800);
+			color: var(--c-800);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -55,16 +54,16 @@ ril-radio-option {
 
 		&:hover {
 			.ril-radio-handle {
-				background: main-palette(700);
+				background: var(--700);
 
 				.check-detector {
-					background: main-contrast(700);
+					background: var(--c-700);
 					transform: scale(0.5);
 				}
 			}
 
 			.ril-radio-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -72,7 +71,7 @@ ril-radio-option {
 	&.checked {
 		.ril-radio-wrap {
 			.ril-radio-handle {
-				background: main-palette(800);
+				background: var(--800);
 				color: $success-color;
 
 				.check-detector {
@@ -81,7 +80,7 @@ ril-radio-option {
 			}
 
 			.ril-radio-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -91,8 +90,8 @@ ril-radio-option {
 			cursor: not-allowed;
 
 			.ril-radio-handle {
-				background: main-palette(500);
-				color: main-contrast(500);
+				background: var(--500);
+				color: var(--c-500);
 
 				.check-detector {
 					transform: scale(0);
@@ -100,7 +99,7 @@ ril-radio-option {
 			}
 
 			.ril-radio-label {
-				color: main-palette(500);
+				color: var(--500);
 			}
 		}
 

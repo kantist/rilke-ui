@@ -14,7 +14,7 @@ ril-form-group {
 			transition: all 0.2s;
 			top: -0.5em;
 			margin-left: $base-size;
-			color: main-contrast(800);
+			color: var(--c-800);
 			z-index: 3;
 			line-height: 1;
 			padding: 0 1px;
@@ -25,7 +25,7 @@ ril-form-group {
 				content: " ";
 				display: block;
 				position: absolute;
-				background: main-palette(800);
+				background: var(--800);
 				height: 1px;
 				top: 50%;
 				left: -0.3em;

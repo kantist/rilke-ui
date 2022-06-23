@@ -31,7 +31,7 @@ $themes: (
 			700: color.adjust($light-contrast, $lightness: -85%),
 			800: color.adjust($light-contrast, $lightness: -90%),
 			900: color.adjust($light, $lightness: 100%),
-		)
+		),
 	),
 	dark: (
 		50: color.adjust($dark, $lightness: 50%),
@@ -55,24 +55,46 @@ $themes: (
 			700: color.adjust($dark-contrast, $lightness: -15%),
 			800: color.adjust($dark-contrast, $lightness: -5%),
 			900: color.adjust($dark, $lightness: 100%),
-		)
-	)
+		),
+	),
 );
 
 $main-palette: null;
 
-@mixin set-theme($key: 'light') {
+@mixin set-theme($key: "light") {
 	$main-palette: map-get($themes, $key) !global;
 }
 
 @include set-theme();
 
-@function main-palette($key: $main-palette) {
-	@return map-get($main-palette, $key);
+@mixin default-theme() {
+	:root {
+		@each $key, $value in $main-palette {
+			@if type-of($value) == "color" {
+				--#{$key}: #{$value};
+			} @else if type-of($value) == "map" {
+				@each $nk, $nv in $value {
+					--c-#{$nk}: #{$nv};
+				}
+			}
+		}
+	}
 }
 
-@function main-contrast($key: $main-palette) {
-	@return map-get(map-get($main-palette, contrast), $key);
+@mixin theme() {
+	@each $theme, $map in $themes {
+		.#{$theme} {
+			@each $key, $value in $map {
+				@if type-of($value) == "color" {
+					--#{$key}: #{$value};
+				} @else if type-of($value) == "map" {
+					@each $nk, $nv in $value {
+						--c-#{$nk}: #{$nv};
+					}
+				}
+			}
+		}
+	}
 }
 
 $accent-color: material-palette(indigo, 500);
@@ -81,7 +103,10 @@ $accent-hover: color.adjust(material-palette(indigo, 500), $lightness: -10%);
 
 $success-color: material-palette(light-green, 500);
 $success-text: material-palette(grey, 50);
-$success-hover: color.adjust(material-palette(light-green, 500), $lightness: -10%);
+$success-hover: color.adjust(
+	material-palette(light-green, 500),
+	$lightness: -10%
+);
 
 $info-color: material-palette(light-blue, 500);
 $info-text: material-palette(grey, 50);

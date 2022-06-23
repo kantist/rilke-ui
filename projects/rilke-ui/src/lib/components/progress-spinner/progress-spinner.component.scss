@@ -7,7 +7,7 @@ ril-progress-spinner {
 	align-items: center;
 
 	.mat-progress-spinner {
-		stroke: main-palette(800);
+		stroke: var(--800);
 	}
 
 	.mat-progress-spinner circle,

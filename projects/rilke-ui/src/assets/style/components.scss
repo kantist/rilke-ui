@@ -10,17 +10,17 @@ ril-alert {
 		min-height: 48px;
 
 		p {
-			color: main-contrast(800);
+			color: var(--c-800);
 			font-size: 1rem;
 			line-height: 1.6rem;
 			margin-right: 0.6rem;
 		}
 
 		&.default {
-			background: main-palette(900);
+			background: var(--900);
 
 			button {
-				background-color: main-palette(700);
+				background-color: var(--700);
 			}
 		}
 
@@ -150,13 +150,13 @@ ril-badge {
 	}
 
 	&.badge-light {
-		background: main-contrast(900);
-		color: main-palette(900);
+		background: var(--c-900);
+		color: var(--900);
 	}
 
 	&.badge-dark {
-		background: main-palette(900);
-		color: main-contrast(900);
+		background: var(--900);
+		color: var(--c-900);
 	}
 }
 ril-auto-complete {
@@ -318,7 +318,7 @@ ril-avatar {
 	vertical-align: middle;
 	white-space: nowrap;
 	appearance: none;
-	color: main-contrast(800);
+	color: var(--c-800);
 
 	&:hover {
 		border-color: transparent;
@@ -359,7 +359,7 @@ ril-avatar {
 		border-top: 2px solid rgba(255, 255, 255, 20%);
 		border-right: 2px solid rgba(255, 255, 255, 20%);
 		border-bottom: 2px solid rgba(255, 255, 255, 20%);
-		border-left: 2px solid #FFF;
+		border-left: 2px solid #fff;
 		transform: translateZ(0);
 		transform: translateZ(0);
 		transform: translateZ(0);
@@ -569,31 +569,31 @@ ril-avatar {
 	}
 
 	&.btn-light {
-		background: main-contrast(900);
-		color: main-palette(900);
+		background: var(--c-900);
+		color: var(--900);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: main-contrast(900);
-			color: main-contrast(900);
+			border-color: var(--c-900);
+			color: var(--c-900);
 
 			.btn-loader {
-				border-left: 2px solid main-contrast(900);
+				border-left: 2px solid var(--c-900);
 			}
 		}
 	}
 
 	&.btn-dark {
-		background: main-palette(900);
-		color: main-contrast(900);
+		background: var(--900);
+		color: var(--c-900);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: main-palette(900);
-			color: main-palette(900);
+			border-color: var(--900);
+			color: var(--900);
 
 			.btn-loader {
-				border-left: 2px solid main-palette(900);
+				border-left: 2px solid var(--900);
 			}
 		}
 	}
@@ -635,7 +635,7 @@ ril-card {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background: main-palette(800);
+	background: var(--800);
 }
 ril-checkbox {
 	display: inline-flex;
@@ -649,7 +649,7 @@ ril-checkbox {
 
 		.ril-checkbox-handle {
 			align-items: center;
-			background: main-palette(700);
+			background: var(--700);
 			border-radius: math.div($r-xs, 1.5);
 			cursor: inherit;
 			display: flex;
@@ -658,9 +658,7 @@ ril-checkbox {
 			justify-content: center;
 			margin: 0;
 			position: relative;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
 
 			.checkbox-input {
@@ -681,7 +679,7 @@ ril-checkbox {
 		}
 
 		.ril-checkbox-label {
-			color: main-contrast(800);
+			color: var(--c-800);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -692,8 +690,8 @@ ril-checkbox {
 
 		&:hover {
 			.ril-checkbox-handle {
-				background: main-palette(700);
-				color: main-contrast(700);
+				background: var(--700);
+				color: var(--c-700);
 
 				.check-detector {
 					transform: scale(0.8);
@@ -701,7 +699,7 @@ ril-checkbox {
 			}
 
 			.ril-checkbox-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -709,7 +707,7 @@ ril-checkbox {
 	&.checked {
 		.ril-checkbox-wrap {
 			.ril-checkbox-handle {
-				background: main-palette(800);
+				background: var(--800);
 				color: $success-color;
 
 				.check-detector {
@@ -718,7 +716,7 @@ ril-checkbox {
 			}
 
 			.ril-checkbox-label {
-				color: main-contrast(800);
+				color: var(--c-800);
 			}
 		}
 	}
@@ -728,8 +726,8 @@ ril-checkbox {
 			cursor: not-allowed;
 
 			.ril-checkbox-handle {
-				background: main-palette(500);
-				color: main-contrast(500);
+				background: var(--500);
+				color: var(--c-500);
 
 				.check-detector {
 					transform: scale(0);
@@ -737,7 +735,7 @@ ril-checkbox {
 			}
 
 			.ril-checkbox-label {
-				color: main-palette(500);
+				color: var(--500);
 			}
 		}
 
@@ -765,13 +763,13 @@ ril-color-picker {
 			width: 1.6rem;
 			height: 1.6rem;
 			border-radius: 4px;
-			background-color: #EAEAEA;
-			border: 1px solid main-contrast(800);
+			background-color: #eaeaea;
+			border: 1px solid var(--c-800);
 		}
 
 		p {
 			margin-left: 0.6rem;
-			color: main-contrast(800);
+			color: var(--c-800);
 		}
 	}
 }
@@ -780,7 +778,7 @@ ril-color-picker {
 	color-chrome {
 		.chrome-picker {
 			border-radius: 0 0 $r-sm $r-sm !important;
-			background-color: main-palette(900);
+			background-color: var(--900);
 			margin: $m-md 0;
 		}
 
@@ -799,8 +797,8 @@ ril-color-picker {
 
 				input {
 					width: auto !important;
-					color: main-contrast(800) !important;
-					background: main-palette(700) !important;
+					color: var(--c-800) !important;
+					background: var(--700) !important;
 					border-radius: $r-sm !important;
 					box-shadow: none !important;
 				}
@@ -822,14 +820,12 @@ ril-date-picker {
 
 	.ril-input-wrap {
 		align-items: center;
-		background: main-palette(800);
+		background: var(--800);
 		border-radius: $r-md;
 		cursor: pointer;
 		display: flex;
 		position: relative;
-		transition:
-			background 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
+		transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
@@ -844,7 +840,7 @@ ril-date-picker {
 			background: none;
 			border: none;
 			box-shadow: none;
-			color: main-contrast(500);
+			color: var(--c-500);
 			cursor: inherit;
 			display: block;
 			font: inherit;
@@ -854,7 +850,7 @@ ril-date-picker {
 
 		.input-prefix,
 		.input-suffix {
-			color: main-contrast(500);
+			color: var(--c-500);
 			flex: none;
 			padding: 0 $p-md;
 		}
@@ -872,15 +868,15 @@ ril-date-picker {
 
 	&:hover {
 		.ril-input-wrap {
-			background: main-palette(700);
+			background: var(--700);
 			box-shadow: $s-md;
 		}
 	}
 
 	&.input-focus {
 		.ril-input-wrap {
-			background: main-palette(700);
-			border-color: main-contrast(200);
+			background: var(--700);
+			border-color: var(--c-200);
 		}
 	}
 
@@ -893,10 +889,10 @@ ril-date-picker {
 
 	&.input-disabled,
 	&.input-readonly {
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.ril-input-wrap {
-			background-color: main-palette(500);
+			background-color: var(--500);
 			box-shadow: none !important;
 			cursor: not-allowed;
 
@@ -910,31 +906,31 @@ ril-date-picker {
 .mat-datepicker-content {
 	margin-top: 1rem;
 	box-shadow: $s-md;
-	background-color: main-palette(800);
+	background-color: var(--800);
 	border-radius: $r-md !important;
-	color: main-contrast(800);
+	color: var(--c-800);
 
 	.mat-calendar-arrow {
-		border-top-color: main-contrast(800);
-		fill: main-contrast(800);
+		border-top-color: var(--c-800);
+		fill: var(--c-800);
 	}
 
 	.mat-calendar-next-button,
 	.mat-calendar-previous-button {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 
 	.mat-calendar-next-button:hover,
 	.mat-calendar-previous-button:hover {
-		background-color: main-palette(800);
+		background-color: var(--800);
 	}
 
 	.mat-calendar-period-button:hover {
-		background-color: main-palette(800);
+		background-color: var(--800);
 	}
 
 	.mat-calendar-table-header {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 
 	.mat-calendar-table-header-divider::after {
@@ -942,14 +938,14 @@ ril-date-picker {
 	}
 
 	.mat-calendar-body-label {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 
 	.mat-calendar-body-cell-content {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		// &:hover {
-		// 	background-color: main-palette(700) !important;
+		// 	background-color: var(--700) !important;
 		// }
 
 		&.mat-calendar-body-selected {
@@ -957,10 +953,15 @@ ril-date-picker {
 		}
 	}
 
-	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
-	.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
-	.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-		background-color: main-palette(700) !important;
+	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-keyboard-focused
+		.mat-calendar-body-active
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-program-focused
+		.mat-calendar-body-active
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+		background-color: var(--700) !important;
 	}
 
 	.mat-calendar-body-today:not(.mat-calendar-body-selected) {
@@ -968,10 +969,15 @@ ril-date-picker {
 	}
 }
 
-.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
-.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
-.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-	background-color: main-palette(800);
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-keyboard-focused
+	.mat-calendar-body-active
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-program-focused
+	.mat-calendar-body-active
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+	background-color: var(--800);
 }
 ril-dialog {
 	width: 100%;
@@ -982,7 +988,7 @@ ril-dialog {
 		margin-bottom: 2rem;
 
 		p {
-			color: main-contrast(800);
+			color: var(--c-800);
 		}
 	}
 
@@ -995,7 +1001,7 @@ ril-dialog {
 			cursor: pointer;
 			padding: math.div($p-sm, 2) $p-sm;
 			border-radius: $r-sm;
-			color: main-palette(900);
+			color: var(--900);
 			display: flex;
 			align-items: center;
 
@@ -1016,17 +1022,17 @@ ril-dialog {
 }
 
 .mat-dialog-container {
-	background: main-palette(900) !important;
+	background: var(--900) !important;
 	border-radius: $r-md !important;
 }
 ril-expansion-panel {
 	.mat-expansion-panel {
-		background: main-palette(800);
+		background: var(--800);
 		box-shadow: $s-md;
 		border-radius: $r-md;
 
 		.mat-expansion-indicator::after {
-			color: main-contrast(700) !important;
+			color: var(--c-700) !important;
 		}
 	}
 }
@@ -1037,7 +1043,7 @@ ril-file-drop {
 	width: 100%;
 
 	.wrapper {
-		background-color: main-palette(800);
+		background-color: var(--800);
 		border-radius: $r-md;
 		display: flex;
 		align-items: center;
@@ -1046,11 +1052,11 @@ ril-file-drop {
 		cursor: pointer;
 		position: relative;
 		width: 100%;
-		transition: background-color .2s ease-in;
+		transition: background-color 0.2s ease-in;
 
 		.dropzone {
 			border-radius: $r-md;
-			border: 1px dashed main-contrast(800);
+			border: 1px dashed var(--c-800);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -1066,15 +1072,15 @@ ril-file-drop {
 		.upload-icon {
 			font-size: 1.4rem;
 			margin-left: 0.5rem;
-			color: main-contrast(800);
+			color: var(--c-800);
 		}
 
 		&.fileover {
-			background-color: main-palette(700);
+			background-color: var(--700);
 		}
 
 		&:hover {
-			background-color: main-palette(700);
+			background-color: var(--700);
 		}
 	}
 
@@ -1082,13 +1088,14 @@ ril-file-drop {
 		width: 100%;
 		margin-top: $m-md;
 	}
-}ril-file-upload {
+}
+ril-file-upload {
 	.wrapper {
 		display: flex;
 		align-items: center;
 
 		.upload-btn {
-			background-color: main-palette(800);
+			background-color: var(--800);
 			border-radius: $r-md;
 			padding: $p-sm;
 			display: flex;
@@ -1111,13 +1118,13 @@ ril-file-drop {
 			.file-icon {
 				width: 2rem;
 				height: 2rem;
-				background-color: main-palette(700);
+				background-color: var(--700);
 				font-size: 2.4rem;
 				position: absolute;
 				left: 0.2rem;
 				border-radius: $r-md;
 				object-fit: cover;
-				color: main-contrast(800);
+				color: var(--c-800);
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -1125,7 +1132,7 @@ ril-file-drop {
 
 			p {
 				margin: 0 !important;
-				color: main-contrast(800);
+				color: var(--c-800);
 			}
 
 			.file-name {
@@ -1137,7 +1144,7 @@ ril-file-drop {
 				font-size: 1rem;
 				scale: 1.3;
 				margin-right: 0.5rem;
-				color: main-contrast(800);
+				color: var(--c-800);
 			}
 
 			.close-icon {
@@ -1155,14 +1162,15 @@ ril-file-drop {
 			}
 		}
 	}
-}ril-form-description {
+}
+ril-form-description {
 	display: block;
 	position: absolute;
-	font-size: .7rem;
+	font-size: 0.7rem;
 	margin-top: 1px;
 
 	.error {
-		line-height: .7rem;
+		line-height: 0.7rem;
 		color: $error-color;
 	}
 }
@@ -1182,7 +1190,7 @@ ril-form-group {
 			transition: all 0.2s;
 			top: -0.5em;
 			margin-left: $base-size;
-			color: main-contrast(800);
+			color: var(--c-800);
 			z-index: 3;
 			line-height: 1;
 			padding: 0 1px;
@@ -1193,7 +1201,7 @@ ril-form-group {
 				content: " ";
 				display: block;
 				position: absolute;
-				background: main-palette(800);
+				background: var(--800);
 				height: 1px;
 				top: 50%;
 				left: -0.3em;
@@ -1244,7 +1252,7 @@ ril-form-label {
 }
 ril-input {
 	border-radius: $r-md;
-	color: main-contrast(800);
+	color: var(--c-800);
 	display: flex;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -1252,17 +1260,14 @@ ril-input {
 
 	.ril-input-wrap {
 		align-items: center;
-		background: main-palette(800);
-		border: 1px solid main-palette(800);
+		background: var(--800);
+		border: 1px solid var(--800);
 		border-radius: inherit;
 		cursor: text;
 		display: flex;
 		position: relative;
-		transition:
-			background 0.2s ease-in-out,
-			border 0.2s ease-in-out,
-			border 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
+		transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+			border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
@@ -1288,7 +1293,7 @@ ril-input {
 
 		.input-prefix,
 		.input-suffix {
-			color: main-contrast(500);
+			color: var(--c-500);
 			flex: none;
 			padding: 0 $p-md;
 		}
@@ -1305,7 +1310,7 @@ ril-input {
 
 		.char-limiting {
 			align-items: center;
-			color: main-contrast(500);
+			color: var(--c-500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: center;
@@ -1316,25 +1321,25 @@ ril-input {
 
 	:host-context(ril-form-group.float) {
 		.ril-input-wrap {
-			border-color: main-contrast(700);
+			border-color: var(--c-700);
 		}
 	}
 
 	&:hover {
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.ril-input-wrap {
-			background: main-palette(700);
-			border-color: main-palette(700);
+			background: var(--700);
+			border-color: var(--700);
 		}
 	}
 
 	&.input-focus {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		.ril-input-wrap {
-			background: main-palette(700);
-			border-color: main-contrast(200);
+			background: var(--700);
+			border-color: var(--c-200);
 		}
 	}
 
@@ -1347,11 +1352,11 @@ ril-input {
 
 	&.input-disabled,
 	&.input-readonly {
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.ril-input-wrap {
-			background-color: main-palette(500);
-			border-color: main-palette(500);
+			background-color: var(--500);
+			border-color: var(--500);
 			box-shadow: none !important;
 			cursor: not-allowed;
 
@@ -1508,11 +1513,11 @@ ril-list {
 			}
 
 			&:nth-child(odd) {
-				background: main-palette(800);
+				background: var(--800);
 			}
 
 			&:nth-child(even) {
-				background: main-palette(700);
+				background: var(--700);
 			}
 
 			&:last-child {
@@ -1577,7 +1582,7 @@ ril-menu {
 }
 
 .mat-menu-panel {
-	background: main-palette(800);
+	background: var(--800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {
@@ -1597,17 +1602,17 @@ ril-pagination {
 			margin: 0;
 
 			.page-link {
-				background: main-palette(700);
-				border-color: main-palette(700);
+				background: var(--700);
+				border-color: var(--700);
 				border-left: 1px solid #353535;
-				color: main-contrast(500);
+				color: var(--c-500);
 				padding: 0.8rem 1.6rem;
 				cursor: pointer;
 
 				&:hover {
-					background: main-palette(500);
-					border-color: main-palette(500);
-					color: main-contrast(500);
+					background: var(--500);
+					border-color: var(--500);
+					color: var(--c-500);
 				}
 			}
 
@@ -1629,9 +1634,9 @@ ril-pagination {
 
 		.page-item.active {
 			.page-link {
-				background: main-palette(500);
+				background: var(--500);
 				border-color: transparent;
-				color: main-contrast(500);
+				color: var(--c-500);
 			}
 		}
 
@@ -1655,7 +1660,7 @@ ril-progress-spinner {
 	align-items: center;
 
 	.mat-progress-spinner {
-		stroke: main-palette(800);
+		stroke: var(--800);
 	}
 
 	.mat-progress-spinner circle,
@@ -1699,7 +1704,7 @@ ril-range-slider {
 	.mat-accent .mat-slider-track-fill,
 	.mat-accent .mat-slider-thumb,
 	.mat-accent .mat-slider-thumb-label {
-		background-color: main-palette(800);
+		background-color: var(--800);
 	}
 
 	.mat-accent .mat-slider-thumb-label-text {
@@ -1707,12 +1712,12 @@ ril-range-slider {
 	}
 
 	.mat-slider-track-background {
-		background-color: main-palette(600);
+		background-color: var(--600);
 	}
 }
 ril-rich-text {
 	border-radius: $r-md;
-	color: main-contrast(800);
+	color: var(--c-800);
 	display: block;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -1720,15 +1725,15 @@ ril-rich-text {
 
 	.ril-richtext-wrap {
 		border-radius: $r-md;
-		color: main-contrast(800);
+		color: var(--c-800);
 		display: block;
 		font-size: $f-size-md;
 		line-height: $f-line-md;
 		width: 100%;
 
 		.richtext-control {
-			background: main-palette(800);
-			border: 1px solid main-palette(800);
+			background: var(--800);
+			border: 1px solid var(--800);
 			border-radius: inherit;
 			box-shadow: none;
 			color: inherit;
@@ -1738,26 +1743,23 @@ ril-rich-text {
 			height: 100%;
 			margin: 0;
 			padding: $p-sm $p-md;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
-				box-shadow 0.2s ease-in-out,
-				color 0.2s ease-in-out;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+				box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 			width: 100%;
 
 			// @include placeholder {
-			// 	color: main-palette(500);
+			// 	color: var(--500);
 			// }
 
 			&:hover {
-				background: main-palette(700);
-				border-color: main-palette(700);
+				background: var(--700);
+				border-color: var(--700);
 				box-shadow: $s-md;
 			}
 		}
 
 		.char-limiter {
-			color: main-palette(500);
+			color: var(--500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: flex-end;
@@ -1772,12 +1774,12 @@ ril-rich-text {
 	}
 
 	&.richtext-focus {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		.ril-richtext-wrap {
 			.richtext-control {
-				background: main-palette(700);
-				border-color: main-contrast(200);
+				background: var(--700);
+				border-color: var(--c-200);
 				box-shadow: $s-md;
 			}
 		}
@@ -1794,14 +1796,14 @@ ril-rich-text {
 
 	&.richtext-disabled,
 	&.richtext-readonly {
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.ril-richtext-wrap {
 			cursor: not-allowed;
 
 			.richtext-control {
-				background-color: main-palette(500);
-				border-color: main-palette(500);
+				background-color: var(--500);
+				border-color: var(--500);
 				pointer-events: none;
 				box-shadow: none;
 			}
@@ -1845,40 +1847,37 @@ ril-select {
 
 	.select-box {
 		align-items: center;
-		background: main-palette(800);
-		border: 1px solid main-palette(800);
+		background: var(--800);
+		border: 1px solid var(--800);
 		border-radius: inherit;
-		color: main-contrast(800);
+		color: var(--c-800);
 		cursor: pointer;
 		overflow: hidden;
-		transition:
-			background 0.2s ease-in-out,
-			border-color 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
-			color 0.2s ease-in-out;
+		transition: background 0.2s ease-in-out, border-color 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		width: 100%;
 		padding: $p-sm $p-md;
 		min-width: 10rem;
 
 		.mat-select-value {
 			max-width: 100%;
-			color: main-contrast(800);
+			color: var(--c-800);
 
 			.mat-select-placeholder {
-				color: main-palette(700);
+				color: var(--700);
 			}
 		}
 
 		.mat-select-arrow {
-			color: main-contrast(800);
+			color: var(--c-800);
 		}
 	}
 
 	&:hover {
 		.select-box {
-			background: main-palette(700);
-			border-color: main-palette(700);
-			color: main-contrast(700);
+			background: var(--700);
+			border-color: var(--700);
+			color: var(--c-700);
 		}
 	}
 
@@ -1896,10 +1895,10 @@ ril-select {
 
 	&.opened {
 		.select-box {
-			background: main-palette(700);
-			border-color: main-palette(200);
+			background: var(--700);
+			border-color: var(--200);
 			box-shadow: $s-md;
-			color: main-contrast(700);
+			color: var(--c-700);
 		}
 	}
 
@@ -1907,10 +1906,10 @@ ril-select {
 		cursor: not-allowed;
 
 		.select-box {
-			background: main-palette(500);
-			border-color: main-palette(500);
+			background: var(--500);
+			border-color: var(--500);
 			box-shadow: none;
-			color: main-contrast(500);
+			color: var(--c-500);
 			cursor: not-allowed;
 			pointer-events: none;
 		}
@@ -1925,7 +1924,7 @@ ril-select {
 }
 
 .mat-select-panel {
-	background: main-palette(800);
+	background: var(--800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {
@@ -1934,7 +1933,7 @@ ril-select {
 	}
 
 	.mat-option {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 }
 ril-switcher {
@@ -1950,7 +1949,7 @@ ril-switcher {
 
 		.ril-switcher-handle {
 			align-items: center;
-			background: main-palette(800);
+			background: var(--800);
 			border-radius: $r-md;
 			cursor: inherit;
 			display: flex;
@@ -1959,9 +1958,7 @@ ril-switcher {
 			margin: 0;
 			padding: 0 2px;
 			position: relative;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
 
 			.switcher-input {
@@ -1971,7 +1968,7 @@ ril-switcher {
 			}
 
 			.check-detector {
-				background: main-palette(300);
+				background: var(--300);
 				border-radius: 50%;
 				display: block;
 				height: $base-size * 0.9;
@@ -1979,14 +1976,13 @@ ril-switcher {
 				left: 0;
 				position: absolute;
 				transform: translateX(4px);
-				transition:
-					background 0.2s ease-in-out,
+				transition: background 0.2s ease-in-out,
 					transform 0.2s ease-in-out;
 			}
 		}
 
 		.ril-switcher-label {
-			color: main-contrast(700);
+			color: var(--c-700);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -1997,15 +1993,15 @@ ril-switcher {
 
 		&:hover {
 			.ril-switcher-handle {
-				background: main-palette(600);
+				background: var(--600);
 
 				.check-detector {
-					background: main-palette(50);
+					background: var(--50);
 				}
 			}
 
 			.ril-switcher-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -2016,13 +2012,13 @@ ril-switcher {
 				background: $success-color;
 
 				.check-detector {
-					background: main-palette(800);
+					background: var(--800);
 					transform: translate(calc(($base-size * 2.8) / 2 + 8px));
 				}
 			}
 
 			.ril-switcher-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -2069,14 +2065,14 @@ ril-tabs {
 
 	.button-group {
 		position: relative;
-		background: main-palette(800);
+		background: var(--800);
 		border-radius: 0.5rem;
 		text-align: center;
 		cursor: pointer;
 		width: 100%;
 		height: 2.8rem;
 		display: flex;
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.active {
 			color: $success-color;
@@ -2097,7 +2093,7 @@ ril-tabs {
 
 			.box {
 				height: 100%;
-				background-color: main-palette(900);
+				background-color: var(--900);
 				border-radius: $r-sm;
 			}
 		}
@@ -2109,7 +2105,7 @@ ril-tabs {
 }
 ril-text-area {
 	border-radius: $r-md;
-	color: main-contrast(800);
+	color: var(--c-800);
 	display: block;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -2124,8 +2120,8 @@ ril-text-area {
 		width: 100%;
 
 		.textarea-control {
-			background: main-palette(800);
-			border: 1px solid main-palette(800);
+			background: var(--800);
+			border: 1px solid var(--800);
 			border-radius: inherit;
 			box-shadow: none;
 			color: inherit;
@@ -2135,20 +2131,17 @@ ril-text-area {
 			height: 100%;
 			margin: 0;
 			padding: $p-sm $p-md;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
-				box-shadow 0.2s ease-in-out,
-				color 0.2s ease-in-out;
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+				box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 			width: 100%;
 
 			// @include placeholder {
-			// 	color: main-palette(500);
+			// 	color: var(--500);
 			// }
 		}
 
 		.char-limiter {
-			color: main-palette(500);
+			color: var(--500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: flex-end;
@@ -2163,24 +2156,24 @@ ril-text-area {
 	}
 
 	&:hover {
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: main-palette(700);
-				border-color: main-palette(700);
+				background: var(--700);
+				border-color: var(--700);
 				box-shadow: $s-md;
 			}
 		}
 	}
 
 	&.textarea-focus {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		.ril-textarea-wrap {
 			.textarea-control {
-				background: main-palette(700);
-				border-color: main-contrast(200);
+				background: var(--700);
+				border-color: var(--c-200);
 				box-shadow: $s-md;
 			}
 		}
@@ -2197,14 +2190,14 @@ ril-text-area {
 
 	&.textarea-disabled,
 	&.textarea-readonly {
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.ril-textarea-wrap {
 			cursor: not-allowed;
 
 			.textarea-control {
-				background-color: main-palette(500);
-				border-color: main-palette(500);
+				background-color: var(--500);
+				border-color: var(--500);
 				pointer-events: none;
 				box-shadow: none;
 			}
@@ -2241,11 +2234,11 @@ ril-text-area {
 }
 ril-card-content {
 	font-size: $f-size-md;
-	color: main-contrast(500);
+	color: var(--c-500);
 
 	p {
 		font-size: $f-size-md;
-		color: main-contrast(500);
+		color: var(--c-500);
 	}
 }
 ril-card-image {
@@ -2271,25 +2264,25 @@ ril-card-image {
 }
 ril-card-title {
 	font-size: $f-size-lg;
-	color: main-contrast(800);
+	color: var(--c-800);
 	margin-bottom: $m-md;
 
 	p {
 		font-size: $f-size-lg;
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 }
 ril-expansion-panel-content {
-	color: main-contrast(800);
+	color: var(--c-800);
 }
 ril-expansion-panel-description {
 	p {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 }
 ril-expansion-panel-title {
 	h4 {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 }
 ril-list-header {
@@ -2302,7 +2295,7 @@ ril-list-header {
 		cursor: pointer;
 	}
 
-	color: main-contrast(800);
+	color: var(--c-800);
 }
 ril-list-item {
 	display: flex;
@@ -2312,7 +2305,7 @@ ril-list-item {
 	width: 100%;
 	max-height: 5rem;
 	border-radius: $r-xs;
-	background: main-palette(800);
+	background: var(--800);
 
 	+ ril-list-item {
 		margin-top: $m-xs;
@@ -2326,7 +2319,7 @@ ril-list-item {
 		justify-content: center;
 		width: 100%;
 		min-height: 5rem;
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.columns {
 			padding: $p-md;
@@ -2338,17 +2331,17 @@ ril-list-item {
 
 		&:hover {
 			div {
-				color: main-contrast(500);
+				color: var(--c-500);
 			}
 		}
 	}
 
 	// &:nth-child(odd) {
-	// 	background: main-palette(700);
+	// 	background: var(--700);
 	// }
 
 	// &:nth-child(even) {
-	// 	background: main-palette(600);
+	// 	background: var(--600);
 	// }
 
 	// &:first-child {
@@ -2373,7 +2366,7 @@ ril-list-toolbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: main-contrast(800);
+	color: var(--c-800);
 
 	.left {
 		display: flex;
@@ -2409,10 +2402,10 @@ ril-menu-item {
 	}
 
 	button {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		&:hover {
-			background: main-palette(700);
+			background: var(--700);
 		}
 	}
 }
@@ -2434,7 +2427,7 @@ ril-radio-option {
 
 		.ril-radio-handle {
 			align-items: center;
-			background: main-palette(800);
+			background: var(--800);
 
 			//border: 1px solid red;
 			border-radius: 50%;
@@ -2454,15 +2447,14 @@ ril-radio-option {
 				height: 100%;
 				padding: 0;
 				transform: scale(0);
-				transition:
-					background 0.2s ease-in-out,
+				transition: background 0.2s ease-in-out,
 					transform 0.2s ease-in-out;
 				width: 100%;
 			}
 		}
 
 		.ril-radio-label {
-			color: main-contrast(800);
+			color: var(--c-800);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -2473,16 +2465,16 @@ ril-radio-option {
 
 		&:hover {
 			.ril-radio-handle {
-				background: main-palette(700);
+				background: var(--700);
 
 				.check-detector {
-					background: main-contrast(700);
+					background: var(--c-700);
 					transform: scale(0.5);
 				}
 			}
 
 			.ril-radio-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -2490,7 +2482,7 @@ ril-radio-option {
 	&.checked {
 		.ril-radio-wrap {
 			.ril-radio-handle {
-				background: main-palette(800);
+				background: var(--800);
 				color: $success-color;
 
 				.check-detector {
@@ -2499,7 +2491,7 @@ ril-radio-option {
 			}
 
 			.ril-radio-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -2509,8 +2501,8 @@ ril-radio-option {
 			cursor: not-allowed;
 
 			.ril-radio-handle {
-				background: main-palette(500);
-				color: main-contrast(500);
+				background: var(--500);
+				color: var(--c-500);
 
 				.check-detector {
 					transform: scale(0);
@@ -2518,7 +2510,7 @@ ril-radio-option {
 			}
 
 			.ril-radio-label {
-				color: main-palette(500);
+				color: var(--500);
 			}
 		}
 
@@ -2536,9 +2528,9 @@ ril-radio-option {
 ril-editor-toolbar {
 	display: flex;
 	width: 100%;
-	background-color: main-palette(700);
+	background-color: var(--700);
 	border-radius: $r-md $r-md 0 0;
-	border: 1px solid main-palette(700);
+	border: 1px solid var(--700);
 	border-bottom: none;
 	transition: border 0.2s ease-in-out;
 	padding: math.div($p-md, 5) $p-xs;
@@ -2550,7 +2542,7 @@ ril-editor-toolbar {
 		.set {
 			display: flex;
 			align-items: center;
-			background-color: main-palette(700);
+			background-color: var(--700);
 
 			button {
 				border: none;
@@ -2562,7 +2554,7 @@ ril-editor-toolbar {
 				cursor: pointer;
 				white-space: normal;
 				padding: math.div($p-md, 5);
-				color: main-contrast(800);
+				color: var(--c-800);
 
 				&.active {
 					color: $accent-text;
@@ -2575,7 +2567,8 @@ ril-editor-toolbar {
 			}
 		}
 	}
-}ril-select-option {
+}
+ril-select-option {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;

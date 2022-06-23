@@ -1,6 +1,6 @@
 ril-input {
 	border-radius: $r-md;
-	color: main-contrast(800);
+	color: var(--c-800);
 	display: flex;
 	font-size: $f-size-md;
 	line-height: $f-line-md;
@@ -8,17 +8,15 @@ ril-input {
 
 	.ril-input-wrap {
 		align-items: center;
-		background: main-palette(800);
-		border: 1px solid main-palette(800);
+		background: var(--800);
+		border: 1px solid var(--800);
+		box-shadow: $s-sm;
 		border-radius: inherit;
 		cursor: text;
 		display: flex;
 		position: relative;
-		transition:
-			background 0.2s ease-in-out,
-			border 0.2s ease-in-out,
-			border 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
+		transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
+			border 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
@@ -44,7 +42,7 @@ ril-input {
 
 		.input-prefix,
 		.input-suffix {
-			color: main-contrast(500);
+			color: var(--c-500);
 			flex: none;
 			padding: 0 $p-md;
 		}
@@ -61,7 +59,7 @@ ril-input {
 
 		.char-limiting {
 			align-items: center;
-			color: main-contrast(500);
+			color: var(--c-500);
 			display: flex;
 			font-size: 0.9em;
 			justify-content: center;
@@ -72,25 +70,25 @@ ril-input {
 
 	:host-context(ril-form-group.float) {
 		.ril-input-wrap {
-			border-color: main-contrast(700);
+			border-color: var(--c-700);
 		}
 	}
 
 	&:hover {
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.ril-input-wrap {
-			background: main-palette(700);
-			border-color: main-palette(700);
+			background: var(--700);
+			border-color: var(--700);
 		}
 	}
 
 	&.input-focus {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		.ril-input-wrap {
-			background: main-palette(700);
-			border-color: main-contrast(200);
+			background: var(--700);
+			border-color: var(--c-200);
 		}
 	}
 
@@ -103,11 +101,11 @@ ril-input {
 
 	&.input-disabled,
 	&.input-readonly {
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.ril-input-wrap {
-			background-color: main-palette(500);
-			border-color: main-palette(500);
+			background-color: var(--500);
+			border-color: var(--500);
 			box-shadow: none !important;
 			cursor: not-allowed;
 

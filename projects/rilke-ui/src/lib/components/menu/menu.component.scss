@@ -15,7 +15,7 @@ ril-menu {
 }
 
 .mat-menu-panel {
-	background: main-palette(800);
+	background: var(--800);
 	border-radius: $r-md !important;
 
 	&::-webkit-scrollbar {

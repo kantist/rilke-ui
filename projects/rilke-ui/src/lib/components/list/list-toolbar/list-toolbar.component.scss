@@ -4,7 +4,7 @@ ril-list-toolbar {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	color: main-contrast(800);
+	color: var(--c-800);
 
 	.left {
 		display: flex;

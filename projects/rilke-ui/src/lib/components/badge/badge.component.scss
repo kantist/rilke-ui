@@ -84,12 +84,12 @@ ril-badge {
 	}
 
 	&.badge-light {
-		background: main-contrast(900);
-		color: main-palette(900);
+		background: var(--c-900);
+		color: var(--900);
 	}
 
 	&.badge-dark {
-		background: main-palette(900);
-		color: main-contrast(900);
+		background: var(--900);
+		color: var(--c-900);
 	}
 }

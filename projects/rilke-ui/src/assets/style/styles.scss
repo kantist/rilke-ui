@@ -6,6 +6,9 @@
 @import "./structure";
 @import "./typography";
 
+@include default-theme();
+@include theme();
+
 @include mat.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
@@ -39,20 +42,20 @@ html {
 	display: block;
 	scroll-behavior: smooth;
 	font-family: $f-family;
-	color: main-contrast(800);
+	color: var(--c-800);
 	font-weight: $f-weight-md;
 	line-height: $f-size-md;
 }
 
 body {
 	height: 100%;
-	background-color: main-palette(900);
+	background-color: var(--900);
 
 	mat-bottom-sheet-container {
 		padding: $p-lg * 2 !important;
 		color: inherit !important;
 		font-family: inherit !important;
-		background: main-palette(900) !important;
+		background: var(--900) !important;
 		border-top-right-radius: $r-md !important;
 		border-top-left-radius: $r-md !important;
 	}
@@ -70,7 +73,7 @@ body {
 			max-width: 100%;
 			position: static;
 			padding: 1rem !important;
-			background: main-palette(800) !important;
+			background: var(--800) !important;
 			border-radius: $r-md;
 		}
 	}
@@ -88,7 +91,7 @@ body {
 			max-width: 100%;
 			position: static;
 			padding: 1rem !important;
-			background: main-palette(800) !important;
+			background: var(--800) !important;
 			border-radius: $r-md;
 			margin-bottom: 2rem;
 		}

@@ -4,14 +4,13 @@ ril-date-picker {
 
 	.ril-input-wrap {
 		align-items: center;
-		background: main-palette(800);
+		background: var(--800);
 		border-radius: $r-md;
+		box-shadow: $s-sm;
 		cursor: pointer;
 		display: flex;
 		position: relative;
-		transition:
-			background 0.2s ease-in-out,
-			box-shadow 0.2s ease-in-out,
+		transition: background 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
 			color 0.2s ease-in-out;
 		will-change: background, border, box-shadow, color;
 		width: 100%;
@@ -26,7 +25,7 @@ ril-date-picker {
 			background: none;
 			border: none;
 			box-shadow: none;
-			color: main-contrast(500);
+			color: var(--c-500);
 			cursor: inherit;
 			display: block;
 			font: inherit;
@@ -36,7 +35,7 @@ ril-date-picker {
 
 		.input-prefix,
 		.input-suffix {
-			color: main-contrast(500);
+			color: var(--c-500);
 			flex: none;
 			padding: 0 $p-md;
 		}
@@ -54,15 +53,15 @@ ril-date-picker {
 
 	&:hover {
 		.ril-input-wrap {
-			background: main-palette(700);
+			background: var(--700);
 			box-shadow: $s-md;
 		}
 	}
 
 	&.input-focus {
 		.ril-input-wrap {
-			background: main-palette(700);
-			border-color: main-contrast(200);
+			background: var(--700);
+			border-color: var(--c-200);
 		}
 	}
 
@@ -75,10 +74,10 @@ ril-date-picker {
 
 	&.input-disabled,
 	&.input-readonly {
-		color: main-contrast(500);
+		color: var(--c-500);
 
 		.ril-input-wrap {
-			background-color: main-palette(500);
+			background-color: var(--500);
 			box-shadow: none !important;
 			cursor: not-allowed;
 
@@ -92,31 +91,31 @@ ril-date-picker {
 .mat-datepicker-content {
 	margin-top: 1rem;
 	box-shadow: $s-md;
-	background-color: main-palette(800);
+	background-color: var(--800);
 	border-radius: $r-md !important;
-	color: main-contrast(800);
+	color: var(--c-800);
 
 	.mat-calendar-arrow {
-		border-top-color: main-contrast(800);
-		fill: main-contrast(800);
+		border-top-color: var(--c-800);
+		fill: var(--c-800);
 	}
 
 	.mat-calendar-next-button,
 	.mat-calendar-previous-button {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 
 	.mat-calendar-next-button:hover,
 	.mat-calendar-previous-button:hover {
-		background-color: main-palette(800);
+		background-color: var(--800);
 	}
 
 	.mat-calendar-period-button:hover {
-		background-color: main-palette(800);
+		background-color: var(--800);
 	}
 
 	.mat-calendar-table-header {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 
 	.mat-calendar-table-header-divider::after {
@@ -124,14 +123,14 @@ ril-date-picker {
 	}
 
 	.mat-calendar-body-label {
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 
 	.mat-calendar-body-cell-content {
-		color: main-contrast(800);
+		color: var(--c-800);
 
 		// &:hover {
-		// 	background-color: main-palette(700) !important;
+		// 	background-color: var(--700) !important;
 		// }
 
 		&.mat-calendar-body-selected {
@@ -139,10 +138,15 @@ ril-date-picker {
 		}
 	}
 
-	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
-	.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
-	.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
-		background-color: main-palette(700) !important;
+	.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-keyboard-focused
+		.mat-calendar-body-active
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical),
+	.cdk-program-focused
+		.mat-calendar-body-active
+		> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+		background-color: var(--700) !important;
 	}
 
 	.mat-calendar-body-today:not(.mat-calendar-body-selected) {
@@ -150,8 +154,13 @@ ril-date-picker {
 	}
 }
 
-.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
-.cdk-keyboard-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
-.cdk-program-focused .mat-calendar-body-active > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
-	background-color: main-palette(800);
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-keyboard-focused
+	.mat-calendar-body-active
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected),
+.cdk-program-focused
+	.mat-calendar-body-active
+	> .mat-calendar-body-cell-content:not(.mat-calendar-body-selected) {
+	background-color: var(--800);
 }

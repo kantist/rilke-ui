@@ -5,7 +5,7 @@ ril-file-drop {
 	width: 100%;
 
 	.wrapper {
-		background-color: main-palette(800);
+		background-color: var(--800);
 		border-radius: $r-md;
 		display: flex;
 		align-items: center;
@@ -14,11 +14,11 @@ ril-file-drop {
 		cursor: pointer;
 		position: relative;
 		width: 100%;
-		transition: background-color .2s ease-in;
+		transition: background-color 0.2s ease-in;
 
 		.dropzone {
 			border-radius: $r-md;
-			border: 1px dashed main-contrast(800);
+			border: 1px dashed var(--c-800);
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -34,15 +34,15 @@ ril-file-drop {
 		.upload-icon {
 			font-size: 1.4rem;
 			margin-left: 0.5rem;
-			color: main-contrast(800);
+			color: var(--c-800);
 		}
 
 		&.fileover {
-			background-color: main-palette(700);
+			background-color: var(--700);
 		}
 
 		&:hover {
-			background-color: main-palette(700);
+			background-color: var(--700);
 		}
 	}
 

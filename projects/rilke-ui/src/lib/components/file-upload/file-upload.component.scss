@@ -4,8 +4,9 @@ ril-file-upload {
 		align-items: center;
 
 		.upload-btn {
-			background-color: main-palette(800);
+			background-color: var(--800);
 			border-radius: $r-md;
+			box-shadow: $s-sm;
 			padding: $p-sm;
 			display: flex;
 			align-items: center;
@@ -27,13 +28,13 @@ ril-file-upload {
 			.file-icon {
 				width: 2rem;
 				height: 2rem;
-				background-color: main-palette(700);
+				background-color: var(--700);
 				font-size: 2.4rem;
 				position: absolute;
 				left: 0.2rem;
 				border-radius: $r-md;
 				object-fit: cover;
-				color: main-contrast(800);
+				color: var(--c-800);
 				display: flex;
 				justify-content: center;
 				align-items: center;
@@ -41,7 +42,7 @@ ril-file-upload {
 
 			p {
 				margin: 0 !important;
-				color: main-contrast(800);
+				color: var(--c-800);
 			}
 
 			.file-name {
@@ -53,7 +54,7 @@ ril-file-upload {
 				font-size: 1rem;
 				scale: 1.3;
 				margin-right: 0.5rem;
-				color: main-contrast(800);
+				color: var(--c-800);
 			}
 
 			.close-icon {

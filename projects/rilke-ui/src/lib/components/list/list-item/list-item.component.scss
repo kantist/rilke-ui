@@ -6,7 +6,7 @@ ril-list-item {
 	width: 100%;
 	max-height: 5rem;
 	border-radius: $r-xs;
-	background: main-palette(800);
+	background: var(--800);
 
 	+ ril-list-item {
 		margin-top: $m-xs;
@@ -20,7 +20,7 @@ ril-list-item {
 		justify-content: center;
 		width: 100%;
 		min-height: 5rem;
-		color: main-contrast(700);
+		color: var(--c-700);
 
 		.columns {
 			padding: $p-md;
@@ -32,17 +32,17 @@ ril-list-item {
 
 		&:hover {
 			div {
-				color: main-contrast(500);
+				color: var(--c-500);
 			}
 		}
 	}
 
 	// &:nth-child(odd) {
-	// 	background: main-palette(700);
+	// 	background: var(--700);
 	// }
 
 	// &:nth-child(even) {
-	// 	background: main-palette(600);
+	// 	background: var(--600);
 	// }
 
 	// &:first-child {

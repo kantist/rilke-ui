@@ -11,7 +11,7 @@ ril-switcher {
 
 		.ril-switcher-handle {
 			align-items: center;
-			background: main-palette(800);
+			background: var(--800);
 			border-radius: $r-md;
 			cursor: inherit;
 			display: flex;
@@ -20,9 +20,7 @@ ril-switcher {
 			margin: 0;
 			padding: 0 2px;
 			position: relative;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
 
 			.switcher-input {
@@ -32,7 +30,7 @@ ril-switcher {
 			}
 
 			.check-detector {
-				background: main-palette(300);
+				background: var(--300);
 				border-radius: 50%;
 				display: block;
 				height: $base-size * 0.9;
@@ -40,14 +38,13 @@ ril-switcher {
 				left: 0;
 				position: absolute;
 				transform: translateX(4px);
-				transition:
-					background 0.2s ease-in-out,
+				transition: background 0.2s ease-in-out,
 					transform 0.2s ease-in-out;
 			}
 		}
 
 		.ril-switcher-label {
-			color: main-contrast(700);
+			color: var(--c-700);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -58,15 +55,15 @@ ril-switcher {
 
 		&:hover {
 			.ril-switcher-handle {
-				background: main-palette(600);
+				background: var(--600);
 
 				.check-detector {
-					background: main-palette(50);
+					background: var(--50);
 				}
 			}
 
 			.ril-switcher-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -77,13 +74,13 @@ ril-switcher {
 				background: $success-color;
 
 				.check-detector {
-					background: main-palette(800);
+					background: var(--800);
 					transform: translate(calc(($base-size * 2.8) / 2 + 4px));
 				}
 			}
 
 			.ril-switcher-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}

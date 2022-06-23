@@ -1,10 +1,10 @@
 ril-card-title {
 	font-size: $f-size-lg;
-	color: main-contrast(800);
+	color: var(--c-800);
 	margin-bottom: $m-md;
 
 	p {
 		font-size: $f-size-lg;
-		color: main-contrast(800);
+		color: var(--c-800);
 	}
 }

@@ -10,7 +10,7 @@ ril-checkbox {
 
 		.ril-checkbox-handle {
 			align-items: center;
-			background: main-palette(700);
+			background: var(--700);
 			border-radius: math.div($r-xs, 1.5);
 			cursor: inherit;
 			display: flex;
@@ -19,9 +19,7 @@ ril-checkbox {
 			justify-content: center;
 			margin: 0;
 			position: relative;
-			transition:
-				background 0.2s ease-in-out,
-				border 0.2s ease-in-out,
+			transition: background 0.2s ease-in-out, border 0.2s ease-in-out,
 				color 0.2s ease-in-out;
 
 			.checkbox-input {
@@ -42,7 +40,7 @@ ril-checkbox {
 		}
 
 		.ril-checkbox-label {
-			color: main-contrast(800);
+			color: var(--c-800);
 			margin-left: 10px;
 			transition: color 0.2s ease-in-out;
 
@@ -53,8 +51,8 @@ ril-checkbox {
 
 		&:hover {
 			.ril-checkbox-handle {
-				background: main-palette(700);
-				color: main-contrast(700);
+				background: var(--700);
+				color: var(--c-700);
 
 				.check-detector {
 					transform: scale(0.8);
@@ -62,7 +60,7 @@ ril-checkbox {
 			}
 
 			.ril-checkbox-label {
-				color: main-contrast(700);
+				color: var(--c-700);
 			}
 		}
 	}
@@ -70,7 +68,7 @@ ril-checkbox {
 	&.checked {
 		.ril-checkbox-wrap {
 			.ril-checkbox-handle {
-				background: main-palette(800);
+				background: var(--800);
 				color: $success-color;
 
 				.check-detector {
@@ -79,7 +77,7 @@ ril-checkbox {
 			}
 
 			.ril-checkbox-label {
-				color: main-contrast(800);
+				color: var(--c-800);
 			}
 		}
 	}
@@ -89,8 +87,8 @@ ril-checkbox {
 			cursor: not-allowed;
 
 			.ril-checkbox-handle {
-				background: main-palette(500);
-				color: main-contrast(500);
+				background: var(--500);
+				color: var(--c-500);
 
 				.check-detector {
 					transform: scale(0);
@@ -98,7 +96,7 @@ ril-checkbox {
 			}
 
 			.ril-checkbox-label {
-				color: main-palette(500);
+				color: var(--500);
 			}
 		}
 

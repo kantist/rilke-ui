@@ -1,9 +1,9 @@
 ril-editor-toolbar {
 	display: flex;
 	width: 100%;
-	background-color: main-palette(700);
+	background-color: var(--700);
 	border-radius: $r-md $r-md 0 0;
-	border: 1px solid main-palette(700);
+	border: 1px solid var(--700);
 	border-bottom: none;
 	transition: border 0.2s ease-in-out;
 	padding: math.div($p-md, 5) $p-xs;
@@ -17,7 +17,7 @@ ril-editor-toolbar {
 		.set {
 			display: flex;
 			align-items: center;
-			background-color: main-palette(700);
+			background-color: var(--700);
 			margin-top: $m-xs;
 
 			button {
@@ -31,7 +31,7 @@ ril-editor-toolbar {
 				white-space: normal;
 				border-radius: $r-xs;
 				padding: math.div($p-md, 5);
-				color: main-contrast(800);
+				color: var(--c-800);
 
 				&.active {
 					color: $accent-text;
