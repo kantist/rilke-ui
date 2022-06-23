@@ -5,7 +5,7 @@
 $dark: material-palette(grey, 900);
 $dark-contrast: color.adjust($dark, $lightness: 100%);
 
-$light: material-palette(grey, 300);
+$light: #fff;
 $light-contrast: color.adjust($light, $lightness: 100%);
 
 $themes: (
@@ -32,6 +32,31 @@ $themes: (
 			800: color.adjust($light-contrast, $lightness: -90%),
 			900: color.adjust($light, $lightness: 100%),
 		),
+		accent: (
+			color: color.adjust($light, $lightness: -5%),
+			text: #00c685,
+			hover: color.adjust(#00c685, $lightness: 5%),
+		),
+		success: (
+			color: color.adjust(#00c685, $lightness: -10%),
+			text: #212121,
+			hover: color.adjust(#00c685, $lightness: 10%),
+		),
+		info: (
+			color: #4fc3f7,
+			text: #fafafa,
+			hover: color.adjust(#4fc3f7, $lightness: -10%),
+		),
+		warning: (
+			color: #ffc107,
+			text: #fafafa,
+			hover: color.adjust(#ffc107, $lightness: -10%),
+		),
+		error: (
+			color: #dd5858,
+			text: #fafafa,
+			hover: color.adjust(#dd5858, $lightness: -10%),
+		),
 	),
 	dark: (
 		50: color.adjust($dark, $lightness: 50%),
@@ -56,6 +81,31 @@ $themes: (
 			800: color.adjust($dark-contrast, $lightness: -5%),
 			900: color.adjust($dark, $lightness: 100%),
 		),
+		accent: (
+			color: color.adjust($light, $lightness: 5%),
+			text: #00ffab,
+			hover: color.adjust(#00ffab, $lightness: 5%),
+		),
+		success: (
+			color: color.adjust(#00ffab, $lightness: -10%),
+			text: #212121,
+			hover: color.adjust(#00ffab, $lightness: 10%),
+		),
+		info: (
+			color: #4fc3f7,
+			text: #fafafa,
+			hover: color.adjust(#4fc3f7, $lightness: -10%),
+		),
+		warning: (
+			color: #ffc107,
+			text: #fafafa,
+			hover: color.adjust(#ffc107, $lightness: -10%),
+		),
+		error: (
+			color: #dd5858,
+			text: #fafafa,
+			hover: color.adjust(#dd5858, $lightness: -10%),
+		),
 	),
 );
 
@@ -65,7 +115,7 @@ $main-palette: null;
 	$main-palette: map-get($themes, $key) !global;
 }
 
-@include set-theme();
+@include set-theme("light");
 
 @mixin default-theme() {
 	:root {
@@ -74,7 +124,11 @@ $main-palette: null;
 				--#{$key}: #{$value};
 			} @else if type-of($value) == "map" {
 				@each $nk, $nv in $value {
-					--c-#{$nk}: #{$nv};
+					@if $key == "contrast" {
+						--c-#{$nk}: #{$nv};
+					} @else {
+						--#{$key}-#{$nk}: #{$nv};
+					}
 				}
 			}
 		}
@@ -89,33 +143,14 @@ $main-palette: null;
 					--#{$key}: #{$value};
 				} @else if type-of($value) == "map" {
 					@each $nk, $nv in $value {
-						--c-#{$nk}: #{$nv};
+						@if $key == "contrast" {
+							--c-#{$nk}: #{$nv};
+						} @else {
+							--#{$key}-#{$nk}: #{$nv};
+						}
 					}
 				}
 			}
 		}
 	}
 }
-
-$accent-color: material-palette(indigo, 500);
-$accent-text: material-palette(grey, 50);
-$accent-hover: color.adjust(material-palette(indigo, 500), $lightness: -10%);
-
-$success-color: material-palette(light-green, 500);
-$success-text: material-palette(grey, 50);
-$success-hover: color.adjust(
-	material-palette(light-green, 500),
-	$lightness: -10%
-);
-
-$info-color: material-palette(light-blue, 500);
-$info-text: material-palette(grey, 50);
-$info-hover: color.adjust(material-palette(light-blue, 500), $lightness: -10%);
-
-$warning-color: material-palette(amber, 500);
-$warning-text: material-palette(grey, 50);
-$warning-hover: color.adjust(material-palette(amber, 500), $lightness: -10%);
-
-$error-color: material-palette(pink, 500);
-$error-text: material-palette(grey, 50);
-$error-hover: color.adjust(material-palette(pink, 500), $lightness: -10%);

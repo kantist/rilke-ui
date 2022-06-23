@@ -34,7 +34,7 @@ ril-editor-toolbar {
 				color: var(--c-800);
 
 				&.active {
-					color: $accent-text;
+					color: var(--accent-text);
 					box-shadow: $s-md;
 				}
 			}

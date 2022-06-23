@@ -71,7 +71,7 @@ ril-switcher {
 	&.checked {
 		.ril-switcher-wrap {
 			.ril-switcher-handle {
-				background: $success-color;
+				background: var(--success-color);
 
 				.check-detector {
 					background: var(--800);

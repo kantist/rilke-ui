@@ -30,7 +30,7 @@ ril-radio-option {
 			transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 
 			.check-detector {
-				background: $success-color;
+				background: var(--success-color);
 				border-radius: 50%;
 				display: block;
 				height: 100%;
@@ -72,7 +72,7 @@ ril-radio-option {
 		.ril-radio-wrap {
 			.ril-radio-handle {
 				background: var(--800);
-				color: $success-color;
+				color: var(--success-color);
 
 				.check-detector {
 					transform: scale(0.5);

@@ -25,34 +25,34 @@ ril-alert {
 		}
 
 		&.success {
-			background: $success-color;
+			background: var(--success-color);
 
 			button {
-				background-color: $success-hover;
+				background-color: var(--success-hover);
 			}
 		}
 
 		&.info {
-			background: $info-color;
+			background: var(--info-color);
 
 			button {
-				background-color: $info-hover;
+				background-color: var(--info-hover);
 			}
 		}
 
 		&.warning {
-			background: $warning-color;
+			background: var(--warning-color);
 
 			button {
-				background-color: $warning-hover;
+				background-color: var(--warning-hover);
 			}
 		}
 
 		&.error {
-			background: $error-color;
+			background: var(--error-color);
 
 			button {
-				background-color: $error-hover;
+				background-color: var(--error-hover);
 			}
 		}
 	}
@@ -125,28 +125,28 @@ ril-badge {
 
 	// Colors
 	&.badge-accent {
-		background: $accent-color;
-		color: $accent-text;
+		background: var(--accent-color);
+		color: var(--accent-text);
 	}
 
 	&.badge-success {
-		background: $success-color;
-		color: $success-text;
+		background: var(--success-color);
+		color: var(--success-text);
 	}
 
 	&.badge-warning {
-		background: $warning-color;
-		color: $warning-text;
+		background: var(--warning-color);
+		color: var(--warning-text);
 	}
 
 	&.badge-error {
-		background: $error-color;
-		color: $error-text;
+		background: var(--error-color);
+		color: var(--error-text);
 	}
 
 	&.badge-info {
-		background: $info-color;
-		color: $info-text;
+		background: var(--info-color);
+		color: var(--info-text);
 	}
 
 	&.badge-light {
@@ -494,76 +494,76 @@ ril-avatar {
 
 	//colors - (default, accent, gray, neutral, success, info, warning, error)
 	&.btn-accent {
-		background: $accent-color;
-		color: $accent-text;
+		background: var(--accent-color);
+		color: var(--accent-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $accent-color;
-			color: $accent-color;
+			border-color: var(--accent-color);
+			color: var(--accent-color);
 
 			.btn-loader {
-				border-left: 2px solid $accent-color;
+				border-left: 2px solid var(--accent-color);
 			}
 		}
 	}
 
 	&.btn-success {
-		background: $success-color;
-		color: $success-text;
+		background: var(--success-color);
+		color: var(--success-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $success-color;
-			color: $success-color;
+			border-color: var(--success-color);
+			color: var(--success-color);
 
 			.btn-loader {
-				border-left: 2px solid $success-color;
+				border-left: 2px solid var(--success-color);
 			}
 		}
 	}
 
 	&.btn-info {
-		background: $info-color;
-		color: $info-text;
+		background: var(--info-color);
+		color: var(--info-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $info-color;
-			color: $info-color;
+			border-color: var(--info-color);
+			color: var(--info-color);
 
 			.btn-loader {
-				border-left: 2px solid $info-color;
+				border-left: 2px solid var(--info-color);
 			}
 		}
 	}
 
 	&.btn-warning {
-		background: $warning-color;
-		color: $warning-text;
+		background: var(--warning-color);
+		color: var(--warning-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $warning-color;
-			color: $warning-color;
+			border-color: var(--warning-color);
+			color: var(--warning-color);
 
 			.btn-loader {
-				border-left: 2px solid $warning-color;
+				border-left: 2px solid var(--warning-color);
 			}
 		}
 	}
 
 	&.btn-error {
-		background: $error-color;
-		color: $error-text;
+		background: var(--error-color);
+		color: var(--error-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $error-color;
-			color: $error-color;
+			border-color: var(--error-color);
+			color: var(--error-color);
 
 			.btn-loader {
-				border-left: 2px solid $error-color;
+				border-left: 2px solid var(--error-color);
 			}
 		}
 	}
@@ -708,7 +708,7 @@ ril-checkbox {
 		.ril-checkbox-wrap {
 			.ril-checkbox-handle {
 				background: var(--800);
-				color: $success-color;
+				color: var(--success-color);
 
 				.check-detector {
 					transform: scale(0.8);
@@ -883,7 +883,7 @@ ril-date-picker {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {
-			border: 1px solid $error-color;
+			border: 1px solid var(--error-color);
 		}
 	}
 
@@ -949,7 +949,7 @@ ril-date-picker {
 		// }
 
 		&.mat-calendar-body-selected {
-			background-color: $success-color;
+			background-color: var(--success-color);
 		}
 	}
 
@@ -1006,11 +1006,11 @@ ril-dialog {
 			align-items: center;
 
 			&.cancel {
-				background-color: $error-color;
+				background-color: var(--error-color);
 			}
 
 			&.action {
-				background-color: $success-color;
+				background-color: var(--success-color);
 				margin-left: 1rem;
 
 				span {
@@ -1065,7 +1065,7 @@ ril-file-drop {
 
 			.link {
 				margin-right: $m-xs;
-				color: $info-color;
+				color: var(--info-color);
 			}
 		}
 
@@ -1152,7 +1152,7 @@ ril-file-upload {
 				justify-content: flex-end;
 				align-items: center;
 				margin-left: 0.5rem;
-				color: $error-color;
+				color: var(--error-color);
 				flex: 2;
 
 				span {
@@ -1171,7 +1171,7 @@ ril-form-description {
 
 	.error {
 		line-height: 0.7rem;
-		color: $error-color;
+		color: var(--error-color);
 	}
 }
 ril-form-group {
@@ -1346,7 +1346,7 @@ ril-input {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {
-			border: 1px solid $error-color;
+			border: 1px solid var(--error-color);
 		}
 	}
 
@@ -1708,7 +1708,7 @@ ril-range-slider {
 	}
 
 	.mat-accent .mat-slider-thumb-label-text {
-		color: $success-color;
+		color: var(--success-color);
 	}
 
 	.mat-slider-track-background {
@@ -1789,7 +1789,7 @@ ril-rich-text {
 	.has-error & {
 		.ril-richtext-wrap {
 			.richtext-control {
-				border: 1px solid $error-color;
+				border: 1px solid var(--error-color);
 			}
 		}
 	}
@@ -1918,7 +1918,7 @@ ril-select {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.select-box {
-			border: 1px solid $error-color;
+			border: 1px solid var(--error-color);
 		}
 	}
 }
@@ -2009,7 +2009,7 @@ ril-switcher {
 	&.checked {
 		.ril-switcher-wrap {
 			.ril-switcher-handle {
-				background: $success-color;
+				background: var(--success-color);
 
 				.check-detector {
 					background: var(--800);
@@ -2075,7 +2075,7 @@ ril-tabs {
 		color: var(--c-500);
 
 		.active {
-			color: $success-color;
+			color: var(--success-color);
 		}
 
 		.button {
@@ -2183,7 +2183,7 @@ ril-text-area {
 	.has-error & {
 		.ril-textarea-wrap {
 			.textarea-control {
-				border: 1px solid $error-color;
+				border: 1px solid var(--error-color);
 			}
 		}
 	}
@@ -2380,7 +2380,7 @@ ril-list-toolbar {
 
 		.quantity {
 			margin-left: 1rem;
-			color: $success-color;
+			color: var(--success-color);
 		}
 
 		.text {
@@ -2441,7 +2441,7 @@ ril-radio-option {
 			transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
 
 			.check-detector {
-				background: $success-color;
+				background: var(--success-color);
 				border-radius: 50%;
 				display: block;
 				height: 100%;
@@ -2483,7 +2483,7 @@ ril-radio-option {
 		.ril-radio-wrap {
 			.ril-radio-handle {
 				background: var(--800);
-				color: $success-color;
+				color: var(--success-color);
 
 				.check-detector {
 					transform: scale(0.5);
@@ -2557,7 +2557,7 @@ ril-editor-toolbar {
 				color: var(--c-800);
 
 				&.active {
-					color: $accent-text;
+					color: var(--accent-text);
 					box-shadow: $s-md;
 				}
 			}

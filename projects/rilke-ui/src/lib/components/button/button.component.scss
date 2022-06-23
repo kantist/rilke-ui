@@ -189,76 +189,76 @@
 
 	//colors - (default, accent, gray, neutral, success, info, warning, error)
 	&.btn-accent {
-		background: $accent-color;
-		color: $accent-text;
+		background: var(--accent-color);
+		color: var(--accent-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $accent-color;
-			color: $accent-color;
+			border-color: var(--accent-color);
+			color: var(--accent-color);
 
 			.btn-loader {
-				border-left: 2px solid $accent-color;
+				border-left: 2px solid var(--accent-color);
 			}
 		}
 	}
 
 	&.btn-success {
-		background: $success-color;
-		color: $success-text;
+		background: var(--success-color);
+		color: var(--success-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $success-color;
-			color: $success-color;
+			border-color: var(--success-color);
+			color: var(--success-color);
 
 			.btn-loader {
-				border-left: 2px solid $success-color;
+				border-left: 2px solid var(--success-color);
 			}
 		}
 	}
 
 	&.btn-info {
-		background: $info-color;
-		color: $info-text;
+		background: var(--info-color);
+		color: var(--info-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $info-color;
-			color: $info-color;
+			border-color: var(--info-color);
+			color: var(--info-color);
 
 			.btn-loader {
-				border-left: 2px solid $info-color;
+				border-left: 2px solid var(--info-color);
 			}
 		}
 	}
 
 	&.btn-warning {
-		background: $warning-color;
-		color: $warning-text;
+		background: var(--warning-color);
+		color: var(--warning-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $warning-color;
-			color: $warning-color;
+			border-color: var(--warning-color);
+			color: var(--warning-color);
 
 			.btn-loader {
-				border-left: 2px solid $warning-color;
+				border-left: 2px solid var(--warning-color);
 			}
 		}
 	}
 
 	&.btn-error {
-		background: $error-color;
-		color: $error-text;
+		background: var(--error-color);
+		color: var(--error-text);
 
 		&.btn-outline {
 			background: transparent !important;
-			border-color: $error-color;
-			color: $error-color;
+			border-color: var(--error-color);
+			color: var(--error-color);
 
 			.btn-loader {
-				border-left: 2px solid $error-color;
+				border-left: 2px solid var(--error-color);
 			}
 		}
 	}

@@ -32,7 +32,7 @@ ril-rich-text {
 			width: 100%;
 
 			a {
-				color: $accent-text;
+				color: var(--accent-text);
 				text-decoration: underline;
 			}
 
@@ -89,7 +89,7 @@ ril-rich-text {
 	.has-error & {
 		.ril-richtext-wrap {
 			.richtext-control {
-				border: 1px solid $error-color;
+				border: 1px solid var(--error-color);
 			}
 		}
 	}

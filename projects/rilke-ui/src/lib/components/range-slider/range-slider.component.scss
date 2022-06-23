@@ -15,7 +15,7 @@ ril-range-slider {
 	}
 
 	.mat-accent .mat-slider-thumb-label-text {
-		color: $success-color;
+		color: var(--success-color);
 	}
 
 	.mat-slider-track-background {

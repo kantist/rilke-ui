@@ -69,7 +69,7 @@ ril-checkbox {
 		.ril-checkbox-wrap {
 			.ril-checkbox-handle {
 				background: var(--800);
-				color: $success-color;
+				color: var(--success-color);
 
 				.check-detector {
 					transform: scale(0.8);

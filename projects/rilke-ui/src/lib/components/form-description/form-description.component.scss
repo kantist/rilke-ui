@@ -1,11 +1,11 @@
 ril-form-description {
 	display: block;
 	position: absolute;
-	font-size: .7rem;
+	font-size: 0.7rem;
 	margin-top: 1px;
 
 	.error {
-		line-height: .7rem;
-		color: $error-color;
+		line-height: 0.7rem;
+		color: var(--error-color);
 	}
 }

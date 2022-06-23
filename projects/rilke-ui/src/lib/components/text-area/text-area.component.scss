@@ -78,7 +78,7 @@ ril-text-area {
 	.has-error & {
 		.ril-textarea-wrap {
 			.textarea-control {
-				border: 1px solid $error-color;
+				border: 1px solid var(--error-color);
 			}
 		}
 	}

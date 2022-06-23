@@ -62,7 +62,7 @@ ril-file-upload {
 				justify-content: flex-end;
 				align-items: center;
 				margin-left: 0.5rem;
-				color: $error-color;
+				color: var(--error-color);
 				flex: 2;
 
 				span {

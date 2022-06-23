@@ -68,7 +68,7 @@ ril-date-picker {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.ril-input-wrap {
-			border: 1px solid $error-color;
+			border: 1px solid var(--error-color);
 		}
 	}
 
@@ -134,7 +134,7 @@ ril-date-picker {
 		// }
 
 		&.mat-calendar-body-selected {
-			background-color: $success-color;
+			background-color: var(--success-color);
 		}
 	}
 

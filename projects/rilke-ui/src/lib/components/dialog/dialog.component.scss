@@ -25,11 +25,11 @@ ril-dialog {
 			align-items: center;
 
 			&.cancel {
-				background-color: $error-color;
+				background-color: var(--error-color);
 			}
 
 			&.action {
-				background-color: $success-color;
+				background-color: var(--success-color);
 				margin-left: 1rem;
 
 				span {

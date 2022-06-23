@@ -25,34 +25,34 @@ ril-alert {
 		}
 
 		&.success {
-			background: $success-color;
+			background: var(--success-color);
 
 			button {
-				background-color: $success-hover;
+				background-color: var(--success-hover);
 			}
 		}
 
 		&.info {
-			background: $info-color;
+			background: var(--info-color);
 
 			button {
-				background-color: $info-hover;
+				background-color: var(--info-hover);
 			}
 		}
 
 		&.warning {
-			background: $warning-color;
+			background: var(--warning-color);
 
 			button {
-				background-color: $warning-hover;
+				background-color: var(--warning-hover);
 			}
 		}
 
 		&.error {
-			background: $error-color;
+			background: var(--error-color);
 
 			button {
-				background-color: $error-hover;
+				background-color: var(--error-hover);
 			}
 		}
 	}

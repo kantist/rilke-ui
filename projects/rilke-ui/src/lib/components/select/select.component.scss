@@ -79,7 +79,7 @@ ril-select {
 	&.ng-invalid.ng-touched,
 	.has-error & {
 		.select-box {
-			border: 1px solid $error-color;
+			border: 1px solid var(--error-color);
 		}
 	}
 }

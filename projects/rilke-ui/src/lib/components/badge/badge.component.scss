@@ -59,28 +59,28 @@ ril-badge {
 
 	// Colors
 	&.badge-accent {
-		background: $accent-color;
-		color: $accent-text;
+		background: var(--accent-color);
+		color: var(--accent-text);
 	}
 
 	&.badge-success {
-		background: $success-color;
-		color: $success-text;
+		background: var(--success-color);
+		color: var(--success-text);
 	}
 
 	&.badge-warning {
-		background: $warning-color;
-		color: $warning-text;
+		background: var(--warning-color);
+		color: var(--warning-text);
 	}
 
 	&.badge-error {
-		background: $error-color;
-		color: $error-text;
+		background: var(--error-color);
+		color: var(--error-text);
 	}
 
 	&.badge-info {
-		background: $info-color;
-		color: $info-text;
+		background: var(--info-color);
+		color: var(--info-text);
 	}
 
 	&.badge-light {
